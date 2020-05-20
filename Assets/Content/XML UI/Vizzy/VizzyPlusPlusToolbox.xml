@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VizzyToolbox>
+    <Colors>
+        <Color id="ExtCraftExpression" color="#7e7313" />
+        <Color id="ExtOperator" color="#2e80b7" />
+    </Colors>
+    <Styles>
+        <Style id="orbital-element" color="ExtCraftExpression" format="orbital element [x] of (0)" tooltip="Get an orbital element of a craft or planet by craft id or name." />
+        <Style id="advanced-orbital-element" color="ExtCraftExpression" format="advanced orbital element [x] of (0)" tooltip="Get an advanced orbital element of a craft or planet by craft id or name." />
+        <Style id="cartesian-state" color="ExtCraftExpression" format="cartesian state vector [x] of (0)" tooltip="Get a cartesian state vector (position or velocity) of a craft or planet by node id." />
+        <style id="constant-pi" color="ExtOperator" format="π" tooltip="3.14159..." />
+        <style id="constant-g" color="ExtOperator" format="G" tooltip="Universal Gravitational Constant (in cubic meters per kilogram per seconds squared)." />
+        <style id="constant-e" color="ExtOperator" format="e" tooltip="Euler's Number (base of natural logarithms)." />
+        <style id="constant-c" color="ExtOperator" format="c" tooltip="The speed of light in meters per second." />
+        <Style id="target-craft-id" color="ExtCraftExpression" format="Target Craft ID" tooltip="Gets the target craft ID if a craft is currently targeted (returns -1 if no craft is targeted)." />
+    </Styles>
+    <Categories>
+        <Category name="Craft Information" icon="Ui/Vizzy/ToolboxIconExpressions">
+            <OrbitalElement style="orbital-element" element="right-ascension">
+                <Constant number="0" />
+            </OrbitalElement>
+            <AdvancedOrbitalElement style="advanced-orbital-element" element="angular-momentum">
+                <Constant number="0" />
+            </AdvancedOrbitalElement>
+            <CartesianStateVector style="cartesian-state" op="position">
+                <Constant number="0" />
+            </CartesianStateVector>
+            <TargetCraftId style="target-craft-id" />
+        </Category>
+        <Category name="Constants" icon="VizzyPlusPlus/Sprites/Constants">
+            <NumericConstant style="constant-pi" type="PI" />
+            <NumericConstant style="constant-g" type="G" />
+            <NumericConstant style="constant-e" type="E" />
+            <NumericConstant style="constant-c" type="C" />
+        </Category>
+    </Categories>
+</VizzyToolbox>
