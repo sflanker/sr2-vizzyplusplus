@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.CraftInformation {
     [Serializable]
-    public class AdvancedOrbitalElementExpression : ProgramExpression {
+    public class AdvancedOrbitalElementExpression : OrbitNodeInformationExpression {
         public const String XmlName = "AdvancedOrbitalElement";
 
         [ProgramNodeProperty] private String _element;
@@ -23,14 +23,14 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                     "A vector representing the body's rate of rotation around its parent.",
                     ListItemInfoType.Vector),
                 new ListItemInfo(
-                    "apoapsis",
-                    "Apoapsis",
-                    "A vector representing the apoapsis of the orbit.",
+                    "apoapse",
+                    "Apoapse",
+                    "A vector representing the apoapse of the orbit.",
                     ListItemInfoType.Vector),
                 new ListItemInfo(
-                    "periapsis",
-                    "Periapsis",
-                    "A vector representing the periapsis of the orbit.",
+                    "periapse",
+                    "Periapse",
+                    "A vector representing the periapse of the orbit.",
                     ListItemInfoType.Vector),
                 new ListItemInfo(
                     "orbital-plane-normal",
@@ -80,27 +80,17 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
             this.OnElementChanged();
         }
 
-        public override ExpressionResult Evaluate(IThreadContext context) {
-            var selectedNodeExpression = this.GetExpression(0).Evaluate(context);
-            IOrbitNode node;
-            if (selectedNodeExpression.ExpressionType == ExpressionType.Number) {
-                node = context.Craft.GetCraftNode((Int32)selectedNodeExpression.NumberValue);
-            } else {
-                var nodeName = selectedNodeExpression.TextValue;
-                node = context.Craft.GetPlanet(nodeName) ??
-                    (IOrbitNode)context.Craft.GetCraftNodeByName(nodeName);
-            }
-
+        protected override ExpressionResult GetOrbitNodeProperty(IOrbitNode node) {
             switch (this._elementType) {
                 case AdvancedOrbitalElement.AngularMomentum:
                     return new ExpressionResult {
                         VectorValue = node.Orbit.AngularMomentum
                     };
-                case AdvancedOrbitalElement.Apoapsis:
+                case AdvancedOrbitalElement.Apoapse:
                     return new ExpressionResult {
                         VectorValue = node.Orbit.Apoapsis
                     };
-                case AdvancedOrbitalElement.Periapsis:
+                case AdvancedOrbitalElement.Periapse:
                     return new ExpressionResult {
                         VectorValue = node.Orbit.Periapsis
                     };
@@ -137,11 +127,11 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                 case "angular-momentum":
                     this._elementType = AdvancedOrbitalElement.AngularMomentum;
                     break;
-                case "apoapsis":
-                    this._elementType = AdvancedOrbitalElement.Apoapsis;
+                case "apoapse":
+                    this._elementType = AdvancedOrbitalElement.Apoapse;
                     break;
-                case "periapsis":
-                    this._elementType = AdvancedOrbitalElement.Periapsis;
+                case "periapse":
+                    this._elementType = AdvancedOrbitalElement.Periapse;
                     break;
                 case "orbital-plane-normal":
                     this._elementType = AdvancedOrbitalElement.OrbitalPlaneNormal;
@@ -167,8 +157,8 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
 
     public enum AdvancedOrbitalElement {
         AngularMomentum = 1,
-        Apoapsis,
-        Periapsis,
+        Apoapse,
+        Periapse,
         OrbitalPlaneNormal,
         EccentricityVector,
         EccentricAnomaly,

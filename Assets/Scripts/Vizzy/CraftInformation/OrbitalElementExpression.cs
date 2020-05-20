@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.CraftInformation {
     [Serializable]
-    public class OrbitalElementExpression : ProgramExpression {
+    public class OrbitalElementExpression : OrbitNodeInformationExpression {
         public const String XmlName = "OrbitalElement";
 
         [ProgramNodeProperty] private String _element;
@@ -57,48 +57,12 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
             OnElementChanged();
         }
 
-        private void OnElementChanged() {
-            switch (this._element?.ToLower().Trim()) {
-                case "right-ascension":
-                    this._elementType = OrbitalElement.RightAscension;
-                    break;
-                case "inclination":
-                    this._elementType = OrbitalElement.Inclination;
-                    break;
-                case "argument-of-periapsis":
-                    this._elementType = OrbitalElement.ArgumentOfPeriapsis;
-                    break;
-                case "true-anomaly":
-                    this._elementType = OrbitalElement.TrueAnomaly;
-                    break;
-                case "semi-major-axis":
-                    this._elementType = OrbitalElement.SemiMajorAxis;
-                    break;
-                case "eccentricity":
-                    this._elementType = OrbitalElement.Eccentricity;
-                    break;
-                default:
-                    this._elementType = default;
-                    break;
-            }
-        }
-
         public override void OnDeserialized(XElement xml) {
             base.OnDeserialized(xml);
             this.OnElementChanged();
         }
 
-        public override ExpressionResult Evaluate(IThreadContext context) {
-            var selectedNodeExpression = this.GetExpression(0).Evaluate(context);
-            IOrbitNode node;
-            if (selectedNodeExpression.ExpressionType == ExpressionType.Number) {
-                node = context.Craft.GetCraftNode((Int32)selectedNodeExpression.NumberValue);
-            } else {
-                var nodeName = selectedNodeExpression.TextValue;
-                node = context.Craft.GetPlanet(nodeName) ??
-                    (IOrbitNode)context.Craft.GetCraftNodeByName(nodeName);
-            }
-
+        protected override ExpressionResult GetOrbitNodeProperty(IOrbitNode node) {
             switch (this._elementType) {
                 case OrbitalElement.RightAscension:
                     return new ExpressionResult {
@@ -129,6 +93,32 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                     return new ExpressionResult {
                         NumberValue = 0
                     };
+            }
+        }
+
+        private void OnElementChanged() {
+            switch (this._element?.ToLower().Trim()) {
+                case "right-ascension":
+                    this._elementType = OrbitalElement.RightAscension;
+                    break;
+                case "inclination":
+                    this._elementType = OrbitalElement.Inclination;
+                    break;
+                case "argument-of-periapsis":
+                    this._elementType = OrbitalElement.ArgumentOfPeriapsis;
+                    break;
+                case "true-anomaly":
+                    this._elementType = OrbitalElement.TrueAnomaly;
+                    break;
+                case "semi-major-axis":
+                    this._elementType = OrbitalElement.SemiMajorAxis;
+                    break;
+                case "eccentricity":
+                    this._elementType = OrbitalElement.Eccentricity;
+                    break;
+                default:
+                    this._elementType = default;
+                    break;
             }
         }
     }

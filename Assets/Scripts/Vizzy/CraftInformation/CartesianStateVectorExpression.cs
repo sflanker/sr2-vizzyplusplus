@@ -5,7 +5,7 @@ using ModApi.Flight.Sim;
 using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.CraftInformation {
-    public class CartesianStateVectorExpression  : ProgramExpression {
+    public class CartesianStateVectorExpression  : OrbitNodeInformationExpression {
         public const String XmlName = "CartesianStateVector";
 
         [ProgramNodeProperty] private String _vector;
@@ -43,17 +43,7 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
             this.OnVectorChanged();
         }
 
-        public override ExpressionResult Evaluate(IThreadContext context) {
-            var selectedNodeExpression = this.GetExpression(0).Evaluate(context);
-            IOrbitNode node;
-            if (selectedNodeExpression.ExpressionType == ExpressionType.Number) {
-                node = context.Craft.GetCraftNode((Int32)selectedNodeExpression.NumberValue);
-            } else {
-                var nodeName = selectedNodeExpression.TextValue;
-                node = context.Craft.GetPlanet(nodeName) ??
-                    (IOrbitNode)context.Craft.GetCraftNodeByName(nodeName);
-            }
-
+        protected override ExpressionResult GetOrbitNodeProperty(IOrbitNode node) {
             switch (this._vectorType) {
                 case CartesianStateVector.Position:
                     return new ExpressionResult {
