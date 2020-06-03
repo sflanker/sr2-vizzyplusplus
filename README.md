@@ -54,3 +54,13 @@
      * Set burn node direction (in a vector relative to +X = prograde and +Y is the orbit normal)
      * Set burn node delta-v
      * Get orbital parameters after burn.
+ * TCP & UPD Socket Clients
+     * Create a client (and a connection in the TCP case) to a host and port
+     * Send data as newline delimited lines of text (UTF-8 encoded)
+     * New event for data received (again, one line at a time)
+ * HTTP Client
+     * Send http gets, posts, puts, deletes
+     * New event for responses
+     * Query string builder expression
+     * Specify headers as a list of alternating key and value strings
+     
