@@ -40,6 +40,10 @@
  * Additional Current Craft Information
      * NavSphere settings: Pitch/Heading
      * Staging information
+         * Current stage number
+         * Number of stages remaining
+         * List of parts activated by a stage (by stage number)
+         * An event that fires on stage activation
  * Camera Part Manipulation
      * Set the FOV of a camera part by id.
      * Set camera part orientation (in craft local coordinates)
