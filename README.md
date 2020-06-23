@@ -36,7 +36,7 @@
 
 # Roadmap
 
- * String Expressions (Contains, Starts/Ends With, Regex Match)
+ * \[In Progress - @sflanker\] String Expressions (Contains, Starts/Ends With, Regex Match)
  * Additional Current Craft Information
      * NavSphere settings: Pitch/Heading
      * Staging information
