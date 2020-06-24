@@ -55,7 +55,7 @@ This mod is currently using Unity 2019.2.3f1, and the SimpleRockets 0.9.307 vers
      * Set camera part orientation (in craft local coordinates)
      * Lock camera part orientation (prevent user movement with the mouse)
  * Prompt user for input (using a dialog, pauses the game)
- * Additional Craft (by Id) Information
+ * \[In Progress - @AnotherFireFox\] Additional Craft (by Id) Information
      * Time of next closest approach
      * Distance at closest approach
  * Burn Node Manipulation
