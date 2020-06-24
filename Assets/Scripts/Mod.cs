@@ -6,12 +6,12 @@ using System.Reflection;
 using System.Xml.Linq;
 using Assets.Scripts.Vizzy.Constants;
 using Assets.Scripts.Vizzy.CraftInformation;
+using Assets.Scripts.Vizzy.Operators;
 using Assets.Scripts.Vizzy.UI;
 using ModApi.Craft.Program;
 using ModApi.Ui;
 using ModApi.Ui.Events;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Assets.Scripts {
     /// <summary>
@@ -53,7 +53,11 @@ namespace Assets.Scripts {
                 { OrbitalElementExpression.XmlName, (typeof(OrbitalElementExpression), () => new OrbitalElementExpression()) },
                 { AdvancedOrbitalElementExpression.XmlName, (typeof(AdvancedOrbitalElementExpression), () => new AdvancedOrbitalElementExpression()) },
                 { CartesianStateVectorExpression.XmlName, (typeof(CartesianStateVectorExpression), () => new CartesianStateVectorExpression()) },
-                { TargetCraftIdExpression.XmlName, (typeof(TargetCraftIdExpression), () => new TargetCraftIdExpression()) },
+                { GetCraftIdExpression.XmlName, (typeof(GetCraftIdExpression), () => new GetCraftIdExpression()) },
+                { GetCraftIdExpression.LegacyXmlName, (typeof(GetCraftIdExpression), () => new GetCraftIdExpression()) },
+                { StringComparisonExpression.XmlName, (typeof(StringComparisonExpression), () => new StringComparisonExpression()) },
+                { StringTransformExpression.XmlName, (typeof(StringTransformExpression), () => new StringTransformExpression()) },
+                { StringSplitExpression.XmlName, (typeof(StringSplitExpression), () => new StringSplitExpression()) },
             };
 
             var programNodeCreatorType =
@@ -122,24 +126,6 @@ namespace Assets.Scripts {
         }
 
         private void UiOnUserInterfaceLoading(object sender, UserInterfaceLoadingEventArgs e) {
-            var vizzyUI = e.XmlLayout.GameObject.GetComponent<VizzyUIController>();
-            if (e.UserInterfaceId == UserInterfaceIds.Vizzy) {
-                if (VizzyPlusPlusToolbox != null) {
-                    if (vizzyUI.VizzyUI.Toolbox != null) {
-                        MergeToolbox(
-                            vizzyUI.VizzyUI.Toolbox,
-                            VizzyPlusPlusToolbox
-                        );
-                    } else {
-                        Debug.Log("VizzyPlusPlus: The default Vizzy Toolbox isn't loaded yet.");
-                    }
-                } else {
-                    Debug.Log("VizzyPlusPlus: Unable to load VizzyPlusPlusToolbox.");
-                }
-            }
-        }
-
-        private void UiOnUserInterfaceLoaded(Object sender, UserInterfaceLoadedEventArgs e) {
             var vizzyUI = e.XmlLayout.GameObject.GetComponent<VizzyUIController>();
             if (e.UserInterfaceId == UserInterfaceIds.Vizzy) {
                 if (VizzyPlusPlusToolbox != null) {
