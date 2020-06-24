@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Craft name="VizzyPlusPlus Text Expressions Test" parent="" initialBoundsMin="-0.8359594,-5.079902,-0.8359594" initialBoundsMax="0.8359594,3.50361,0.8359594" price="1174677" suppressCraftConfigWarnings="false" xmlVersion="11" localCenterOfMass="0,-2.871937,0">
+  <Assembly>
+    <Parts>
+      <Part id="0" partType="CommandPod1" position="0,2.871938,0" rotation="0,0,0" rootPart="true" commandPodId="0" materials="0,1,2,3,4">
+        <Drag drag="1.239071,1.239071,1.115946,0.02116545,1.133565,1.134434" area="1.673438,1.673438,2.023688,0.03678274,1.546356,1.546356" />
+        <Config />
+        <CommandPod activationGroupNames=",,,,,,,Landing Gear,Solar Panels,RCS" activationGroupStates="false,false,false,false,false,false,false,true,false,true" pidPitch="10,0,25" pidRoll="10,0,25" pilotSeatRotation="-90,0,0">
+          <Controls />
+        </CommandPod>
+        <Gyroscope />
+        <FuelTank subPriority="28" />
+        <CrewCompartment />
+        <FlightProgram>
+          <Program name="New Program">
+            <Variables>
+              <Variable name="actual_result" number="0" />
+              <Variable name="split_result">
+                <Items />
+              </Variable>
+              <Variable name="pass" number="0" />
+            </Variables>
+            <Instructions>
+              <Event event="FlightStart" id="0" style="flight-start" pos="-10,-20" />
+              <CallCustomInstruction call="Text Compare Test Case" id="1" style="call-custom-instruction">
+                <Constant text="Foo" />
+                <Constant text="Foo" />
+                <Constant text="=" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="2" style="call-custom-instruction">
+                <Constant text="Foo" />
+                <Constant text="Bar" />
+                <Constant text="=" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="3" style="call-custom-instruction">
+                <Constant text="aaa" />
+                <Constant text="bbb" />
+                <Constant text="&lt;" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="4" style="call-custom-instruction">
+                <Constant text="bbb" />
+                <Constant text="aaa" />
+                <Constant text="&lt;" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="5" style="call-custom-instruction">
+                <Constant text="aaa" />
+                <Constant text="bbb" />
+                <Constant text="&lt;=" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="6" style="call-custom-instruction">
+                <Constant text="bbb" />
+                <Constant text="bbb" />
+                <Constant text="&lt;=" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="7" style="call-custom-instruction">
+                <Constant text="bbb" />
+                <Constant text="aaa" />
+                <Constant text="&lt;=" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="8" style="call-custom-instruction">
+                <Constant text="bbb" />
+                <Constant text="aaa" />
+                <Constant text="&gt;" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="9" style="call-custom-instruction">
+                <Constant text="aaa" />
+                <Constant text="bbb" />
+                <Constant text="&gt;" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="10" style="call-custom-instruction">
+                <Constant text="bbb" />
+                <Constant text="aaa" />
+                <Constant text="&gt;=" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="11" style="call-custom-instruction">
+                <Constant text="bbb" />
+                <Constant text="bbb" />
+                <Constant text="&gt;=" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="12" style="call-custom-instruction">
+                <Constant text="aaa" />
+                <Constant text="bbb" />
+                <Constant text="&gt;=" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="13" style="call-custom-instruction">
+                <Constant text="FooBar" />
+                <Constant text="Foo" />
+                <Constant text="StartsWith" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="14" style="call-custom-instruction">
+                <Constant text="Foo" />
+                <Constant text="Foo" />
+                <Constant text="StartsWith" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="15" style="call-custom-instruction">
+                <Constant text="FooBar" />
+                <Constant text="Baz" />
+                <Constant text="StartsWith" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="16" style="call-custom-instruction">
+                <Constant text="FooBar" />
+                <Constant text="ooBar" />
+                <Constant text="StartsWith" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="17" style="call-custom-instruction">
+                <Constant text="FooBar" />
+                <Constant text="Bar" />
+                <Constant text="EndsWith" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="18" style="call-custom-instruction">
+                <Constant text="Bar" />
+                <Constant text="Bar" />
+                <Constant text="EndsWith" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="19" style="call-custom-instruction">
+                <Constant text="FooBar" />
+                <Constant text="Baz" />
+                <Constant text="EndsWith" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="20" style="call-custom-instruction">
+                <Constant text="FooBar" />
+                <Constant text="FooBa" />
+                <Constant text="EndsWith" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="21" style="call-custom-instruction">
+                <Constant text="Foo Bar Baz" />
+                <Constant text="^Foo" />
+                <Constant text="Matches" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="22" style="call-custom-instruction">
+                <Constant text="Foo Bar Baz" />
+                <Constant text="Baz$" />
+                <Constant text="Matches" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="23" style="call-custom-instruction">
+                <Constant text="test 23,245,765.07453" />
+                <Constant text="^test [0-9]{1,3}(,[0-9]{3})*(.[0-9]+)?$" />
+                <Constant text="Matches" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="24" style="call-custom-instruction">
+                <Constant text="test 0.0" />
+                <Constant text="^test [0-9]{1,3}(,[0-9]{3})*(.[0-9]+)?$" />
+                <Constant text="Matches" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="25" style="call-custom-instruction">
+                <Constant text="test 5,500" />
+                <Constant text="^test [0-9]{1,3}(,[0-9]{3})*(.[0-9]+)?$" />
+                <Constant text="Matches" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="26" style="call-custom-instruction">
+                <Constant text="Bar Baz Foo" />
+                <Constant text="^Foo" />
+                <Constant text="Matches" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="27" style="call-custom-instruction">
+                <Constant text="Bar Baz Foo" />
+                <Constant text="Baz$" />
+                <Constant text="Matches" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="28" style="call-custom-instruction">
+                <Constant text="test 23245765.07" />
+                <Constant text="^test [0-9]{1,3}(,[0-9]{3})*(.[0-9]+)?$" />
+                <Constant text="Matches" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Compare Test Case" id="29" style="call-custom-instruction">
+                <Constant text="test Derp" />
+                <Constant text="^test [0-9]{1,3}(,[0-9]{3})*(.[0-9]+)?$" />
+                <Constant text="Matches" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="30" style="call-custom-instruction">
+                <Constant text="FOO" />
+                <Constant text="Lowercase" />
+                <Constant text="foo" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="31" style="call-custom-instruction">
+                <Constant text="bar" />
+                <Constant text="Uppercase" />
+                <Constant text="BAR" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="32" style="call-custom-instruction">
+                <Constant text="  foo  bar  " />
+                <Constant text="Trim" />
+                <Constant text="foo  bar" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="33" style="call-custom-instruction">
+                <Constant text="  foo  bar  " />
+                <Constant text="Trim Start" />
+                <Constant text="foo  bar  " />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="34" style="call-custom-instruction">
+                <Constant text="  foo  bar  " />
+                <Constant text="Trim End" />
+                <Constant text="  foo  bar" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="35" style="call-custom-instruction">
+                <Constant text="   " />
+                <Constant text="Is Blank?" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="36" style="call-custom-instruction">
+                <Constant text="" />
+                <Constant text="Is Blank?" />
+                <Constant style="true" bool="true" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Text Transform Test Case " id="37" style="call-custom-instruction">
+                <Constant text="foo" />
+                <Constant text="Is Blank?" />
+                <Constant style="false" bool="false" />
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Spli Text Test Case" id="38" style="call-custom-instruction">
+                <Constant text="foo,bar;baz" />
+                <Constant text=",;" />
+                <ListOp op="create" style="list-create">
+                  <Constant text="foo,bar,baz" />
+                </ListOp>
+              </CallCustomInstruction>
+              <CallCustomInstruction call="Spli Text Test Case" id="39" style="call-custom-instruction">
+                <Constant text="-foo-bar-" />
+                <Constant text="-" />
+                <ListOp op="create" style="list-create">
+                  <Constant text=",foo,bar," />
+                </ListOp>
+              </CallCustomInstruction>
+            </Instructions>
+            <Instructions>
+              <CustomInstruction callFormat="Text Compare Test Case (0) compare with (1) using op (2) expect result (3) " format="Text Compare Test Case |txt1| compare with |txt2| using op |op| expect result |result| " name="Text Compare Test Case" id="40" style="custom-instruction" pos="-1555.292,-213.7323" />
+              <SetVariable id="41" style="set-variable">
+                <Variable list="false" local="false" variableName="actual_result" />
+                <Constant text="-1" />
+              </SetVariable>
+              <If id="42" style="if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="=" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="43" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="equals" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </If>
+              <ElseIf id="44" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="&lt;" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="45" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="less-than" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="46" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="&lt;=" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="47" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="less-than-or-equal" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="48" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="&gt;" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="49" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="greater-than" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="50" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="&gt;=" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="51" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="greater-than-or-equal" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="52" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="StartsWith" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="53" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="starts-with" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="54" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="EndsWith" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="55" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="ends-with" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="56" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="op" />
+                  <Constant text="Matches" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="57" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <StringComparison op="matches" style="string-compare">
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                    </StringComparison>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="58" style="else">
+                <Constant bool="true" />
+                <Instructions>
+                  <LogMessage id="59" style="log">
+                    <StringOp op="format" style="format">
+                      <Constant text="FAIL! Unexpected operator: {0}" />
+                      <Variable list="false" local="true" variableName="op" />
+                      <Constant text="" />
+                    </StringOp>
+                  </LogMessage>
+                </Instructions>
+              </ElseIf>
+              <If id="60" style="if">
+                <Not style="op-not">
+                  <Comparison op="=" style="op-eq">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <Constant text="-1" />
+                  </Comparison>
+                </Not>
+                <Instructions>
+                  <LogMessage id="61" style="log">
+                    <StringOp op="format" style="format">
+                      <Constant text="{0} Comparison &quot;{1}&quot; {2} &quot;{3}&quot; returned result: {4}" />
+                      <Conditional style="conditional">
+                        <Comparison op="=" style="op-eq">
+                          <Variable list="false" local="true" variableName="result" />
+                          <Variable list="false" local="false" variableName="actual_result" />
+                        </Comparison>
+                        <Constant text="PASS!" />
+                        <Constant text="FAIL!" />
+                      </Conditional>
+                      <Variable list="false" local="true" variableName="txt1" />
+                      <Variable list="false" local="true" variableName="op" />
+                      <Variable list="false" local="true" variableName="txt2" />
+                      <Variable list="false" local="false" variableName="actual_result" />
+                      <Constant text="" />
+                    </StringOp>
+                  </LogMessage>
+                </Instructions>
+              </If>
+            </Instructions>
+            <Instructions>
+              <CustomInstruction callFormat="Text Transform Test Case (0) transformed with (1) should be (2) " format="Text Transform Test Case |input| transformed with |operator| should be |result| " name="Text Transform Test Case " id="62" style="custom-instruction" pos="-1570.909,-1414.87" />
+              <SetVariable id="63" style="set-variable">
+                <Variable list="false" local="false" variableName="actual_result" />
+                <Constant text="-1" />
+              </SetVariable>
+              <If id="64" style="if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="operator" />
+                  <Constant text="Lowercase" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="65" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <UnaryStringTransform op="to-lower" style="string-transform">
+                      <Variable list="false" local="true" variableName="input" />
+                    </UnaryStringTransform>
+                  </SetVariable>
+                </Instructions>
+              </If>
+              <ElseIf id="66" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="operator" />
+                  <Constant text="Uppercase" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="67" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <UnaryStringTransform op="to-upper" style="string-transform">
+                      <Variable list="false" local="true" variableName="input" />
+                    </UnaryStringTransform>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="68" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="operator" />
+                  <Constant text="Trim" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="69" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <UnaryStringTransform op="trim" style="string-transform">
+                      <Variable list="false" local="true" variableName="input" />
+                    </UnaryStringTransform>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="70" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="operator" />
+                  <Constant text="Trim Start" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="71" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <UnaryStringTransform op="trim-start" style="string-transform">
+                      <Variable list="false" local="true" variableName="input" />
+                    </UnaryStringTransform>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="72" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="operator" />
+                  <Constant text="Trim End" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="73" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <UnaryStringTransform op="trim-end" style="string-transform">
+                      <Variable list="false" local="true" variableName="input" />
+                    </UnaryStringTransform>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="74" style="else-if">
+                <StringComparison op="equals" style="string-compare">
+                  <Variable list="false" local="true" variableName="operator" />
+                  <Constant text="Is Blank?" />
+                </StringComparison>
+                <Instructions>
+                  <SetVariable id="75" style="set-variable">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <UnaryStringTransform op="is-blank" style="string-transform">
+                      <Variable list="false" local="true" variableName="input" />
+                    </UnaryStringTransform>
+                  </SetVariable>
+                </Instructions>
+              </ElseIf>
+              <ElseIf id="76" style="else">
+                <Constant bool="true" />
+                <Instructions>
+                  <LogMessage id="77" style="log">
+                    <StringOp op="format" style="format">
+                      <Constant text="FAIL! Unexpected operator: {0}" />
+                      <Variable list="false" local="true" variableName="operator" />
+                      <Constant text="" />
+                    </StringOp>
+                  </LogMessage>
+                </Instructions>
+              </ElseIf>
+              <If id="78" style="if">
+                <Not style="op-not">
+                  <Comparison op="=" style="op-eq">
+                    <Variable list="false" local="false" variableName="actual_result" />
+                    <Constant text="-1" />
+                  </Comparison>
+                </Not>
+                <Instructions>
+                  <LogMessage id="79" style="log">
+                    <StringOp op="format" style="format">
+                      <Constant text="{0} Transform {1} of &quot;{2}&quot; returned result: {3}" />
+                      <Conditional style="conditional">
+                        <Comparison op="=" style="op-eq">
+                          <Variable list="false" local="true" variableName="result" />
+                          <Variable list="false" local="false" variableName="actual_result" />
+                        </Comparison>
+                        <Constant text="PASS!" />
+                        <Constant text="FAIL!" />
+                      </Conditional>
+                      <Variable list="false" local="true" variableName="operator" />
+                      <Variable list="false" local="true" variableName="input" />
+                      <Variable list="false" local="false" variableName="actual_result" />
+                      <Constant text="" />
+                    </StringOp>
+                  </LogMessage>
+                </Instructions>
+              </If>
+            </Instructions>
+            <Instructions>
+              <CustomInstruction callFormat="Spli Text Test Case (0) split by (1) should be (2) " format="Spli Text Test Case |input| split by |delim| should be |list| " name="Spli Text Test Case" id="80" style="custom-instruction" pos="-1587.192,-2422.737" />
+              <SetVariable id="81" style="list-init">
+                <Variable list="true" local="false" variableName="split_result" />
+                <Split style="string-split">
+                  <Variable list="false" local="true" variableName="input" />
+                  <Variable list="false" local="true" variableName="delim" />
+                </Split>
+              </SetVariable>
+              <If id="82" style="if">
+                <Comparison op="=" style="op-eq">
+                  <ListOp op="length" style="list-length">
+                    <Variable list="false" local="true" variableName="list" />
+                  </ListOp>
+                  <ListOp op="length" style="list-length">
+                    <Variable list="true" local="false" variableName="split_result" />
+                  </ListOp>
+                </Comparison>
+                <Instructions>
+                  <SetVariable id="83" style="set-variable">
+                    <Variable list="false" local="false" variableName="pass" />
+                    <Constant style="true" bool="true" />
+                  </SetVariable>
+                  <For id="84" style="for">
+                    <Constant number="1" />
+                    <ListOp op="length" style="list-length">
+                      <Variable list="false" local="true" variableName="list" />
+                    </ListOp>
+                    <Constant number="1" />
+                    <Instructions>
+                      <If id="85" style="if">
+                        <Not style="op-not">
+                          <Comparison op="=" style="op-eq">
+                            <ListOp op="get" style="list-get">
+                              <Variable list="false" local="true" variableName="list" />
+                              <Variable list="false" local="true" variableName="i" />
+                            </ListOp>
+                            <ListOp op="get" style="list-get">
+                              <Variable list="true" local="false" variableName="split_result" />
+                              <Variable list="false" local="true" variableName="i" />
+                            </ListOp>
+                          </Comparison>
+                        </Not>
+                        <Instructions>
+                          <LogMessage id="86" style="log">
+                            <StringOp op="format" style="format">
+                              <Constant text="FAIL! Item {0} is incorrect. Expected: &quot;{1}&quot;, Actual: &quot;{2}&quot;" />
+                              <Variable list="false" local="true" variableName="i" />
+                              <ListOp op="get" style="list-get">
+                                <Variable list="false" local="true" variableName="list" />
+                                <Variable list="false" local="true" variableName="i" />
+                              </ListOp>
+                              <ListOp op="get" style="list-get">
+                                <Variable list="true" local="false" variableName="split_result" />
+                                <Variable list="false" local="true" variableName="i" />
+                              </ListOp>
+                              <Constant text="" />
+                            </StringOp>
+                          </LogMessage>
+                          <SetVariable id="87" style="set-variable">
+                            <Variable list="false" local="false" variableName="pass" />
+                            <Constant style="false" bool="false" />
+                          </SetVariable>
+                          <Break id="88" style="break" />
+                        </Instructions>
+                      </If>
+                    </Instructions>
+                  </For>
+                  <If id="89" style="if">
+                    <Variable list="false" local="false" variableName="pass" />
+                    <Instructions>
+                      <LogMessage id="90" style="log">
+                        <StringOp op="format" style="format">
+                          <Constant text="PASS! Split &quot;{0}&quot; by {1} returned: {2}" />
+                          <Variable list="false" local="true" variableName="input" />
+                          <Variable list="false" local="true" variableName="delim" />
+                          <Variable list="true" local="false" variableName="split_result" />
+                          <Constant text="" />
+                        </StringOp>
+                      </LogMessage>
+                    </Instructions>
+                  </If>
+                </Instructions>
+              </If>
+              <ElseIf id="91" style="else">
+                <Constant bool="true" />
+                <Instructions>
+                  <LogMessage id="92" style="log">
+                    <StringOp op="format" style="format">
+                      <Constant text="FAIL! Split did not return the correct number of items. Expected: {0}, Actual: {1}" />
+                      <ListOp op="length" style="list-length">
+                        <Variable list="false" local="true" variableName="list" />
+                      </ListOp>
+                      <ListOp op="length" style="list-length">
+                        <Variable list="true" local="false" variableName="split_result" />
+                      </ListOp>
+                      <Constant text="" />
+                    </StringOp>
+                  </LogMessage>
+                </Instructions>
+              </ElseIf>
+            </Instructions>
+            <Expressions />
+          </Program>
+        </FlightProgram>
+      </Part>
+      <Part id="1" partType="Fuselage1" position="0,-0.2600812,0" rotation="0,0,0" commandPodId="0" materials="0,0,0,0,4">
+        <Drag drag="6.211324,6.211324,0,1.186767,6.21155,6.211504" area="8.044127,8.044127,0,1.186767,8.044127,8.044127" />
+        <Config />
+        <Fuselage bottomScale="0.8,0.8" offset="0,2.5,0" topScale="0.8,0.8" />
+        <FuelTank capacity="5529.204" fuel="5529.204" subPriority="-2" />
+      </Part>
+      <Part id="2" partType="RocketEngine1" position="0,-2.760093,0" rotation="1.366038E-05,0,0" activationStage="0" commandPodId="0" materials="0,0,2,3,4" engineTypeTexture="RocketEngine_Type" subTypeTexture="RocketEngine_SubType" nozzleTexture="RocketEngine_Nozzle">
+        <Drag drag="1.104031,1.074616,0,0.389863,1.266261,1.263069" area="1.508119,1.508119,0,0.8001726,1.730794,1.730794" />
+        <Config />
+        <RocketEngine engineSubTypeId="GasGenerator1" mass="4.61046171" nozzleTypeId="Bravo" price="662818" size="0.8" />
+      </Part>
+    </Parts>
+    <Connections>
+      <Connection partA="1" partB="0" attachPointsA="2" attachPointsB="0" />
+      <Connection partA="2" partB="1" attachPointsA="0" attachPointsB="1" />
+    </Connections>
+    <Collisions />
+    <Bodies>
+      <Body id="1" partIds="0,1,2" mass="76.47947" position="0,2.493936E-08,0" rotation="0,0,0" centerOfMass="0,0,0" />
+    </Bodies>
+  </Assembly>
+  <DesignerSettings themeName="Custom">
+    <Theme name="Custom" id="dc7fb4e6-df15-43e1-84c3-0043bfabe179">
+      <Material color="FFFFFF" m="0.3" s="0.6" />
+      <Material color="178BFF" m="0.4" s="0.83" />
+      <Material color="7F7F7F" m="0.4" s="0.83" />
+      <Material color="454545" m="0.4" s="0.83" />
+      <Material color="171717" m="0.3" s="0.6" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.65" s="0.08" />
+      <Material color="FFFFFF" m="0.65" s="0.08" />
+      <Material color="FFFFFF" m="0.65" s="0.08" />
+      <Material color="FFFFFF" m="0" s="0" d="0.2" />
+      <Material color="178BFF" m="0" s="0.44" d="0.2" />
+      <Material color="7F7F7F" m="0.65" s="0.37" />
+      <Material color="454545" m="1" s="0.57" />
+      <Material color="8B8B8B" m="1" s="1" />
+    </Theme>
+  </DesignerSettings>
+  <Themes>
+    <Theme name="Custom" id="dc7fb4e6-df15-43e1-84c3-0043bfabe179">
+      <Material color="FFFFFF" m="0.3" s="0.6" />
+      <Material color="178BFF" m="0.4" s="0.83" />
+      <Material color="7F7F7F" m="0.4" s="0.83" />
+      <Material color="454545" m="0.4" s="0.83" />
+      <Material color="171717" m="0.3" s="0.6" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.1" s="0.08" />
+      <Material color="FFFFFF" m="0.65" s="0.08" />
+      <Material color="FFFFFF" m="0.65" s="0.08" />
+      <Material color="FFFFFF" m="0.65" s="0.08" />
+      <Material color="FFFFFF" m="0" s="0" d="0.2" />
+      <Material color="178BFF" m="0" s="0.44" d="0.2" />
+      <Material color="7F7F7F" m="0.65" s="0.37" />
+      <Material color="454545" m="1" s="0.57" />
+      <Material color="8B8B8B" m="1" s="1" />
+    </Theme>
+  </Themes>
+  <RequiredMods>
+    <RequiredMod name="VizzyPlusPlus" author="sflanker" version="0.1" lastModified="2020-06-28T06:47:53Z" requiresCodeExecution="true" />
+  </RequiredMods>
+  <Symmetry />
+</Craft>
