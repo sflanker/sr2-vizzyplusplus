@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Image class="arrow-button:@Image" color="LabelText" sprite="Ui/Sprites/Common/IconChevronLeft" width="24" height="26" pivot="0.5 0.5" />
+    <ContentButton class="arrow-button" rectAlignment="MiddleCenter" width="50" height="50" pivot="0.5 0.5" />
+    <Image class="icon-button" width="32" height="32" color="ButtonIcon" tooltipPosition="Below" />
+    <Image class="toggled" color="Primary" />
+  </Defaults>
+  <Panel id="panel" active="false" color="#000000FF" raycastTarget="true">
+    <Panel id="image-container" class="no-image" offsetMax="-10 -40" offsetMin="10 10">
+      <RawImage id="image" width="80%" height="80%" />
+    </Panel>
+    <RectTransform class="safe-area">
+      <Panel id="details" class="no-image" rectAlignment="UpperRight" offsetXY="-10 -50" width="320">
+        <VerticalLayout color="#0000008A" contentSizeFitter="vertical" childAlignment="UpperCenter" rectAlignment="UpperCenter" pivot="0 1" padding="10">
+          <Panel class="row">
+            <TextMeshPro id="details-location" class="value" width="50%" rectAlignment="MiddleLeft" alignment="Center" text="Location" />
+            <TextMeshPro id="details-date" class="value" width="50%" rectAlignment="MiddleRight" alignment="Center" text="Date" />
+          </Panel>
+          <TextMeshPro id="details-description" flexibleHeight="100" class="value" alignment="Top" text="Description..." />
+        </VerticalLayout>
+      </Panel>
+      <Button id="select-photo-button" active="false" class="btn btn-primary" width="150" rectAlignment="LowerCenter" offsetXY="0 20" onClick="OnSelectPhotoClicked();">
+        <TextMeshPro text="SELECT PHOTO" />
+      </Button>
+      <Button id="share-photo-button" class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconButtonShare" active="false" offsetXY="-10 10" rectAlignment="LowerRight" width="40" height="40" onClick="OnSharePhotoClicked()" tooltip="Share Photo" tooltipPosition="Above" />
+      <Panel width="100%" height="40" rectAlignment="UpperCenter" class="panel">
+        <Image class="icon-button" offsetXY="10 0" sprite="Ui/Sprites/Menu/IconButtonBack" rectAlignment="MiddleLeft" onClick="OnCloseButtonClicked();" tooltip="Back to album" />
+        <Image class="icon-button toggled" offsetXY="-10 0" sprite="Ui/Sprites/Common/IconButtonDetails" rectAlignment="MiddleRight" onClick="OnDetailsButtonClicked(this);" tooltip="Show photo details" />
+        <ContentButton class="arrow-button" offsetXY="-75 0" onClick="OnPreviousClicked()" color="Transparent">
+          <Image />
+        </ContentButton>
+        <TextMeshPro id="index-text" class="value" text="4/12" />
+        <ContentButton class="arrow-button" offsetXY="75 0" onClick="OnNextClicked()" color="Transparent">
+          <Image rotation="0 0 180" />
+        </ContentButton>
+      </Panel>
+    </RectTransform>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <TextMeshPro class="inspector-panel:@TextMeshPro" fontSize="14" alignment="Center" />
+    <VerticalLayout class="inspector-panel" color="TransparentPanel" />
+    <Panel class="inspector-panel-row" preferredHeight="25" />
+    <TextMeshPro class="label" alignment="Left" color="#a3aabf" />
+    <TextMeshPro class="value" alignment="Right" />
+    <Image class="inspector-panel-button" color="Button" hoverClass="inspector-panel-button-hover" raycastTarget="true" />
+    <Image class="inspector-panel-button-hover" color="Primary" />
+    <Image class="inspector-panel-button-hover:@TextMeshPro" color="White" />
+    <Image class="inspector-panel-pin" color="LabelText" opacity="0.5" />
+    <Image class="inspector-panel-pin-selected" color="Primary" opacity="1.0" />
+    <Image class="inspector-panel-pin-hover" color="PrimaryHover" opacity="0.75" />
+    <Panel class="column-left" width="50%" rectAlignment="MiddleLeft" padding="10 0 0 0" />
+    <Panel class="column-right" width="50%" rectAlignment="MiddleRight" padding="0 10 0 0" />
+    <VerticalLayout class="float-upper-right" pivot="1 1" rectAlignment="UpperRight" />
+    <VerticalLayout class="float-upper-left" pivot="0 1" rectAlignment="UpperLeft" offsetXY="200 -25" />
+    <Panel class="inspector-header" raycastTarget="true" color="#1d2127ba" hoverClass="inspector-header-hover" />
+    <Panel class="inspector-header-hover" raycastTarget="true" color="#2e353eE0" />
+    <Panel class="tooltip-row" raycastTarget="true" tooltipPosition="Above" />
+  </Defaults>
+  <RectTransform id="templates" active="false">
+    <VerticalLayout id="template-panel" class="panel draggable inspector-panel inspector-template" padding="0 0 0 5" contentSizeFitter="vertical" childAlignment="LowerCenter" width="250" height="0" childForceExpandHeight="false">
+      <Panel class="inspector-header" preferredHeight="30" onClick="OnMainHeaderClicked(this);">
+        <TextMeshPro internalId="title-text" color="Primary" fontStyle="UpperCase" />
+        <Image internalId="pin-button" class="inspector-panel-pin" width="20" height="20" offsetXY="5 0" sprite="Ui/Sprites/Panel-Pin" rectAlignment="MiddleLeft" onClick="OnPinClicked(this);" hoverClass="inspector-panel-pin-hover" />
+        <Image internalId="close-button" class="inspector-panel-pin" width="24" height="24" offsetXY="0 0" sprite="Ui/Sprites/Common/IconCloseFlyout" rectAlignment="MiddleRight" onClick="OnCloseClicked(this);" hoverClass="inspector-panel-pin-hover" />
+      </Panel>
+      <VerticalScrollView class="no-image" internalId="scroll-view" pivot="0 1" preferredHeight="100">
+        <VerticalLayout class="no-image" internalId="items-parent" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" spacing="5"></VerticalLayout>
+      </VerticalScrollView>
+    </VerticalLayout>
+    <Panel id="template-header-element" class="inspector-panel-row inspector-header inspector-template">
+      <TextMeshPro internalId="label" class="label" color="Primary" text="Header" alignment="Left" margin="10 0 0 0" />
+    </Panel>
+    <Panel id="template-text-element" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="15">
+      <TextMeshPro internalId="label" class="label" margin="10 0 0 0" />
+      <TextMeshPro internalId="value" class="value" margin="0 0 10 0" />
+    </Panel>
+    <Panel id="template-text-button-element" class="inspector-panel-row inspector-template no-image" preferredHeight="24" padding="50 50 0 0" navigation="None">
+      <ContentButton internalId="button" class="btn">
+        <TextMeshPro internalId="label" text="BUTTON" />
+      </ContentButton>
+    </Panel>
+    <ContentButton id="template-icon-button-element" internalId="button" preferredHeight="35" preferredWidth="35" class="btn inspector-template" navigation="None" tooltipPosition="Above">
+      <Image internalId="image" width="24" height="24" />
+    </ContentButton>
+    <Panel id="template-label-button-element" class="inspector-panel-row inspector-template no-image" navigation="None">
+      <Panel class="no-image" width="55%" rectAlignment="MiddleLeft" padding="10 0 0 0">
+        <TextMeshPro internalId="label" class="label" text="Label" />
+      </Panel>
+      <Panel class="no-image" width="45%" rectAlignment="MiddleRight" padding="0 5 0 0">
+        <Panel rectAlignment="MiddleRight">
+          <ContentButton internalId="button" class="btn" preferredHeight="23" height="23">
+            <TextMeshPro internalId="labelButton" text="BUTTON" />
+          </ContentButton>
+        </Panel>
+      </Panel>
+    </Panel>
+    <Panel id="template-icon-button-row" class="inspector-panel-row inspector-template no-image" preferredHeight="35" padding="0 0 2 2" navigation="None">
+      <HorizontalLayout class="no-image" internalId="container" spacing="10" childForceExpandWidth="false" rectAlignment="MiddleCenter" contentSizeFitter="horizontal"></HorizontalLayout>
+    </Panel>
+    <Panel id="template-spinner-element" class="inspector-panel-row inspector-template no-image" preferredHeight="30" padding="5 5 2 2" navigation="None">
+      <Spinner internalId="spinner">
+        <TextMeshPro />
+      </Spinner>
+    </Panel>
+    <Panel id="template-progress-bar-element" class="inspector-panel-row inspector-template no-image" preferredHeight="30" padding="20 20 0 0" navigation="None">
+      <Panel class="no-image">
+        <Image color="DarkPanel" ignoreLayout="true" />
+        <Image internalId="image-bar" sprite="Ui/Sprites/Common/White" border="Border" ignoreLayout="true" color="Primary" fillAmount="0" fillMethod="Horizontal" fillOrigin="0" type="Filled" />
+        <TextMeshPro internalId="label" class="value" alignment="Center" />
+      </Panel>
+    </Panel>
+    <Panel id="template-slider-element" class="inspector-panel-row inspector-template tooltip-row no-image" padding="10 10 0 0" preferredHeight="40">
+      <Panel internalId="slider" class="slider">
+        <TextMeshPro internalId="slider-label" class="label" />
+        <TextMeshPro internalId="slider-value" class="value" />
+        <Slider internalId="slider" />
+      </Panel>
+    </Panel>
+    <Panel id="template-toggle-element" class="inspector-panel-row inspector-template tooltip-row no-image" navigation="None">
+      <Panel class="column-left no-image">
+        <TextMeshPro internalId="label" class="label" text="Toggle" overflowMode="Overflow" enableWordWrapping="false" />
+      </Panel>
+      <Panel class="column-right no-image">
+        <Panel rectAlignment="MiddleRight">
+          <Toggle internalId="toggle" toggleBackgroundImage="" anchorMax="1, .5" anchorMin="1, .5" pivot="1, .5" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" navigation="None" />
+        </Panel>
+      </Panel>
+    </Panel>
+    <Panel id="template-dropdown-element" class="inspector-panel-row inspector-template tooltip-row no-image" navigation="None">
+      <Panel class="column-left no-image">
+        <TextMeshPro internalId="label" class="label" text="Toggle" />
+      </Panel>
+      <Panel class="column-right no-image">
+        <TextMeshProDropdown internalId="dropdown" rectAlignment="MiddleRight">
+          <TMP_OptionTextTemplate enableWordWrapping="false" />
+          <TMP_DropdownLabel enableWordWrapping="false" />
+        </TextMeshProDropdown>
+      </Panel>
+    </Panel>
+    <Panel id="template-log-element" class="inspector-template no-image" color="Green" preferredHeight="420">
+      <VerticalScrollView internalId="log-scroll" class="no-image" pivot="0 1" horizontal="true" verticalScrollbarWidth="10" movementType="Clamped">
+        <Panel internalId="log-panel" anchorMin="0 1" anchorMax="0 1" pivot="0 1">
+          <TextMeshPro internalId="log-text" class="label" alignment="TopLeft" pivot="0 1" offsetXY="5 0" />
+        </Panel>
+      </VerticalScrollView>
+    </Panel>
+  </RectTransform>
+  <RectTransform id="panel-container" class="safe-area"></RectTransform>
+</XmlLayout>

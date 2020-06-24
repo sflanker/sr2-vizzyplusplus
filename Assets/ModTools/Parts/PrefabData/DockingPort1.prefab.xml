@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="DockingPort1" path="Craft/Parts/Prefabs/DockingPort1.prefab">
+  <GameObject name="DockingPort">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+  <GameObject name="DockCollider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.SphereCollider" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.DockingColliderScript" />
+  </GameObject>
+  <GameObject name="DockingPortCollider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+</GameObject>

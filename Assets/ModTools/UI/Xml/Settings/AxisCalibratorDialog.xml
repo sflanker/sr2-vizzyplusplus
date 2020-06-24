@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Image class="center-stick-image" width="30" sprite="Ui/Sprites/Settings/graphic-center-stick" rectAlignment="MiddleCenter" color="ValueText" />
+    <Image class="move-stick-image" width="30" sprite="Ui/Sprites/Settings/graphic-move-stick" rectAlignment="MiddleCenter" color="ValueText" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="500" preferredHeight="380" contentSizeFitter="vertical" spacing="10" padding="20">
+      <TextMeshPro id="label-title" class="text-header" preferredHeight="50" alignment="Top" rectAlignment="UpperCenter" text="Binding [Input]" />
+      <TextMeshPro id="label-text" class="value" fontSize="20" rectAlignment="MiddleCenter" alignment="Center" text="First center or zero all sticks and axes, then press any button or wait for the timer to finish." minHeight="90" />
+      <Panel id="stick-panel" preferredHeight="126">
+        <Image internalId="center-stick-image" class="center-stick-image" width="264" height="126" />
+        <Image internalId="move-stick-image" class="move-stick-image" width="264" height="126" active="false" />
+      </Panel>
+      <TextMeshPro id="timer-text" class="value" fontSize="20" rectAlignment="LowerCenter" alignment="Center" text="5" minHeight="10" />
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

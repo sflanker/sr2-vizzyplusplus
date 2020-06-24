@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Color name="PanelButton" color="#5e6d80" />
+    <Color name="PanelButtonHover" color="#8ea4bf" />
+    <Panel class="input-slider" width="32" height="100%" />
+    <Panel class="input-slider-handle" width="28" height="10" color="Primary" />
+    <Image class="input-slider-line" color="LabelText" />
+    <Panel class="input-panel" height="210" preferredHeight="210" />
+    <Image class="slider-button" color="Button" width="25" height="25" hoverClass="slider-button-hover" />
+    <Image class="slider-button-hover" color="ButtonHover" />
+  </Defaults>
+</XmlLayout>

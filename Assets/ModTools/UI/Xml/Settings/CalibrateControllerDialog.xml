@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <ContentButton class="control-button" color="Button" navigation="None" />
+    <Image class="axis-invert-icon" width="30" sprite="Ui/Sprites/Settings/IconInvertControlAxis" rectAlignment="MiddleRight" color="ButtonPressed" raycastTarget="true" tooltip="Invert Input" tooltipPosition="Above" />
+    <Image class="inverted" color="Primary" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <Panel class="panel border" width="500" height="400" padding="20">
+      <Panel>
+        <TextMeshPro class="text-header" text="Calibrate Controller" alignment="Top" />
+        <Panel offsetMax="0 -40" offsetMin="0 50">
+          <Panel anchorMax="0.4 1" color="DarkPanel" padding="10 5 10 10">
+            <VerticalScrollView offsetMax="10 0">
+              <VerticalLayout id="items-parent" childForceExpandHeight="false" contentSizeFitter="vertical" childAlignment="UpperLeft" pivot="0 1" spacing="5">
+                <Button class="btn">
+                  <TextMeshPro text="Left Stick X" />
+                </Button>
+                <Button class="btn btn-primary">
+                  <TextMeshPro text="Left Stick Y" />
+                </Button>
+                <Button class="btn">
+                  <TextMeshPro text="Right Stick X" />
+                </Button>
+                <Button class="btn">
+                  <TextMeshPro text="Right Stick Y" />
+                </Button>
+              </VerticalLayout>
+            </VerticalScrollView>
+          </Panel>
+          <Panel anchorMin="0.4 0" padding="25 0 0 0">
+            <VerticalLayout pivot="0 1" childAlignment="UpperCenter" childForceExpandHeight="false" spacing="10">
+              <Panel preferredHeight="75">
+                <Panel class="border" rectAlignment="UpperCenter" height="50">
+                  <Mask>
+                    <Panel width="98.5%">
+                      <Image color="DarkPanel" />
+                      <Image id="dead-zone" color="#111111" width="25%" height="15" rectAlignment="LowerCenter" pivot="0.5 0" offsetXY="0 0" />
+                      <Image id="calibrated-zero" color="Primary" width="2" height="84%" rectAlignment="MiddleCenter" pivot="0.5 0" offsetXY="0 0" />
+                      <Image id="true-zero" color="White" width="2" height="84%" rectAlignment="MiddleCenter" pivot="0.5 0" offsetXY="0 0" />
+                      <Image id="input-game" sprite="Ui/Sprites/Settings/CalibrationArrow" color="Primary" width="32" height="24" rectAlignment="UpperCenter" pivot="0.5 1" raycastTarget="true" tooltipPosition="Above" tooltip="The input after settings are applied" />
+                      <Image id="input-raw" sprite="Ui/Sprites/Settings/CalibrationArrow" color="ButtonText" rotation="0 0 180" width="20" height="12" rectAlignment="LowerCenter" pivot="0.5 1" raycastTarget="true" tooltipPosition="Above" tooltip="The raw input from the controller" />
+                    </Panel>
+                  </Mask>
+                </Panel>
+                <TextMeshPro alignment="BottomLeft" text="-1" offsetXY="0 5" />
+                <TextMeshPro alignment="Bottom" text="0" offsetXY="0 5" />
+                <TextMeshPro alignment="BottomRight" text="1" offsetXY="0 5" />
+              </Panel>
+              <Panel id="dead-zone-slider" class="slider" rectAlignment="MiddleLeft" width="60%">
+                <TextMeshPro internalId="slider-label" class="label" text="Dead Zone" />
+                <TextMeshPro internalId="slider-value" class="value" text="0%" />
+                <Slider internalId="slider" minValue="0" maxValue="1" />
+              </Panel>
+              <Panel id="zero-slider" class="slider" rectAlignment="MiddleLeft" width="60%">
+                <TextMeshPro internalId="slider-label" class="label" text="Zero" />
+                <TextMeshPro internalId="slider-value" class="value" text="0%" />
+                <Slider internalId="slider" minValue="-1" maxValue="1" />
+              </Panel>
+              <Panel id="sensitivity-slider" class="slider" rectAlignment="MiddleLeft" width="60%">
+                <TextMeshPro internalId="slider-label" class="label" text="Sensitivity" />
+                <TextMeshPro internalId="slider-value" class="value" text="0%" />
+                <Slider internalId="slider" minValue="0" maxValue="2" />
+              </Panel>
+              <Panel preferredHeight="30">
+                <Panel id="invert-toggle" rectAlignment="MiddleLeft" width="40%">
+                  <TextMeshPro class="label" text="Invert" rectAlignment="MiddleRight" />
+                  <Toggle class="audio-btn-click" rectAlignment="MiddleLeft" />
+                </Panel>
+                <Button class="btn" rectAlignment="MiddleRight" width="45%" onClick="OnCalibrateClicked();">
+                  <TextMeshPro text="Calibrate" />
+                </Button>
+              </Panel>
+            </VerticalLayout>
+          </Panel>
+        </Panel>
+        <Panel rectAlignment="LowerCenter" height="45" offsetXY="0 0">
+          <Image color="Border" height="1" rectAlignment="UpperCenter" />
+          <Button class="btn" rectAlignment="LowerLeft" width="40%" onClick="OnRestoreDefaultsButtonClicked();">
+            <TextMeshPro text="Restore Defaults" />
+          </Button>
+          <Button class="btn btn-primary" rectAlignment="LowerRight" width="40%" onClick="OnDoneButtonClicked();">
+            <TextMeshPro text="Done" />
+          </Button>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Panel>
+</XmlLayout>

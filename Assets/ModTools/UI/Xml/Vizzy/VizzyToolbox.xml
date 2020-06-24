@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VizzyToolbox p1:noNamespaceSchemaLocation="..\..\XmlLayout.xsd" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <Colors>
+    <Color id="Instruction" color="#373737" />
+    <Color id="InstructionBlock" color="#3b99d8" />
+    <Color id="CraftInstruction" color="#373737" />
+    <Color id="CraftExpression" color="#373737" />
+    <Color id="Event" color="#db942e" />
+    <Color id="Operator" color="#2e80b7" />
+    <Color id="Input" color="#262626" />
+    <Color id="GlobalVariable" color="#00b200" />
+    <Color id="LocalVariable" color="#ffb200" />
+    <Color id="Constant" color="#262626" />
+    <Color id="Comment" color="#4E8C51" />
+    <Color id="CustomExpression" color="#8B34A9" />
+    <Color id="CustomInstruction" color="#8B34A9" />
+    <Color id="CallCustom" color="#DC77FF" />
+    <Color id="List" color="#555A87" />
+  </Colors>
+  <Styles>
+    <Style id="repeat" color="InstructionBlock" format="repeat (0:ZeroOrMore)" tooltip="Repeats the block of code the number of times specified." />
+    <Style id="for" color="InstructionBlock" format="for |i| from (0) to (1) by (2)" tooltip="Loops from the starting value to the end value by the step and provides a local variable 'i' with the current value." />
+    <Style id="while" color="InstructionBlock" format="while {0}" tooltip="Loops until its condition is no longer true." />
+    <Style id="wait-seconds" color="Instruction" format="wait (0:ZeroOrMore) seconds" tooltip="Waits for the specified number of seconds. It is also recommended to place a wait at the end of while and repeat loops, as it can improve performance." />
+    <Style id="wait-until" color="Instruction" format="wait until {0}" tooltip="Waits until the condition is true." />
+    <Style id="if" color="InstructionBlock" format="if {0} then" tooltip="Only executes the code if the condition is true." />
+    <Style id="else-if" color="InstructionBlock" format="else if {0} then" tooltip="Only executes if previous if/else if blocks were false and this condition is true. Must follow an if or else if block." />
+    <Style id="else" color="InstructionBlock" format="else" tooltip="Only executes if all previous if/else if blocks were false. Must follow an if or else if block." />
+    <Style id="display" color="Instruction" format="display (0)" tooltip="Displays the message at the top of the screen." />
+    <Style id="log" color="Instruction" format="log (0)" tooltip="Logs the message to the output log, which can be viewed by clicking View Log in the part's inspector panel during flight." />
+    <Style id="break" color="Event" format="break" tooltip="Breaks out of a while or repeat loop." />
+    <Style id="comment" color="Instruction" textColor="Comment" format="# (0)" tooltip="This instruction does not execute and can be used to place comments in your program to help explain how it works." />
+    <Style id="comment-text" color="Constant" textColor="Comment" />
+    <Style id="op-add" color="Operator" format="(0:Number) + (1:Number)" tooltip="Adds the left and right numbers together and returns the result." />
+    <Style id="op-sub" color="Operator" format="(0:Number) - (1:Number)" tooltip="Subtracts the right number from the left number and returns the result." />
+    <Style id="op-div" color="Operator" format="(0:Number) / (1:Number)" tooltip="Divides the left number by the right number and returns the result." />
+    <Style id="op-mul" color="Operator" format="(0:Number) * (1:Number)" tooltip="Multiplies the left and right numbers together and returns the result." />
+    <Style id="op-exp" color="Operator" format="(0:Number) ^ (1:Number)" tooltip="Raises the left number to the power specified on the right side." />
+    <Style id="op-mod" color="Operator" format="(0:Number) % (1:Number)" tooltip="Returns the remainder of the left number divided by the right number." />
+    <Style id="op-rand" color="Operator" format="random (0:Number) to (1:Number)" tooltip="Returns a random number between the two numbers." />
+    <Style id="op-atan-2" color="Operator" format="atan2 of (0) and (1)" tooltip="Returns the angle in radians between the positive x-axis and the ray to the point." />
+    <Style id="op-min" color="Operator" format="min of (0:Number) and (1:Number)" tooltip="Returns the smaller of the two numbers." />
+    <Style id="op-max" color="Operator" format="max of (0:Number) and (1:Number)" tooltip="Returns the larger of the two numbers." />
+    <Style id="op-and" color="Operator" format="{0} and {1}" tooltip="Returns true if both sides are true." />
+    <Style id="op-or" color="Operator" format="{0} or {1}" tooltip="Returns true if either side is true." />
+    <Style id="op-not" color="Operator" format="not {0}" tooltip="Returns true if the condition is false. Returns false if the condition is true." />
+    <Style id="op-eq" color="Operator" format="(0:Number) = (1:Number)" tooltip="Returns true if both sides are equal." />
+    <Style id="op-lt" color="Operator" format="(0:Number) &lt; (1:Number)" tooltip="Returns true if the left number is less than the right number." />
+    <Style id="op-lte" color="Operator" format="(0:Number) &lt;= (1:Number)" tooltip="Returns true if the left number is less than or equal to the right number." />
+    <Style id="op-gt" color="Operator" format="(0:Number) &gt; (1:Number)" tooltip="Returns true if the left number is greater than the right number." />
+    <Style id="op-gte" color="Operator" format="(0:Number) &gt;= (1:Number)" tooltip="Returns true if the left number is greater than or equal to the right number." />
+    <Style id="op-math" color="Operator" format="[x] of (0:Number)" tooltip="Returns the result of running the math function on the specified number. Math functions such as sin, cos, and tan expect the angle to be in radians." />
+    <Style id="conditional" color="Operator" format="if (0) then (1) else (2)" tooltip="Evaluates the condition and returns the specified result." />
+    <Style id="vec" color="Operator" format="vec (0),(1),(2)" tooltip="Creates a vector from the x, y, and z components." />
+    <Style id="vec-op-1" color="Operator" format="(0) [op]" tooltip="Access information from a vector." />
+    <Style id="vec-op-2" color="Operator" format="(0) [op] (1)" tooltip="Returns the result of the operation between the two vectors." />
+    <Style id="join" color="Operator" format="join " dynamicExpressionsSlots="true" tooltip="Returns the result of joining the two or more strings of text together." />
+    <Style id="letter" color="Operator" format="letter (0:OneOrMore) of (1)" tooltip="Returns the letter at the specified location." />
+    <Style id="substring" color="Operator" format="letters (0:ZeroOrMore) to (1:ZeroOrMore) of (2)" tooltip="Returns the letters of the text between the start and end locations. If 0 is specified for start/end then the start/end of the text will be used." />
+    <Style id="length" color="Operator" format="length of (0)" tooltip="Returns the length of the string of text." />
+    <Style id="contains" color="Operator" format="(0) contains (1)" tooltip="Returns true if the text on the left contains the text on the right." />
+    <Style id="format" color="Operator" format="format " dynamicExpressionsSlots="true" tooltip="Advaned formatting that uses C#'s built-in System.String method. Refer to Microsoft's documentation for more information." />
+    <Style id="activate-stage" color="Event" format="activate stage" tooltip="Activates the next stage in the craft." />
+    <Style id="set-input" color="CraftInstruction" format="set [x] to (0:NegOneToPosOne)" tooltip="Sets the selected input of the craft to the specified amount. Value must be between -1 and 1. For example, if you want to set throttle to 65%, then set this to 0.65" />
+    <Style id="set-heading" color="CraftInstruction" format="set craft [x] to (0)" tooltip="Sets the pitch or heading the craft should target." />
+    <Style id="set-target" color="CraftInstruction" format="target node (0)" tooltip="Sets the craft's current target planet or craft." />
+    <Style id="set-ag" color="CraftInstruction" format="set activation group (0:OneOrMore) to (1)" tooltip="Activates or deactivates the specified activation group. Setting an AG to true activates it. False deactivates it." />
+    <Style id="lock-nav-sphere" color="CraftInstruction" format="lock heading on [x]" tooltip="Locks the nav sphere on the specified indicator." />
+    <Style id="set-time-mode" color="CraftInstruction" format="set time mode to [x]" tooltip="Sets the current time mode of the game." />
+    <Style id="set-camera" color="CraftInstruction" format="set camera [x] to (0)" tooltip="Sets the property on the camera." />
+    <Style id="set-part" color="CraftInstruction" format="set part (0) [x] to (1)" tooltip="Sets the property of the part with the specified ID." />
+    <Style id="switch-craft" color="CraftInstruction" format="switch to craft (0:ZeroOrMore)" tooltip="Switches to the craft with the specified ID. If the craft is far away, then this program may stop executing." />
+    <Style id="prop-altitude" color="CraftExpression" format="altitude [x]" tooltip="Returns the altitude in meters." />
+    <Style id="prop-orbit" color="CraftExpression" format="orbit [x]" tooltip="Returns the orbit parameter." />
+    <Style id="prop-atmosphere" color="CraftExpression" format="atmosphere [x]" tooltip="Returns the atmosphere property." />
+    <Style id="prop-performance" color="CraftExpression" format="performance [x]" tooltip="Returns the performance property of the craft." />
+    <Style id="prop-fuel" color="CraftExpression" format="fuel [x]" tooltip="Returns the remaining fuel." />
+    <Style id="prop-nav" color="CraftExpression" format="nav [x]" tooltip="Returns the specified navigation property of the craft." />
+    <Style id="prop-velocity" color="CraftExpression" format="velocity [x]" tooltip="Returns the specified velocity in m/s (or m/s2 for accelerations)." />
+    <Style id="prop-input" color="CraftExpression" format="input [x]" tooltip="Returns the craft's current value for the specified input. The value returned will be between -1 and 1." />
+    <Style id="prop-misc" color="CraftExpression" format="misc [x]" tooltip="Miscellanous properties." />
+    <Style id="prop-time" color="CraftExpression" format="time [x]" tooltip="Returns the specified time in seconds." />
+    <Style id="prop-name" color="CraftExpression" format="name of [x]" tooltip="Returns the current name the selected item." />
+    <Style id="activation-group" color="CraftExpression" format="activation group (0:OneOrMore)" tooltip="Returns the status of the activation group. True indicates the AG is active." />
+    <Style id="planet-to-lat-long-agl" color="CraftInstruction" format="convert (0) to lat/long/AGL" tooltip="Converts the position vector to a (latitude, longitude, AGL) vector." />
+    <Style id="planet-to-position" color="CraftInstruction" format="convert (0) to position" tooltip="Converts the (latitude, longitude, AGL) vector to a position vector." />
+    <Style id="planet" color="CraftInstruction" format="planet (0) [x]" tooltip="Gets a property of the specified planet." />
+    <Style id="part" color="CraftInstruction" format="part (0:ZeroOrMore) [x]" tooltip="Gets a property of the part with the specified ID." />
+    <Style id="part-id" color="CraftInstruction" format="part ID of (0)" tooltip="The ID of the first part found with the specified name or -1 if none are found." />
+    <Style id="part-transform" color="CraftInstruction" format="part (0) [x] (1)" tooltip="Converts the vector between local and PCI coordinates." />
+    <Style id="craft" color="CraftInstruction" format="craft (0:ZeroOrMore) [x]" tooltip="Gets a property of the craft with the specified ID." />
+    <Style id="craft-id" color="CraftInstruction" format="craft ID of (0)" tooltip="The ID of the first craft found with the specified name or -1 if none are found. If no name is provided, then the ID of the player's craft is returned." />
+    <Style id="true" color="Operator" format="true" tooltip="" />
+    <Style id="false" color="Operator" format="false" tooltip="" />
+    <Style id="flight-start" color="Event" format="on start" tooltip="Event called when the craft enters the flight scene for the first time." />
+    <Style id="part-collision" color="Event" format="on |part| collide with |other| at |velocity| and |impulse|" tooltip="Event called when a part in the craft has collided with something else." />
+    <Style id="part-explode" color="Event" format="on |part| exploded" tooltip="Event called when a part in the craft explodes." />
+    <Style id="craft-docked" color="Event" format="on |craftA| and |craftB| docked" tooltip="Event called when this craft docks with another craft. NOTE: Part IDs may change after docking with another craft." />
+    <Style id="change-soi" color="Event" format="on enter |planet| SOI" />
+    <Style id="receive-msg" color="Event" format="receive (0) with |data|" tooltip="Called when the flight program receives a message, with its data set to the value that was broadcasted." />
+    <Style id="broadcast-msg" color="Instruction" format="broadcast (0) with data (1)" tooltip="Sends a message with the specified data to all matching receive message events in this program." />
+    <Style id="broadcast-msg-craft" color="Instruction" format="broadcast (0) with data (1) to craft" tooltip="Sends a message with the specified data to all matching receive message events in this craft." />
+    <Style id="set-variable" color="Instruction" format="set variable (0) to (1)" tooltip="Sets the value of the variable." />
+    <Style id="change-variable" color="Instruction" format="change variable (0) by (1)" tooltip="Changes the value of the number variable by the specified amount." />
+    <Style id="global-variable" color="GlobalVariable" format="" tooltip="Variable that can change its value." />
+    <Style id="local-variable" color="LocalVariable" format="" tooltip="Variable that can change its value." />
+    <Style id="list-variable" color="List" format="" tooltip="Variable that can hold a list of items." />
+    <Style id="list-init" color="List" format="set list (0) to (1)" tooltip="Initializes the list with a set of comma separated values." />
+    <Style id="list-add" color="List" format="add (1) to (0)" tooltip="Adds the item to the end of the list." />
+    <Style id="list-insert" color="List" format="insert (1) at (2:OneOrMore) in (0)" tooltip="Inserts the item at the index in the list. Index 1 is the first item in the list." />
+    <Style id="list-remove" color="List" format="remove (1:OneOrMore) from (0)" tooltip="Removes the item at the index from the list. Index 1 is the first item in the list." />
+    <Style id="list-set" color="List" format="set (2:OneOrMore) in (0) to (1)" tooltip="Sets the item at the index in the list. If the list doesn't have an item at that index, nothing will be set. Index 1 is the first item in the list." />
+    <Style id="list-clear" color="List" format="remove all from (0)" tooltip="Removes all items in the list." />
+    <Style id="list-sort" color="List" format="sort (0)" tooltip="Sorts the items in the list in ascending order." />
+    <Style id="list-reverse" color="List" format="reverse (0)" tooltip="Reverses the order of the items in the list." />
+    <Style id="list-create" color="List" format="create list from (0)" tooltip="Creates a new list from a list of comma separated values." />
+    <Style id="list-get" color="List" format="item (1:OneOrMore) in (0)" tooltip="Gets the item in the list at the index. Index 1 is the first item in the list." />
+    <Style id="list-length" color="List" format="length of (0)" tooltip="Returns the length of the list." />
+    <Style id="list-index" color="List" format="index of (1) in list (0)" tooltip="Gets the index of the item in the list. Index 1 is the first item in the list. If the item is not in the list, then 0 is returned." />
+    <Style id="constant" color="Constant" />
+    <Style id="text" color="Constant" />
+    <Style id="list" color="Constant" />
+    <Style id="custom-expression" color="CustomExpression" format="" tooltip="" />
+    <Style id="custom-instruction" color="CustomInstruction" format="" tooltip="" />
+    <Style id="call-custom-expression" color="CraftInstruction" textColor="CallCustom" format="" tooltip="" />
+    <Style id="call-custom-instruction" color="CraftInstruction" textColor="CallCustom" format="" tooltip="" />
+  </Styles>
+  <Categories>
+    <Category name="Program Flow" icon="Ui/Vizzy/ToolboxIconFlow">
+      <WaitSeconds style="wait-seconds">
+        <Constant number="1" />
+      </WaitSeconds>
+      <WaitUntil style="wait-until">
+        <Constant bool="false" />
+      </WaitUntil>
+      <Repeat style="repeat">
+        <Constant number="10" />
+      </Repeat>
+      <While style="while">
+        <Constant bool="true" />
+      </While>
+      <For style="for">
+        <Constant number="1" />
+        <Constant number="10" />
+        <Constant number="1" />
+      </For>
+      <If style="if">
+        <Constant bool="false" />
+      </If>
+      <ElseIf style="else-if">
+        <Constant bool="false" />
+      </ElseIf>
+      <ElseIf style="else">
+        <Constant bool="true" />
+      </ElseIf>
+      <DisplayMessage style="display">
+        <Constant text="text" />
+        <Constant number="7" />
+      </DisplayMessage>
+      <LogMessage style="log">
+        <Constant text="text" />
+      </LogMessage>
+      <Break style="break" />
+      <Comment style="comment">
+        <Constant text="Comment Text" style="comment-text" canReplace="false" />
+      </Comment>
+    </Category>
+    <Category name="Operators" icon="Ui/Vizzy/ToolboxIconOperators">
+      <BinaryOp style="op-add" op="+">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-sub" op="-">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-div" op="/">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-mul" op="*">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-exp" op="^">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-mod" op="%">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-rand" op="rand">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-min" op="min">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BinaryOp style="op-max" op="max">
+        <Constant number="0" />
+        <Constant number="0" />
+      </BinaryOp>
+      <BoolOp style="op-and" op="and">
+        <Constant bool="false" />
+        <Constant bool="false" />
+      </BoolOp>
+      <BoolOp style="op-or" op="or">
+        <Constant bool="false" />
+        <Constant bool="false" />
+      </BoolOp>
+      <Not style="op-not">
+        <Constant bool="false" />
+      </Not>
+      <Comparison style="op-eq" op="=">
+        <Constant number="0" />
+        <Constant number="0" />
+      </Comparison>
+      <Comparison style="op-lt" op="l">
+        <Constant number="0" />
+        <Constant number="0" />
+      </Comparison>
+      <Comparison style="op-lte" op="le">
+        <Constant number="0" />
+        <Constant number="0" />
+      </Comparison>
+      <Comparison style="op-gt" op="g">
+        <Constant number="0" />
+        <Constant number="0" />
+      </Comparison>
+      <Comparison style="op-gte" op="ge">
+        <Constant number="0" />
+        <Constant number="0" />
+      </Comparison>
+      <MathFunction style="op-math" function="abs">
+        <Constant number="0" />
+      </MathFunction>
+      <BinaryOp style="op-atan-2" op="atan2">
+        <Constant text="y" />
+        <Constant text="x" />
+      </BinaryOp>
+      <Conditional style="conditional">
+        <Constant bool="false" />
+        <Constant number="0" />
+        <Constant number="0" />
+      </Conditional>
+      <StringOp op="join" style="join">
+        <Constant text="alpha" />
+        <Constant text="bravo" />
+      </StringOp>
+      <StringOp op="length" style="length">
+        <Constant text="alpha" />
+      </StringOp>
+      <StringOp op="letter" style="letter">
+        <Constant number="1" />
+        <Constant text="alpha" />
+      </StringOp>
+      <StringOp op="substring" style="substring">
+        <Constant number="2" />
+        <Constant number="4" />
+        <Constant text="alpha" />
+      </StringOp>
+      <StringOp op="contains" style="contains">
+        <Constant text="alpha" />
+        <Constant text="a" />
+      </StringOp>
+      <StringOp op="format" style="format">
+        <Constant text="{0:n1}" />
+        <Constant text="10000.99" />
+      </StringOp>
+      <Vector style="vec">
+        <Constant number="0" />
+        <Constant number="0" />
+        <Constant number="0" />
+      </Vector>
+      <VectorOp style="vec-op-1" op="length">
+        <Constant vector="0,0,0" />
+      </VectorOp>
+      <VectorOp style="vec-op-2" op="dot">
+        <Constant vector="0,0,0" />
+        <Constant vector="0,0,0" />
+      </VectorOp>
+      <Constant style="true" bool="true" />
+      <Constant style="false" bool="false" />
+    </Category>
+    <Category name="Craft Instructions" icon="Ui/Vizzy/ToolboxIconCraft">
+      <ActivateStage style="activate-stage" />
+      <SetInput style="set-input" input="throttle">
+        <Constant number="0" />
+      </SetInput>
+      <SetTargetHeading style="set-heading">
+        <Constant number="0" />
+      </SetTargetHeading>
+      <SetTarget style="set-target">
+        <Constant text="name" />
+      </SetTarget>
+      <SetActivationGroup style="set-ag">
+        <Constant number="1" />
+        <Constant bool="true" />
+      </SetActivationGroup>
+      <LockNavSphere style="lock-nav-sphere"></LockNavSphere>
+      <SetTimeMode style="set-time-mode" mode="Normal" />
+      <SetCameraProperty style="set-camera" property="zoom">
+        <Constant number="100" />
+      </SetCameraProperty>
+      <SetCraftProperty style="set-part" property="Part.SetActivated">
+        <Constant number="0" />
+        <Constant number="0" />
+      </SetCraftProperty>
+      <SwitchCraft style="switch-craft">
+        <Constant number="0" />
+      </SwitchCraft>
+    </Category>
+    <Category name="Craft Information" icon="Ui/Vizzy/ToolboxIconExpressions">
+      <CraftProperty style="prop-altitude" property="Altitude.AGL" />
+      <CraftProperty style="prop-orbit" property="Orbit.Apoapsis" />
+      <CraftProperty style="prop-atmosphere" property="Atmosphere.AirDensity" />
+      <CraftProperty style="prop-performance" property="Performance.Mass" />
+      <CraftProperty style="prop-fuel" property="Fuel.FuelInStage" />
+      <CraftProperty style="prop-nav" property="Nav.Position" />
+      <CraftProperty style="prop-velocity" property="Vel.OrbitVelocity" />
+      <CraftProperty style="prop-input" property="Input.Throttle" />
+      <CraftProperty style="prop-misc" property="Misc.Grounded" />
+      <CraftProperty style="prop-time" property="Time.TimeSinceLaunch" />
+      <CraftProperty style="prop-name" property="Name.Craft" />
+      <ActivationGroup style="activation-group">
+        <Constant number="1" />
+      </ActivationGroup>
+      <Planet style="planet-to-lat-long-agl" op="toLatLongAgl">
+        <Constant vector="0,0,0" />
+      </Planet>
+      <Planet style="planet-to-position" op="toPosition">
+        <Constant vector="0,0,0" />
+      </Planet>
+      <Planet style="planet" op="radius">
+        <Constant text="Droo" />
+      </Planet>
+      <CraftProperty style="part" property="Part.Activated">
+        <Constant number="0" />
+      </CraftProperty>
+      <CraftProperty style="part-id" property="Part.NameToID">
+        <Constant text="PartName" />
+      </CraftProperty>
+      <CraftProperty style="part-transform" property="Part.LocalToPci">
+        <Constant number="0" />
+        <Constant vector="0,0,0" />
+      </CraftProperty>
+      <CraftProperty style="craft" property="Craft.Position">
+        <Constant number="0" />
+      </CraftProperty>
+      <CraftProperty style="craft-id" property="Craft.NameToID">
+        <Constant text="CraftName" />
+      </CraftProperty>
+      <Constant style="true" bool="true" />
+      <Constant style="false" bool="false" />
+    </Category>
+    <Category name="Events" icon="Ui/Vizzy/ToolboxIconEvents">
+      <Event style="flight-start" event="FlightStart" />
+      <Event style="part-collision" event="PartCollision" />
+      <Event style="part-explode" event="PartExplode" />
+      <Event style="craft-docked" event="Docked" />
+      <Event style="change-soi" event="ChangeSoi" />
+      <Event style="receive-msg" event="ReceiveMessage">
+        <Constant text="message" canReplace="false" />
+      </Event>
+      <BroadcastMessage style="broadcast-msg">
+        <Constant text="message" />
+        <Constant number="0" />
+      </BroadcastMessage>
+      <BroadcastMessage style="broadcast-msg-craft" local="false">
+        <Constant text="message" />
+        <Constant number="0" />
+      </BroadcastMessage>
+    </Category>
+    <Category name="Variables" icon="Ui/Vizzy/ToolboxIconVariables">
+      <SetVariable style="set-variable">
+        <Constant text="" />
+        <Constant number="0" />
+      </SetVariable>
+      <ChangeVariable style="change-variable">
+        <Constant text="" />
+        <Constant number="0" />
+      </ChangeVariable>
+    </Category>
+    <Category name="Lists" icon="Ui/Vizzy/ToolboxIconLists">
+      <SetList op="add" style="list-add">
+        <Constant text="" />
+        <Constant text="item" />
+      </SetList>
+      <SetList op="insert" style="list-insert">
+        <Constant text="" />
+        <Constant text="item" />
+        <Constant number="1" />
+      </SetList>
+      <SetList op="remove" style="list-remove">
+        <Constant text="" />
+        <Constant number="1" />
+      </SetList>
+      <SetList op="set" style="list-set">
+        <Constant text="" />
+        <Constant text="item" />
+        <Constant number="1" />
+      </SetList>
+      <SetList op="clear" style="list-clear">
+        <Constant text="" />
+      </SetList>
+      <SetList op="sort" style="list-sort">
+        <Constant text="" />
+      </SetList>
+      <SetList op="reverse" style="list-reverse">
+        <Constant text="" />
+      </SetList>
+      <SetVariable style="list-init">
+        <Constant text="" />
+        <ListOp op="create" style="list-create">
+          <Constant text="a,b,c" />
+        </ListOp>
+      </SetVariable>
+      <ListOp op="get" style="list-get">
+        <Constant text="" />
+        <Constant number="1" />
+      </ListOp>
+      <ListOp op="length" style="list-length">
+        <Constant text="" />
+      </ListOp>
+      <ListOp op="index" style="list-index">
+        <Constant text="" />
+        <Constant text="item" />
+      </ListOp>
+    </Category>
+    <Category name="Custom Expressions" icon="Ui/Vizzy/ToolboxIconCustomExpressions"></Category>
+    <Category name="Custom Instructions" icon="Ui/Vizzy/ToolboxIconCustomInstructions"></Category>
+  </Categories>
+</VizzyToolbox>

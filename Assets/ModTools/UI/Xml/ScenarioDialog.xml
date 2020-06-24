@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Panel class="column-left" width="50%" rectAlignment="MiddleLeft" />
+    <Panel class="column-right" width="50%" rectAlignment="MiddleRight" padding="10 10 0 0" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="450" contentSizeFitter="vertical" spacing="10" padding="20">
+      <TextMeshPro class="text-header" text="LOAD SCENARIO" />
+      <VerticalLayout color="DarkPanel" childForceExpandHeight="false" childForceExpandWidth="true" contentSizeFitter="vertical" childAlignment="UpperCenter" pivot="0 1" spacing="20" padding="20" rectAlignment="UpperCenter">
+        <Button id="template-row" class="btn" rectAlignment="LowerLeft" width="150" onClick="OnScenarioClicked(this);">
+          <TextMeshPro internalId="name" text="BUTTON" />
+        </Button>
+      </VerticalLayout>
+      <TextMeshPro class="label" text="Warning, you will lose your current flight state!" />
+      <Panel preferredHeight="50">
+        <Button class="btn" rectAlignment="LowerCenter" width="50%" onClick="OnCancelClicked();">
+          <TextMeshPro text="CLOSE" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Panel class="credit" preferredHeight="20" preferredWidth="225" />
+    <TextMeshPro class="credit-header" color="Primary" />
+    <TextMeshPro class="credit:name" alignment="Left" />
+    <TextMeshPro class="credit:job" alignment="Right" color="LabelText" />
+  </Defaults>
+  <Panel id="main-panel" active="false" color="DarkPanel" showAnimation="FadeIn" animationDuration="0.5" hideAnimation="FadeOut" raycastTarget="true">
+    <Panel class="safe-area">
+      <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonBack" rectAlignment="UpperLeft" offsetXY="20 -20" onClick="OnCloseAboutPage();" />
+      <VerticalLayout spacing="20" padding="50">
+        <Panel preferredHeight="50" rectAlignment="UpperCenter">
+          <Image sprite="Ui/Sprites/Menu/JundrooLogo" preserveAspect="true" height="50" rectAlignment="MiddleCenter" />
+        </Panel>
+        <Panel preferredHeight="350" rectAlignment="MiddleCenter">
+          <Image sprite="Ui/Sprites/Menu/Team" preserveAspect="true" />
+        </Panel>
+        <Panel preferredHeight="200" rectAlignment="LowerCenter">
+          <VerticalLayout contentSizeFitter="vertical" childForceExpandWidth="false" childForceExpandHeight="false" rectAlignment="UpperLeft" width="40%" childAlignment="UpperCenter" spacing="5" pivot="0.5 1">
+            <TextMeshPro text="CONTRIBUTORS" class="credit-header" />
+            <Panel class="credit">
+              <TextMeshPro class="name" text="Fat Bard" />
+              <TextMeshPro class="job" text="Audio" />
+            </Panel>
+            <Panel class="credit">
+              <TextMeshPro class="name" text="Joey Sellers" />
+              <TextMeshPro class="job" text="Design" />
+            </Panel>
+          </VerticalLayout>
+          <VerticalLayout contentSizeFitter="vertical" childForceExpandWidth="false" childForceExpandHeight="false" rectAlignment="UpperCenter" childAlignment="UpperCenter" spacing="5" pivot="0.5 1">
+            <TextMeshPro text="CORE TEAM" class="credit-header" />
+            <TextMeshPro text="from left to right" color="LabelText" />
+            <Panel class="credit">
+              <TextMeshPro class="name" text="Nathan Mikeska" />
+              <TextMeshPro class="job" text="Code" />
+            </Panel>
+            <Panel class="credit">
+              <TextMeshPro class="name" text="Philip Tarpley" />
+              <TextMeshPro class="job" text="Code" />
+            </Panel>
+            <Panel class="credit">
+              <TextMeshPro class="name" text="William Burnham" />
+              <TextMeshPro class="job" text="Code" />
+            </Panel>
+            <Panel class="credit">
+              <TextMeshPro class="name" text="Kevin Murphy" />
+              <TextMeshPro class="job" text="Art" />
+            </Panel>
+            <Panel class="credit">
+              <TextMeshPro class="name" text="Andrew Garrison" />
+              <TextMeshPro class="job" text="Code" />
+            </Panel>
+          </VerticalLayout>
+          <VerticalLayout contentSizeFitter="vertical" childForceExpandWidth="false" childForceExpandHeight="false" rectAlignment="UpperRight" width="40%" childAlignment="UpperCenter" spacing="5" pivot="0.5 1">
+            <TextMeshPro text="ASSETS" class="credit-header" />
+            <TextMeshPro text="Anita Semi Square Font" />
+            <TextMeshPro text="by Gustavo Paz" color="LabelText" />
+          </VerticalLayout>
+        </Panel>
+      </VerticalLayout>
+    </Panel>
+  </Panel>
+</XmlLayout>

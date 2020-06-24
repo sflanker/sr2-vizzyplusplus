@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Engine3" path="Craft/Parts/Prefabs/Engine3.prefab">
+  <GameObject name="ApexMountingPlate">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+  <GameObject name="SmokeParticleSystem">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.SmokeTrailScript" />
+  </GameObject>
+  <GameObject name="ApexGimbalBaseX">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineActuatorScript" />
+    <GameObject name="ApexUpperArmHingeX">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <GameObject name="ApexUpperArmX">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="ApexLowerArmRootX">
+          <GameObject name="ApexLowerArmX">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="ApexGimbalBaseZ">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineActuatorScript" />
+    <GameObject name="ApexUpperArmHingeZ">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <GameObject name="ApexUpperArmZ">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="ApexLowerArmRootZ">
+          <GameObject name="ApexLowerArmZ">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="Collider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="BottomCollider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="Nozzle">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+    <GameObject name="GimbalTargetX" />
+    <GameObject name="GimbalTargetZ" />
+    <GameObject name="ExhaustParticleSystem">
+      <Component type="UnityEngine.ParticleSystem" />
+      <Component type="UnityEngine.ParticleSystemRenderer" />
+      <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+    </GameObject>
+    <GameObject name="ApexBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="LoopingAudio">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+  </GameObject>
+</GameObject>

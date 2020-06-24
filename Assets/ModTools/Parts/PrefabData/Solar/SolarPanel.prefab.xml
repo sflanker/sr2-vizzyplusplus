@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="SolarPanel" path="Craft/Parts/Prefabs/Solar/SolarPanel.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+  <Component type="ModApi.Craft.Parts.PartMeshScript" />
+</GameObject>

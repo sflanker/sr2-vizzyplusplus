@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CargoBay1" path="Craft/Parts/Prefabs/CargoBay1.prefab">
+  <GameObject name="Collider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.FuselageColliderScript" />
+  </GameObject>
+  <GameObject name="Collider-1">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.FuselageColliderScript" />
+  </GameObject>
+  <GameObject name="Collider-2">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.FuselageColliderScript" />
+  </GameObject>
+  <GameObject name="Audio">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+  </GameObject>
+</GameObject>

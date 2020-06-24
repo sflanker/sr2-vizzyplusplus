@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Rocket" path="Craft/Parts/Prefabs/Eva/EvaChairs/Rocket.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+  <GameObject name="BackCollider">
+    <Component type="UnityEngine.BoxCollider" />
+  </GameObject>
+  <GameObject name="ArmRestCollider">
+    <Component type="UnityEngine.BoxCollider" />
+  </GameObject>
+  <GameObject name="ArmRestCollider">
+    <Component type="UnityEngine.BoxCollider" />
+  </GameObject>
+  <GameObject name="AttachPointPosition" />
+</GameObject>

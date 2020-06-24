@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults></Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <Panel class="panel border" width="480" height="200">
+      <TextMeshPro id="status-text" class="value text-lg" text="" rectAlignment="MiddleCenter" offsetXY="0 30" />
+      <Panel rectAlignment="MiddleCenter" color="ProgressBarBackground" width="440" height="20">
+        <Image id="progress" color="Primary" fillMethod="Horizontal" pivot="0 0.5" scale="0.0 1 1" />
+      </Panel>
+      <Button id="cancel-button" class="btn" rectAlignment="LowerLeft" width="150" offsetXY="20 20" onClick="OnCancelButtonClicked();">
+        <TextMeshPro text="CANCEL" />
+      </Button>
+    </Panel>
+  </Panel>
+</XmlLayout>

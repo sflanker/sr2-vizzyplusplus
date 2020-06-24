@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Button class="lower-right" rectAlignment="LowerRight" />
+    <Button class="lower-center" rectAlignment="LowerCenter" />
+    <Button class="dialog-button" width="150" />
+    <Button class="three-buttons:dialog-button" width="105" />
+    <VerticalLayout class="dialog-panel" width="380" />
+    <VerticalLayout class="extra-wide" width="540" />
+    <VerticalLayout class="three-buttons:dialog-panel" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout internalId="dialog-panel" class="panel border dialog-panel" contentSizeFitter="vertical" spacing="10" padding="20">
+      <TextMeshPro id="label-text" class="value" text="Title" minHeight="90" />
+      <Panel preferredHeight="50">
+        <Button id="cancel-button" class="btn audio-btn-back dialog-button" rectAlignment="LowerLeft">
+          <TextMeshPro id="cancel-button-text" text="CANCEL" />
+        </Button>
+        <Button id="middle-button" class="btn audio-btn-back dialog-button" rectAlignment="LowerCenter" active="false">
+          <TextMeshPro id="middle-button-text" text="MIDDLE" />
+        </Button>
+        <Button id="okay-button" class="btn btn-primary dialog-button audio-btn-big lower-right">
+          <TextMeshPro id="okay-button-text" text="OKAY" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults></Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <Panel class="safe-area">
+      <Panel id="form" class="panel border" maxSize="640 480" padding="20">
+        <Panel>
+          <Panel width="65%" rectAlignment="MiddleLeft">
+            <TextMeshPro id="content-title" class="text-lg" text="UPLOAD CRAFT" rectAlignment="UpperCenter" height="40" alignment="Top" />
+            <VerticalLayout spacing="10" childAlignment="UpperCenter" childForceExpandHeight="false" offsetMax="0 -40">
+              <Panel class="row" preferredHeight="50" padding="0">
+                <TextMeshProInputField id="name-input" text="">
+                  <TMP_Placeholder id="name-input-placeholder" text="Craft Name" alignment="Left" />
+                  <TMP_Text text="" alignment="Left" />
+                </TextMeshProInputField>
+              </Panel>
+              <Panel class="row" preferredHeight="250">
+                <TextMeshProInputField id="description-input" width="100%" height="100%" padding="10" lineType="MultiLineNewline" text="">
+                  <TMP_Placeholder id="description-input-placeholder" text="Craft Description" alignment="TopLeft" />
+                  <TMP_Text text="" alignment="TopLeft" />
+                </TextMeshProInputField>
+              </Panel>
+              <HorizontalLayout preferredHeight="50" childForceExpandWidth="false">
+                <TextMeshPro class="label" text="Visibility" alignment="Left" preferredWidth="100" />
+                <ToggleGroup class="toggle-buttons" preferredWidth="250">
+                  <ToggleButton id="public-toggle" isOn="true" tooltip="Your upload will be visible to everyone." tooltipPosition="Above">
+                    <TextMeshPro text="Public" />
+                  </ToggleButton>
+                  <ToggleButton id="toggle-unlisted" rectAlignment="MiddleRight" width="50%" tooltip="Your upload is only visible to people that you give the link to." tooltipPosition="Above">
+                    <TextMeshPro text="Unlisted" />
+                  </ToggleButton>
+                </ToggleGroup>
+              </HorizontalLayout>
+              <HorizontalLayout preferredHeight="50" childForceExpandWidth="false">
+                <TextMeshPro class="label" text="Account" alignment="Left" preferredWidth="100" />
+                <Button class="btn" preferredWidth="250" onClick="OnAccountButtonClicked();">
+                  <TextMeshPro id="account-label" />
+                </Button>
+              </HorizontalLayout>
+              <Panel preferredHeight="100">
+                <Panel>
+                  <Button id="cancel-button" class="btn" rectAlignment="LowerLeft" width="150" onClick="OnCancelButtonClicked();">
+                    <TextMeshPro text="CANCEL" />
+                  </Button>
+                  <Button id="okay-button" class="btn btn-primary" rectAlignment="LowerRight" width="150" onClick="OnUploadButtonClicked();">
+                    <TextMeshPro text="UPLOAD" />
+                  </Button>
+                </Panel>
+              </Panel>
+            </VerticalLayout>
+          </Panel>
+          <Panel id="screenshot-panel" width="30%" rectAlignment="MiddleRight">
+            <TextMeshPro class="text-lg" text="SCREENSHOTS" color="LabelText" rectAlignment="UpperCenter" height="40" alignment="Top" />
+            <ChildXmlLayout id="screenshots-list" viewPath="Ui/Xml/Sharing/ScreenshotList" controller="Assets.Scripts.Ui.Sharing.Screenshot.ScreenshotListController" />
+          </Panel>
+        </Panel>
+      </Panel>
+      <Panel id="uploading-panel" class="panel border" width="480" height="200" active="false">
+        <TextMeshPro id="upload-status-label" class="value" text="UPLOADING: 0%" fontSize="18" rectAlignment="MiddleCenter" offsetXY="0 30" />
+        <Panel rectAlignment="MiddleCenter" color="ProgressBarBackground" width="440" height="20">
+          <Image id="upload-progress" color="Primary" fillMethod="Horizontal" pivot="0 0.5" scale="0.5 1 1" />
+        </Panel>
+        <Button id="upload-cancel-button" class="btn" rectAlignment="LowerLeft" width="150" offsetXY="20 20" onClick="OnCancelUploadButtonClicked();">
+          <TextMeshPro text="CANCEL" />
+        </Button>
+      </Panel>
+    </Panel>
+  </Panel>
+</XmlLayout>

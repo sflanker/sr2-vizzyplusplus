@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Engine2" path="Craft/Parts/Prefabs/Engine2.prefab">
+  <GameObject name="SmokeParticleSystem">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.SmokeTrailScript" />
+  </GameObject>
+  <GameObject name="SmallBoosterBase">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <GameObject name="BaseCollider">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="NozzleCollider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="Nozzle">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+    <GameObject name="SmallBoosterNozzle">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    </GameObject>
+    <GameObject name="ExhaustParticleSystem">
+      <Component type="UnityEngine.ParticleSystem" />
+      <Component type="UnityEngine.ParticleSystemRenderer" />
+      <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="LoopingAudio">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+  </GameObject>
+</GameObject>

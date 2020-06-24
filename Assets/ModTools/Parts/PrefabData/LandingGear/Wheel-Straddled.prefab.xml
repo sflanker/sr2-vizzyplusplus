@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Wheel-Straddled" path="Craft/Parts/Prefabs/LandingGear/Wheel-Straddled.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.WheelStyleTransformDataScript" />
+  <GameObject name="WheelAssembly">
+    <GameObject name="Collider" />
+    <GameObject name="SlantRoot">
+      <GameObject name="SuspensionTravelRoot">
+        <GameObject name="TurnRoot">
+          <GameObject name="LandingGearCurvedWheelOffset1">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="LandingGearCurvedWheelOffset2">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="SpinRoot">
+            <GameObject name="LandingGearTire">
+              <Component type="UnityEngine.MeshFilter" />
+              <Component type="UnityEngine.MeshRenderer" />
+              <Component type="ModApi.Craft.Parts.PartMeshScript" />
+              <GameObject name="MeshCollider">
+                <Component type="UnityEngine.MeshCollider" />
+              </GameObject>
+              <GameObject name="LandingGearRim">
+                <Component type="UnityEngine.MeshFilter" />
+                <Component type="UnityEngine.MeshRenderer" />
+                <Component type="ModApi.Craft.Parts.PartMeshScript" />
+              </GameObject>
+            </GameObject>
+          </GameObject>
+        </GameObject>
+        <GameObject name="SuspensionArm">
+          <GameObject name="LowerSupportMesh">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+            <Component type="UnityEngine.CapsuleCollider" />
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <ContentButton class="list-item" preferredHeight="32" buttonColors="Transparent|ButtonHover|ButtonPressed|Transparent" rectAlignment="UpperCenter" navigation="None" />
+    <ContentButton class="selected" buttonColors="Primary|PrimaryHover|PrimaryPressed|Transparent" />
+    <Image class="rename-button" color="#cccccc" sprite="Ui/Sprites/MapView/IconRenameNode" width="20" height="20" rectAlignment="MiddleRight" hoverClass="rename-button-hover" raycastTarget="true" offsetXY="-5 0" />
+    <Image class="rename-button-hover" color="White" />
+  </Defaults>
+  <RectTransform class="safe-area">
+    <Panel id="search-panel" class="no-image" rectAlignment="UpperLeft" width="320" height="75%" offsetXY="5 -5" active="false">
+      <Panel class="no-image" offsetMin="90 0" offsetMax="0 -45">
+        <Panel class="row" padding="0" rectAlignment="UpperLeft" height="32">
+          <TextMeshProInputField internalId="search-input" text="">
+            <TMP_Placeholder id="placeholder-text" text="Search..." />
+            <TMP_Text text="" />
+          </TextMeshProInputField>
+        </Panel>
+      </Panel>
+      <Panel class="no-image" offsetMin="90 0" offsetMax="0 -82">
+        <VerticalScrollView class="no-image" rectAlignment="UpperLeft" active="true" raycastTarget="false">
+          <VerticalLayout class="no-image" internalId="search-content" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" raycastTarget="true">
+            <ContentButton internalId="search-item-template" class="list-item audio-btn-click" active="false">
+              <TextMeshPro internalId="name" class="search-item-text" offsetMin="10 0" alignment="Left" />
+              <Image internalId="rename-button" class="rename-button" active="false" />
+            </ContentButton>
+          </VerticalLayout>
+        </VerticalScrollView>
+      </Panel>
+    </Panel>
+  </RectTransform>
+</XmlLayout>

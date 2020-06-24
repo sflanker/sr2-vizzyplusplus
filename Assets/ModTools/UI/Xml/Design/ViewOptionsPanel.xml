@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Color name="CenterOfMass" color="#CA2D2D" />
+    <Color name="CenterOfLift" color="#378CFF" />
+    <Color name="CenterOfThrust" color="#FFF93E" />
+    <Button class="gizmo-toggle-button" onClickSound="Ui/Audio/ButtonClicked" sprite="" colors="Button|ButtonHover|Button|Button" icon="Ui/Sprites/Design/IconButtonCenterGizmo" navigation="None" width="40" height="40" tooltipPosition="Above" onClick="OnCenterGizmoClicked(this);" />
+    <Button class="toggled" border="Primary" />
+    <Button class="camera-focus-button" onClickSound="Ui/Audio/ButtonClicked" sprite="" rectAlignment="MiddleCenter" iconColor="Primary" iconHoverColor="Primary" colors="Button|ButtonHover|Button|Button" navigation="None" width="40" height="40" tooltipPosition="Above" />
+  </Defaults>
+  <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10">
+    <Panel class="header" preferredHeight="20">
+      <Panel height="35" rectAlignment="LowerCenter">
+        <TextMeshPro text="CENTER INDICATORS" fontStyle="Bold,UpperCase" />
+      </Panel>
+      <Image class="separator" />
+    </Panel>
+    <Panel class="no-image" preferredHeight="40">
+      <Button id="gizmo-com" class="gizmo-toggle-button" iconColor="CenterOfMass" iconHoverColor="CenterOfMass" offsetXY="-60 0" tooltip="Toggle Center of Mass indicator" />
+      <Button id="gizmo-col" class="gizmo-toggle-button" iconColor="CenterOfLift" iconHoverColor="CenterOfLift" offsetXY="0 0" tooltip="Toggle Center of Lift indicator" />
+      <Button id="gizmo-cot" class="gizmo-toggle-button" iconColor="CenterOfThrust" iconHoverColor="CenterOfThrust" offsetXY="60 0" tooltip="Toggle Center of Thrust indicator" />
+    </Panel>
+    <Panel class="spinner row">
+      <TextMeshPro class="label tooltip" text="Stage" width="50%" tooltip="View Center indicators with respect to a specific stage" />
+      <Spinner id="stage-spinner" width="50%">
+        <TextMeshPro text="All" />
+      </Spinner>
+    </Panel>
+    <Panel class="header" preferredHeight="40">
+      <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+        <TextMeshPro text="CAMERA OPTIONS" fontStyle="Bold,UpperCase" />
+      </Panel>
+      <Image class="separator" />
+    </Panel>
+    <Panel class="no-image" preferredHeight="40">
+      <Button name="ViewOptions.ViewFront" class="camera-focus-button" offsetXY="-60 0" icon="Ui/Sprites/Design/IconButtonViewFront" tooltip="View craft from front" onClick="OnCameraClicked(front);" />
+      <Button name="ViewOptions.ViewSide" class="camera-focus-button" offsetXY="0 0" icon="Ui/Sprites/Design/IconButtonViewSide" tooltip="View craft from the side" onClick="OnCameraClicked(side);" />
+      <Button name="ViewOptions.ViewTop" class="camera-focus-button" offsetXY="60 0" icon="Ui/Sprites/Design/IconButtonViewTop" tooltip="View craft from the top" onClick="OnCameraClicked(top);" />
+    </Panel>
+    <Panel class="header" preferredHeight="40">
+      <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+        <TextMeshPro text="OTHER" fontStyle="Bold,UpperCase" />
+      </Panel>
+      <Image class="separator" />
+    </Panel>
+    <Panel class="no-image" preferredHeight="20" id="show-lift-panel">
+      <TextMeshPro class="label tooltip" text="Show Lift Vectors" rectAlignment="MiddleLeft" />
+      <Toggle internalId="show-lift-button" isOn="false" onValueChanged="OnShowLiftVectorChanged(this);" rectAlignment="MiddleRight" tooltip="Shows lift vectors for wings.  Useful to determine if a wing is considered inverted with respect to pilot seat orientation." />
+    </Panel>
+    <Panel class="no-image" preferredHeight="20" id="show-pilot-panel">
+      <TextMeshPro class="label tooltip" text="Pilot" rectAlignment="MiddleLeft" />
+      <Toggle internalId="show-pilot-button" isOn="false" onValueChanged="OnShowPilotChanged(this);" rectAlignment="MiddleRight" tooltip="Shows the pilot associted with the selected part.  Adjust the pilot's orientation through the associated command pod's properties window.  Wings, gyros, RCS, and auto control surfaces are configured using the pilot's orientation." />
+    </Panel>
+    <Panel class="no-image" preferredHeight="20" id="select-command-pod-panel" active="false">
+      <Button class="btn" onClick="OnSelectPartsAssociatedCommandPodClicked(this)" rectAlignment="MiddleRight" tooltip="Selects the command pod associated with the selected part.">
+        <TextMeshPro>Select Command Pod</TextMeshPro>
+      </Button>
+    </Panel>
+  </VerticalLayout>
+</XmlLayout>

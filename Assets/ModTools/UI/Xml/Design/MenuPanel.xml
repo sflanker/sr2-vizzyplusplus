@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults></Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" contentSizeFitter="vertical">
+      <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnDownloadCraftButtonClicked();" tooltip="Open your web browser to the crafts download page.">
+        <TextMeshPro text="DOWNLOAD CRAFTS" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnNewCraftButtonClicked();" tooltip="Start over with a new craft.">
+        <TextMeshPro text="NEW CRAFT" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnLoadCraftButtonClicked();" tooltip="Load an existing craft from your hard drive.">
+        <TextMeshPro text="LOAD CRAFT" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnSaveCraftButtonClicked();" tooltip="Save this craft to your hard drive.">
+        <TextMeshPro text="SAVE CRAFT" />
+      </Button>
+      <Image class="separator" />
+      <Panel preferredHeight="40">
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconSettings" rectAlignment="MiddleLeft" offsetXY="15 0" onClick="OnSettingsButtonClicked();" tooltip="Open the settings window" tooltipPosition="Above" id="share-sandbox-button" />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconButtonShare" rectAlignment="MiddleCenter" onClick="OnShareCraftButtonClicked();" tooltip="Upload this craft to the website to share it with other players." tooltipPosition="Above" />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconButtonCamera" rectAlignment="MiddleRight" offsetXY="-15 0" onClick="OnPhotoLibraryButtonClicked();" tooltip="Photo Library" tooltipPosition="Above" id="photo-library-button" />
+      </Panel>
+      <Image class="separator" />
+      <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnPerformanceAnalyzerButtonClicked();" tooltip="Open the Analyze Performance window to view your craft's performance.">
+        <TextMeshPro text="PERFORMANCE" />
+      </Button>
+      <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnEditProgramButtonClicked();" tooltip="Automate your craft with Vizzy, a visual programming system.">
+        <TextMeshPro text="EDIT PROGRAM" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBugReportButtonClicked();" tooltip="Report a bug to the developers.">
+        <TextMeshPro text="REPORT A BUG" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn audio-btn-big" rectAlignment="LowerLeft" onClick="OnExitButtonClicked();" tooltip="Exit the designer back to the main menu.">
+        <TextMeshPro text="EXIT" />
+      </Button>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

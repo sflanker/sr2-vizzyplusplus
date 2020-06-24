@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Button class="toggled" iconColor="Primary" />
+    <Panel class="hide-by-default" active="false" />
+    <Panel class="missing-files:show-if-missing-files" active="true" />
+    <Panel class="missing-files:hide-if-missing-files" active="false" />
+    <Button class="missing-files:hide-if-missing-files" active="false" />
+    <TextMeshPro class="missing-files:hide-if-missing-files" active="false" />
+  </Defaults>
+  <RectTransform id="main-panel" class="safe-area">
+    <Panel class="no-image" width="50%" height="70" rectAlignment="UpperCenter" offsetXY="0 6">
+      <Panel class="panel panel-angled border-angled" rotation="0 0 180"></Panel>
+      <TextMeshPro id="company-text" class="text-lg" color="Primary" text="Simple Aerospace, Inc" rectAlignment="MiddleCenter" raycastTarget="true" onClick="OnCompanyNameClicked();" />
+    </Panel>
+    <Panel id="missing-files-panel" name="MissingFilesPanel" class="hide-by-default show-if-missing-files" width="380">
+      <VerticalLayout internalId="dialog-panel" class="panel border dialog-panel" contentSizeFitter="vertical" childForceExpandWidth="0" childAlignment="MiddleCenter" spacing="20" padding="20">
+        <TextMeshPro internalId="label-main" class="value" flexibleWidth="1" text="Unable to load the game because the planetary system is missing files." />
+        <Image internalId="loading-image" sprite="Ui/Sprites/Menu/LevelIcons/SatelliteRendezvous" />
+        <TextMeshPro internalId="label-status" class="value" flexibleWidth="1" text="Querying server for missing files..." />
+        <Button internalId="download-button" class="btn btn-primary audio-btn-big" preferredWidth="150" active="false" onClick="OnDownloadMissingFilesClicked">
+          <TextMeshPro internalId="download-button-text" text="DOWNLOAD" />
+        </Button>
+      </VerticalLayout>
+    </Panel>
+    <TextMeshPro id="active-crafts-text" class="label hide-if-missing-files" rectAlignment="LowerLeft" width="200" offsetXY="20 70" alignment="BottomLeft" />
+    <Button id="active-crafts-button" class="btn hide-if-missing-files" rectAlignment="LowerLeft" width="125" height="50" offsetXY="20 15" onClick="OnActiveCraftsButtonClicked();">
+      <TextMeshPro text="RESUME FLIGHT" />
+    </Button>
+    <TextMeshPro id="version-number-text" class="label" fontSize="12" rectAlignment="UpperRight" width="240" offsetXY="-20 -5" alignment="TopRight" />
+    <TextMeshPro id="launch-location-text" class="label hide-if-missing-files" rectAlignment="LowerRight" width="200" offsetXY="-20 70" alignment="BottomRight" />
+    <Button class="btn hide-if-missing-files" rectAlignment="LowerRight" width="125" height="50" offsetXY="-20 15" onClick="OnLaunchLocationButtonClicked();">
+      <TextMeshPro text="CHANGE LOCATION" />
+    </Button>
+    <TextMeshPro id="rocket-text" class="hide-if-missing-files" color="ValueText" rectAlignment="LowerCenter" offsetXY="0 80" alignment="Bottom" />
+    <Panel class="panel panel-angled border-angled hide-if-missing-files" width="400" height="76" rectAlignment="LowerCenter" offsetXY="0 -6">
+      <Button class="icon-button audio-btn-big" width="50" height="50" icon="Ui/Sprites/Menu/IconButtonBuild" rectAlignment="MiddleCenter" offsetXY="-80 0" onClick="OnBuildButtonClicked();" tooltip="Build Craft" tooltipPosition="Above" />
+      <Button class="icon-button btn-primary" width="50" height="50" iconColor="White" icon="Ui/Sprites/Menu/IconButtonPlay" rectAlignment="MiddleCenter" offsetXY="0 0" onClick="OnLaunchButtonClicked();" tooltip="Start Playing!" tooltipPosition="Above" />
+      <Button class="icon-button" width="50" height="50" icon="Ui/Sprites/Common/IconButtonLoad" rectAlignment="MiddleCenter" offsetXY="80 0" onClick="OnLoadCraftButtonClicked();" tooltip="Load a different craft" tooltipPosition="Above" />
+    </Panel>
+    <Panel id="whats-new" active="false" color="Panel" border="Border" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="500" height="90%" offsetXY="-20 -20" pivot="1 1">
+      <TextMeshPro ignoreLayout="true" text="WHAT'S NEW" fontSize="18" color="LabelText" offsetXY="0 0" height="50" rectAlignment="UpperCenter" />
+      <Button class="btn btn-primary" rectAlignment="UpperLeft" width="100" offsetXY="10 -12" height="25" onClick="OnRoadmapButtonClicked();" tooltip="Check out what we're working on next." tooltipPosition="Above">
+        <TextMeshPro text="ROADMAP" />
+      </Button>
+      <RectTransform>
+        <RectTransform>
+          <VerticalScrollView color="DarkPanel" offsetMin="10 10" offsetMax="-10 -50">
+            <VerticalLayout childForceExpandHeight="false" contentSizeFitter="vertical" pivot="0 1" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="10" spacing="5">
+              <TextMeshPro id="whats-new-text" color="LabelText" pivot="0 1" rectAlignment="UpperLeft" alignment="TopLeft" scale="1,1,1" richText="true" raycastTarget="true" />
+            </VerticalLayout>
+          </VerticalScrollView>
+        </RectTransform>
+      </RectTransform>
+    </Panel>
+    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonWhatsNew" rectAlignment="UpperRight" offsetXY="-20 -20" onClick="OnWhatsNewButtonClicked();" />
+    <VerticalLayout id="file-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="20" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperLeft" width="225" childForceExpandHeight="false" offsetXY="20 -20" spacing="10" pivot="0 1">
+      <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
+      <Panel class="no-image" preferredHeight="30" />
+      <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnDownloadButtonClicked();">
+        <TextMeshPro text="DOWNLOAD CRAFTS" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnNewGameButtonClicked();">
+        <TextMeshPro text="NEW GAME" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnLoadGameButtonClicked();">
+        <TextMeshPro text="LOAD GAME" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnSettingsButtonClicked();">
+        <TextMeshPro text="SETTINGS" />
+      </Button>
+      <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnRoadmapButtonClicked();">
+        <TextMeshPro text="ROADMAP" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnModsButtonClicked();" id="menu-button-mods" device="-mobile">
+        <TextMeshPro text="MODS" />
+      </Button>
+      <Image class="separator" device="-ios" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnExitButtonClicked();" device="-ios">
+        <TextMeshPro text="EXIT" />
+      </Button>
+    </VerticalLayout>
+    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonMenu" rectAlignment="UpperLeft" offsetXY="20 -20" onClick="OnMenuButtonClicked(this);" />
+  </RectTransform>
+</XmlLayout>

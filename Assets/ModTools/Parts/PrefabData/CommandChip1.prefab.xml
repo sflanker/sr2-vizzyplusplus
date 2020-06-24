@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CommandChip1" path="Craft/Parts/Prefabs/CommandChip1.prefab">
+  <GameObject name="Colliders">
+    <Component type="UnityEngine.MeshFilter" />
+    <GameObject name="CenterCollider">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="Collider">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="Collider (1)">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="Collider (2)">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="Collider (3)">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="Mesh">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+</GameObject>

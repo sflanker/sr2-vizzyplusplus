@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Image class="transparent" color="Transparent" />
+    <ContentButton class="view-button" color="Transparent" preferredHeight="40" preferredWidth="40" tooltipPosition="Below" hoverClass="view-button-hover" />
+    <Image class="view-button&gt;@Image" width="20" height="20" color="PanelButton" />
+    <Image class="view-button-hover&gt;@Image" color="PanelButtonHover" />
+    <Image class="selected&gt;@Image" color="Primary" />
+    <TextMeshPro class="selected&gt;@TextMeshPro" color="ValueText" />
+  </Defaults>
+  <HorizontalLayout class="flight-panel" height="40" rectAlignment="UpperLeft" pivot="0 1" spacing="0" contentSizeFitter="both" childForceExpandHeight="false" childForceExpandWidth="false">
+    <ContentButton name="ToggleMenu" class="view-button audio-btn-click" tooltip="Open the menu" onClick="OnToggleMenuButtonClicked();">
+      <Image sprite="Ui/Sprites/Common/IconMenu" />
+    </ContentButton>
+    <ContentButton name="ToggleMapView" id="toggle-map-view-button" class="view-button audio-btn-click" tooltip="Toggle Map View" onClick="OnMapViewButtonClicked();">
+      <Image sprite="Ui/Sprites/Flight/IconMapView" />
+    </ContentButton>
+    <ContentButton id="toggle-camera-panel-button" class="view-button audio-btn-click game-view-only" tooltip="Change camera view" onClick="OnToggleCameraPanelButtonClicked(this);">
+      <Image sprite="Ui/Sprites/Flight/IconChangeCamera" />
+    </ContentButton>
+    <!--<ContentButton class="view-button audio-btn-click map-view-only" tooltip="Camera Parts" onClick="OnSelectPlayer();">
+         <Image sprite="Ui/Sprites/MapView/IconPlayer"  />
+      </ContentButton>-->
+    <ContentButton name="ToggleMapView" class="view-button audio-btn-click map-view-only" tooltip="Search for planets and crafts" onClick="OnSearchButtonClicked(this);">
+      <Image sprite="Ui/Sprites/Common/IconSearch" />
+    </ContentButton>
+    <ContentButton id="recenter-button" active="true" class="view-button audio-btn-click" onClick="OnRecenterButtonClicked();" tooltip="Re-center View on Target">
+      <Image sprite="Ui/Sprites/Flight/IconCameraRecenter" />
+    </ContentButton>
+  </HorizontalLayout>
+  <HorizontalLayout id="camera-panel" class="flight-panel" active="false" height="40" rectAlignment="UpperLeft" offsetXY="0 -40" pivot="0 1" spacing="0" contentSizeFitter="both" childForceExpandHeight="false" childForceExpandWidth="false">
+    <ContentButton class="view-button audio-btn-click" id="camera-third-person" tooltip="Third Person" onClick="OnCameraModeClicked(this);" active="false">
+      <Image sprite="Ui/Sprites/Flight/IconCameraThirdPerson" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-first-person" tooltip="First Person" onClick="OnCameraModeClicked(this);" active="false">
+      <Image sprite="Ui/Sprites/Flight/IconCameraFirstPerson" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-planet-aligned" tooltip="Default View" onClick="OnCameraModeClicked(this);">
+      <Image sprite="Ui/Sprites/Flight/IconCameraPlanetAligned" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-space-aligned" tooltip="Space Aligned" onClick="OnCameraModeClicked(this);">
+      <Image sprite="Ui/Sprites/Flight/IconCameraSpaceAligned" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-orbit-chase" tooltip="Chase View" onClick="OnCameraModeClicked(this);">
+      <Image sprite="Ui/Sprites/Flight/IconCameraChase" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-fly-by-cinematic" tooltip="Fly-By Cinematic" onClick="OnCameraModeClicked(this);">
+      <Image sprite="Ui/Sprites/Flight/IconCameraFlyBy" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-fly-by-stationary" tooltip="Fly-By Stationary" onClick="OnCameraModeClicked(this);">
+      <Image sprite="Ui/Sprites/Flight/IconCameraFlyByStationary" />
+    </ContentButton>
+    <ContentButton class="view-button audio-btn-click" id="camera-parts" tooltip="Camera Parts" onClick="OnToggleCameraPartsPanelButtonClicked();">
+      <Image sprite="Ui/Sprites/Flight/IconCameraParts" />
+    </ContentButton>
+  </HorizontalLayout>
+  <VerticalLayout id="camera-parts-panel" class="flight-panel" active="false" height="40" width="200" rectAlignment="UpperLeft" offsetXY="40 -80" pivot="0 1" spacing="5" contentSizeFitter="vertical" childForceExpandHeight="false" padding="5">
+    <TextMeshPro id="no-camera-parts-text" text="No Camera Parts" />
+    <ContentButton id="camera-part-template" active="false" preferredHeight="25" class="btn" onClick="OnCameraModeClicked(this);">
+      <Image class="transparent" />
+      <TextMeshPro internalId="text" text="Camera Part" />
+    </ContentButton>
+  </VerticalLayout>
+</XmlLayout>

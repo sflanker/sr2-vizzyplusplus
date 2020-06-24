@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="connection-row" hoverClass="connection-row-hover" color="Transparent" raycastTarget="true" prefabPath="Ui/Prefabs/XmlLayout/ImagePanel" />
+    <Panel class="connection-row-hover" color="Button" raycastTarget="true" />
+    <Panel class="attachpoint-header" hoverClass="attachpoint-header-hover" color="DarkPanel" raycastTarget="true" prefabPath="Ui/Prefabs/XmlLayout/ImagePanel" />
+    <Panel class="attachpoint-header-hover" color="Panel" />
+    <Image class="ap-icon" offsetXY="8 0" rectAlignment="MiddleLeft" width="16" height="16" sprite="Ui/Sprites/Design/ShapeTriangle" color="#777777" />
+    <Image class="ap-surface" sprite="Ui/Sprites/Design/ShapeCircle" />
+    <Image class="ap-rotating" sprite="Ui/Sprites/Design/ShapeSquare" />
+    <Image class="ap-fuel-line" sprite="Ui/Sprites/Design/AttachPointFuelLine" />
+    <Image class="ap-fairing" color="#C600FF" />
+    <TextMeshPro class="attachpoint-title" offsetXY="35 0" alignment="Left" color="LabelText" rectAlignment="MiddleLeft" />
+    <Button class="icon-button audio-btn-big" rectAlignment="MiddleCenter" tooltipPosition="Above" />
+  </Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" contentSizeFitter="vertical" padding="10 10 0 50" spacing="10" pivot="0 1">
+      <Panel class="header" preferredHeight="35">
+        <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+          <TextMeshPro id="part-name" text="FUEL TANK #21" fontStyle="Bold,UpperCase" />
+        </Panel>
+        <Image class="separator" />
+      </Panel>
+      <Panel id="button-panel" preferredHeight="55" pivot="0 1">
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonDisconnectPart" offsetXY="-100 0" onClick="OnDisconnectButtonClicked();" tooltip="Removes all of this part's connections." />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonReconnectPart" offsetXY="-33 0" onClick="OnReconnectButtonClicked();" tooltip="Removes all of this part's connections and attempts to reconnect with all surrounding parts." />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonDisableAttachPoints" offsetXY="33 0" onClick="OnToggleAllAttachPoints();" tooltip="Toggles all attach points on this part." />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonDisableAllAttachPoints" offsetXY="100 0" onClick="OnToggleAllConnectedAttachPoints();" tooltip="Toggles all attach points on this part and all of its connected parts." />
+      </Panel>
+      <VerticalLayout id="attach-points" class="no-image" childForceExpandHeight="false" contentSizeFitter="vertical" spacing="10" pivot="0 1">
+        <Panel class="header" preferredHeight="40">
+          <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+            <TextMeshPro id="attachpoint-group-header" text="4 x ATTACH POINTS" fontStyle="Bold" />
+          </Panel>
+          <Image class="separator" />
+        </Panel>
+        <Panel id="template-connection" class="row connection-row" active="false">
+          <TextMeshPro internalId="connection-name" offsetXY="10 0" class="label" text="Fuel Tank #237" rectAlignment="MiddleLeft" />
+          <Image internalId="delete-part-connection" class="delete-button audio-btn-click" rectAlignment="MiddleRight" onClick="OnDeletePartConnectionClicked(this);" offsetXY="-2 0">
+            <Image class="delete-button-icon" color="Warning" />
+          </Image>
+        </Panel>
+        <VerticalLayout id="template-attach-point" class="no-image border" childForceExpandHeight="false" spacing="0" pivot="0 1" active="false">
+          <Panel internalId="attachpoint-header" class="row attachpoint-header">
+            <TextMeshPro internalId="ap-name" class="attachpoint-title" text="Top Load Attach Point" />
+            <Toggle internalId="ap-toggle" isOn="true" rectAlignment="MiddleRight" width="50" height="25" offsetXY="-2 0" tooltip="Enable this attach point for consideration when placing parts." />
+            <Image internalId="ap-icon" class="ap-icon" />
+          </Panel>
+          <Panel internalId="add-connection" class="row">
+            <ContentButton internalId="add-connection-button" class="btn">
+              <Image sprite="Ui/Sprites/Design/IconAddStage" width="16" height="16" offsetXY="-100 0" color="Primary" />
+              <TextMeshPro text="Add New Connection" />
+            </ContentButton>
+          </Panel>
+        </VerticalLayout>
+      </VerticalLayout>
+      <VerticalLayout id="connecting-panel" active="false" class="no-image" childForceExpandHeight="false" spacing="10" pivot="0 1">
+        <Panel class="header" preferredHeight="40">
+          <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+            <TextMeshPro id="add-new-connection-header" text="HEADER TEXT" fontStyle="Bold,UpperCase" />
+          </Panel>
+          <Image class="separator" />
+        </Panel>
+        <TextMeshPro id="connecting-text" class="label" text="Select target attach point" alignment="Center" rectAlignment="MiddleCenter" />
+        <VerticalLayout id="target-attach-points" class="no-image" childForceExpandHeight="false" spacing="10" pivot="0 1">
+          <Button id="template-target-attach-point" class="btn" active="false">
+            <TextMeshPro internalId="ap-name" />
+          </Button>
+        </VerticalLayout>
+        <Image class="separator" />
+        <Panel preferredHeight="40" pivot="0 1">
+          <Button id="connect-button" class="btn btn-primary" width="120" rectAlignment="MiddleRight" onClick="OnConnectButtonClicked();">
+            <TextMeshPro text="CONNECT" />
+          </Button>
+          <Button class="btn" width="120" rectAlignment="MiddleLeft" onClick="OnCancelConnectButtonClicked();">
+            <TextMeshPro text="CANCEL" />
+          </Button>
+        </Panel>
+      </VerticalLayout>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

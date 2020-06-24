@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="HingeRotator1" path="Craft/Parts/Prefabs/HingeRotator1.prefab">
+  <Component type="UnityEngine.AudioSource" />
+  <GameObject name="Mesh">
+    <GameObject name="HingeHolder">
+      <GameObject name="Hinge">
+        <GameObject name="RotatorCylinder">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="UnityEngine.BoxCollider" />
+          <Component type="ModApi.Craft.Parts.PartColliderScript" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="HingeBase">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="UnityEngine.BoxCollider" />
+        <Component type="UnityEngine.BoxCollider" />
+      </GameObject>
+    </GameObject>
+    <GameObject name="RotatorBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="UnityEngine.BoxCollider" />
+    </GameObject>
+    <GameObject name="RotatorBaseExtension">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="UnityEngine.BoxCollider" />
+    </GameObject>
+  </GameObject>
+</GameObject>

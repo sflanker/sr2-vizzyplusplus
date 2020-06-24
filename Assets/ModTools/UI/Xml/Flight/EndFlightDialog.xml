@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Panel class="column-left" width="50%" rectAlignment="MiddleLeft" />
+    <Panel class="column-right" width="50%" rectAlignment="MiddleRight" padding="10 10 0 0" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="450" contentSizeFitter="vertical" spacing="10" padding="20">
+      <TextMeshPro class="text-header" text="EXIT FLIGHT" />
+      <VerticalLayout color="DarkPanel" childForceExpandHeight="false" childForceExpandWidth="false" contentSizeFitter="vertical" childAlignment="UpperCenter" pivot="0 1" spacing="5" padding="10" rectAlignment="UpperCenter">
+        <TextMeshPro class="label" text="FLIGHT STATS" />
+        <Panel id="template-stat-row" preferredHeight="30" preferredWidth="400">
+          <Panel class="column-left" offsetXY="-10 0">
+            <TextMeshPro internalId="label" class="label" text="Thrust" alignment="Right" />
+          </Panel>
+          <Panel class="column-right" offsetXY="10 0">
+            <TextMeshPro internalId="value" class="value" text="480kN" alignment="Left" />
+          </Panel>
+        </Panel>
+      </VerticalLayout>
+      <Panel preferredHeight="50" class="no-image">
+        <Button class="btn audio-btn-back" rectAlignment="LowerLeft" width="125" onClick="OnCancelClicked();">
+          <TextMeshPro text="CANCEL" />
+        </Button>
+        <Button class="btn" rectAlignment="LowerCenter" width="125" onClick="OnRetryClicked();">
+          <TextMeshPro text="UNDO FLIGHT" />
+        </Button>
+        <Button class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="125" onClick="OnExitClicked();">
+          <TextMeshPro text="SAVE &amp; EXIT" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Bay-Straight" path="Craft/Parts/Prefabs/LandingGear/Bay-Straight.prefab">
+  <GameObject name="LandingGearBayStraight">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+  <GameObject name="DepthMask">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+</GameObject>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <ContentButton class="end-button" width="32" height="32" navigation="None" tooltipPosition="Above" rectAlignment="MiddleRight" />
+    <TextMeshPro class="header-text" color="White" />
+    <TextMeshPro class="pinned:@TextMeshPro" color="Primary" />
+  </Defaults>
+  <VerticalLayout id="info-panel" showAnimation="SlideIn_Top" hideAnimation="SlideOut_Top" animationDuration="0.1" class="panel border" rectAlignment="UpperCenter" padding="0" spacing="5" contentSizeFitter="vertical" childAlignment="LowerCenter" width="400" height="0" childForceExpandHeight="false" active="false" onMouseExit="OnMouseExitPanel();">
+    <Panel preferredHeight="40" color="DarkPanel">
+      <Image height="1" rectAlignment="LowerCenter" width="100%" color="Border" />
+    </Panel>
+    <Panel preferredHeight="10" />
+    <TextMeshPro id="level-description" class="label" text="You must build a rocket that can exceed a speed of 750m/s before it reaches an altitude of 2,000 meters. You must be careful not to stray outside of your lane or your score will not count!" margin="5" />
+    <Panel preferredHeight="50">
+      <Button class="btn btn-primary audio-btn-big" rectAlignment="MiddleCenter" width="150" onClick="OnExitClicked();">
+        <TextMeshPro text="EXIT LEVEL" />
+      </Button>
+    </Panel>
+  </VerticalLayout>
+  <Panel id="header-panel" class="header-panel" width="320" height="40" rectAlignment="UpperCenter" onMouseEnter="OnMouseEnterPanel();" onClick="OnMouseClickPanel();">
+    <Panel class="panel panel-angled border-angled" rotation="0 0 180"></Panel>
+    <TextMeshPro id="level-title" class="header-text" height="40" text="Maximum Thrust" fontSize="14" />
+  </Panel>
+</XmlLayout>

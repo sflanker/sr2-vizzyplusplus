@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <TextMeshPro class="label" raycastTarget="true" tooltipPosition="Above" width="225" alignment="Left" rectAlignment="MiddleLeft" />
+    <Image class="header-arrow" color="LabelText" pivot="0.5 0.5" offsetXY="20 0" sprite="Ui/Sprites/Common/IconTriangleRight" width="12" height="12" rectAlignment="MiddleLeft" />
+    <Image class="expanded" rotation="0 0 -90" />
+    <Panel class="header" color="Panel" offsetMax="10 0" hoverClass="header-hover" raycastTarget="true" preferredHeight="40" />
+    <Panel class="header-hover" color="PanelHover" />
+    <TextMeshPro class="header-text" color="White" fontStyle="Bold,UpperCase" alignment="Left" rectAlignment="MiddleLeft" width="250" offsetXY="40 0" />
+    <Spinner class="settings-spinner" onClickSound="Ui/Audio/ButtonClicked" buttonColors="Button|ButtonHover|ButtonPressed|ButtonDisabled" rectAlignment="MiddleRight" width="200" />
+    <TextMeshPro class="spinner:label" rectAlignment="MiddleLeft" width="200" />
+    <TextMeshPro class="settings-spinner:@TextMeshPro" color="White" />
+    <Image class="setting-info" rectAlignment="MiddleLeft" sprite="Ui/Sprites/Common/IconQuestionMark" hoverClass="setting-info-hover" width="30" height="30" color="Button" offsetXY="-35 0" tooltipDelayTime="0.0" tooltipPosition="Above" raycastTarget="true" />
+    <Image class="setting-info-hover" color="ButtonHover" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <RectTransform class="safe-area">
+      <Panel class="panel border" width="550" padding="20" maxSize="550 960" allowDragging="true" returnToOriginalPositionWhenReleased="false">
+        <RectTransform>
+          <TextMeshPro class="text-header" text="SETTINGS" alignment="Top" />
+          <HorizontalLayout id="control-categories" class="no-image" childForceExpandHeight="true" height="30" rectAlignment="UpperCenter" spacing="10" offsetXY="0 -50">
+            <Button internalId="Game" class="btn btn-primary">
+              <TextMeshPro text="Game" />
+            </Button>
+            <Button internalId="Quality" class="btn">
+              <TextMeshPro text="Quality" />
+            </Button>
+            <Button internalId="Mods" class="btn">
+              <TextMeshPro text="Mods" />
+            </Button>
+            <Button class="btn" onClick="OnControlsButtonClicked();">
+              <TextMeshPro text="Controls" />
+            </Button>
+          </HorizontalLayout>
+          <Panel class="no-image" offsetMax="0 -90">
+            <Image color="Border" height="1" rectAlignment="UpperCenter" />
+            <Panel offsetMax="0 0" offsetMin="0 50" color="DarkPanel" padding="10">
+              <RectTransform id="templates" active="false">
+                <Panel id="template-header" class="header audio-btn-click">
+                  <Image internalId="arrow" class="header-arrow expanded" />
+                  <TextMeshPro internalId="label" class="header-text" text="Header Text" />
+                  <Spinner internalId="spinner" class="settings-spinner" offsetXY="-15 0">
+                    <TextMeshPro />
+                  </Spinner>
+                </Panel>
+                <VerticalLayout id="template-layout" class="no-image" childForceExpandHeight="false" childAlignment="UpperRight" pivot="0 1" spacing="5" padding="40 15 0 0"></VerticalLayout>
+                <Panel id="template-dropdown" class="settings-row row no-image">
+                  <Image internalId="setting-info" class="setting-info" />
+                  <TextMeshPro internalId="label" class="label" text="Label Text" />
+                  <Panel rectAlignment="MiddleRight" width="200">
+                    <TextMeshProDropdown internalId="dropdown" image="" width="100%" color="Button" dropdownBackgroundImage="" dropdownBackgroundColor="Button" itemBackgroundColors="Button|ButtonHover|Button|Button">
+                      <TMP_OptionTextTemplate color="Primary" image="" alignment="Center" />
+                      <TMP_DropdownLabel color="ValueText" alignment="Center" />
+                    </TextMeshProDropdown>
+                  </Panel>
+                </Panel>
+                <Panel id="template-spinner-numeric" class="settings-row row no-image">
+                  <Image internalId="setting-info" class="setting-info" />
+                  <TextMeshPro internalId="label" class="label" text="Label Text" />
+                  <Spinner internalId="spinner" class="settings-spinner" numericValue="0" minValue="0" maxValue="10">
+                    <TextMeshProInputField>
+                      <TMP_Text text="0" />
+                    </TextMeshProInputField>
+                  </Spinner>
+                </Panel>
+                <Panel id="template-spinner-text" class="settings-row row no-image">
+                  <Image internalId="setting-info" class="setting-info" />
+                  <TextMeshPro internalId="label" class="label" text="Label Text" />
+                  <Spinner internalId="spinner" class="settings-spinner">
+                    <TextMeshPro text="Value Text" />
+                  </Spinner>
+                </Panel>
+                <Panel id="template-slider" class="settings-row row slider no-image">
+                  <Image internalId="setting-info" class="setting-info" />
+                  <TextMeshPro internalId="slider-label" class="label" width="325" text="Label Text" />
+                  <TextMeshPro internalId="slider-value" class="value" text="Value Text" />
+                  <Slider internalId="slider" />
+                </Panel>
+                <Panel id="template-toggle" class="settings-row row no-image">
+                  <Image internalId="setting-info" class="setting-info" />
+                  <TextMeshPro internalId="label" class="label" text="Label Text" />
+                  <Toggle internalId="toggle" class="audio-btn-click" rectAlignment="MiddleRight" />
+                </Panel>
+                <Panel id="template-text-input" class="settings-row row no-image">
+                  <Image internalId="setting-info" class="setting-info" />
+                  <TextMeshPro internalId="label" class="label" text="Label Text" />
+                  <TextMeshProInputField internalId="input" width="50%" height="100%" rectAlignment="MiddleRight">
+                    <TMP_Text color="White" enableWordWrapping="false" />
+                  </TextMeshProInputField>
+                </Panel>
+              </RectTransform>
+              <VerticalScrollView id="items-scroll" class="no-image">
+                <VerticalLayout id="items-parent" class="no-image" childForceExpandHeight="false" contentSizeFitter="vertical" childAlignment="UpperLeft" pivot="0 1" spacing="5" padding="0 5 0 0"></VerticalLayout>
+              </VerticalScrollView>
+            </Panel>
+            <Panel class="no-image" rectAlignment="LowerCenter" height="45" offsetXY="0 0">
+              <Button id="close-button" class="btn audio-btn-back" rectAlignment="LowerLeft" width="30%" onClick="OnCloseButtonClicked();">
+                <TextMeshPro text="Close" />
+              </Button>
+              <Button id="cancel-button" class="btn audio-btn-back" rectAlignment="LowerLeft" width="30%" onClick="OnCancelButtonClicked();" active="false">
+                <TextMeshPro text="Cancel" />
+              </Button>
+              <Button id="discard-button" class="btn audio-btn-back" rectAlignment="LowerCenter" width="30%" onClick="OnDiscardButtonClicked();" active="false">
+                <TextMeshPro text="Discard" />
+              </Button>
+              <Button id="apply-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="30%" onClick="OnApplyButtonClicked();" active="false">
+                <TextMeshPro text="Apply" />
+              </Button>
+            </Panel>
+          </Panel>
+        </RectTransform>
+      </Panel>
+    </RectTransform>
+  </Panel>
+</XmlLayout>

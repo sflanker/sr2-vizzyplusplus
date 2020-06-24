@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="RCSNozzle2" path="Craft/Parts/Prefabs/RCSNozzle2.prefab">
+  <GameObject name="Root">
+    <GameObject name="Collider">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="RCSMultiBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="CenterOfThrust">
+      <GameObject name="ParticleSystem">
+        <Component type="UnityEngine.ParticleSystem" />
+        <Component type="UnityEngine.ParticleSystemRenderer" />
+      </GameObject>
+      <GameObject name="RCSMultiNozzle">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Door-Curved-Vertical" path="Craft/Parts/Prefabs/LandingGear/Door-Curved-Vertical.prefab">
+  <GameObject name="LeftBayDoor">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    <Component type="UnityEngine.BoxCollider" />
+  </GameObject>
+  <GameObject name="RightBayDoor">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    <Component type="UnityEngine.BoxCollider" />
+  </GameObject>
+</GameObject>

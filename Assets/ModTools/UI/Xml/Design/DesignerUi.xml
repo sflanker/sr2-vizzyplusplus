@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="toggle-flyout" tooltipPosition="Right" />
+    <TextMeshPro class="message-text" offsetXY="0 -10" />
+    <TextMeshPro class="level-in-progress" offsetXY="0 -50" />
+    <Image class="finger-button" sprite="Ui/Sprites/Design/FingerToolButton" color="#00000050" width="42" height="36" raycastTarget="true" />
+    <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolSelectPart" width="34" height="34" />
+    <Image class="finger-button-selected" color="Primary" />
+  </Defaults>
+  <Panel id="main-panel" opacity="1" class="safe-area no-image">
+    <Button name="LaunchButton" class="icon-button btn-primary audio-btn-big" icon="Ui/Sprites/Design/IconButtonPlay" rectAlignment="UpperRight" offsetXY="-10 -10" onClick="OnPlayButtonClicked();" tooltip="Launch this craft" tooltipPosition="Left" />
+    <Button id="toggle-finger-tool-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-110 10" icon="Ui/Sprites/Design/IconButtonFingerTool" onClick="OnToggleFingerToolButtonClicked();" tooltip="Toggle Finger Aid Tool" tooltipPosition="Left" name="ToggleFingerTool" device="mobile" />
+    <Button id="group-parts-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-60 10" icon="Ui/Sprites/Design/IconButtonGroupParts" onClick="OnGroupPartsButtonClicked();" tooltip="Group/Ungroup selected parts" tooltipPosition="Above" />
+    <Button id="undo-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-10 10" icon="Ui/Sprites/Design/IconButtonUndo" onClick="OnUndoButtonClicked();" tooltip="Undo" tooltipPosition="Left" />
+    <Button id="redo-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-10 60" icon="Ui/Sprites/Design/IconButtonRedo" onClick="OnRedoButtonClicked();" tooltip="Redo" tooltipPosition="Left" />
+    <Panel class="panel" rectAlignment="MiddleLeft" height="100%" width="51" border="Border">
+      <VerticalLayout class="no-image" childForceExpandHeight="false" padding="1 1 0 0">
+        <Panel preferredHeight="30" color="#171717"></Panel>
+        <Panel internalId="flyout-menu" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.Menu" tooltip="Menu" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonMenu" />
+        </Panel>
+        <Panel internalId="flyout-tools" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.Tools" tooltip="Active Tool" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonMovePartTool" id="active-tool-icon" />
+        </Panel>
+        <Panel internalId="flyout-part-list" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.AddPart" tooltip="Add Part" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonParts" />
+        </Panel>
+        <Panel internalId="flyout-part-properties" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.PartProperties" tooltip="Part Properties" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonProperties" />
+        </Panel>
+        <Panel internalId="flyout-staging" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.StagingEditor" tooltip="Staging Editor" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonStaging" />
+        </Panel>
+        <Panel internalId="flyout-symmetry" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.Symmetry" tooltip="Symmetry Tool" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonSymmetry" />
+        </Panel>
+        <Panel internalId="flyout-craft-parts" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.CraftParts" tooltip="Search Craft's Parts" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonCraftParts" />
+        </Panel>
+        <Panel internalId="flyout-view" class="toggle-button toggle-flyout audio-btn-click" name="ButtonPanel.ViewOptions" tooltip="View Options" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonView" />
+        </Panel>
+      </VerticalLayout>
+      <Panel id="part-properties-hint" offsetXY="72 -205" width="250" height="40" class="panel" pivot="0 0.5" rectAlignment="UpperLeft" active="false">
+        <Image class="header-arrow" color="Panel" pivot="0.5 0.5" offsetXY="-10 0" sprite="Ui/Sprites/Common/IconTriangleRight" width="24" height="24" rectAlignment="MiddleLeft" rotation="0 0 180" />
+        <TextMeshPro class="value" offsetXY="0 0" text="Click on 'Part Properties' to customize this part." />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-menu" class="panel flyout" width="225" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="MENU" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/MenuPanel" controller="Assets.Scripts.Design.MenuPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-tools" class="panel flyout" width="320" active="false">
+      <Image rectAlignment="MiddleLeft" width="1" height="100%" color="Border" offsetXY="50 0" />
+      <Panel class="flyout-header">
+        <TextMeshPro text="TOOLS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/ToolPanel" controller="Assets.Scripts.Design.Tools.ToolPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-part-list" class="panel flyout" width="258" active="false">
+      <Image rectAlignment="MiddleLeft" width="1" height="100%" color="Border" offsetXY="50 0" />
+      <Panel class="flyout-header">
+        <TextMeshPro text="PART LIST" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/PartListPanel" controller="Assets.Scripts.Design.PartListPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-load-craft" class="panel flyout" width="300" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="LOAD CRAFT" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/LoadCraftPanel" controller="Assets.Scripts.Design.LoadCraftPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-part-properties" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="PART PROPERTIES" />
+        <Image name="Flyout.PartProperties.Close" class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/PartPropertiesPanel" controller="Assets.Scripts.Design.PartProperties.PartPropertiesFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-staging" class="panel flyout" width="320" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="STAGING" />
+        <Image name="Flyout.Staging.Close" class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/StagingEditorPanel" controller="Assets.Scripts.Design.Staging.StagingEditorPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-activation-groups" class="panel flyout" width="320" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="ACTIVATION GROUPS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/ActivationGroupsPanel" controller="Assets.Scripts.Design.ActivationGroupsPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-part-connections" class="panel flyout" width="320" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="PART CONNECTIONS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/PartConnectionsPanel" controller="Assets.Scripts.Design.PartConnectionsPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-symmetry" class="panel flyout" width="280" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="SYMMETRY" />
+        <Image name="Flyout.Symmetry.Close" class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/SymmetryPanel" controller="Assets.Scripts.Design.SymmetryPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-craft-parts" class="panel flyout" width="280" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="SEARCH PARTS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/CraftPartsPanel" controller="Assets.Scripts.Design.CraftPartsPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-view" class="panel flyout" width="250" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="VIEW OPTIONS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/Design/ViewOptionsPanel" controller="Assets.Scripts.Design.ViewOptionsPanelScript" />
+      </Panel>
+    </Panel>
+    <Panel class="panel panel-angled border-angled" width="350" height="32" rectAlignment="LowerCenter" offsetXY="0 -6">
+      <TextMeshPro id="craft-mass-text" color="ValueText" text="25kg" height="30" rectAlignment="MiddleLeft" width="50%" offsetXY="25 0" tooltip="The current mass of your craft." raycastTarget="true" tooltipPosition="Above" />
+      <TextMeshPro id="craft-price-text" color="ValueText" text="$23k" height="30" rectAlignment="MiddleRight" width="50%" offsetXY="-25 0" tooltip="The current price of your craft. Money doesn't matter.....yet." raycastTarget="true" tooltipPosition="Above" />
+    </Panel>
+  </Panel>
+  <TextMeshPro id="message-text" class="message-text" rectAlignment="UpperCenter" alignment="Top" height="50" width="50%" showAnimation="None" hideAnimation="FadeOut" animationDuration="0.5" />
+  <RectTransform class="safe-area">
+    <RectTransform id="move-part-panel" class="no-image" active="false">
+      <Panel id="subassembly-dropzone" class="move-part-dropzone no-image" rectAlignment="UpperLeft">
+        <Image sprite="Ui/Sprites/Design/DropZone" setNativeSize="true" />
+        <Image sprite="Ui/Sprites/Design/IconPartCategorySubs" setNativeSize="true" />
+        <TextMeshPro text="Create Subassembly" offsetXY="0 -75" />
+      </Panel>
+      <Panel id="trashcan-dropzone" class="move-part-dropzone no-image" rectAlignment="UpperRight">
+        <Image sprite="Ui/Sprites/Design/DropZone" setNativeSize="true" />
+        <Image sprite="Ui/Sprites/Design/IconButtonTrash" setNativeSize="true" />
+        <TextMeshPro text="Drag to Delete" offsetXY="0 -75" />
+      </Panel>
+    </RectTransform>
+  </RectTransform>
+  <RectTransform id="select-part-panel" class="safe-area" active="false">
+    <RectTransform class="no-image">
+      <Button internalId="select-button" class="btn btn-primary" rectAlignment="UpperRight" offsetXY="-10 -10" width="200">
+        <TextMeshPro text="SELECT" />
+      </Button>
+      <Button internalId="cancel-button" class="btn" rectAlignment="UpperLeft" offsetXY="10 -10" width="200">
+        <TextMeshPro text="CANCEL" />
+      </Button>
+    </RectTransform>
+  </RectTransform>
+  <RectTransform id="finger-tool" rectAlignment="MiddleCenter" device="mobile">
+    <Image sprite="Ui/Sprites/Design/FingerToolStem" width="13" height="64" offsetXY="0 -32" />
+    <Image internalId="select-part" class="finger-button" offsetXY="0 -84" name="FingerTool.SelectPart">
+      <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolSelectPart" />
+    </Image>
+    <Image internalId="move-part" class="finger-button" offsetXY="0 -124">
+      <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolMovePart" />
+    </Image>
+    <Image internalId="clone-part" class="finger-button" offsetXY="42 -104" name="FingerTool.ClonePart">
+      <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolClonePart" />
+    </Image>
+    <Image internalId="clone-group" class="finger-button" offsetXY="42 -144">
+      <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolCloneGroup" />
+    </Image>
+    <Image internalId="detach-part" class="finger-button" offsetXY="-42 -104">
+      <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolDetachPart" />
+    </Image>
+  </RectTransform>
+</XmlLayout>

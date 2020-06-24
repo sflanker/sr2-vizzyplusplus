@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="ElectricMotor1" path="Craft/Parts/Prefabs/ElectricMotor1.prefab">
+  <Component type="UnityEngine.AudioSource" />
+  <GameObject name="Mesh">
+    <GameObject name="MotorBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="UnityEngine.CapsuleCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="MotorShaft">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+  </GameObject>
+</GameObject>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Door-Straight-Side" path="Craft/Parts/Prefabs/LandingGear/Door-Straight-Side.prefab">
+  <GameObject name="LandingGearBayStraightDoorSide">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+</GameObject>

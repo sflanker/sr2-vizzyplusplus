@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Nozzle_Bravo" path="Craft/Parts/Prefabs/RocketEngine/Nozzle_Bravo.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+</GameObject>
