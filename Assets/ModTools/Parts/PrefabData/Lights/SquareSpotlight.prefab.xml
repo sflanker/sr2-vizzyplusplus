@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="SquareSpotlight" path="Craft/Parts/Prefabs/Lights/SquareSpotlight.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Lights.LightMeshData" />
+  <Component type="UnityEngine.BoxCollider" />
+  <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  <GameObject name="SpotlightEmissive">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+  <GameObject name="SpotlightEmissiveOff">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+  <GameObject name="SpotLight">
+    <Component type="UnityEngine.Light" />
+  </GameObject>
+</GameObject>

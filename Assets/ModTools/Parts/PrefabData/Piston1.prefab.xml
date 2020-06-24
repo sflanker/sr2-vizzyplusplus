@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Piston1" path="Craft/Parts/Prefabs/Piston1.prefab">
+  <GameObject name="Piston">
+    <GameObject name="ShaftOffset">
+      <GameObject name="PistonShaft-0">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="ShaftCollider-0">
+          <Component type="UnityEngine.CapsuleCollider" />
+          <Component type="UnityEngine.BoxCollider" />
+        </GameObject>
+        <GameObject name="ExpectedJointPosition" />
+      </GameObject>
+      <GameObject name="PistonShaft-1">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="ShaftCollider-1">
+          <Component type="UnityEngine.CapsuleCollider" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="PistonShaft-2">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="ShaftCollider-2">
+          <Component type="UnityEngine.CapsuleCollider" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="PistonShaft-3">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="ShaftCollider-3">
+          <Component type="UnityEngine.CapsuleCollider" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+    <GameObject name="Collider">
+      <Component type="UnityEngine.CapsuleCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="PistonBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    </GameObject>
+  </GameObject>
+</GameObject>

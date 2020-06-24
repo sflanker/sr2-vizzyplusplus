@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <!--<Include path="Ui/Xml/Styles.xml" />-->
+  <Defaults>
+    <Text color="white" alignment="MiddleLeft" font="Arial" />
+    <Text class="title" alignment="MiddleCenter" color="rgb(1,1,0)" fontSize="32" shadow="rgba(0,0,0,0.5)" font="Arial Bold" />
+    <Text class="h1" font="Arial Bold" fontSize="24" />
+    <Text class="h2" font="Arial Bold" fontSize="16" color="rgb(1,1,0)" shadow="rgba(0,0,0,0.5)" />
+    <Text class="h3" font="Arial Bold" fontSize="12" />
+    <TableLayout class="noCellBackground" cellBackgroundColor="clear" />
+    <!--<Row class="headerRow" dontUseTableRowBackground="true" image="Ui/Sprites/Layout/Title" color="rgb(0.1,0.7,0)" preferredHeight="64" />-->
+    <Row class="sectionHeaderRow" dontUseTableRowBackground="true" image="Ui/Sprites/Layout/Button" color="rgb(0.2,0.6,0)" preferredHeight="36" />
+    <Row class="viewport" dontUseTableRowBackground="true" image="Ui/Sprites/Layout/Viewport" color="rgb(0.5,0.5,0.5)" />
+    <Row class="infoPanelContent" dontUseTableRowBackground="true" image="Ui/Sprites/Layout/Viewport" color="rgb(0.5,0.5,0.5)" />
+    <TMP_DropdownLabel class="infoPanelContentDropLabel" fontSize="10" />
+    <TMP_OptionTextTemplate class="infoPanelContentDropText" fontSize="10" />
+    <TextMeshPro class="infoPanelContentText" fontSize="10" />
+    <Row class="compactRow" preferredHeight="20" />
+    <Button font="Arial Bold" image="Ui/Sprites/Layout/Button" colors="rgb(0.09,0.4,0.6)|rgb(0.09,0.4,0.6)|rgb(0.02,0.8,.95)" textColor="rgb(1,1,1)" textShadow="rgba(0,0,0,0.5)" />
+    <Button class="disabled" colors="rgb(0.1,0.4,0)|rgb(0.1,0.4,0)|rgb(0.1,0.4,0)|rgb(0.1,0.4,0)" textColor="rgb(0,0.5,0)" interactable="false" />
+    <Button class="submit" colors="rgb(0.1,0.4,0)|rgb(0.1,0.4,0)|rgb(0.1,0.4,0)" textColor="rgb(0,0.5,0)" />
+    <ToggleButton font="Arial Bold" image="Ui/Sprites/Layout/Button" colors="rgb(0.2,0.7,0)|rgb(0.2,0.9,0)|rgb(0.2,0.9,0)" textColors="rgb(0,0.75,0)|rgb(1,1,0)|rgb(1,1,0)" deselectedBackgroundColor="rgb(0.1,0.6,0)" deselectedIconColor="rgb(0.5,0.5,0)" selectedBackgroundColor="rgb(0.2,0.7,0)" selectedIconColor="rgb(1,1,0)" textShadow="rgba(0,0,0,0.5)" />
+    <!--<VerticalScrollView class="scrollView"
+                      color="rgb(0.05,0.05,0.05,0.5)"
+                      image="Sprites/Layout/Base"
+                      movementType="Clamped"
+                      scrollSensitivity="15"
+                      scrollbarBackgroundColor="rgb(0.05,0.1,0)"
+                      scrollbarColors="rgba(0.2,0.6,0,0.8)|rgb(0.2,0.7,0)|rgb(0.2,0.7,0)|rgb(0.2,0.6,0)"
+                      scrollbarImage="Sprites/Layout/Scrollbar" />
+
+      <HorizontalScrollView class="scrollView"
+                      color="rgb(0.05,0.05,0.05,0.5)"
+                      image="Sprites/Layout/Base"
+                      movementType="Clamped"
+                      scrollSensitivity="15"
+                      scrollbarBackgroundColor="rgb(0.05,0.1,0)"
+                      scrollbarColors="rgba(0.2,0.6,0,0.8)|rgb(0.2,0.7,0)|rgb(0.2,0.7,0)|rgb(0.2,0.6,0)"
+                      scrollbarImage="Sprites/Layout/Scrollbar" />-->
+    <!-- Audio 'Styles' -->
+    <!--<Button onClickSound="Audio/beep-timber" audioVolume="0.25" audioMixerGroup="Audio/XmlLayoutExampleAudioMixer|Master/Interface" />-->
+    <Tooltip tooltipBorderColor="rgb(1,1,1)" tooltipTextColor="rgb(1,1,1)" />
+    <!-- Hover Styles (new in v1.21) -->
+    <Slider fillColor="rgb(0.9,0.9,0.9)" handleColor="rgb(0.9,0.9,0.9)" hoverClass="hover" navigation="Vertical" />
+    <Slider class="hover" fillColor="rgb(1,1,1)" handleColor="rgb(1,1,1)" />
+    <Dropdown colors="rgb(0.9,0.9,0.9)|rgb(1,1,1)" textColor="rgb(0.3,0.3,0.3)" hoverClass="hover" />
+    <Dropdown class="hover" textColor="rgb(0,0,0)" />
+    <Toggle colors="rgb(0.9,0.9,0.9)|rgb(1,1,1)|rgb(0.9,0.9,0.9)" />
+    <InputField colors="rgb(0.9,0.9,0.9)|rgb(1,1,1)|rgb(0.9,0.9,0.9)" textColor="rgb(0.3,0.3,0.3)" hoverClass="hover" />
+    <InputField class="hover" textColor="rgb(0,0,0)" />
+    <Button hoverClass="hover" />
+    <Button class="hover" textColor="rgb(1,1,0)" />
+    <!-- Cursors -->
+    <!--<Button cursor="Cursors/ExampleCursor_Hover|0 0" />
+      <InputField cursor="Cursors/ExampleCursor_Hover|0 0" />
+      <Toggle cursor="Cursors/ExampleCursor_Hover|0 0" />
+      <ToggleButton cursor="Cursors/ExampleCursor_Hover|0 0" />
+      <Slider cursor="Cursors/ExampleCursor_Hover|0 0" />-->
+  </Defaults>
+</XmlLayout>

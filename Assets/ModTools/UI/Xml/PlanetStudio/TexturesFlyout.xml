@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Image class="header-arrow" color="LabelText" pivot="0.5 0.5" offsetXY="5 0" sprite="Ui/Sprites/Common/IconTriangleRight" width="12" height="12" rectAlignment="MiddleLeft" rotation="0 0 -90" />
+    <Image class="collapsed:header-arrow" rotation="0 0 0" />
+    <Panel class="header" preferredHeight="30" />
+    <Image class="header-background" color="Button" offsetMax="10 0" hoverClass="header-hover" raycastTarget="true" />
+    <Image class="header-hover" color="ButtonHover" />
+    <TextMeshPro class="header-text" color="White" fontStyle="Bold,UpperCase" alignment="Left" rectAlignment="MiddleLeft" width="300" offsetXY="25 0" />
+  </Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperLeft" rectAlignment="UpperLeft">
+      <Panel id="style-header" class="header">
+        <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+        <Image internalId="arrow" class="header-arrow collapsed" />
+        <TextMeshPro internalId="label" class="header-text" text="TEXTURE 1" />
+      </Panel>
+      <Panel id="style-header" class="header">
+        <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+        <Image internalId="arrow" class="header-arrow expanded" />
+        <TextMeshPro internalId="label" class="header-text" text="TEXTURE 2" />
+      </Panel>
+      <VerticalLayout class="no-image" childForceExpandHeight="false" spacing="10" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperLeft" rectAlignment="UpperLeft">
+        <TextMeshPro class="label" text="Snow_Ground_Texture_9_n" alignment="Top" />
+        <Panel preferredHeight="200">
+          <RawImage texture="Ui/Sprites/Common/DeleteThis_PlaceholderTexture" width="200" height="200" />
+        </Panel>
+        <Panel class="property-row" preferredHeight="30">
+          <Button internalId="button-save-planetary-system" class="btn" onClick="OnBrowseButtonClicked();" width="200">
+            <TextMeshPro text="BROWSE" />
+          </Button>
+        </Panel>
+        <Image class="separator" />
+        <Panel class="property-row slider">
+          <TextMeshPro internalId="slider-label" class="label" text="Color Strength" />
+          <TextMeshPro internalId="slider-value" class="value" text="100%" />
+          <Slider internalId="slider" value="1" />
+        </Panel>
+        <Panel class="property-row row">
+          <TextMeshPro class="label" text="Color Adjustment" width="60%" alignment="Left" rectAlignment="MiddleLeft" />
+          <Spinner numericFormat="0.####" minValue="0.05" maxValue="100" stepSize="0.05" width="40%" rectAlignment="MiddleRight">
+            <TextMeshProInputField>
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel id="template-toggle" class="property-row row">
+          <TextMeshPro internalId="label" class="label" text="Convert To Grayscale" rectAlignment="MiddleLeft" />
+          <Toggle internalId="toggle" rectAlignment="MiddleRight" />
+        </Panel>
+      </VerticalLayout>
+      <Panel id="style-header" class="header">
+        <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+        <Image internalId="arrow" class="header-arrow expanded" />
+        <TextMeshPro internalId="label" class="header-text" text="TEXTURE 3" />
+      </Panel>
+      <Panel id="style-header" class="header">
+        <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+        <Image internalId="arrow" class="header-arrow expanded" />
+        <TextMeshPro internalId="label" class="header-text" text="TEXTURE 4" />
+      </Panel>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

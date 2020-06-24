@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Image class="node-arrow" color="LabelText" pivot="0.5 0.5" sprite="Ui/Sprites/Design/IconArrowRight" width="10" height="10" rectAlignment="MiddleLeft" />
+    <Image class="node-icon" width="20" height="20" rectAlignment="MiddleLeft" />
+    <TextMeshPro class="node-name" rectAlignment="MiddleLeft" alignment="Left" color="ValueText" />
+    <TextMeshPro class="node-count" rectAlignment="MiddleRight" alignment="Right" color="LabelText" offsetXY="-10 0" />
+    <ContentButton class="node-button" preferredHeight="30" buttonColors="Transparent|ButtonPressed|ButtonHover|Button" navigation="None" onMouseEnter="OnMouseEnterNode(this);" onMouseExit="OnMouseExitNode(this);" />
+    <ContentButton class="stage-node-button" buttonColors="ButtonHover|ButtonPressed|ButtonHover|Button" />--&gt;
+      <VerticalLayout class="stage-node" border="ButtonHover" childForceExpandHeight="false" childAlignment="UpperLeft" pivot="0 1" /><VerticalLayout class="selected" border="Primary" /><Image class="indent-1&gt;@Image" offsetXY="25 0" /><TextMeshPro class="indent-1&gt;@TextMeshPro" offsetMin="55 0" /><Image class="indent-2&gt;@Image" offsetXY="55 0" /><TextMeshPro class="indent-2&gt;@TextMeshPro" offsetMin="85 0" /><TextMeshPro class="stage-info-text" fontSize="12" raycastTarget="true" tooltipPosition="Above" /><Panel class="stat-panel" color="DarkPanel" /><ContentButton class="ready-for-drag" buttonColors="Primary|Primary|Primary|Primary" /></Defaults>
+  <HorizontalLayout class="no-image" rectAlignment="UpperCenter" height="55" padding="10 15 10 10" spacing="10">
+    <Button name="Staging.AddStage" class="btn btn-primary" onClick="OnAddStageButtonClicked();" preferredWidth="350">
+      <TextMeshPro text="ADD STAGE" />
+    </Button>
+    <ContentButton name="Staging.ResetStage" id="reset-staging-button" class="btn btn-warning" onClick="OnResetStagingButtonClicked();" preferredWidth="125" tooltipPosition="Right" tooltip="Reset all changes made to this craft's stages.">
+      <Image sprite="Ui/Sprites/Design/IconResetStaging" width="25" height="21" />
+    </ContentButton>
+    <ContentButton name="Staging.ToggleAutoRecalculate" id="auto-recalculate-button" class="btn" onClick="OnToggleAutoRecalculateButtonClicked();" preferredWidth="125" tooltipPosition="Right" tooltip="Toggle the auto-recalculation of stages. For new players, this is best to leave on, however if the auto-staging is not working how you would like, you can simply disable it for this craft.">
+      <Image sprite="Ui/Sprites/Design/IconAutoRecalculateStaging" width="24" height="24" />
+    </ContentButton>
+    <ContentButton name="Staging.ToggleDeltaV" id="show-deltav-button" class="btn" onClick="OnToggleDeltaVButtonClicked();" preferredWidth="125" tooltipPosition="Right" tooltip="Toggle display of Delta-V and other advanced info for stages. These calculations can slow performance a bit, so you can toggle them off to make things a little more snappy while editing stages on a large craft.">
+      <Image sprite="Ui/Sprites/Common/IconDeltaV" width="25" height="13" />
+    </ContentButton>
+  </HorizontalLayout>
+  <VerticalScrollView class="no-image" offsetMax="0 -45">
+    <VerticalLayout id="content-root" class="no-image" childForceExpandHeight="false" contentSizeFitter="vertical" pivot="0 1" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="10 10 10 40" spacing="5">
+      <Panel id="info-total-panel" class="stat-panel" active="false" preferredHeight="30" border="ButtonHover">
+        <TextMeshPro id="info-total-delta-v" raycastTarget="true" color="ValueText" tooltip="Total Delta-V for the craft." tooltipPosition="Above" />
+      </Panel>
+      <VerticalLayout id="template-stage-node" class="stage-node" active="false" raycastTarget="true" color="Button">
+        <ContentButton class="node-button stage-node-button">
+          <Image internalId="arrow" class="node-arrow" offsetXY="12 0" />
+          <TextMeshPro internalId="name" class="node-name" offsetXY="30 0" />
+          <TextMeshPro internalId="count" class="node-count" text="x2" />
+          <Button internalId="delete-button" class="delete-button" colors="Button|Button|Button|Button" rectAlignment="MiddleRight" offsetXY="-10 0" active="false" onClick="OnDeleteStageNodeClicked(this);" />
+        </ContentButton>
+        <Panel internalId="info-panel" class="stat-panel" preferredHeight="25" active="false">
+          <TextMeshPro internalId="info-burn-time" class="stage-info-text" rectAlignment="MiddleLeft" width="33%" tooltip="Amount of time the engines will burn in this stage" />
+          <TextMeshPro internalId="info-twr" class="stage-info-text" rectAlignment="MiddleCenter" width="33%" tooltip="The Thrust to Weight ratio of this stage" />
+          <TextMeshPro internalId="info-delta-v" class="stage-info-text" rectAlignment="MiddleRight" width="33%" tooltip="The Delta-V for this stage" />
+        </Panel>
+        <Panel internalId="empty" class="no-image" active="false" preferredHeight="30">
+          <TextMeshPro text="Empty Stage" color="LabelText" />
+        </Panel>
+      </VerticalLayout>
+      <VerticalLayout id="template-category-node" class="no-image" childForceExpandHeight="false" childAlignment="UpperLeft" pivot="0 1" active="false">
+        <ContentButton class="node-button">
+          <Image internalId="arrow" class="node-arrow" offsetXY="35 0" />
+          <TextMeshPro internalId="name" class="node-name" offsetXY="55 0" />
+          <TextMeshPro internalId="count" class="node-count" text="x2" />
+        </ContentButton>
+      </VerticalLayout>
+      <ContentButton id="template-part-node" class="node-button indent-1" pivot="0 1" active="false">
+        <Image internalId="node-icon" class="node-icon" width="20" height="20" />
+        <TextMeshPro internalId="name" class="node-name" />
+      </ContentButton>
+      <Panel id="rearrange-indicator" preferredHeight="4" active="false">
+        <Image color="Primary" height="2" />
+      </Panel>
+      <VerticalLayout id="template-panel" class="no-image" childForceExpandHeight="false" childAlignment="UpperCenter" contentSizeFitter="vertical" spacing="10" pivot="0 1" active="false"></VerticalLayout>
+    </VerticalLayout>
+  </VerticalScrollView>
+  <Panel id="drag-parent" class="no-image" active="true"></Panel>
+</XmlLayout>

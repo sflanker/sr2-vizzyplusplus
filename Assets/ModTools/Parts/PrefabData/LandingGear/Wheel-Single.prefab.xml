@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Wheel-Single" path="Craft/Parts/Prefabs/LandingGear/Wheel-Single.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.WheelStyleTransformDataScript" />
+  <GameObject name="WheelAssembly">
+    <GameObject name="Collider" />
+    <GameObject name="SlantRoot">
+      <GameObject name="SuspensionTravelRoot">
+        <GameObject name="TurnRoot">
+          <GameObject name="LandingGearCurvedWheelOffset">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="SpinRoot">
+            <GameObject name="LandingGearRim">
+              <Component type="UnityEngine.MeshFilter" />
+              <Component type="UnityEngine.MeshRenderer" />
+              <Component type="ModApi.Craft.Parts.PartMeshScript" />
+            </GameObject>
+            <GameObject name="LandingGearTire">
+              <Component type="UnityEngine.MeshFilter" />
+              <Component type="UnityEngine.MeshRenderer" />
+              <Component type="ModApi.Craft.Parts.PartMeshScript" />
+            </GameObject>
+          </GameObject>
+        </GameObject>
+        <GameObject name="MeshCollider">
+          <Component type="UnityEngine.MeshCollider" />
+        </GameObject>
+        <GameObject name="Ball">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+        <GameObject name="SuspensionArm">
+          <GameObject name="LowerSupportMesh">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+            <Component type="UnityEngine.CapsuleCollider" />
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

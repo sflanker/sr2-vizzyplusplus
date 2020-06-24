@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Image class="radial-progress-bar" type="Filled" fillMethod="Radial360" rotation="0 0 0" />
+    <Image class="foreground" color="Primary" />
+    <Image class="fuel-tank-drain:foreground" color="Warning" />
+  </Defaults>
+  <Panel id="template" class="no-image" width="55" height="55" scale="1.0" offsetXY="0 0" pivot="0.5 0.5">
+    <Image color="Panel" sprite="Ui/Sprites/Circle" />
+    <Image class="radial-progress-bar" color="ProgressBarBackground" sprite="Ui/Sprites/CircleProgressBar" fillAmount="1.0" />
+    <Image internalId="transfer-progress" class="radial-progress-bar foreground" sprite="Ui/Sprites/CircleProgressBar" fillAmount="0.4" />
+    <TextMeshPro internalId="percent" text="100%" fontSize="14" offsetXY="0 0" />
+  </Panel>
+</XmlLayout>

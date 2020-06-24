@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="part-icon" hoverClass="part-icon-hover" raycastTarget="true" pivot="1 1" />
+    <Panel class="part-icon-hover" color="Button" border="Primary" />
+    <Image class="part-icon:@Image" width="80" height="80" />
+    <Panel class="subassembly-hover" color="Button" />
+    <Image class="delete-button" active="false" />
+    <Image class="subassembly-hover:delete-button" active="true" />
+    <Image class="delete-button" onClick="OnDeleteSubassemblyClicked(this);" />
+  </Defaults>
+  <VerticalLayout id="part-category-panel" class="no-image" childForceExpandHeight="false" width="50" offsetXY="0 0" rectAlignment="UpperLeft">
+    <Panel id="template-part-category" active="false" name="" class="toggle-button toggle-category audio-btn-click" tooltip="" data-category-id="" onClick="OnPartCategoryButtonClicked(this);">
+      <Image class="toggle-button-icon" sprite="" />
+    </Panel>
+  </VerticalLayout>
+  <Panel class="no-image" offsetMin="52 0" height="100%">
+    <VerticalScrollView id="parts" class="no-image" active="false">
+      <GridLayout id="parts-content" class="no-image" cellSize="100 100" spacing="0" contentSizeFitter="vertical" pivot="0 1" padding="0 0 0 120">
+        <Panel id="template-part" class="part-icon" active="false">
+          <Image internalId="icon" ignoreLayout="true" rectAlignment="MiddleCenter" />
+        </Panel>
+      </GridLayout>
+    </VerticalScrollView>
+    <Panel id="subassemblies" class="no-image" active="false">
+      <Panel class="no-image" height="32" padding="0 2 0 0" rectAlignment="UpperCenter">
+        <TextMeshProInputField id="subassembly-search-input" text="" class="search-input" onValueChanged="FilterSubassemblies(value);">
+          <TMP_Placeholder text="Search..." />
+          <TMP_Text text="" />
+        </TextMeshProInputField>
+      </Panel>
+      <VerticalScrollView class="no-image" offsetMax="0 -35">
+        <VerticalLayout id="subassemblies-content" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" pivot="0 1" padding="0 0 0 20">
+          <Panel id="template-subassembly" preferredHeight="32" rectAlignment="UpperCenter" active="false" raycastTarget="true" hoverClass="subassembly-hover">
+            <TextMeshPro internalId="name" offsetMin="10 0" alignment="Left" text="Subassembly Name" />
+            <Image class="border" rectAlignment="LowerCenter" height="1" />
+            <Image class="delete-button" rectAlignment="MiddleRight">
+              <Image class="delete-button-icon" />
+            </Image>
+          </Panel>
+        </VerticalLayout>
+      </VerticalScrollView>
+    </Panel>
+  </Panel>
+  <Panel rectAlignment="UpperCenter" offsetMin="51 0">
+    <TextMeshPro id="no-category-selected" alignment="Top" offsetXY="0 -10" text="Select a category on the left to view parts." />
+  </Panel>
+  <Panel id="info-popup" active="false" border="Border" showAnimation="FadeIn" animationDuration="0.1" color="#010101F0" width="300" padding="15" contentSizeFitter="vertical" pivot="0 1">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" spacing="10">
+      <TextMeshPro internalId="name" color="Primary" text="Mage I Engine" alignment="Center" />
+      <TextMeshPro internalId="description" class="label" text="The mage is a powerful engine..." alignment="Center" />
+      <Panel preferredHeight="20">
+        <TextMeshPro internalId="price" text="$35k" alignment="Center" anchorMax="0.5 1" />
+        <TextMeshPro internalId="mass" text="3,245kg" alignment="Center" anchorMin="0.5 0" />
+        <TextMeshPro internalId="variable-properties" text="Mass and price vary with size" alignment="Center" active="false" />
+      </Panel>
+      <VerticalLayout internalId="engine-details" childForceExpandHeight="false" spacing="5">
+        <Image preferredHeight="1" color="Border" />
+        <TextMeshPro class="value" text="Engine Details" alignment="Center" />
+        <Panel class="row" preferredHeight="20">
+          <TextMeshPro class="label" text="Thrust" alignment="Center" anchorMax="0.5 1" />
+          <TextMeshPro internalId="engine-thrust" class="value" text="400kN" alignment="Center" anchorMin="0.5 0" />
+        </Panel>
+        <Panel class="row" preferredHeight="20">
+          <TextMeshPro class="label" text="Isp (vac)" alignment="Center" anchorMax="0.5 1" />
+          <TextMeshPro internalId="engine-isp-vac" class="value" text="321s" alignment="Center" anchorMin="0.5 0" />
+        </Panel>
+        <Panel class="row" preferredHeight="20">
+          <TextMeshPro class="label" text="Isp (SL)" alignment="Center" anchorMax="0.5 1" />
+          <TextMeshPro internalId="engine-isp-sl" class="value" text="282s" alignment="Center" anchorMin="0.5 0" />
+        </Panel>
+        <Panel class="row" preferredHeight="20">
+          <TextMeshPro class="label" text="Fuel Type" alignment="Center" anchorMax="0.5 1" />
+          <TextMeshPro internalId="engine-fuel-type" class="value" text="RP-1" alignment="Center" anchorMin="0.5 0" />
+        </Panel>
+        <Panel class="row" preferredHeight="20">
+          <TextMeshPro class="label" text="Power Usage" alignment="Center" anchorMax="0.5 1" />
+          <TextMeshPro internalId="engine-power-usage" class="value" text="0 kW" alignment="Center" anchorMin="0.5 0" />
+        </Panel>
+      </VerticalLayout>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

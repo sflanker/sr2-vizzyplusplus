@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Inlet1" path="Craft/Parts/Prefabs/Inlet1.prefab">
+  <GameObject name="Collider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.FuselageColliderScript" />
+  </GameObject>
+</GameObject>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="toggle-flyout" tooltipPosition="Right" />
+    <TextMeshPro class="message-text" offsetXY="0 -10" />
+    <TextMeshPro class="level-in-progress" offsetXY="0 -50" />
+    <Image class="finger-button" sprite="Ui/Sprites/Design/FingerToolButton" color="#00000050" width="42" height="36" raycastTarget="true" />
+    <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolSelectPart" width="34" height="34" />
+    <Image class="finger-button-selected" color="Primary" />
+  </Defaults>
+  <Panel id="todo-main-panel" opacity="1" class="safe-area no-image">
+    <!--
+      <Button id="undo-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-10 10" icon="Ui/Sprites/Design/IconButtonUndo" onClick="OnUndoButtonClicked();" tooltip="Undo" tooltipPosition="Left" />
+      <Button id="redo-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-10 60" icon="Ui/Sprites/Design/IconButtonRedo" onClick="OnRedoButtonClicked();" tooltip="Redo" tooltipPosition="Left"  />
+      -->
+    <Panel class="panel" rectAlignment="MiddleLeft" height="100%" width="51" border="Border">
+      <VerticalLayout class="no-image" childForceExpandHeight="false" padding="1 1 0 0">
+        <Panel preferredHeight="30" color="#171717"></Panel>
+        <Panel internalId="flyout-menu" class="toggle-button toggle-flyout audio-btn-click" tooltip="Menu" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonMenu" />
+        </Panel>
+        <!--<Panel internalId="flyout-menu" class="toggle-button toggle-flyout audio-btn-click ps-only" tooltip="Brush" onClick="OnToggleFlyoutButtonClicked(this);">
+               <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonView"/>
+            </Panel>-->
+      </VerticalLayout>
+    </Panel>
+    <Panel id="flyout-menu" class="panel flyout" width="225" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="MENU" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/MenuFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.MenuFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel class="no-image cb-only">
+      <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/CelestialBodyDesigner" controller="Assets.Scripts.PlanetStudio.CelestialBodyDesignerController" />
+    </Panel>
+    <!--
+      <Panel id="flyout-brush" class="panel flyout" width="300" active="false">
+         <Panel class="flyout-header">
+            <TextMeshPro text="BRUSH" />
+            <Image class="flyout-close-button audio-btn-back" />
+         </Panel>
+         <Panel class="flyout-content no-image">
+            <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/BrushFlyout" controller="Assets.Scripts.Design.MenuPanelScript" />
+         </Panel>
+      </Panel>
+      
+      <Panel id="flyout-biomes" class="panel flyout" width="350" active="false">
+         <Panel class="flyout-header">
+            <TextMeshPro text="BIOMES" />
+            <Image class="flyout-close-button audio-btn-back" />
+         </Panel>
+         <Panel class="flyout-content no-image">
+            <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/BiomesFlyout" controller="Assets.Scripts.Design.MenuPanelScript" />
+         </Panel>
+      </Panel>
+
+      <Panel id="flyout-textures" class="panel flyout" width="300" active="false">
+         <Panel class="flyout-header">
+            <TextMeshPro text="TERRAIN TEXTURES" />
+            <Image class="flyout-close-button audio-btn-back" />
+         </Panel>
+         <Panel class="flyout-content no-image">
+            <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/TexturesFlyout" controller="Assets.Scripts.Design.MenuPanelScript" />
+         </Panel>
+      </Panel>-->
+    <TextMeshPro id="loading-text" class="text-lg" rectAlignment="LowerRight" width="160" height="30" text="Loading..." active="false" />
+  </Panel>
+  <TextMeshPro id="message-text" class="message-text" rectAlignment="UpperCenter" alignment="Top" height="50" width="50%" showAnimation="None" hideAnimation="FadeOut" animationDuration="0.5" />
+</XmlLayout>

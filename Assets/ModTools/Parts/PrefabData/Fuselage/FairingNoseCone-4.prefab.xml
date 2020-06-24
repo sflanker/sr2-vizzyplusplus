@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="FairingNoseCone-4" path="Craft/Parts/Prefabs/Fuselage/FairingNoseCone-4.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.MeshDefinitionScript" />
+  <GameObject name="Mesh-1">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    <GameObject name="Collider.008">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.009">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.010">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.011">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.012">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.013">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.014">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.015">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="Mesh-2">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Design.HideScript" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    <GameObject name="Collider.000">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.001">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.002">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.003">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.004">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.005">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.006">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+    <GameObject name="Collider.007">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+    </GameObject>
+  </GameObject>
+</GameObject>

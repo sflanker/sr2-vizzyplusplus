@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Image class="edit-button" color="Button" sprite="Ui/Sprites/Design/IconButtonEdit" width="24" height="24" hoverClass="edit-hover" />
+    <Image class="edit-hover" color="ButtonHover" />
+    <TextMeshPro class="error" color="Red" />
+  </Defaults>
+  <RectTransform class="safe-area">
+    <Panel id="program-container" raycastTarget="true" color="#2C2E33">
+      <Panel name="ProgramPanel" id="program-panel" anchorMin="0.5 1" anchorMax="0.5 1"></Panel>
+      <Image id="connection-hint-line" color="Primary" sprite="Ui/Vizzy/ConnectingLine" width="100" height="6" active="false" type="Sliced" />
+    </Panel>
+    <Panel id="main-ui" opacity="1">
+      <Panel rectAlignment="MiddleLeft" width="52" class="panel" border="Border">
+        <VerticalLayout id="category-panel" class="no-image" childForceExpandHeight="false" width="50" offsetXY="0 0" rectAlignment="UpperLeft">
+          <Panel id="template-category" active="false" name="" class="toggle-button toggle-category audio-btn-click" tooltip="" onClick="OnCategoryButtonClicked(this);">
+            <Image class="toggle-button-icon" sprite="" />
+          </Panel>
+          <Panel preferredHeight="30" color="#171717"></Panel>
+          <Panel id="menu-button" name="Menu" data-category-id="Menu" class="toggle-button toggle-category audio-btn-click" tooltip="" onClick="OnCategoryButtonClicked(this);">
+            <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonMenu" />
+          </Panel>
+        </VerticalLayout>
+      </Panel>
+      <Panel id="toolbox" class="panel flyout" width="300" active="false">
+        <Panel class="flyout-header">
+          <TextMeshPro id="category-text" text="CONTROL" />
+          <Image class="flyout-close-button audio-btn-back" onClick="OnClosePanelClicked();" />
+        </Panel>
+        <VerticalScrollView class="no-image" offsetMax="0 -30">
+          <Panel id="toolbox-node-parent" pivot="0 1" anchorMin="0 1" anchorMax="0 1"></Panel>
+        </VerticalScrollView>
+        <Panel id="template-variable" active="false" rectAlignment="UpperLeft" pivot="0 1" height="30">
+          <Image class="edit-button" onClick="OnEditVariableClicked(this);" />
+        </Panel>
+        <Button id="create-button" class="btn btn-primary" rectAlignment="LowerCenter" onClick="OnButtonCreateClicked();" tooltip="" tooltipPosition="Above" active="false">
+          <TextMeshPro internalId="button-text" text="CREATE" />
+        </Button>
+      </Panel>
+      <Panel id="menu" class="panel flyout" height="100%" width="225" active="false">
+        <Panel class="flyout-header">
+          <TextMeshPro text="MENU" />
+          <Image class="flyout-close-button audio-btn-back" onClick="OnClosePanelClicked();" />
+        </Panel>
+        <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" offsetXY="0 -30" rectAlignment="UpperCenter">
+          <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnButtonApplyClicked();" tooltip="Save the changes to the craft's flight program.">
+            <TextMeshPro text="SAVE TO CRAFT" />
+          </Button>
+          <Button class="btn" onClick="OnButtonCancelClicked();" tooltip="Discard the changes you've made to the craft's flight program.">
+            <TextMeshPro text="DISCARD AND EXIT" />
+          </Button>
+          <Image class="separator" />
+          <Button class="btn" onClick="OnButtonNewClicked();" tooltip="Start over with a new program.">
+            <TextMeshPro text="NEW PROGRAM" />
+          </Button>
+          <Button class="btn" onClick="OnButtonSaveClicked();" tooltip="Save this program to your hard drive.">
+            <TextMeshPro text="SAVE PROGRAM" />
+          </Button>
+          <Button class="btn" onClick="OnButtonLoadClicked();" tooltip="Load an existing program from your hard drive.">
+            <TextMeshPro text="LOAD PROGRAM" />
+          </Button>
+          <Image class="separator" />
+          <Button class="btn" onClick="OnButtonImportClicked();" tooltip="Import an existing program into this program.">
+            <TextMeshPro text="IMPORT PROGRAM" />
+          </Button>
+          <Image class="separator" />
+          <Panel class="row">
+            <Button id="undo-button" class="btn" rectAlignment="MiddleLeft" onClick="OnButtonUndoClicked();" tooltip="Undoes the last step." width="46%">
+              <TextMeshPro text="UNDO" />
+            </Button>
+            <Button id="redo-button" class="btn" rectAlignment="MiddleRight" onClick="OnButtonRedoClicked();" tooltip="Redoes the last step." width="46%">
+              <TextMeshPro text="REDO" />
+            </Button>
+          </Panel>
+        </VerticalLayout>
+      </Panel>
+    </Panel>
+    <RectTransform id="drop-zones" class="safe-area" active="false">
+      <Panel id="trashcan-dropzone" class="move-part-dropzone no-image" rectAlignment="UpperRight">
+        <Image sprite="Ui/Sprites/Design/DropZone" setNativeSize="true" raycastTarget="true" />
+        <Image sprite="Ui/Sprites/Design/IconButtonTrash" setNativeSize="true" />
+        <TextMeshPro text="Drag to Delete" offsetXY="0 -75" />
+      </Panel>
+    </RectTransform>
+    <Panel id="drag-panel"></Panel>
+    <Panel id="message-background" color="TransparentPanel" active="false" />
+    <TextMeshPro id="message-text" class="message-text" rectAlignment="UpperCenter" offsetXY="0 -20" alignment="Top" height="50" width="50%" showAnimation="None" hideAnimation="None" />
+  </RectTransform>
+</XmlLayout>

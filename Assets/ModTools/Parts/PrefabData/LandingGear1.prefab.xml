@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="LandingGear1" path="Craft/Parts/Prefabs/LandingGear1.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.ConfigurableGearScript" />
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.LandingGearAnimator" />
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.LandingGearScriptConfig" />
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+  <GameObject name="AttachPointWithBay" />
+  <GameObject name="AttachPointWithoutBay" />
+  <GameObject name="LandingGear">
+    <GameObject name="Offset">
+      <GameObject name="UpperSupport">
+        <GameObject name="UpperMesh">
+          <GameObject name="LandingGearMainBase1">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="BaySuspension">
+            <GameObject name="WheelPrefabBase" />
+            <GameObject name="LandingGearStraightBase">
+              <Component type="UnityEngine.MeshFilter" />
+              <Component type="UnityEngine.MeshRenderer" />
+              <Component type="ModApi.Craft.Parts.PartMeshScript" />
+              <Component type="UnityEngine.CapsuleCollider" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="Suspension">
+            <GameObject name="Wheel-Double">
+              <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.WheelStyleTransformDataScript" />
+              <GameObject name="WheelAssembly">
+                <GameObject name="Collider" />
+                <GameObject name="SlantRoot">
+                  <GameObject name="SuspensionTravelRoot">
+                    <GameObject name="SuspensionArm">
+                      <GameObject name="LowerSupportMesh">
+                        <Component type="UnityEngine.MeshFilter" />
+                        <Component type="UnityEngine.MeshRenderer" />
+                        <Component type="UnityEngine.CapsuleCollider" />
+                        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                      </GameObject>
+                    </GameObject>
+                    <GameObject name="TurnRoot">
+                      <Component type="UnityEngine.MeshFilter" />
+                      <Component type="UnityEngine.MeshRenderer" />
+                      <GameObject name="SpinRoot">
+                        <GameObject name="Wheels">
+                          <GameObject name="LandingGearTire1">
+                            <Component type="UnityEngine.MeshFilter" />
+                            <Component type="UnityEngine.MeshRenderer" />
+                            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                            <GameObject name="LandingGearRim1">
+                              <Component type="UnityEngine.MeshFilter" />
+                              <Component type="UnityEngine.MeshRenderer" />
+                              <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                            </GameObject>
+                            <GameObject name="MeshCollider">
+                              <Component type="UnityEngine.MeshCollider" />
+                            </GameObject>
+                          </GameObject>
+                          <GameObject name="LandingGearTire2">
+                            <Component type="UnityEngine.MeshFilter" />
+                            <Component type="UnityEngine.MeshRenderer" />
+                            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                            <GameObject name="MeshCollider">
+                              <Component type="UnityEngine.MeshCollider" />
+                            </GameObject>
+                            <GameObject name="LandingGearRim2">
+                              <Component type="UnityEngine.MeshFilter" />
+                              <Component type="UnityEngine.MeshRenderer" />
+                              <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                            </GameObject>
+                          </GameObject>
+                        </GameObject>
+                      </GameObject>
+                    </GameObject>
+                  </GameObject>
+                </GameObject>
+              </GameObject>
+            </GameObject>
+          </GameObject>
+        </GameObject>
+        <GameObject name="BraceHolder">
+          <GameObject name="LandingGearMainBase2">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="Brace">
+            <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.ControlRodLinkScript" />
+            <GameObject name="BraceRod">
+              <GameObject name="BraceRodMesh">
+                <Component type="UnityEngine.MeshFilter" />
+                <Component type="UnityEngine.MeshRenderer" />
+                <Component type="ModApi.Craft.Parts.PartMeshScript" />
+              </GameObject>
+            </GameObject>
+            <GameObject name="BraceUJoint">
+              <GameObject name="BraceUJointMesh">
+                <Component type="UnityEngine.MeshRenderer" />
+                <Component type="UnityEngine.MeshFilter" />
+                <Component type="ModApi.Craft.Parts.PartMeshScript" />
+              </GameObject>
+            </GameObject>
+          </GameObject>
+        </GameObject>
+      </GameObject>
+      <GameObject name="InternalBay">
+        <Component type="UnityEngine.BoxCollider" />
+        <Component type="ModApi.Craft.Parts.PartColliderScript" />
+        <GameObject name="BackOfBay" />
+        <GameObject name="FrontOfBay" />
+        <GameObject name="Bay-Curved">
+          <GameObject name="LandingGearBayCurved">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="LandingGearDepthMaskCurved">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+        </GameObject>
+        <GameObject name="Door-Curved-Vertical">
+          <GameObject name="LeftBayDoor">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+            <Component type="UnityEngine.BoxCollider" />
+          </GameObject>
+          <GameObject name="RightBayDoor">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+            <Component type="UnityEngine.BoxCollider" />
+          </GameObject>
+        </GameObject>
+      </GameObject>
+      <GameObject name="UpperBrace" />
+      <GameObject name="LowerBrace">
+        <GameObject name="Base" />
+        <GameObject name="Extension" />
+      </GameObject>
+      <GameObject name="TorqueLink">
+        <GameObject name="Upper" />
+        <GameObject name="Lower" />
+      </GameObject>
+    </GameObject>
+    <GameObject name="RetractedWheelPosition" />
+  </GameObject>
+</GameObject>

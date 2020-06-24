@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Color name="TutorialPanel" color="#111111F0" />
+    <ContentButton class="tutorial-button" buttonColors="Button|ButtonHover|ButtonPressed|ButtonDisabled" width="32" height="32" tooltipPosition="Above" />
+  </Defaults>
+  <RectTransform id="tutorial">
+    <RectTransform class="safe-area">
+      <VerticalLayout pivot="0.5 0" id="tutorial-panel" color="TutorialPanel" childForceExpandHeight="false" contentSizeFitter="vertical" width="640" height="100" rectAlignment="LowerCenter" offsetXY="0 0" padding="5 5 5 10" spacing="5">
+        <Panel class="no-image" preferredHeight="10"></Panel>
+        <TextMeshPro id="tutorial-step-text" color="White" autoSizeTextContainer="true" margin="10 0 10 0" />
+        <Panel class="no-image" preferredHeight="15"></Panel>
+        <TextMeshPro id="error-text" color="Warning" autoSizeTextContainer="true" margin="10 0 10 0" />
+        <Panel id="instruction-panel" class="no-image" preferredHeight="40" active="false">
+          <Panel padding="40 40 0 0">
+            <TextMeshPro color="Primary" id="tutorial-instruction-text" />
+          </Panel>
+          <ContentButton class="panel tutorial-button" sprite="Ui/Sprites/Design/IconTutorialRestartStep" rectAlignment="MiddleLeft" onClick="OnRestartStepClicked();" tooltip="Restart this step"></ContentButton>
+          <ContentButton class="panel tutorial-button" sprite="Ui/Sprites/Design/IconTutorialSkipStep" rectAlignment="MiddleRight" onClick="OnSkipStepClicked();" tooltip="Skip this step"></ContentButton>
+        </Panel>
+        <Panel id="okay-panel" class="no-image" preferredHeight="40" active="false">
+          <Button class="btn btn-primary" width="150" onClick="OnSkipStepClicked();">
+            <TextMeshPro text="Okay" />
+          </Button>
+        </Panel>
+        <Panel id="intro-panel" class="no-image" preferredHeight="40" padding="10 10 0 0" active="false">
+          <Panel class="no-image">
+            <Button class="btn" width="150" rectAlignment="MiddleLeft" onClick="OnExitTutorialClicked();">
+              <TextMeshPro text="Cancel" />
+            </Button>
+            <Button class="btn btn-primary" width="150" rectAlignment="MiddleRight" onClick="OnSkipStepClicked();">
+              <TextMeshPro text="Start Tutorial" />
+            </Button>
+          </Panel>
+        </Panel>
+        <Image ignoreLayout="true" height="2" color="Panel" pivot="0 0" rectAlignment="LowerLeft"></Image>
+        <Image id="tutorial-progress" ignoreLayout="true" height="2" color="Primary" pivot="0 0" rectAlignment="LowerLeft" width="0%"></Image>
+      </VerticalLayout>
+    </RectTransform>
+    <Image id="tutorial-highlight" width="64" height="64" sprite="Ui/Sprites/Border/Square-2px" type="Sliced" fillCenter="false" active="false" />
+    <Image id="tutorial-highlight-offscreen" width="64" height="32" sprite="Ui/Sprites/Design/OffscreenArrow" active="false" />
+  </RectTransform>
+</XmlLayout>

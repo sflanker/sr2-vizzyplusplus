@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Image class="requirement-status-icon" sprite="Ui/Sprites/Flight/RequirementPass" color="Button" width="16" height="16" rectAlignment="MiddleLeft" tooltipPosition="Above" tooltip="This requirement is incomplete" />
+    <Image class="failed" sprite="Ui/Sprites/Flight/RequirementFail" color="Alert" tooltip="You have failed this requirement" />
+    <Image class="passed" sprite="Ui/Sprites/Flight/RequirementPass" color="Primary" tooltip="You have passed this requirement (for now)" />
+    <TextMeshPro class="header-text" color="White" />
+    <TextMeshPro class="pinned:@TextMeshPro" color="Primary" />
+    <ContentButton class="end-button" width="32" height="32" navigation="None" tooltipPosition="Above" rectAlignment="MiddleRight" />
+    <Panel class="win" color="Primary" />
+    <Panel class="lose" color="#a22600" />
+    <TextMeshPro class="win:end-message" text="You did it!" />
+    <TextMeshPro class="lose:end-message" text="You have failed!" />
+  </Defaults>
+  <VerticalLayout id="info-panel" showAnimation="SlideIn_Top" hideAnimation="SlideOut_Top" animationDuration="0.1" class="flight-panel border" rectAlignment="UpperCenter" padding="0" spacing="5" contentSizeFitter="vertical" childAlignment="LowerCenter" width="360" height="0" childForceExpandHeight="false" active="false" onMouseExit="OnMouseExitPanel();">
+    <Panel preferredHeight="40" color="TransparentPanel">
+      <Image height="1" rectAlignment="LowerCenter" width="100%" color="Border" />
+    </Panel>
+    <Panel id="requirement-template" class="no-image" preferredHeight="25" active="false">
+      <Image internalId="icon" class="requirement-status-icon" offsetXY="10 0" />
+      <TextMeshPro internalId="label" class="value" alignment="Left" offsetXY="40 0" />
+      <TextMeshPro internalId="value" class="label" alignment="Right" offsetXY="-10 0" />
+    </Panel>
+    <Panel id="end-level-buttons" class="no-image" preferredHeight="40" active="false">
+      <TextMeshPro class="end-message" color="White" />
+      <ContentButton class="btn end-button" tooltip="Exit Level" onClick="OnExitClicked();" offsetXY="-5 0">
+        <Image internalId="image" sprite="Ui/Sprites/Flight/IconQuit" width="24" height="24" />
+      </ContentButton>
+      <ContentButton class="btn end-button" rectAlignment="MiddleLeft" tooltip="Retry Level" onClick="OnRetryClicked();" offsetXY="5 0">
+        <Image internalId="image" sprite="Ui/Sprites/Flight/IconRetry" width="24" height="24" />
+      </ContentButton>
+    </Panel>
+  </VerticalLayout>
+  <Panel id="header-panel" width="360" height="40" rectAlignment="UpperCenter" onMouseEnter="OnMouseEnterPanel();" onClick="OnMouseClickPanel();">
+    <Panel class="flight-panel panel-angled border-angled" rotation="0 0 180"></Panel>
+    <TextMeshPro id="level-message-text" class="header-text" height="40" text="Fuel Usage: 12.1kL" fontSize="14" />
+  </Panel>
+</XmlLayout>

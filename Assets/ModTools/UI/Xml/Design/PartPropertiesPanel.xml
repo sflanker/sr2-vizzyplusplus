@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <TextMeshPro class="label" raycastTarget="true" tooltipPosition="Above" width="225" alignment="Left" rectAlignment="MiddleLeft" />
+    <Image class="header-arrow" color="LabelText" pivot="0.5 0.5" offsetXY="5 0" sprite="Ui/Sprites/Common/IconTriangleRight" width="12" height="12" rectAlignment="MiddleLeft" rotation="0 0 -90" />
+    <Image class="collapsed:header-arrow" rotation="0 0 0" />
+    <Panel class="header" preferredHeight="30" />
+    <Image class="header-background" color="Button" offsetMax="10 0" hoverClass="header-hover" raycastTarget="true" />
+    <Image class="header-hover" color="ButtonHover" />
+    <TextMeshPro class="header-text" color="White" fontStyle="Bold,UpperCase" alignment="Left" rectAlignment="MiddleLeft" width="300" offsetXY="25 0" />
+    <VerticalLayout class="properties-group" childForceExpandHeight="false" childAlignment="UpperLeft" pivot="0 1" spacing="5" />
+    <VerticalLayout class="property-row" tooltipPosition="Right" tooltipBackgroundColor="DarkPanel" />
+    <Panel class="property-row" tooltipPosition="Right" tooltipBackgroundColor="DarkPanel" />
+    <TextMeshProInputField class="spinner-texture-input" offsetMin="10 0" offsetMax="-10 0" />
+  </Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout id="content-root" class="no-image" childForceExpandHeight="false" pivot="0 1" contentSizeFitter="vertical" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="10 10 10 40" spacing="5">
+      <Panel id="templates" class="no-image" ignoreLayout="true" active="false">
+        <Panel id="template-header" class="header" active="false">
+          <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+          <Image internalId="arrow" class="header-arrow expanded" />
+          <TextMeshPro internalId="label" class="header-text" text="Header Text" />
+          <Button internalId="delete-button" class="delete-button" rectAlignment="MiddleRight" active="false" offsetXY="-5 0" />
+        </Panel>
+        <!--<Panel id="template-label" class="property-row row">
+               <TextMeshPro internalId="value" />
+            </Panel>-->
+        <TextMeshPro id="template-label" class="property-row row" internalId="value" raycastTarget="true" />
+        <Panel id="template-label-value" class="property-row row">
+          <TextMeshPro internalId="label" class="label" />
+          <TextMeshPro internalId="value" class="value" alignment="Right" />
+        </Panel>
+        <Panel id="template-slider" class="property-row slider">
+          <TextMeshPro internalId="slider-label" class="label" text="Smoothness" />
+          <TextMeshPro internalId="slider-value" class="value" text="None" />
+          <Slider internalId="slider" />
+        </Panel>
+        <Panel id="template-toggle" class="property-row row">
+          <TextMeshPro internalId="label" class="label" text="Invert" rectAlignment="MiddleLeft" />
+          <Toggle internalId="toggle" rectAlignment="MiddleRight" />
+        </Panel>
+        <Panel id="template-label-button" class="property-row row">
+          <TextMeshPro internalId="label" class="label" text="Invert" rectAlignment="MiddleLeft" raycastTarget="true" />
+          <Button internalId="button" class="btn" rectAlignment="MiddleRight" width="80">
+            <TextMeshPro internalId="buttonLabel" text="Button" />
+          </Button>
+        </Panel>
+        <Panel id="template-button" class="property-row row">
+          <Button internalId="button" class="btn btn-primary" width="200">
+            <TextMeshPro internalId="label" text="Button" />
+          </Button>
+        </Panel>
+        <Panel id="template-spinner" class="property-row spinner row" active="false">
+          <TextMeshPro internalId="label" class="label" text="Target" />
+          <Spinner internalId="spinner">
+            <TextMeshPro offsetMin="32 0" offsetMax="-32 0" />
+          </Spinner>
+        </Panel>
+        <Panel id="template-spinner-input" class="property-row spinner row" active="false">
+          <TextMeshPro internalId="label" class="label" text="Target" />
+          <Spinner internalId="spinner">
+            <PartPropertySpinnerInputField width="100%" offsetMin="40 0" offsetMax="-40 0" colors="Transparent|Transparent|Transparent|Transparent">
+              <TMP_Text />
+            </PartPropertySpinnerInputField>
+          </Spinner>
+        </Panel>
+        <Panel id="template-text-input" class="property-row row" active="false">
+          <TextMeshPro internalId="label" class="label" width="35%" />
+          <TextMeshProInputField internalId="input-field" width="65%" height="100%" rectAlignment="MiddleRight">
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Panel>
+        <VerticalLayout id="template-color-sliders" class="property-row" padding="30 0 30 5" active="false">
+          <TextMeshPro internalId="color-sliders-label" class="label" text="Color" alignment="TopLeft" ignoreLayout="true" />
+          <Panel internalId="slider-panel-red" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Red" />
+            <TextMeshPro internalId="slider-value" class="value" text="None" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel internalId="slider-panel-green" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Green" />
+            <TextMeshPro internalId="slider-value" class="value" text="None" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel internalId="slider-panel-blue" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Blue" />
+            <TextMeshPro internalId="slider-value" class="value" text="None" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel internalId="slider-panel-alpha" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Alpha" />
+            <TextMeshPro internalId="slider-value" class="value" text="None" />
+            <Slider internalId="slider" />
+          </Panel>
+        </VerticalLayout>
+      </Panel>
+      <VerticalLayout id="part-part-properties" class="properties-group no-image">
+        <Panel class="row">
+          <TextMeshProInputField id="part-name-input" text="" width="100%" height="100%" rectAlignment="MiddleRight">
+            <TMP_Placeholder id="part-name-input-placeholder" text="Part Name..." alignment="Left" />
+            <TMP_Text text="" alignment="Left" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel class="row">
+          <TextMeshPro class="label" text="Mass" rectAlignment="MiddleLeft" />
+          <TextMeshPro id="part-info-mass" class="value" text="2,512kg" anchorMin="0.35 0" alignment="Right" />
+        </Panel>
+        <Panel class="row">
+          <TextMeshPro class="label" text="Price" rectAlignment="MiddleLeft" />
+          <TextMeshPro id="part-info-price" class="value" text="$42,012" anchorMin="0.35 0" alignment="Right" />
+        </Panel>
+        <Panel id="activation-group" class="spinner row">
+          <TextMeshPro class="label" text="Activation Group" width="50%" />
+          <Spinner internalId="spinner" width="50%">
+            <TextMeshPro />
+          </Spinner>
+        </Panel>
+      </VerticalLayout>
+      <VerticalLayout id="template-style-part-properties" class="properties-group no-image" active="false">
+        <Panel id="style-header" class="header">
+          <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+          <Image internalId="arrow" class="header-arrow expanded" />
+          <TextMeshPro internalId="label" class="header-text" text="Header Text" />
+        </Panel>
+        <Panel id="style" class="spinner row">
+          <TextMeshPro internalId="label" class="label" text="Style" />
+          <Spinner internalId="spinner">
+            <TextMeshPro />
+          </Spinner>
+        </Panel>
+        <Panel id="texture-style" class="spinner row">
+          <TextMeshPro internalId="label" class="label" text="Texture" />
+          <Spinner internalId="spinner">
+            <TextMeshPro />
+          </Spinner>
+        </Panel>
+        <Panel id="texture-tile-x" class="spinner row">
+          <TextMeshPro class="label" text="Texture Tiling X" width="60%" />
+          <Spinner internalId="spinner" numericFormat="0.####" minValue="0.05" maxValue="100" stepSize="0.05" width="50%">
+            <TextMeshProInputField class="spinner-texture-input">
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel id="texture-tile-y" class="spinner row">
+          <TextMeshPro class="label" text="Texture Tiling Y" width="60%" />
+          <Spinner internalId="spinner" numericFormat="0.####" minValue="0.05" maxValue="100" stepSize="0.05" width="50%">
+            <TextMeshProInputField class="spinner-texture-input">
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel id="texture-offset-x" class="spinner row">
+          <TextMeshPro class="label" text="Texture Offset X" width="60%" />
+          <Spinner internalId="spinner" numericFormat="0.####" minValue="0.00" maxValue="0.95" stepSize="0.05" width="50%">
+            <TextMeshProInputField class="spinner-texture-input">
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel id="texture-offset-y" class="spinner row">
+          <TextMeshPro class="label" text="Texture Offset Y" width="60%" />
+          <Spinner internalId="spinner" numericFormat="0.####" minValue="0.00" maxValue="0.95" stepSize="0.05" width="50%">
+            <TextMeshProInputField class="spinner-texture-input">
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+      </VerticalLayout>
+      <VerticalLayout id="template-panel" class="properties-group no-image" active="false"></VerticalLayout>
+    </VerticalLayout>
+  </VerticalScrollView>
+  <Panel id="empty-panel" padding="20" class="no-image">
+    <TextMeshPro internalId="label" text="Nothing selected" />
+  </Panel>
+</XmlLayout>

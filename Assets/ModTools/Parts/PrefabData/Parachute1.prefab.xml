@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Parachute1" path="Craft/Parts/Prefabs/Parachute1.prefab">
+  <Component type="UnityEngine.AudioSource" />
+  <GameObject name="ParachuteBase">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <GameObject name="ParachuteBaseCollider">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="Container">
+      <GameObject name="Chute">
+        <GameObject name="ChuteTop">
+          <GameObject name="ChuteCords">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="ChuteMeshParent" />
+        </GameObject>
+        <GameObject name="ChuteBaseCord">
+          <GameObject name="Mesh">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+        </GameObject>
+      </GameObject>
+      <GameObject name="ChutePackage">
+        <GameObject name="ChutePackageMesh">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

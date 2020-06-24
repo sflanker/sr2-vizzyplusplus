@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Color name="TutorialPanel" color="#111111F0" />
+    <ContentButton class="tutorial-button" buttonColors="Button|ButtonHover|ButtonPressed|ButtonDisabled" width="32" height="32" tooltipPosition="Above" />
+    <VerticalLayout class="tutorial-offset" device="desktop" offsetXY="0 75" />
+    <VerticalLayout class="tutorial-offset" device="mobile" offsetXY="0 55" />
+  </Defaults>
+  <Panel id="tutorial" class="no-image">
+    <Image id="tutorial-highlight" width="64" height="64" sprite="Ui/Sprites/Border/Square-2px" type="Sliced" fillCenter="false" active="false" />
+    <Panel class="safe-area no-image">
+      <VerticalLayout pivot="0.5 0" id="tutorial-panel" class="tutorial-offset" color="TutorialPanel" childForceExpandHeight="false" contentSizeFitter="vertical" width="700" height="100" rectAlignment="LowerCenter" padding="5 5 5 5" spacing="5">
+        <TextMeshPro id="tutorial-step-text" color="White" autoSizeTextContainer="true" margin="10 0 10 0" />
+        <Panel preferredHeight="5" />
+        <TextMeshPro color="Primary" id="tutorial-instruction-text" />
+        <Panel preferredHeight="5" />
+        <Panel id="tutorial-button-panel" preferredHeight="25" active="false">
+          <Button class="btn btn-primary" width="150" rectAlignment="MiddleCenter" onClick="OnButtonClicked();">
+            <TextMeshPro text="Okay" />
+          </Button>
+        </Panel>
+      </VerticalLayout>
+    </Panel>
+  </Panel>
+</XmlLayout>

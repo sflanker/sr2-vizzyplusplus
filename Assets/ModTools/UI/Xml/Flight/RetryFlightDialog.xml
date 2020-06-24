@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <TextMeshPro class="message-text" text="Okay, let's pretend this never happened. We can roll everything back to the way it was before this flight.&#xA;&#xA;Would you like to retry this flight or just undo and exit?" />
+    <TextMeshPro class="level:message-text" text="Would you like to retry this level or exit?" />
+    <TextMeshPro class="text-header" text="UNDO FLIGHT" />
+    <TextMeshPro class="level:text-header" text="END FLIGHT" />
+    <TextMeshPro class="undo-button-text" text="UNDO &amp; EXIT" />
+    <TextMeshPro class="level:undo-button-text" text="EXIT" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="450" contentSizeFitter="vertical" spacing="10" padding="20">
+      <TextMeshPro class="text-header" />
+      <TextMeshPro id="message-text" class="message-text" />
+      <Panel preferredHeight="60">
+        <Button class="btn audio-btn-back" rectAlignment="LowerLeft" width="125" onClick="OnCancelClicked();">
+          <TextMeshPro text="CANCEL" />
+        </Button>
+        <Button id="retry-button" class="btn btn-danger audio-btn-big" rectAlignment="LowerCenter" width="125" onClick="OnRetryClicked();">
+          <TextMeshPro text="RETRY" />
+        </Button>
+        <Button class="btn btn-danger audio-btn-big" rectAlignment="LowerRight" width="125" onClick="OnExitClicked();">
+          <TextMeshPro id="undo-button-text" class="undo-button-text" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="ExhaustSystem" path="Craft/Parts/Prefabs/Exhaust/ExhaustSystem.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ExhaustSystemScript" />
+  <GameObject name="ExhaustMesh">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+  <GameObject name="ParticleSystem">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+  </GameObject>
+</GameObject>

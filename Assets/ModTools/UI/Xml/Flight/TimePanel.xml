@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <ContentButton color="Transparent" width="38" height="40" rectAlignment="MiddleRight" hoverClass="time-button-hover" tooltipPosition="Below" navigation="None" />
+    <Image class="time-button&gt;@Image" width="20" height="20" color="PanelButton" />
+    <Image class="time-button-hover&gt;@Image" color="PanelButtonHover" />
+    <Image class="time-button-selected&gt;@Image" color="Primary" />
+    <ContentButton class="time-warp-button" color="Transparent" tooltipPosition="Below" width="40" height="32" hoverClass="time-warp-button-hover" />
+    <Image class="time-warp-arrow" sprite="Ui/Sprites/Common/IconChevronLeft" width="15" height="20" color="ButtonHover" />
+    <Image class="time-warp-button-hover&gt;@Image" color="ButtonPressed" />
+  </Defaults>
+  <VerticalLayout class="no-image" width="280" height="0" rectAlignment="UpperRight" contentSizeFitter="vertical" childAlignment="MiddleCenter" offsetXY="0 0">
+    <Panel class="flight-panel" preferredHeight="40">
+      <TextMeshPro id="time-text" onClickSound="Ui/Audio/ButtonClicked" class="value" text="06:12:11" width="140" height="50" rectAlignment="MiddleRight" alignment="Center" offsetXY="-150 0" onClick="OnTimeClicked();" raycastTarget="true" />
+      <ContentButton id="mode-slow" class="time-button audio-btn-click" offsetXY="-140 0" tooltip="Slow Motion" onClick="OnSlowMotionClicked();">
+        <Image sprite="Ui/Sprites/Flight/IconTimeSlowMotion" />
+      </ContentButton>
+      <ContentButton id="mode-normal" class="time-button audio-btn-click" offsetXY="-100 0" tooltip="Normal Speed" onClick="OnPlayClicked();" name="TimePanel.Play">
+        <Image sprite="Ui/Sprites/Flight/IconTimePlay" />
+      </ContentButton>
+      <ContentButton id="mode-fast" class="time-button audio-btn-click" offsetXY="-60 0" tooltip="Fast Forward" onClick="OnFastForwardClicked();" name="TimePanel.FastForward">
+        <Image sprite="Ui/Sprites/Flight/IconTimeFastForward" />
+      </ContentButton>
+      <ContentButton id="mode-warp" class="time-button audio-btn-click" offsetXY="-20 0" tooltip="Warp Speed" onClick="OnWarpModeClicked();" name="TimePanel.Warp">
+        <Image sprite="Ui/Sprites/Flight/IconTimeWarp" />
+      </ContentButton>
+    </Panel>
+    <Panel id="warp-panel" class="no-image" preferredHeight="40">
+      <Panel class="flight-panel panel-angled" rotation="0 0 180" />
+      <Panel class="no-image" width="280">
+        <TextMeshPro id="warp-text" class="White" text="100x" width="120" />
+        <ContentButton class="time-warp-button audio-btn-click" offsetXY="50 0" rectAlignment="MiddleLeft" tooltip="Decrease Warp Speed" onClick="OnDecreaseWarpClicked();">
+          <Image class="time-warp-arrow" />
+        </ContentButton>
+        <ContentButton class="time-warp-button audio-btn-click" offsetXY="-50 0" rectAlignment="MiddleRight" tooltip="Increase Warp Speed" onClick="OnIncreaseWarpClicked();">
+          <Image class="time-warp-arrow" rotation="0 0 180" />
+        </ContentButton>
+      </Panel>
+    </Panel>
+  </VerticalLayout>
+</XmlLayout>

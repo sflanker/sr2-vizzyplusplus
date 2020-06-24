@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Chamber_Solid" path="Craft/Parts/Prefabs/RocketEngine/Chamber_Solid.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+</GameObject>

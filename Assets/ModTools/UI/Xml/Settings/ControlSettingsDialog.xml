@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <ContentButton class="control-button" color="Button" navigation="None" />
+    <Image class="axis-invert-icon" width="30" sprite="Ui/Sprites/Settings/IconInvertControlAxis" rectAlignment="MiddleRight" color="ButtonPressed" raycastTarget="true" tooltip="Invert Input" tooltipPosition="Above" />
+    <Image class="inverted" color="Primary" />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <RectTransform class="safe-area">
+      <Panel class="panel border" width="750" padding="20">
+        <RectTransform>
+          <TextMeshPro class="text-header" text="Control Settings" alignment="Top" />
+          <Button id="context-menu-toggle-button" class="icon-button" rectAlignment="UpperRight" tooltip="Open context menu" icon="Ui/Sprites/Common/IconButtonMenu" onClick="OnContextMenuButtonClicked();" />
+          <HorizontalLayout id="control-categories" class="no-image" childForceExpandHeight="true" height="30" rectAlignment="UpperCenter" spacing="10" offsetXY="0 -50">
+            <Button internalId="FlightCommon,FlightCraft,FlightEva" class="btn btn-primary">
+              <TextMeshPro text="Flight Controls" />
+            </Button>
+            <Button internalId="Designer" class="btn">
+              <TextMeshPro text="Designer Controls" />
+            </Button>
+            <Button internalId="Other" class="btn">
+              <TextMeshPro text="Other Controls" />
+            </Button>
+          </HorizontalLayout>
+          <Panel class="no-image" offsetMax="0 -90">
+            <Image color="Border" height="1" rectAlignment="UpperCenter" />
+            <Panel class="no-image" rectAlignment="UpperCenter" offsetXY="0 -10" height="30">
+              <TextMeshPro text="Actions" class="label" alignment="Left" rectAlignment="MiddleLeft" anchorMax="0.3 1" offsetXY="10 0" />
+              <TextMeshPro text="Keyboard" class="label" rectAlignment="MiddleLeft" anchorMin="0.25 0" anchorMax="0.75 1" />
+              <Spinner id="controller-spinner" class="label" width="28%" rectAlignment="MiddleRight" offsetXY="-15 0">
+                <TextMeshPro text="Logitech F310" class="label" />
+              </Spinner>
+            </Panel>
+            <Panel offsetMax="0 -40" offsetMin="0 110" color="DarkPanel" padding="10">
+              <VerticalScrollView class="no-image">
+                <VerticalLayout id="items-parent" class="no-image" childForceExpandHeight="false" contentSizeFitter="vertical" childAlignment="UpperLeft" pivot="0 1" spacing="5">
+                  <TextMeshPro id="category-separator-template" class="label" preferredHeight="30" alignment="Left" fontSize="14" />
+                  <Panel id="row-template" class="no-image" preferredHeight="30">
+                    <TextMeshPro internalId="action-name" alignment="Left" rectAlignment="MiddleLeft" width="30%" />
+                    <Panel internalId="keyboard-buttons" class="no-image" rectAlignment="MiddleCenter" width="35%">
+                      <ContentButton class="control-button" internalId="keyboard-binding" rectAlignment="MiddleLeft" width="48%">
+                        <TextMeshPro internalId="keyboard-binding-text" />
+                      </ContentButton>
+                      <ContentButton class="control-button" internalId="keyboard-binding-alternate" rectAlignment="MiddleRight" width="48%">
+                        <TextMeshPro internalId="keyboard-binding-alternate-text" />
+                      </ContentButton>
+                    </Panel>
+                    <ContentButton class="control-button" internalId="controller-binding" rectAlignment="MiddleRight" width="28%" offsetXY="-5 0">
+                      <TextMeshPro internalId="controller-binding-text" />
+                      <Image internalId="invert-axis" class="axis-invert-icon" active="false" />
+                    </ContentButton>
+                  </Panel>
+                  <!--<Panel id="spinner-row-template" class="no-image" preferredHeight="30" active="false">
+                              <TextMeshPro internalId="action-name" alignment="Left" rectAlignment="MiddleLeft" width="30%" />
+                              <Spinner internalId="spinner" class="label" rectAlignment="MiddleCenter" width="35%" offsetMin="-10 0" offsetMax="-10 0">
+                                 <TextMeshPro text="Spinner Text" class="label" />
+                              </Spinner>
+                           </Panel>
+                           <Panel id="control-label-row-template" class="no-image" preferredHeight="30" active="false">
+                              <TextMeshPro internalId="action-name" alignment="Left" rectAlignment="MiddleLeft" width="30%" />
+                              <TextMeshPro internalId="action-description" class="label" alignment="Left" rectAlignment="MiddleRight" width="67.5%" />
+                           </Panel>-->
+                </VerticalLayout>
+              </VerticalScrollView>
+            </Panel>
+            <Panel class="no-image" rectAlignment="LowerCenter" height="50" offsetXY="0 50">
+              <Panel id="sensitivity-slider" class="slider" rectAlignment="MiddleLeft" width="60%">
+                <TextMeshPro internalId="slider-label" class="label" text="Controller Sensitivity" />
+                <TextMeshPro internalId="slider-value" class="value" text="0%" />
+                <Slider internalId="slider" minValue="0" maxValue="2" />
+              </Panel>
+              <Button id="calibrate-button" class="btn" rectAlignment="MiddleRight" width="30%" onClick="OnCalibrateButtonClicked();">
+                <TextMeshPro text="Calibrate" />
+              </Button>
+            </Panel>
+            <Panel class="no-image" rectAlignment="LowerCenter" height="45" offsetXY="0 0">
+              <Image color="Border" height="1" rectAlignment="UpperCenter" />
+              <Button class="btn" rectAlignment="LowerLeft" width="30%" onClick="OnRestoreDefaultsButtonClicked();">
+                <TextMeshPro text="Restore Defaults" />
+              </Button>
+              <Button class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="30%" onClick="OnDoneButtonClicked();">
+                <TextMeshPro text="Done" />
+              </Button>
+            </Panel>
+          </Panel>
+          <VerticalLayout id="item-context-menu" active="false" showAnimation="Grow_Vertical" hideAnimation="Shrink_Vertical" contentSizeFitter="vertical" animationDuration="0.1" width="220" childForceExpandHeight="false" spacing="10" pivot="1 1" color="Panel" border="Border" rectAlignment="UpperRight" padding="10" offsetXY="0 -50">
+            <Button class="btn context-menu-button" onClick="OnAddControllerClicked();">
+              <TextMeshPro text="Add Controller" />
+            </Button>
+            <Button class="btn context-menu-button" onClick="OnRemoveControllerClicked();">
+              <TextMeshPro text="Remove Controller" />
+            </Button>
+            <Button class="btn context-menu-button" onClick="OnOpenDevConsoleClicked();">
+              <TextMeshPro text="Open Dev Console" />
+            </Button>
+          </VerticalLayout>
+        </RectTransform>
+      </Panel>
+    </RectTransform>
+  </Panel>
+</XmlLayout>

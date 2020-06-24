@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <TextMeshPro class="label" alignment="Left" />
+    <Panel class="move-part-dropzone" width="120" height="120" />
+    <Image class="move-part-dropzone&gt;@Image" color="White" />
+    <TextMeshPro class="move-part-dropzone&gt;@TextMeshPro" color="White" />
+    <Image class="dropzone-selected&gt;@Image" color="Primary" />
+    <TextMeshPro class="dropzone-selected&gt;@TextMeshPro" color="Primary" />
+    <Panel class="flyout" raycastTarget="true" />
+    <Panel class="toggle-button" preferredWidth="50" preferredHeight="50" borderSprite="Ui/Sprites/Border/Edge-Left-1px" hoverClass="toggle-button-hover" pressClass="toggle-button-pressed" raycastTarget="true" />
+    <Panel class="toggle-button-hover" color="ButtonHover" />
+    <Panel class="toggle-button-pressed" color="Button" />
+    <Panel class="toggle-button-toggled" color="Button" border="Primary" />
+    <Image class="toggle-button-icon" color="ButtonIcon" width="32" height="32" raycastTarget="false" />
+    <Image class="toggle-button-toggled&gt;toggle-button-icon" color="White" />
+    <Image class="delete-button" color="Button" width="24" height="24" offsetXY="0 0" raycastTarget="true" hoverClass="delete-button-hover" />
+    <Image class="delete-button-hover" color="ButtonHover" />
+    <Image class="delete-button-icon" image="Ui/Sprites/Design/IconButtonDeleteItem" color="Primary" width="16" height="16" raycastTarget="false" />
+    <TextMeshProInputField class="search-input" text="" rectAlignment="UpperCenter" lineType="SingleLine" />
+    <TextMeshPro class="tooltip" raycastTarget="true" tooltipPosition="Above" />
+  </Defaults>
+</XmlLayout>

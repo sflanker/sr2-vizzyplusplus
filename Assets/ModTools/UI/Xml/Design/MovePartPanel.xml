@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Spinner class="position-spinner" numericFormat="0.##" stepSize="0.1" minValue="-9999" maxValue="9999" />
+  </Defaults>
+  <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" pivot="0 1">
+    <Panel class="spinner row">
+      <TextMeshPro class="label tooltip" text="Grid Size" tooltip="Attach parts to fuselages at discrete vertical coordinates" />
+      <Spinner id="spinner-grid-size" numericFormat="0.##" onNumericValueChanged="OnGridSizeChanged();" stepSize="0.05" minValue="0" maxValue="2">
+        <TextMeshProInputField>
+          <TMP_Text />
+        </TextMeshProInputField>
+      </Spinner>
+    </Panel>
+    <Panel class="spinner row">
+      <TextMeshPro class="label tooltip" text="Angle Snap" tooltip="Attach parts to fuselages at discrete angles" />
+      <Spinner id="spinner-angle-snap" numericFormat="0.##" onNumericValueChanged="OnAngleSnapChanged();" stepSize="5.0" minValue="0" maxValue="180">
+        <TextMeshProInputField>
+          <TMP_Text />
+        </TextMeshProInputField>
+      </Spinner>
+    </Panel>
+    <Panel class="row">
+      <TextMeshPro class="label tooltip" text="Show Resize Gizmos" rectAlignment="MiddleLeft" tooltip="Show gizmos to control the size of fuel tanks, wings, etc." />
+      <Toggle id="enable-gizmos-toggle" rectAlignment="MiddleRight" onValueChanged="OnEnableGizmosChanged();" />
+    </Panel>
+    <Panel class="row">
+      <TextMeshPro class="label tooltip" text="Auto Rotate Parts" rectAlignment="MiddleLeft" tooltip="Allow parts to rotate into place when suggesting part connections." />
+      <Toggle id="enable-auto-rotation" rectAlignment="MiddleRight" onValueChanged="OnEnableAutoRotationChanged();" />
+    </Panel>
+    <Panel class="row">
+      <TextMeshPro class="label tooltip" text="Show Attach Points" rectAlignment="MiddleLeft" tooltip="Show attach points while moving parts." />
+      <Toggle id="show-attach-points" rectAlignment="MiddleRight" onValueChanged="OnShowAttachPointsChanged();" />
+    </Panel>
+    <Panel class="row">
+      <TextMeshPro class="label tooltip" text="Auto Resize Parts" rectAlignment="MiddleLeft" tooltip="Automatically resize parts to match in size when they are connected." />
+      <Toggle id="enable-auto-resize" rectAlignment="MiddleRight" onValueChanged="OnEnableAutoResizeChanged();" />
+    </Panel>
+    <Button class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnPartConnectionsButtonClicked();" tooltip="View a part's connections with other parts.">
+      <TextMeshPro text="PART CONNECTIONS" />
+    </Button>
+  </VerticalLayout>
+</XmlLayout>

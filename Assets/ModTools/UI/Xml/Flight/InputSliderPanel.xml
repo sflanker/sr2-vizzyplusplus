@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Panel class="collapsed" width="25" height="25" />
+  </Defaults>
+  <Panel name="InputSliderPanel" id="input-panel" class="flight-panel draggable input-panel" width="100" rectAlignment="LowerLeft" offsetXY="90 0" opacity="1.0">
+    <Image color="DarkPanel" rectAlignment="UpperCenter" height="25" />
+    <Panel class="no-image" rectAlignment="LowerRight" width="25">
+      <Image color="Border" width="1" rectAlignment="MiddleLeft" />
+      <Image class="slider-button" rectAlignment="LowerCenter" onClick="OnShowAddSliderPanelClicked();" tooltip="Add Input Slider">
+        <Image sprite="Ui/Sprites/Flight/IconAddInputSlider" width="20" height="20" color="Primary" />
+      </Image>
+      <Image id="remove-slider-button" class="slider-button" offsetXY="0 -25" rectAlignment="UpperCenter" onClick="OnRemoveSliderClicked();" tooltip="Remove Input Slider">
+        <Image sprite="Ui/Sprites/Flight/IconRemoveInputSlider" width="20" height="20" color="Warning" />
+      </Image>
+    </Panel>
+    <HorizontalLayout id="slider-parent" class="no-image" childAlignment="LowerLeft" childForceExpandWidth="false" spacing="0">
+      <Panel id="slider-template" preferredWidth="80" color="#00000000" active="false">
+        <Image color="Border" width="1" rectAlignment="UpperRight" height="25" />
+        <TextMeshPro internalId="slider-name" text="TEMPLATE" class="label" rectAlignment="LowerCenter" alignment="Center" height="20" fontSize="12" offsetXY="0 188" />
+        <TextMeshPro internalId="slider-value" text="X%" class="label" rectAlignment="LowerCenter" alignment="Center" height="20" fontSize="10" />
+        <Panel width="32" border="Button" rectAlignment="LowerCenter" height="150" offsetXY="0 25" color="DarkPanel" padding="5">
+          <Panel internalId="slider-click-area">
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.0" anchorMax="1.0 0.0" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.125" anchorMax="0.75 0.125" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.25" anchorMax="1.0 0.25" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.375" anchorMax="0.75 0.375" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.5" anchorMax="1.0 0.5" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.625" anchorMax="0.75 0.625" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.75" anchorMax="1.0 0.75" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.875" anchorMax="0.75 0.875" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 1.0" anchorMax="1.0 1.0" />
+            <Panel internalId="slider-handle" class="input-slider-handle" />
+          </Panel>
+        </Panel>
+      </Panel>
+    </HorizontalLayout>
+    <Panel id="add-slider-panel" class="no-image" animationDuration="0.1" showAnimation="Grow_Horizontal" rectAlignment="LowerRight" pivot="0 0" width="120" offsetXY="-1 0">
+      <VerticalLayout id="add-slider-parent" class="flight-panel" childForceExpandHeight="false" contentSizeFitter="vertical" pivot="0 0" padding="5" spacing="5" minHeight="210">
+        <TextMeshPro text="ADD SLIDER" />
+        <Button id="add-slider-template" class="btn" preferredHeight="20" active="false">
+          <TextMeshPro internalId="label" text="TEMPLATE" />
+        </Button>
+      </VerticalLayout>
+    </Panel>
+  </Panel>
+</XmlLayout>

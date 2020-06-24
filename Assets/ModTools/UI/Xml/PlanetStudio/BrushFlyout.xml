@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults></Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperCenter" rectAlignment="UpperLeft">
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Radius" />
+        <TextMeshPro internalId="slider-value" class="value" text="100%" />
+        <Slider internalId="slider" value="1" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Intensity" />
+        <TextMeshPro internalId="slider-value" class="value" text="50%" />
+        <Slider internalId="slider" value="0.5" />
+      </Panel>
+      <Panel class="property-row spinner row">
+        <TextMeshPro internalId="label" class="label" text="Type" />
+        <Spinner internalId="spinner">
+          <TextMeshPro offsetMin="32 0" offsetMax="-32 0" text="Biome" />
+        </Spinner>
+      </Panel>
+      <Panel class="property-row spinner row">
+        <TextMeshPro internalId="label" class="label" text="Biome" />
+        <Spinner internalId="spinner">
+          <TextMeshPro offsetMin="32 0" offsetMax="-32 0" text="Tundra" />
+        </Spinner>
+      </Panel>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

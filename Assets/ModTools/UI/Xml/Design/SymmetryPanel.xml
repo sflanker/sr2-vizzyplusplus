@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="tooltip-mirror" tooltip="Mirror mode will clone the part across the mirrow plane. It will also enable any mirrored settings on the part, such as reversing the direction of a wheel." />
+    <Panel class="tooltip-radial" tooltip="Radial Modes clone the part, equally spaced, around the circumference of the fuel tank." />
+  </Defaults>
+  <VerticalLayout class="no-image" childForceExpandHeight="false">
+    <VerticalLayout id="symmetry-panel" class="no-image" childForceExpandHeight="false" padding="20" spacing="10" active="true">
+      <Button id="select-root-button" class="btn btn-primary" rectAlignment="LowerLeft" width="150" onClick="OnSelectRootButtonClicked();">
+        <TextMeshPro text="SELECT ROOT" />
+      </Button>
+      <Panel id="spinner" preferredHeight="35" class="spinner row">
+        <TextMeshPro text="Mode" class="label" rectAlignment="MiddleLeft" />
+        <Spinner name="Symmetry.ModeSpinner" id="radial-spinner" rectAlignment="MiddleRight" width="70%">
+          <TextMeshPro text="Mirror" />
+        </Spinner>
+      </Panel>
+      <TextMeshPro id="message-text" text="Message Text" />
+      <Button id="bake-symmetry-button" class="btn" rectAlignment="LowerLeft" width="150" onClick="OnBakeSymmetryButtonClicked();">
+        <TextMeshPro text="BREAK SYMMETRY" />
+      </Button>
+      <TextMeshPro id="info-text" class="label" alignment="Center" text="Symmetry Mode can be enabled for parts connected to the side of a fuel tank. It will dynamically create clones of the part around the circumference of the fuel tank. " />
+    </VerticalLayout>
+    <VerticalLayout id="quick-mirror-panel" class="no-image" childForceExpandHeight="false" padding="20" spacing="10" active="true">
+      <Panel class="header" preferredHeight="30">
+        <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+          <TextMeshPro text="QUICK MIRROR" fontStyle="Bold,UpperCase" />
+        </Panel>
+        <Image class="separator" />
+      </Panel>
+      <TextMeshPro class="label tooltip" alignment="Center" text="Quick Mirror is useful for airplanes that may not have a central fuel tank to use as a symmetry root." tooltip=" Parts are simply copied to the other side and do not continue to update like they do with active symmetry. The primary command pod is used to determine the position of the mirror plane." />
+      <Panel preferredHeight="40">
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonMirrorRight" rectAlignment="MiddleLeft" offsetXY="15 0" onClick="OnMirrorCraftButtonClicked(false);" tooltip="Mirror the right side of the craft to the other side." tooltipPosition="Above" id="share-sandbox-button" />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonMirrorPart" rectAlignment="MiddleCenter" onClick="OnMirrorPartButtonClicked();" tooltip="Mirror the selected part to the other side." tooltipPosition="Above" />
+        <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Design/IconButtonMirrorLeft" rectAlignment="MiddleRight" offsetXY="-15 0" onClick="OnMirrorCraftButtonClicked(true);" tooltip="Mirror the left side of the craft to the other side" tooltipPosition="Above" id="photo-library-button" />
+      </Panel>
+      <Button id="mirror-tool-button" class="btn" rectAlignment="LowerLeft" width="150" onClick="OnMirrorToolButton();">
+        <TextMeshPro text="MIRROR TOOL" />
+      </Button>
+    </VerticalLayout>
+    <VerticalLayout id="mirror-tool-panel" class="no-image" childForceExpandHeight="false" padding="20" spacing="10" active="false">
+      <Panel class="header" preferredHeight="30">
+        <Panel class="no-image" height="35" rectAlignment="LowerCenter">
+          <TextMeshPro text="MIRROR CRAFT" fontStyle="Bold,UpperCase" />
+        </Panel>
+        <Image class="separator" />
+      </Panel>
+      <Panel preferredHeight="35" class="spinner row">
+        <TextMeshPro text="Mirror Rotation" class="label" rectAlignment="MiddleLeft" />
+        <Spinner id="mirror-rotation-spinner" numericFormat="0.##" onNumericValueChanged="OnMirrorConfigurationChanged();" stepSize="90.0" minValue="-360" maxValue="360" width="70%">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel preferredHeight="35" class="spinner row">
+        <TextMeshPro text="Mirror Position" class="label" rectAlignment="MiddleLeft" />
+        <Spinner id="mirror-location-spinner" numericFormat="0.##" onNumericValueChanged="OnMirrorConfigurationChanged();" stepSize="1.0" minValue="-100" maxValue="100" width="70%">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Image class="separator" />
+      <Panel preferredHeight="30">
+        <Button class="btn btn-primary" rectAlignment="MiddleRight" width="45%" onClick="OnMirrorToolOkayButtonClicked();">
+          <TextMeshPro text="MIRROR" />
+        </Button>
+        <Button class="btn" rectAlignment="MiddleLeft" width="45%" onClick="OnMirrorToolCancelButtonClicked();">
+          <TextMeshPro text="CANCEL" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </VerticalLayout>
+</XmlLayout>

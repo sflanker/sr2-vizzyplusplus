@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <ContentButton class="panel-button" preferredWidth="40" preferredHeight="40" color="Transparent" tooltipPosition="Left" hoverClass="panel-button-hover" />
+    <Image class="panel-button-icon" width="32" height="32" opacity="0.5" color="PanelButton" />
+    <Image class="nav-sphere-icon" width="32" height="32" opacity="0.25" />
+    <Image class="panel-button-hover:panel-button-icon" opacity="0.75" />
+    <Image class="panel-button-hover:nav-sphere-icon" opacity="0.5" />
+    <Image class="toggled" opacity="1.0" />
+    <Image class="panel-button-icon-toggled:panel-button-icon" opacity="1.0" color="Primary" />
+    <Image class="panel-button-icon-toggled:nav-sphere-icon" opacity="1.0" />
+  </Defaults>
+  <Panel class="no-image" rectAlignment="UpperRight" width="100" height="280" offsetXY="0 -100" pivot="1 1">
+    <VerticalLayout id="nav-sphere-panel" class="flight-panel" padding="5" childForceExpandWidth="false" childForceExpandHeight="false" offsetXY="-60 0" childAlignment="UpperRight" spacing="5" rectAlignment="UpperRight" width="50" pivot="1 1" contentSizeFitter="vertical" name="NavSpherePanel">
+      <ContentButton id="nav-sphere-visible" class="panel-button audio-btn-click" onClick="OnVisibleClicked();" tooltip="Show/Hide Nav Sphere" name="NavSpherePanel.ToggleNavSphere">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereHide" />
+      </ContentButton>
+      <ContentButton id="nav-sphere-lock" class="panel-button audio-btn-click" onClick="OnLockHeadingClicked();" tooltip="Lock Current Heading" name="NavSpherePanel.LockNavSphere">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLock" />
+      </ContentButton>
+      <ContentButton id="nav-sphere-prograde" class="panel-button audio-btn-click" onClick="OnProgradeClicked();" tooltip="Lock Velocity Prograde" name="NavSpherePanel.LockPrograde">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockPrograde" />
+      </ContentButton>
+      <ContentButton id="nav-sphere-retrograde" class="panel-button audio-btn-click" onClick="OnRetrogradeClicked();" tooltip="Lock Velocity Retrograde" name="NavSpherePanel.LockRetrograde">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockRetrograde" />
+      </ContentButton>
+      <ContentButton id="nav-sphere-target" class="panel-button audio-btn-click" onClick="OnTargetClicked();" tooltip="Lock Target" name="NavSpherePanel.LockTarget">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereTargetMode" />
+      </ContentButton>
+    </VerticalLayout>
+    <VerticalLayout name="NavPanel" class="flight-panel" padding="5" childForceExpandWidth="false" childForceExpandHeight="false" offsetXY="0 0" childAlignment="UpperRight" spacing="5" rectAlignment="UpperRight" width="50" pivot="1 1" contentSizeFitter="vertical">
+      <ContentButton class="panel-button audio-btn-click" onClick="OnToggleNavPanelClicked(this);" tooltip="Toggle Nav Sphere Panel" name="NavPanel.ToggleNavSpherePanel">
+        <Image class="nav-sphere-icon" sprite="Ui/Sprites/Flight/IconNavPanelToggle" color="White" />
+      </ContentButton>
+      <ContentButton class="panel-button audio-btn-click" onClick="OnToggleActivationPanelClicked(this);" tooltip="Toggle Activation Panel" name="NavPanel.ToggleActivationPanel">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconActivationPanelToggle" />
+      </ContentButton>
+      <ContentButton id="toggle-flight-inspector" class="panel-button audio-btn-click" onClick="OnToggleFlightInspectorClicked(this);" tooltip="Toggle Flight Info Panel" name="NavPanel.ToggleInspector">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconToggleFlightInfoPanel" />
+      </ContentButton>
+      <ContentButton id="toggle-analog-sticks" class="panel-button audio-btn-click" onClick="OnToggleAnalogSticks(this);" tooltip="Toggle Analog Sticks" device="mobile" name="NavPanel.ToggleAnalogSticks">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconToggleAnalogSticks" />
+      </ContentButton>
+      <ContentButton id="nav-sphere-translation" class="panel-button audio-btn-click" onClick="OnTranslationClicked();" tooltip="Toggle Translation Mode" name="NavPanel.ToggleTranslationMode">
+        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereTranslationMode" />
+      </ContentButton>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,3209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jundroo.ModTools</name>
+    </assembly>
+    <members>
+        <member name="T:Jundroo.ModTools.AsyncAssetRequest`1">
+            <summary>
+            A base class for asynchronous asset requests.
+            </summary>
+            <typeparam name="T">The type of the requested asset.</typeparam>
+        </member>
+        <member name="M:Jundroo.ModTools.AsyncAssetRequest`1.#ctor(UnityEngine.AsyncOperation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.AsyncAssetRequest`1"/> class.
+            </summary>
+            <param name="asyncOperation">The asynchronous operation.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.AsyncAssetRequest`1.Asset">
+            <summary>
+            Gets the asset that was loaded.
+            </summary>
+            <value>
+            The asset that was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.AsyncAssetRequest`1.CancellationRequested">
+            <summary>
+            Gets a value indicating whether a cancellation has been requested.
+            </summary>
+            <value>
+            <c>true</c> if a cancellation has been requested; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.AsyncAssetRequest`1.Coroutine">
+            <summary>
+            Gets the coroutine loading the asset. Once the asset is loaded, this will be <c>null</c>.
+            </summary>
+            <value>
+            The coroutine loading the asset. Once the asset is loaded, this will be <c>null</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.AsyncAssetRequest`1.IsDone">
+            <summary>
+            Gets a value indicating whether the loading of the asset is complete.
+            </summary>
+            <value>
+              <c>true</c> if the loading of the asset is complete; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.AsyncAssetRequest`1.op_Implicit(Jundroo.ModTools.AsyncAssetRequest{`0})~UnityEngine.Coroutine">
+            <summary>
+            Performs an implicit conversion from <see cref="T:Jundroo.ModTools.AsyncAssetRequest`1"/> to <see cref="P:Jundroo.ModTools.AsyncAssetRequest`1.Coroutine"/>.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.AsyncAssetRequest`1.RequestCancellation">
+            <summary>
+            Requests that the asynchronous loading be cancelled.
+            NOTE: This does not actually DO anything other than setting the 'CancellationRequested' flag.
+            The asset will still be loaded. It is up to the user to check the cancellation flag and take action based on its value.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.AsyncAssetRequest`1.LoadComplete">
+            <summary>
+            Called when the asynchronous loading of the asset is complete.
+            </summary>
+            <returns>The loaded asset.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.AsyncAssetRequest`1.AsyncLoad(UnityEngine.AsyncOperation)">
+            <summary>
+            The coroutine to asynchronously load the asset.
+            </summary>
+            <param name="asyncOperation">The asynchronous operation.</param>
+            <returns>The coroutine enumerator.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.AsyncAssetRequest">
+            <summary>
+            A non-generic static class for AsyncAssetRequest objects.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.AsyncAssetRequest._manager">
+            <summary>
+            The manager object. This is the true MonoBehaviour on which the coroutine is run.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.AsyncAssetRequest.GetManager">
+            <summary>
+            Gets the manager object.
+            This is the true MonoBehaviour on which the coroutine is run.
+            </summary>
+            <returns>The manager object.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.AsyncAssetRequest.AsyncAssetRequestManager">
+            <summary>
+            The MonoBehaviour responsible for managing the active coroutines.
+            It just needs to sit and look pretty and not be destroyed or disabled.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Attributes.HideInspectorLabelAttribute">
+            <summary>
+            An attribute used for hiding labels in the Unity inspector window.
+            </summary>
+            <seealso cref="T:UnityEngine.PropertyAttribute" />
+        </member>
+        <member name="T:Jundroo.ModTools.Events.GameObjectLoadedEventArgs">
+            <summary>
+            Event arguments for an event that is raised when a game object is loaded by the mod resource loader.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Events.GameObjectLoadedEventArgs.#ctor(UnityEngine.GameObject)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Events.GameObjectLoadedEventArgs"/> class.
+            </summary>
+            <param name="obj">The object that was loaded.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Events.GameObjectLoadedEventArgs.GameObject">
+            <summary>
+            Gets the game object that was loaded.
+            </summary>
+            <value>
+            The game object that was loaded.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Exceptions.AssetNotFoundException">
+            <summary>
+            An exception that is thrown when a asset cannot be found.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.AssetNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.AssetNotFoundException"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.AssetNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.AssetNotFoundException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.AssetNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.AssetNotFoundException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.AssetNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.AssetNotFoundException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Exceptions.ModManifestNotFoundException">
+            <summary>
+            An exception that is thrown when a mod manifest cannot be found.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.ModManifestNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.ModManifestNotFoundException"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.ModManifestNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.ModManifestNotFoundException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.ModManifestNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.ModManifestNotFoundException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Exceptions.ModManifestNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Exceptions.ModManifestNotFoundException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.GameModBase">
+            <summary>
+            The base class for a singleton object representing a mod that is instantiated and initialize when the mod is loaded.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.GameModBase._instances">
+            <summary>
+            The dictionary of game mod instances keyed by the concrete types of game mods.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.GameModBase._initialized">
+            <summary>
+            A value indicating whether this mod is initialized.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.GameModBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.GameModBase"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.GameModBase.Mod">
+            <summary>
+            Gets the loaded mod object associated with this mod.
+            </summary>
+            <value>
+            The loaded mod object associated with this mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.GameModBase.ModInfo">
+            <summary>
+            Gets the mod information for this mod.
+            </summary>
+            <value>
+            The mod information for this mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.GameModBase.ResourceLoader">
+            <summary>
+            Gets the resource loader for this mod.
+            </summary>
+            <value>
+            The resource loader for this mod.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.GameModBase.Initialize(Jundroo.ModTools.ILoadedMod)">
+            <summary>
+            Initializes the mod.
+            </summary>
+            <param name="mod">The loaded mod object associated with this mod.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.GameModBase.OnModLoaded">
+            <summary>
+            Called when the mod is fully loaded.
+            This occurs after the mod is initialized and after mod data is loaded (like part and propulsion data, UI resources, etc.)
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.GameModBase.GetModInstance``1">
+            <summary>
+            Gets the game mod instance for the specified type.
+            </summary>
+            <typeparam name="T">The type for which to get the game mod instance.</typeparam>
+            <returns>The requested game mod instance.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.GameModBase.GetModInstance(System.Type)">
+            <summary>
+            Gets the game mod instance for the specified type.
+            </summary>
+            <param name="type">The type for which to get the game mod instance.</param>
+            <returns>The requested game mod instance.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.GameModBase.OnModInitialized">
+            <summary>
+            Called when the mod is initialized.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.ILoadedMod">
+            <summary>
+            An interface for interacting with a mod that has been loaded.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.ILoadedMod.AssetBundle">
+            <summary>
+            Gets the asset bundle in which the mod resides.
+            </summary>
+            <value>
+            The asset bundle in which the mod resides.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ILoadedMod.ModInfo">
+            <summary>
+            Gets the mod information.
+            </summary>
+            <value>
+            The mod information.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ILoadedMod.GameMods">
+            <summary>
+            Gets the collection of game mod objects for this mod.
+            </summary>
+            <value>
+            The game mod objects for this mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ILoadedMod.ResourceLoader">
+            <summary>
+            Gets the resource loader for the mod.
+            </summary>
+            <value>
+            The resource loader for the mod.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.IModResourceLoader">
+            <summary>
+            A mod service interface used for loading resources from a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.IModResourceLoader.LoadAsset``1(System.String)">
+            <summary>
+            Loads the asset at the specified path.
+            </summary>
+            <typeparam name="T">The type of the asset to load.</typeparam>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <returns>The requested asset or <c>null</c> if an asset of the requested type at the specified path could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.IModResourceLoader.LoadAsset(System.String,System.Type)">
+            <summary>
+            Loads the asset at the specified path.
+            </summary>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <param name="type">The type of the asset to load.</param>
+            <returns>The requested asset or <c>null</c> if an asset of the requested type at the specified path could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.IModResourceLoader.LoadAssetAsync(System.String,System.Type)">
+            <summary>
+            Asynchronously loads the asset at the specified path.
+            </summary>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <param name="type">The type of the asset to load.</param>
+            <returns>The asynchronous request for the asset.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.IModResourceLoader.LoadAssetAsync``1(System.String)">
+            <summary>
+            Asynchronously loads the asset at the specified path.
+            </summary>
+            <typeparam name="T">The type of the asset to load.</typeparam>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <returns>The asynchronous request for the asset.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.ModBuildInfo">
+            <summary>
+            Gets the build information for the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.ModBuildInfo.#ctor(System.Guid,System.Version,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.ModBuildInfo"/> class.
+            </summary>
+            <param name="buildId">The build identifier.</param>
+            <param name="buildGameVersion">The game version that was used to build the mod.</param>
+            <param name="buildUnityVersion">The Unity version that was used to build the mod.</param>
+            <param name="buildOperatingSystem">The operating system that was used to build the mod.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.ModBuildInfo.BuildGameVersion">
+            <summary>
+            Gets the game version that was used to build the mod.
+            </summary>
+            <value>
+            The game version that was used to build the mod.
+            This will return <c>null</c> for mods built with ModTools from game version 0.8.107 and below.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModBuildInfo.BuildId">
+            <summary>
+            Gets the build identifier.
+            </summary>
+            <value>
+            The build identifier.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModBuildInfo.BuildOperatingSystem">
+            <summary>
+            Gets the operating system that was used to build the mod.
+            </summary>
+            <value>
+            The operating system that was used to build the mod.
+            This will return <c>null</c> for mods built with ModTools from game version 0.8.107 and below.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModBuildInfo.BuildUnityVersion">
+            <summary>
+            Gets the Unity version that was used to build the mod.
+            </summary>
+            <value>
+            The Unity version that was used to build the mod.
+            This will return <c>null</c> for mods built with ModTools from game version 0.8.107 and below.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.ModInfo">
+            <summary>
+            An object containing information about a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.ModInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.ModInfo"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.ModInfo.#ctor(Jundroo.ModTools.ModBuildInfo,System.String,System.String,System.String,System.Version,System.DateTime,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.ModInfo" /> class.
+            </summary>
+            <param name="buildInfo">The build information.</param>
+            <param name="name">The name of the mod.</param>
+            <param name="description">The description of the mod.</param>
+            <param name="author">The mod's author.</param>
+            <param name="version">The version number of the mod.</param>
+            <param name="lastUpdated">The last updated date time of the mod.</param>
+            <param name="loadPriority">The load priority for the mod.</param>
+            <param name="path">The file path of the mod.</param>
+            <param name="enabled">A value indicating whether the mod has been enabled.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.Author">
+            <summary>
+            Gets the mod's author.
+            </summary>
+            <value>
+            The mod's author.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.BuildInfo">
+            <summary>
+            Gets the build information for the mod.
+            </summary>
+            <value>
+            The build information for the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.Description">
+            <summary>
+            Gets the description of the mod.
+            </summary>
+            <value>
+            The description of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Jundroo.ModTools.ModInfo"/> is enabled.
+            </summary>
+            <value>
+              <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.IsSteamWorkshopSubscription">
+            <summary>
+            Gets a value indicating whether this mod is steam workshop subscription.
+            </summary>
+            <value>
+            <c>true</c> if this mod is steam workshop subscription; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.LastUpdated">
+            <summary>
+            Gets the last updated date time of the mod.
+            </summary>
+            <value>
+            The last updated date time of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.LoadPriority">
+            <summary>
+            Gets the load priority for the mod.
+            Mods with a lower priority number will be loaded before mods with a higher number.
+            </summary>
+            <value>
+            The load priority for the mod.
+            Mods with a lower priority number will be loaded before mods with a higher number.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.Name">
+            <summary>
+            Gets the name of the mod.
+            </summary>
+            <value>
+            The name of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.Path">
+            <summary>
+            Gets the file path of the mod.
+            </summary>
+            <value>
+            The file path of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.PendingDisable">
+            <summary>
+            Gets or sets a value indicating whether the mod is currently pending disable.
+            </summary>
+            <value>
+              <c>true</c> if the mod is currently pending disable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.SteamWorkshopItemId">
+            <summary>
+            Gets or sets the Steam Workshop item identifier if the mod is from the Steam Workshop.
+            </summary>
+            <value>
+            The Steam Workshop item identifier if the mod is from the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.ModInfo.Version">
+            <summary>
+            Gets the version number of the mod.
+            </summary>
+            <value>
+            The version number of the mod.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Project">
+            <summary>
+            A static class containing project level constants.
+            This class is used as a proxy to the real ModApi.Project class (via reflection).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project.Name">
+            <summary>
+            The name of the project.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project.UnityVersion">
+            <summary>
+            The unity version that the game was built with.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project._getPropertyMainAssembly">
+            <summary>
+            The get property method for MainAssembly.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Project._projectType">
+            <summary>
+            The type of the real ModApi.Project class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Project.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Project"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Project.IsEditorModProject">
+            <summary>
+            Gets a value indicating whether the code is currently executing in the Unity editor of a mod project.
+            </summary>
+            <value>
+            <c>true</c> if the code is currently executing in the Unity editor of a mod project; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Project.MainAssembly">
+            <summary>
+            Gets the main assembly for the game.
+            </summary>
+            <value>
+            The main assembly for the game.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.AnimationCurveXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.AnimationCurve"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.AnimationCurveXmlSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The value read from the element.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.AnimationCurveXmlSerializer.WriteValue(System.Xml.Linq.XElement,UnityEngine.AnimationCurve,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Attributes.CustomSerializeFieldBase">
+            <summary>
+            A base class attribute for fields to be flagged as serializeable by the mod tools XML serializer.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Attributes.CustomSerializeFieldBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.Attributes.CustomSerializeFieldBase"/> class.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.Attributes.CustomSerializeFieldBase.SerializationNullValueMode">
+            <summary>
+            Gets or sets the approach that the serializer uses when serializing members with a <c>null</c> value.
+            </summary>
+            <value>
+            The approach that the serializer uses when serializing members with a <c>null</c> value.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.Attributes.CustomSerializeFieldBase.SerializationOptions">
+            <summary>
+            Gets or sets the serialization options.
+            </summary>
+            <value>
+            The serialization options.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.BoolXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Boolean"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.BoolXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.BoolXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.BoolXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.BoolXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Boolean,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.BoolXmlSerializer.WriteValues(System.Xml.Linq.XAttribute,System.Collections.Generic.IEnumerable{System.Boolean},Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified values to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the values should be written.</param>
+            <param name="values">The values to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.BoundsXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Bounds"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.BoundsXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.BoundsXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Bounds,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.ByteXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Byte"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.ByteXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ByteXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ByteXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ByteXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Byte,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.CharXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Char"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.CharXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.CharXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.CharXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.CharXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Char,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Color32XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Color32"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Color32XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Color32XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Color32,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.ColorXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Color"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ColorXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ColorXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Color,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.DateTimeOffsetXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.DateTimeOffset"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DateTimeOffsetXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DateTimeOffsetXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.DateTimeOffset,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.DateTimeXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.DateTime"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DateTimeXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DateTimeXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.DateTime,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.DecimalXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Decimal"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.DecimalXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DecimalXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DecimalXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DecimalXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Decimal,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.DictionaryXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DictionaryXmlSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the element.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DictionaryXmlSerializer.WriteValue(System.Xml.Linq.XElement,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.DoubleXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Double"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.DoubleXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DoubleXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DoubleXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.DoubleXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Double,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.GradientAlphaKeyXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.GradientAlphaKey"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GradientAlphaKeyXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GradientAlphaKeyXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.GradientAlphaKey,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.GradientColorKeyXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.GradientColorKey"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GradientColorKeyXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GradientColorKeyXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.GradientColorKey,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.GradientXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Gradient"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GradientXmlSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The value read from the element.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GradientXmlSerializer.WriteValue(System.Xml.Linq.XElement,UnityEngine.Gradient,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.GuidXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GuidXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.GuidXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Guid,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Int16XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.Int16XmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int16XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int16XmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int16XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Int16,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Int32XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.Int32XmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int32XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int32XmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int32XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Int32,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Int64XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Int64"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.Int64XmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int64XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int64XmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Int64XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Int64,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer">
+            <summary>
+            An interface for a XML attribute based serializer for Unity.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+              <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The value read from the attribute.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The values read from the attribute.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.WriteValues(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified values to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the values should be written.</param>
+            <param name="values">The values to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer">
+            <summary>
+            An interface for a XML element based serializer for Unity.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The value read from the element.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer.WriteValue(System.Xml.Linq.XElement,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.KeyframeXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Keyframe"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.KeyframeXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.KeyframeXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Keyframe,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.LayerMaskXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.LayerMask"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.LayerMaskXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.LayerMaskXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.LayerMask,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.ListXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ListXmlSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the element.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.ListXmlSerializer.WriteValue(System.Xml.Linq.XElement,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Matrix4x4XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Matrix4x4"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Matrix4x4XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Matrix4x4XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Matrix4x4,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.QuaternionXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Quaternion"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.QuaternionXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.QuaternionXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Quaternion,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.RectOffsetXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.RectOffset"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.RectOffsetXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.RectOffsetXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.RectOffset,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.RectXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Rect"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.RectXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.RectXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Rect,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.SByteXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.SByte"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.SByteXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.SByteXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.SByteXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.SByteXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.SByte,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.SingleXmlSerialier">
+            <summary>
+            A XML serializer for <see cref="T:System.Single"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.SingleXmlSerialier.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.SingleXmlSerialier.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.SingleXmlSerialier.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.SingleXmlSerialier.WriteValue(System.Xml.Linq.XAttribute,System.Single,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.StringXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.StringXmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.StringXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.StringXmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.StringXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.String,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.TimeSpanXmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.TimeSpan"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.TimeSpanXmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.TimeSpanXmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.TimeSpan,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UInt16XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.UInt16"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UInt16XmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt16XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt16XmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt16XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.UInt16,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UInt32XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.UInt32"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UInt32XmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt32XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt32XmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt32XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.UInt32,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UInt64XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:System.UInt64"/>.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UInt64XmlSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt64XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt64XmlSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UInt64XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,System.UInt64,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1">
+            <summary>
+            An base class for a XML attribute based serializer for Unity.
+            </summary>
+            <typeparam name="T">The type handled by the serializer.</typeparam>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1._collectionValuesSeparator">
+            <summary>
+            The separator character used to separate collection values.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+            <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.Jundroo#ModTools#Serialization#Xml#IUnityXmlAttributeSerializer#ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.Jundroo#ModTools#Serialization#Xml#IUnityXmlAttributeSerializer#ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The values read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The values read from the attribute.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.Jundroo#ModTools#Serialization#Xml#IUnityXmlAttributeSerializer#WriteValue(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.WriteValue(System.Xml.Linq.XAttribute,`0,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.Jundroo#ModTools#Serialization#Xml#IUnityXmlAttributeSerializer#WriteValues(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified values to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the values should be written.</param>
+            <param name="values">The values to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.WriteValues(System.Xml.Linq.XAttribute,System.Collections.Generic.IEnumerable{`0},Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified values to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the values should be written.</param>
+            <param name="values">The values to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlAttributeSerializer`1.ReadValues``1(System.Func{System.String,System.IFormatProvider,``0},System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <typeparam name="TValue">The type of the values in the collection.</typeparam>
+            <param name="convertType">The conversion method used to convert that values from string format into their actual type.</param>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The values read from the attribute.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UnityXmlElementSerializer`1">
+            <summary>
+            An base class for a XML element based serializer for Unity.
+            </summary>
+            <typeparam name="T">The type handled by the serializer.</typeparam>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlElementSerializer`1.Jundroo#ModTools#Serialization#Xml#IUnityXmlElementSerializer#ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the element.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlElementSerializer`1.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the element.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlElementSerializer`1.Jundroo#ModTools#Serialization#Xml#IUnityXmlElementSerializer#WriteValue(System.Xml.Linq.XElement,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlElementSerializer`1.WriteValue(System.Xml.Linq.XElement,`0,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer">
+            <summary>
+            An XML based serializer for Unity.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.NullString">
+            <summary>
+            The text used for the null attribute.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._defaultAttributeSerializers">
+            <summary>
+            The default set attribute serializers.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._defaultElementSerializers">
+            <summary>
+            The default set of element serializers.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._memberCache">
+            <summary>
+            The type member lookup cache. This stores a map of types and the serializable members (keyed by member name) on those types.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._memberCacheNoUnderscores">
+            <summary>
+            The type member lookup cache. This stores a map of types and the serializable members (keyed by member name (without underscores)) on those types.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._attributeSerializers">
+            <summary>
+            The collection of attribute serializers for this serializer.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._context">
+            <summary>
+            The current serialization context.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._elementSerializers">
+            <summary>
+            The collection of element serializers for this serializer.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer._tempMemberNameList">
+            <summary>
+            A temporary member name list reused on each deserialization call to avoid garbage collection.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.#ctor(Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer"/> class.
+            </summary>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Deserialize``1(System.Xml.Linq.XElement)">
+            <summary>
+            Deserializes the specified XML element.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize.</typeparam>
+            <param name="element">The XML element from which to deserialize.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Deserialize``1(System.Xml.Linq.XElement,``0)">
+            <summary>
+            Deserializes the XML element in to the specified object.
+            </summary>
+            <typeparam name="T">The type of the object to which to deserialize.</typeparam>
+            <param name="element">The XML element from which to deserialize.</param>
+            <param name="obj">The object in to which to deserialize.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Deserialize(System.Xml.Linq.XElement,System.Type)">
+            <summary>
+            Deserializes the specified XML element.
+            </summary>
+            <param name="element">The XML element from which to deserialize.</param>
+            <param name="type">The type of the object being deserialized.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Deserialize(System.Xml.Linq.XElement,System.Type,System.Object)">
+            <summary>
+            Deserializes the XML element in to the specified object.
+            </summary>
+            <param name="element">The XML element from which to deserialize.</param>
+            <param name="type">The type of the object being deserialized.</param>
+            <param name="obj">The object in to which to deserialize.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Deserialize(System.Xml.Linq.XElement,System.Type,System.Object,System.Boolean,System.String[])">
+            <summary>
+            Deserializes the XML element in to the specified object.
+            </summary>
+            <param name="element">The XML element from which to deserialize.</param>
+            <param name="type">The type of the object being deserialized.</param>
+            <param name="obj">The object in to which to deserialize.</param>
+            <param name="restoreMissingValuesAsNull">If <c>true</c> missing values will be restore as <c>null</c>. If <c>false</c>, missing values will be ignored.</param>
+            <param name="membersToDeserialize">The list of members to deserialize. If this is <c>null</c>, it will attempt to deserialize all members.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Serialize``1(``0,System.String[])">
+            <summary>
+            Serializes the specified object.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="obj">The object to serialize.</param>
+            <param name="membersToSerialize">The names of the fields to serialize. If omitted, all fields will be serialized.</param>
+            <returns>The XML representing the serialized object.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Serialize``1(System.Xml.Linq.XElement,``0,System.String[])">
+            <summary>
+            Serializes the specified object in to the specified element.
+            </summary>
+            <typeparam name="T">The type of the object to serialize.</typeparam>
+            <param name="element">The element in to which to serialize the object.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="membersToSerialize">The names of the fields to serialize. If omitted, all fields will be serialized.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Serialize(System.Xml.Linq.XElement,System.Type,System.Object,System.String[])">
+            <summary>
+            Serializes the specified object in to the specified element.
+            </summary>
+            <param name="element">The element in to which to serialize the object.</param>
+            <param name="type">The type of the object to serialize.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="membersToSerialize">The names of the fields to serialize. If omitted, all fields will be serialized.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.GetMember(System.Type,System.String,System.Boolean)">
+            <summary>
+            Gets the specified member on the specified type.
+            </summary>
+            <param name="type">The type on which to get the member.</param>
+            <param name="name">The name of the member to retrieve.</param>
+            <param name="ignoreUnderscores">If set to <c>true</c>, underscore prefixes are dropped from the member names.</param>
+            <returns>The requested member info or <c>null</c> if it could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.GetMemberLookupTable(System.Type,System.Boolean)">
+            <summary>
+            Gets the member lookup table for the specified type.
+            </summary>
+            <param name="type">The type for which to get the member lookup table.</param>
+            <param name="ignoreUnderscores">If set to <c>true</c>, underscore prefixes are dropped from the member name keys.</param>
+            <returns>The requested member lookup table.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.GetPrivatesSerializeableFields(System.Collections.Generic.ICollection{System.Reflection.FieldInfo},System.Type)">
+            <summary>
+            Recursively gets the private fields that have been flagged with the SerializeField attribute.
+            </summary>
+            <param name="fields">The collection to which to add the fields.</param>
+            <param name="type">The type for which private fields are to be retrieved.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.DeserializeArray(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags)">
+            <summary>
+            Deserializes the array.
+            </summary>
+            <param name="attribute">The attribute from which to deserialize.</param>
+            <param name="type">The type of the array being deserialized.</param>
+            <param name="options">The serialization options.</param>
+            <returns>The deserialized array.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.DeserializeArray(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags)">
+            <summary>
+            Deserializes the array.
+            </summary>
+            <param name="element">The element from which to deserialize.</param>
+            <param name="type">The type of the array being deserialized.</param>
+            <param name="options">The serialization options.</param>
+            <returns>The deserialized array.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.GetMember(System.Type,System.String)">
+            <summary>
+            Gets the specified member on the specified type.
+            </summary>
+            <param name="type">The type on which to get the member.</param>
+            <param name="name">The name of the member to retrieve.</param>
+            <returns>The requested member info or <c>null</c> if it could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.GetTypeAttribute(System.Type)">
+            <summary>
+            Gets the type attribute for elements being serialized.
+            </summary>
+            <param name="type">The type for which to get the attribute.</param>
+            <returns>The type attribute or <c>null</c> if type information should not be serialized.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.Serialize(System.Xml.Linq.XElement,System.String,System.Type,Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode,Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags,System.Object,System.String[])">
+            <summary>
+            Serializes the specified object in to the specified element.
+            </summary>
+            <param name="element">The element in to which to serialize the object.</param>
+            <param name="name">The name of the object to be serialized.</param>
+            <param name="type">The type of the object to serialize.</param>
+            <param name="nullMode">The null value mode for the item to serialize.</param>
+            <param name="options">The serialization options for the item to serialize.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="membersToSerialize">The names of the fields to serialize. If omitted, all fields will be serialized.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializeArray(System.Xml.Linq.XElement,System.String,System.Type,Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode,Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags,System.Object)">
+            <summary>
+            Serializes the array.
+            </summary>
+            <param name="element">The XML element in to which to serialize the array.</param>
+            <param name="name">The name of the array object.</param>
+            <param name="type">The type of the array object.</param>
+            <param name="nullMode">The null value mode.</param>
+            <param name="options">The serialization options.</param>
+            <param name="obj">The array object to serialize.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializeEnumCollection(System.Xml.Linq.XElement,System.String,Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags,System.Collections.IEnumerable)">
+            <summary>
+            Serializes the enumeration collection to an XML attribute.
+            </summary>
+            <param name="element">The element to which to add the attribute containing the serialized collection.</param>
+            <param name="name">The name of the field being serialized.</param>
+            <param name="options">The serialization options.</param>
+            <param name="collection">The collection to serialize.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializeFields(System.Xml.Linq.XElement,System.Type,System.Object,System.String[])">
+            <summary>
+            Serializes the fields of the specified object.
+            </summary>
+            <param name="element">The XML element in to which to serialize fields.</param>
+            <param name="type">The type of the object containing the fields to serialize.</param>
+            <param name="obj">The object containing the fields to serialize.</param>
+            <param name="membersToSerialize">The names of the fields to serialize. If omitted, all fields will be serialized.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.TryGetAttributeSerializer(System.Type,Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer@)">
+            <summary>
+            Gets the attribute serializer for the specified type or <c>null</c> if one could not be found.
+            </summary>
+            <param name="type">The type for which to get the serializer.</param>
+            <param name="attributeSerializer">The requested attribute serializer or <c>null</c> if one could not be found.</param>
+            <returns><c>true</c> if a serializer was found, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.TryGetElementSerializer(System.Type,Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer@)">
+            <summary>
+            Gets the element serializer for the specified type or <c>null</c> if one could not be found.
+            </summary>
+            <param name="type">The type for which to get the serializer.</param>
+            <param name="elementSerializer">The requested element serializer or <c>null</c> if one could not be found.</param>
+            <returns><c>true</c> if a serializer was found, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo">
+            <summary>
+            A class containing information related to a serializable member.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo.#ctor(System.Reflection.FieldInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo" /> class.
+            </summary>
+            <param name="field">The field.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo.#ctor(System.Reflection.FieldInfo,Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode,Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo" /> class.
+            </summary>
+            <param name="field">The field.</param>
+            <param name="nullMode">The null mode.</param>
+            <param name="options">The serialization options.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo.Field">
+            <summary>
+            Gets the field.
+            </summary>
+            <value>
+            The field.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo.NullMode">
+            <summary>
+            Gets the null mode.
+            </summary>
+            <value>
+            The null mode.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializer.SerializableMemberInfo.Options">
+            <summary>
+            Gets the serialization options.
+            </summary>
+            <value>
+            The serialization options.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext">
+            <summary>
+            The serialization context for the Unity XML serializer.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext" /> class.
+            </summary>
+            <param name="saveTypeInfo">If set to <c>true</c> type information will be saved during serialization.</param>
+            <param name="ignoreUnderscorePrefix">
+            A value indicating whether the serialize will drop underscore prefixes from serialized member names during the serialization process.
+            This will also allow the serializer to properly restore these members during deserialization if the option was originally set when serialized.
+            </param>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext.IgnoreUnderscorePrefix">
+            <summary>
+            Gets or sets a value indicating whether the serialize will drop underscore prefixes from serialized member names during the serialization process.
+            This will also allow the serializer to properly restore these members during deserialization if the option was originally set when serialized.
+            </summary>
+            <value>
+            A value indicating whether the serialize will drop underscore prefixes from serialized member names during the serialization process.
+            This will also allow the serializer to properly restore these members during deserialization if the option was originally set when serialized.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext.MemberSerializationOptions">
+            <summary>
+            Gets or sets the serialization options for the member that is currently being serialized or deserialized.
+            </summary>
+            <value>
+            The current member's serialization options.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext.SaveTypeInfo">
+            <summary>
+            Gets or sets a value indicating whether type information will be saved during serialization.
+            </summary>
+            <value>
+              <c>true</c> if type information will be saved during serialization; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext.Serializer">
+            <summary>
+            Gets the XML serializer.
+            </summary>
+            <value>
+            The XML serializer.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Vector2XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Vector2"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Vector2XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Vector2XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Vector2,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Vector3XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Vector3"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Vector3XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Vector3XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Vector3,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.Vector4XmlSerializer">
+            <summary>
+            A XML serializer for <see cref="T:UnityEngine.Vector4"/>.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Vector4XmlSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>
+            The value read from the attribute.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.Vector4XmlSerializer.WriteValue(System.Xml.Linq.XAttribute,UnityEngine.Vector4,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags">
+            <summary>
+            A collection of serialization options for XML serialization.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags.Default">
+            <summary>
+            The default setting. No special options.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags.EnumsAsValues">
+            <summary>
+            A value indicating that enumerations should be serialized as their underlying value type rather than full string format.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags.SingleAttribute">
+            <summary>
+            A value indicating that, where possible, the field being serialized should be serialized to a single XML attribute.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags.EmptyStringAsNull">
+            <summary>
+            A value indicating that empty strings are considered <c>null</c> values when being serialized.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags.NullAsEmptyString">
+            <summary>
+            When being deserialized, a <c>null</c> string will be restored as an empty string.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationFlags.KeepEmptyEntries">
+            <summary>
+            When deserializing a collection, empty entries will be not be removed.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode">
+            <summary>
+            An enumeration defining the different approaches that the serializer uses when serializing members with a <c>null</c> value.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode.Default">
+            <summary>
+            The default null value handling. Null values with be serialized as a special attribute.
+            This will be able to appropriately serialize a null string and an empty string correctly.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode.EmptyString">
+            <summary>
+            Null values will be serialized as an empty string.
+            Empty strings will be restored as empty strings.
+            Restoring an empty string as <c>null</c> is not possible.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode.EmptyStringAlt">
+            <summary>
+            Null values will be serialized as an empty string.
+            Empty strings will be restored as <c>null</c> strings.
+            Restoring an empty string as an empty string is not possible.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Serialization.Xml.XmlSerializationNullValueMode.Ignore">
+            <summary>
+            Null values will be ignored by the serializer (not serialized).
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.VersionInfo">
+            <summary>
+            A class containing version information about the application.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.VersionInfo.UnityVersion">
+            <summary>
+            The unity version that the game was built with.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.VersionInfo.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.VersionInfo"/> class.
+            </summary>
+        </member>
+        <member name="T:System.DataIO">
+            <summary>
+            A class for reading and writing data that is culture invariant.
+            </summary>
+        </member>
+        <member name="F:System.DataIO._Culture">
+            <summary>
+            The invariant culture.
+            </summary>
+        </member>
+        <member name="F:System.DataIO._DateTimeFormat">
+            <summary>
+            The invariant culture date time format.
+            </summary>
+        </member>
+        <member name="F:System.DataIO._NumberFormat">
+            <summary>
+            The invariant culture number format.
+            </summary>
+        </member>
+        <member name="F:System.DataIO._NumberStyleDouble">
+            <summary>
+            The double number style.
+            </summary>
+        </member>
+        <member name="F:System.DataIO._NumberStyleFloat">
+            <summary>
+            The float number style.
+            </summary>
+        </member>
+        <member name="M:System.DataIO.ParseBool(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Boolean" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseBool(System.String,System.Boolean)">
+            <summary>
+            Parses the <see cref="T:System.Boolean" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseBoolNullable(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Parses the <see cref="T:System.Boolean" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseByte(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Byte" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseByte(System.String,System.Byte)">
+            <summary>
+            Parses the <see cref="T:System.Byte" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseChar(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Char" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseChar(System.String,System.Char)">
+            <summary>
+            Parses the <see cref="T:System.Char" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseDateTime(System.String)">
+            <summary>
+            Parses the <see cref="T:System.DateTime" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseDateTime(System.String,System.DateTime)">
+            <summary>
+            Parses the <see cref="T:System.DateTime" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseDateTimeOffset(System.String)">
+            <summary>
+            Parses the <see cref="T:System.DateTimeOffset" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseDateTimeOffset(System.String,System.DateTimeOffset)">
+            <summary>
+            Parses the <see cref="T:System.DateTimeOffset" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseDouble(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Double" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseDouble(System.String,System.Double)">
+            <summary>
+            Parses the <see cref="T:System.Double" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseFloat(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Single" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseFloat(System.String,System.Single)">
+            <summary>
+            Parses the <see cref="T:System.Single" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseGuid(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Guid" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseGuid(System.String,System.Guid)">
+            <summary>
+            Parses the <see cref="T:System.Guid" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseInt(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Int32" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseInt(System.String,System.Int32)">
+            <summary>
+            Parses the <see cref="T:System.Int32" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseLong(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Int64" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseLong(System.String,System.Int64)">
+            <summary>
+            Parses the <see cref="T:System.Int64" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseSByte(System.String)">
+            <summary>
+            Parses the <see cref="T:System.SByte" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseSByte(System.String,System.SByte)">
+            <summary>
+            Parses the <see cref="T:System.SByte" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseShort(System.String)">
+            <summary>
+            Parses the <see cref="T:System.Int16" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseShort(System.String,System.Int16)">
+            <summary>
+            Parses the <see cref="T:System.Int16" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseTimeSpan(System.String)">
+            <summary>
+            Parses the <see cref="T:System.TimeSpan" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseTimeSpan(System.String,System.TimeSpan)">
+            <summary>
+            Parses the <see cref="T:System.TimeSpan" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseUInt(System.String)">
+            <summary>
+            Parses the <see cref="T:System.UInt32" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseUInt(System.String,System.UInt32)">
+            <summary>
+            Parses the <see cref="T:System.UInt32" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseULong(System.String)">
+            <summary>
+            Parses the <see cref="T:System.UInt64" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseULong(System.String,System.UInt64)">
+            <summary>
+            Parses the <see cref="T:System.UInt64" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseUShort(System.String)">
+            <summary>
+            Parses the <see cref="T:System.UInt16" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ParseUShort(System.String,System.UInt16)">
+            <summary>
+            Parses the <see cref="T:System.UInt16" /> value from the input string.
+            </summary>
+            <param name="value">The value to parse.</param>
+            <param name="defaultValue">The default value if the parsing fails.</param>
+            <returns>The parse result.</returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Single)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Single,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Double)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Double,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Int32,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Int64)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Int64,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Int16)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Int16,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Byte)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Byte,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.SByte)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.SByte,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.UInt32)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.UInt32,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.UInt64)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.UInt64,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.UInt16)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.UInt16,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Boolean)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Char)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.DateTime)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.DateTime,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.DateTimeOffset)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.DateTimeOffset,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Guid)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.Guid,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.TimeSpan)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.TimeSpan,System.String)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="format">The format used to represent the value as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.FormattableString)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.String,System.Object[])">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="args">The string format arguments.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.String,System.Object)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="arg0">The first string format argument.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.String,System.Object,System.Object)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="arg0">The first string format argument.</param>
+            <param name="arg1">The second string format argument.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.ToString(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the specified value.
+            </summary>
+            <param name="value">The value to represent as a <see cref="T:System.String" />.</param>
+            <param name="arg0">The first string format argument.</param>
+            <param name="arg1">The second string format argument.</param>
+            <param name="arg2">The third string format argument.</param>
+            <returns>
+            A <see cref="T:System.String" /> that represents the specified value.
+            </returns>
+        </member>
+        <member name="M:System.DataIO.TryParseBool(System.String,System.Boolean@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Boolean" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseBool(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Boolean" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseByte(System.String,System.Byte@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Byte" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseByte(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Byte" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseChar(System.String,System.Char@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Char" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseChar(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Char" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseDateTime(System.String,System.DateTime@)">
+            <summary>
+            Tries to parse the <see cref="T:System.DateTime" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseDateTime(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.DateTime" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseDateTimeOffset(System.String,System.DateTimeOffset@)">
+            <summary>
+            Tries to parse the <see cref="T:System.DateTimeOffset" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseDateTimeOffset(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.DateTimeOffset" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseDouble(System.String,System.Double@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Double" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseDouble(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Double" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseFloat(System.String,System.Single@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Single" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseFloat(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Single" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseGuid(System.String,System.Guid@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Guid" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseGuid(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Guid" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseInt(System.String,System.Int32@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Int32" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseInt(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Int32" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseLong(System.String,System.Int64@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Int64" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseLong(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Int64" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseSByte(System.String,System.SByte@)">
+            <summary>
+            Tries to parse the <see cref="T:System.SByte" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseSByte(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.SByte" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseShort(System.String,System.Int16@)">
+            <summary>
+            Tries to parse the <see cref="T:System.Int16" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseShort(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.Int16" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseTimeSpan(System.String,System.TimeSpan@)">
+            <summary>
+            Tries to parse the <see cref="T:System.TimeSpan" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseTimeSpan(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.TimeSpan" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseUInt(System.String,System.UInt32@)">
+            <summary>
+            Tries to parse the <see cref="T:System.UInt32" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseUInt(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.UInt32" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseULong(System.String,System.UInt64@)">
+            <summary>
+            Tries to parse the <see cref="T:System.UInt64" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseULong(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.UInt64" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseUShort(System.String,System.UInt16@)">
+            <summary>
+            Tries to parse the <see cref="T:System.UInt16" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <param name="value">The parse result value.</param>
+            <returns><c>true</c> if the parsing was successful; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.DataIO.TryParseUShort(System.String)">
+            <summary>
+            Tries to parse the <see cref="T:System.UInt16" /> value from the input string.
+            </summary>
+            <param name="stringValue">The value to parse.</param>
+            <returns>The parse result or <c>null</c> if the parsing failed.</returns>
+        </member>
+    </members>
+</doc>

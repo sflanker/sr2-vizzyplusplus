@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <TextMeshPro class="stage-group&gt;@TextMeshPro" fontSize="14" offsetXY="15 0" alignment="Center" />
+    <Panel class="stage-group" preferredHeight="45" tooltipPosition="Above" tooltipOffset="-10" onMouseEnter="OnMouseEnter(this);" onMouseExit="OnMouseExit(this);" />
+    <Image class="stage-group&gt;@Image" color="Primary" width="24" height="24" offsetXY="-15 0" />
+    <Panel class="current-stage-hover" color="Button" />
+  </Defaults>
+  <VerticalLayout id="staging-panel" class="flight-panel" padding="0" spacing="0" rectAlignment="LowerRight" contentSizeFitter="vertical" childAlignment="LowerCenter" width="80" height="0" childForceExpandHeight="false">
+    <Panel id="stage-group-landing-legs" class="stage-group" tooltip="LandingLeg">
+      <Image sprite="Ui/Sprites/Common/IconStagingLandingLeg" />
+      <TextMeshPro text="x2" />
+    </Panel>
+    <Panel id="stage-group-parachutes" class="stage-group" tooltip="Parachutes">
+      <Image sprite="Ui/Sprites/Common/IconStagingParachute" />
+      <TextMeshPro text="x2" />
+    </Panel>
+    <Panel id="stage-group-fairings" class="stage-group" tooltip="Fairings">
+      <Image sprite="Ui/Sprites/Common/IconStagingFairing" />
+      <TextMeshPro text="x2" />
+    </Panel>
+    <Panel id="stage-group-interstages" class="stage-group" tooltip="Interstages">
+      <Image sprite="Ui/Sprites/Common/IconStagingInterstage" />
+      <TextMeshPro text="x2" />
+    </Panel>
+    <Panel id="stage-group-engines" class="stage-group" tooltip="Engines">
+      <Image sprite="Ui/Sprites/Common/IconStagingEngine" />
+      <TextMeshPro text="x2" />
+    </Panel>
+    <TextMeshPro id="current-stage-number" text="STG 1" preferredHeight="25" fontSize="12" color="White" alignment="Center" />
+    <ContentButton class="btn" preferredHeight="35" onClick="OnStagingButtonClicked();" buttonColors="Transparent|ButtonHover|ButtonPressed|Button" tooltip="Activate this stage" tooltipPosition="Left" name="Staging.ActivateStage">
+      <Image color="Border" height="1" rectAlignment="UpperCenter" />
+      <Image sprite="Ui/Sprites/Flight/IconActivateStage" width="24" height="24" color="Warning" />
+    </ContentButton>
+  </VerticalLayout>
+</XmlLayout>

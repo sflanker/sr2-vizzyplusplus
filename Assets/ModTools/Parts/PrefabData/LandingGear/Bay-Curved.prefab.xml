@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Bay-Curved" path="Craft/Parts/Prefabs/LandingGear/Bay-Curved.prefab">
+  <GameObject name="LandingGearBayCurved">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+  <GameObject name="LandingGearDepthMaskCurved">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+</GameObject>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="list-item" preferredHeight="32" rectAlignment="UpperCenter" raycastTarget="true" hoverClass="list-item-hover" pressClass="list-item-press" onClick="OnListItemClicked(this);" />
+    <Panel class="list-item-hover" color="Button" />
+    <Panel class="list-item-press" color="ButtonHover" />
+    <Image class="delete-button" active="false" device="desktop" />
+    <Image class="list-item-hover:delete-button" active="true" device="desktop" />
+    <Image class="delete-button" onClick="OnDeleteItemClicked(this);" />
+    <Panel class="list-item" preferredHeight="40" device="mobile" />
+    <Image class="delete-button" width="32" height="32" offsetXY="-2 0" device="mobile" />
+  </Defaults>
+  <Panel class="no-image" height="100%">
+    <Panel class="no-image" height="32" padding="0 2 0 0" rectAlignment="UpperCenter">
+      <TextMeshProInputField id="search-input" text="" class="search-input" onValueChanged="FilterItems(value);">
+        <TMP_Placeholder text="Search..." />
+        <TMP_Text text="" />
+      </TextMeshProInputField>
+    </Panel>
+    <VerticalScrollView class="no-image" offsetMax="0 -35">
+      <VerticalLayout id="content" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1">
+        <Panel id="template" class="list-item list-item-height audio-btn-click" active="false">
+          <TextMeshPro internalId="name" offsetMin="10 0" alignment="Left" text="Craft Name" />
+          <Image class="border" rectAlignment="LowerCenter" height="1" />
+          <Image class="delete-button audio-btn-click" rectAlignment="MiddleRight">
+            <Image class="delete-button-icon" />
+          </Image>
+        </Panel>
+      </VerticalLayout>
+    </VerticalScrollView>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="thumbnail" preferredWidth="128" preferredHeight="128" border="Border" />
+    <Image class="thumbnail-button" width="40" height="40" color="Primary" hoverClass="thumbnail-button-hover" raycastTarget="true" tooltipPosition="Above" />
+    <Image class="thumbnail-button-hover" color="PrimaryHover" />
+    <Image class="thumbnail-new" offsetXY="-30 0" />
+    <Image class="thumbnail-load" offsetXY="30 3" />
+    <Image class="prevent-take:thumbnail-new" active="false" />
+    <Image class="prevent-take:thumbnail-load" offsetXY="0 3" />
+  </Defaults>
+  <VerticalScrollView pivot="0.5 1" offsetMax="0 -40">
+    <VerticalLayout id="vertical-layout" childForceExpandHeight="false" childForceExpandWidth="false" contentSizeFitter="vertical" pivot="0.5 1" rectAlignment="UpperCenter" childAlignment="UpperCenter" spacing="10" padding="1">
+      <Panel class="thumbnail">
+        <TextMeshPro text="Required Thumbnail" color="ButtonHover" offsetXY="0 -37" />
+        <Image sprite="Ui/Sprites/Common/IconButtonCamera" class="thumbnail-button thumbnail-new" onClick="OnTakeThumbnail()" />
+        <Image sprite="Ui/Sprites/Common/IconButtonLoad" class="thumbnail-button thumbnail-load" onClick="OnLoadThumbnail()" />
+        <RawImage id="primary-thumbnail" active="false" offsetMin="2 2" offsetMax="-2 -2" />
+        <Image id="primary-thumbnail-delete-button" active="false" class="delete-button" rectAlignment="UpperRight" onClick="OnScreenshotDeleteClicked(this);">
+          <Image class="delete-button-icon" />
+        </Image>
+      </Panel>
+      <Panel id="thumbnail-template" class="thumbnail" active="false">
+        <RawImage internalId="raw-image" offsetMin="2 2" offsetMax="-2 -2" />
+        <Image class="delete-button" rectAlignment="UpperRight" onClick="OnScreenshotDeleteClicked(this);">
+          <Image class="delete-button-icon" />
+        </Image>
+      </Panel>
+      <Panel id="thumbnail-actions" class="thumbnail">
+        <TextMeshPro text="Optional Screenshot" color="ButtonHover" offsetXY="0 -37" />
+        <Image sprite="Ui/Sprites/Common/IconButtonCamera" class="thumbnail-button thumbnail-new" onClick="OnNewPhotoClicked()" />
+        <Image sprite="Ui/Sprites/Common/IconButtonLoad" class="thumbnail-button thumbnail-load" onClick="OnLoadPhotoClicked()" />
+      </Panel>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

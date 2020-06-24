@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Gimbal_Normal" path="Craft/Parts/Prefabs/RocketEngine/Gimbal_Normal.prefab">
+  <GameObject name="GimbalActuator1">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineActuatorScript" />
+    <GameObject name="GimbalUpperArmHingeZ">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <GameObject name="GimbalUpperArmZ">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <GameObject name="GimbalLowerArmZ">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="GimbalActuator2">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineActuatorScript" />
+    <GameObject name="GimbalUpperArmHingeZ">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <GameObject name="GimbalUpperArmZ">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <GameObject name="GimbalLowerArmZ">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="Targets">
+    <GameObject name="Target1" />
+    <GameObject name="Target2" />
+  </GameObject>
+</GameObject>

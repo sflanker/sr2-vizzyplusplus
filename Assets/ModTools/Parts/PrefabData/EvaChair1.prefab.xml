@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="EvaChair1" path="Craft/Parts/Prefabs/EvaChair1.prefab">
+  <GameObject name="Collider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+</GameObject>

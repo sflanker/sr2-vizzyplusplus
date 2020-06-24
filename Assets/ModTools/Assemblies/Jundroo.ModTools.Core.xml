@@ -1,0 +1,1522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jundroo.ModTools.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Jundroo.ModTools.Core.AssetHeaders">
+            <summary>
+            Asset headers.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AssetHeaders.AssemblyHeader">
+            <summary>
+            The assembly header byte array.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AssetHeaders.ManifestHeader">
+            <summary>
+            The manifest header byte array.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AssetHeaders.ExtractAsset(System.Byte[],System.Byte[])">
+            <summary>
+            Extracts the mod asset bytes from the byte array with the specified header bytes.
+            </summary>
+            <param name="assetBytes">The asset bytes.</param>
+            <param name="headerBytes">The header bytes.</param>
+            <returns>The bytes representing the mod asset without any header bytes.</returns>
+            <exception cref="T:System.IO.InvalidDataException">
+            The asset header information is missing or invalid.
+            or
+            The asset header information is incorrect.
+            or
+            The asset length is incorrect.
+            </exception>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AssetHeaders.LoadManifest(System.Byte[])">
+            <summary>
+            Loads the mod manifest from the byte array which is prefixed with a header.
+            </summary>
+            <param name="bytes">The bytes from which to load the mod manifest.</param>
+            <returns>The mod manifest XML document.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AssetHeaders.SaveAsset(System.IO.Stream,System.Byte[],System.Byte[])">
+            <summary>
+            Saves the mod asset bytes to the specified stream using the specified header bytes.
+            </summary>
+            <param name="stream">The stream to which to save the asset.</param>
+            <param name="assetBytes">The asset bytes.</param>
+            <param name="headerBytes">The header bytes.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AssetHeaders.SaveManifest(System.Xml.Linq.XDocument)">
+            <summary>
+            Saves the mod manifest XML to a byte array prefixed with a header.
+            </summary>
+            <param name="xml">The XML representing the mod manifest to be saved.</param>
+            <returns>A byte array representing the mod manifest, prefixed with a header.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.AssetPaths">
+            <summary>
+            A class containing some constants related to asset paths.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AssetPaths.ModAssetFolder">
+            <summary>
+            The mod asset working folder.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AssetPaths.ModDataAssetPath">
+            <summary>
+            The mod data asset path.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AssetPaths.LegacyModManifestFile">
+            <summary>
+            The legacy mod manifest asset file path in the mod asset working folder.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AssetPaths.ModManifestFile">
+            <summary>
+            The mod manifest asset file path in the mod asset working folder.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.AsyncModAssetRequest`1">
+            <summary>
+            An asynchronous request to load an asset from a mod.
+            </summary>
+            <typeparam name="T">The type of the asset to load.</typeparam>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AsyncModAssetRequest`1._modResourceLoader">
+            <summary>
+            The mod resource loader associated with this request.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AsyncModAssetRequest`1.#ctor(UnityEngine.AssetBundleRequest,Jundroo.ModTools.Core.ModResourceLoader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.AsyncModAssetRequest`1"/> class.
+            </summary>
+            <param name="request">The asset bundle request.</param>
+            <param name="modResourceLoader">The mod resource loader associated with the request.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.AsyncModAssetRequest`1.Request">
+            <summary>
+            Gets the asset bundle request.
+            </summary>
+            <value>
+            The asset bundle request.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AsyncModAssetRequest`1.LoadComplete">
+            <summary>
+            Called when the asynchronous loading of the asset is complete.
+            </summary>
+            <returns>
+            The loaded asset.
+            </returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.AsyncResourceRequest`1">
+            <summary>
+            An asynchronous request to load an asset.
+            </summary>
+            <typeparam name="T">The type of the asset to load.</typeparam>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.AsyncResourceRequest`1._instantiate">
+            <summary>
+            A value indicating whether or not the loaded game object should be instantiated.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AsyncResourceRequest`1.#ctor(UnityEngine.ResourceRequest,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.AsyncResourceRequest`1" /> class.
+            </summary>
+            <param name="request">The resource request.</param>
+            <param name="instantiate">If set to <c>true</c> the loaded object will be instantiated after it is loaded.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.AsyncResourceRequest`1.Request">
+            <summary>
+            Gets the resource request.
+            </summary>
+            <value>
+            The resource request.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.AsyncResourceRequest`1.LoadComplete">
+            <summary>
+            Called when the asynchronous loading of the asset is complete.
+            </summary>
+            <returns>
+            The loaded asset.
+            </returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs">
+            <summary>
+            Event args for an event that occurs when there is an API version mismatch while loading a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs.#ctor(Jundroo.ModTools.ModInfo,System.Version,System.Version,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs"/> class.
+            </summary>
+            <param name="mod">The mod being loaded.</param>
+            <param name="currentVersion">The current API version.</param>
+            <param name="modVersion">The mod API version.</param>
+            <param name="apiName">Name of the API.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs.ApiName">
+            <summary>
+            Gets the name of the API.
+            </summary>
+            <value>
+            The name of the API.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs.CurrentApiVersion">
+            <summary>
+            Gets the current API version.
+            </summary>
+            <value>
+            The current API version.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs.Mod">
+            <summary>
+            Gets the mod being loaded.
+            </summary>
+            <value>
+            The mod being loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.ApiVersionMismatchEventArgs.ModApiVersion">
+            <summary>
+            Gets the mod API version.
+            </summary>
+            <value>
+            The mod API version.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Events.PostProcessEventArgs">
+            <summary>
+            Event arguments used for an event that is raised to give code an opportunity to post process a loaded resource.
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Events.PostProcessEventArgs.#ctor(Jundroo.ModTools.ModInfo,Jundroo.ModTools.IModResourceLoader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.Events.PostProcessEventArgs"/> class.
+            </summary>
+            <param name="mod">The mod from which the resource was loaded.</param>
+            <param name="resourceLoader">The resource loader.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessEventArgs.Mod">
+            <summary>
+            Gets the mod from which the resource was loaded.
+            </summary>
+            <value>
+            The mod from which the resource was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessEventArgs.ResourceLoader">
+            <summary>
+            Gets the resource loader.
+            </summary>
+            <value>
+            The resource loader.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Events.PostProcessGameObjectEventArgs">
+            <summary>
+            Event arguments used for an event that is raised to give code an opportunity to post process a loaded game object.
+            </summary>
+            <seealso cref="T:Jundroo.ModTools.Core.Events.PostProcessEventArgs" />
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Events.PostProcessGameObjectEventArgs.#ctor(Jundroo.ModTools.ModInfo,Jundroo.ModTools.IModResourceLoader,UnityEngine.GameObject)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.Events.PostProcessGameObjectEventArgs"/> class.
+            </summary>
+            <param name="mod">The mod from which the resource was loaded.</param>
+            <param name="resourceLoader">The resource loader.</param>
+            <param name="gameObject">The game object that was loaded.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessGameObjectEventArgs.GameObject">
+            <summary>
+            Gets or sets the game object that was loaded.
+            </summary>
+            <value>
+            The game object that was loaded.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Events.PostProcessMaterialEventArgs">
+            <summary>
+            Event arguments used for an event that is raised to give code an opportunity to post process a loaded material.
+            </summary>
+            <seealso cref="T:Jundroo.ModTools.Core.Events.PostProcessEventArgs" />
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Events.PostProcessMaterialEventArgs.#ctor(Jundroo.ModTools.ModInfo,Jundroo.ModTools.IModResourceLoader,UnityEngine.Material,UnityEngine.GameObject,UnityEngine.Component)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.Events.PostProcessMaterialEventArgs"/> class.
+            </summary>
+            <param name="mod">The mod from which the resource was loaded.</param>
+            <param name="resourceLoader">The resource loader.</param>
+            <param name="material">The material that was loaded.</param>
+            <param name="associatedGameObject">The game object associated with the material that was loaded.</param>
+            <param name="associatedComponent">The component associated with the material that was loaded.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessMaterialEventArgs.AssociatedComponent">
+            <summary>
+            Gets the component associated with the material that was loaded.
+            </summary>
+            <value>
+            The component associated with the material that was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessMaterialEventArgs.AssociatedGameObject">
+            <summary>
+            Gets the game object associated with the material that was loaded.
+            </summary>
+            <value>
+            The game object associated with the material that was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessMaterialEventArgs.Material">
+            <summary>
+            Gets the material that was loaded.
+            </summary>
+            <value>
+            The material that was loaded.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Events.PostProcessMissingShaderMaterialEventArgs">
+            <summary>
+            Event arguments used for an event that is raised to give code an opportunity to post process a loaded material with a missing shader.
+            </summary>
+            <seealso cref="T:Jundroo.ModTools.Core.Events.PostProcessEventArgs" />
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Events.PostProcessMissingShaderMaterialEventArgs.#ctor(Jundroo.ModTools.ModInfo,Jundroo.ModTools.IModResourceLoader,UnityEngine.Material,UnityEngine.GameObject,UnityEngine.Component)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.Events.PostProcessMissingShaderMaterialEventArgs"/> class.
+            </summary>
+            <param name="mod">The mod from which the resource was loaded.</param>
+            <param name="resourceLoader">The resource loader.</param>
+            <param name="material">The material that was loaded.</param>
+            <param name="associatedGameObject">The associated game object of the loaded material.</param>
+            <param name="associatedComponent">The associated component of the loaded material.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessMissingShaderMaterialEventArgs.AssociatedComponent">
+            <summary>
+            Gets the component associated with the material that was loaded.
+            </summary>
+            <value>
+            The component associated with the material that was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessMissingShaderMaterialEventArgs.AssociatedGameObject">
+            <summary>
+            Gets the game object associated with the material that was loaded.
+            </summary>
+            <value>
+            The game object associated with the material that was loaded.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PostProcessMissingShaderMaterialEventArgs.Material">
+            <summary>
+            Gets the material that was loaded.
+            </summary>
+            <value>
+            The material that was loaded.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Events.PreProcessAssemblyEventArgs">
+            <summary>
+            An event that is raised when a mod assembly is being pre-processed.
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Events.PreProcessAssemblyEventArgs.#ctor(Jundroo.ModTools.ModInfo,System.String,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.Events.PreProcessAssemblyEventArgs"/> class.
+            </summary>
+            <param name="modInfo">The mod information.</param>
+            <param name="assemblyPath">The path of the assembly in the asset bundle.</param>
+            <param name="assemblyBytes">The byte array of the assembly being pre-processed.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PreProcessAssemblyEventArgs.AssemblyBytes">
+            <summary>
+            Gets or sets the assembly being pre-processed.
+            </summary>
+            <value>
+            The assembly being pre-processed.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PreProcessAssemblyEventArgs.AssemblyPath">
+            <summary>
+            Gets the path of the assembly in the asset bundle.
+            </summary>
+            <value>
+            The path of the assembly in the asset bundle.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.Events.PreProcessAssemblyEventArgs.ModInfo">
+            <summary>
+            Gets the mod information.
+            </summary>
+            <value>
+            The mod information.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.Extensions.DictionaryExtensions">
+            <summary>
+            Extension methods for dictionaries.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.Extensions.DictionaryExtensions.GetValueOrDefault``2(System.Collections.Generic.Dictionary{``0,``1},``0)">
+            <summary>
+            Gets the value for the specified key or the default value if the key does not exist in the dictionary.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The dictionary.</param>
+            <param name="key">The key.</param>
+            <returns>The value for the specified key or the default value.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.IO.PathUtility">
+            <summary>
+            A utility class for working with file and directory paths.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IO.PathUtility.NormalizePath(System.String,System.Boolean)">
+            <summary>
+            Normalizes the path specified path.
+            </summary>
+            <param name="path">The path to normalize.</param>
+            <param name="preserveCasing">If set to <c>true</c> casing will be preserved.</param>
+            <returns>The normalized path.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.LoadedMod">
+            <summary>
+            An object representing a mod that has been loaded.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.LoadedMod._services">
+            <summary>
+            The services registered with the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.LoadedMod.#ctor(Jundroo.ModTools.ModInfo,UnityEngine.AssetBundle,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.LoadedMod"/> class.
+            </summary>
+            <param name="mod">The mod.</param>
+            <param name="assetBundle">The asset bundle.</param>
+            <param name="modManifest">The mod manifest.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.LoadedMod.AssetBundle">
+            <summary>
+            Gets the asset bundle associated with the mod.
+            </summary>
+            <value>
+            The asset bundle associated with the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.LoadedMod.GameMods">
+            <summary>
+            Gets the collection of game mod objects for this mod.
+            </summary>
+            <value>
+            The game mod objects for this mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.LoadedMod.Jundroo#ModTools#ILoadedMod#GameMods">
+            <summary>
+            Gets the collection of game mod objects for this mod.
+            </summary>
+            <value>
+            The game mod objects for this mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.LoadedMod.ModInfo">
+            <summary>
+            Gets the mod information.
+            </summary>
+            <value>
+            The mod information.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.LoadedMod.ResourceLoader">
+            <summary>
+            Gets the resource loader for the mod.
+            </summary>
+            <value>
+            The resource loader for the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.LoadedMod.SteamWorkshopPublishInfo">
+            <summary>
+            Gets the Steam Workshop publish information.
+            </summary>
+            <value>
+            The Steam Workshop publish information.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModHeader">
+            <summary>
+            A class for reading and writing header information in mod files.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModHeader.Default">
+            <summary>
+            The default mod header, typically used for mods that have no header information (legacy mod support).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModHeader._HeaderTagV1">
+            <summary>
+            The header tag (version 1).
+            This is the first set of bytes of a mod file that identifies it as a mod file and provides the format version.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModHeader._HeaderTagV1Buffer">
+            <summary>
+            The temporary reusable (and not thread safe) buffer used to read the header tag from files (version 1).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModHeader._HeaderTagV1Bytes">
+            <summary>
+            The byte representation of the header tag (version 1).
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModHeader._LongBuffer1">
+            <summary>
+            A temporary resusable (and not thread safe) buffer used for reading/writing long data.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModHeader._LongBuffer2">
+            <summary>
+            A second temporary resusable (and not thread safe) buffer used for reading/writing long data.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Core.ModHeader"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModHeader"/> class.
+            </summary>
+            <param name="windowsOffset">The asset bundle offset for Windows or <c>null</c> if it is not supported.</param>
+            <param name="macOSOffset">The asset bundle offset for MacOS or <c>null</c> if it is not supported.</param>
+            <param name="linuxOffset">The asset bundle offset for Linux or <c>null</c> if it is not supported.</param>
+            <param name="androidOffset">The asset bundle offset for Android or <c>null</c> if it is not supported.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.#ctor(System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo,System.IO.FileInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModHeader"/> class.
+            </summary>
+            <param name="windowsBundle">The Windows asset bundle file info or <c>null</c> if it is not supported.</param>
+            <param name="macOSBundle">The MacOS asset bundle file info or <c>null</c> if it is not supported.</param>
+            <param name="linuxBundle">The Linux asset bundle file info or <c>null</c> if it is not supported.</param>
+            <param name="androidBundle">The Android asset bundle file info or <c>null</c> if it is not supported.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModHeader.AssetBundleOffsetAndroid">
+            <summary>
+            Gets the asset bundle offset for Android.
+            This is the byte offset in the mod file at which the Android asset bundle can be found.
+            If this is <c>null</c>, the mod file does not support the Android platform.
+            </summary>
+            <value>
+            The asset bundle offset for Android.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModHeader.AssetBundleOffsetLinux">
+            <summary>
+            Gets the asset bundle offset for Linux.
+            This is the byte offset in the mod file at which the Linux asset bundle can be found.
+            If this is <c>null</c>, the mod file does not support the Linux platform.
+            </summary>
+            <value>
+            The asset bundle offset for Linux.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModHeader.AssetBundleOffsetMacOS">
+            <summary>
+            Gets the asset bundle offset for MacOS.
+            This is the byte offset in the mod file at which the MacOS asset bundle can be found.
+            If this is <c>null</c>, the mod file does not support the MacOS platform.
+            </summary>
+            <value>
+            The asset bundle offset for MacOS.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModHeader.AssetBundleOffsetWindows">
+            <summary>
+            Gets the asset bundle offset for Windows.
+            This is the byte offset in the mod file at which the Windows asset bundle can be found.
+            If this is <c>null</c>, the mod file does not support the Windows platform.
+            </summary>
+            <value>
+            The asset bundle offset for Windows.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.Read(System.String)">
+            <summary>
+            Reads mod header information from the specified file path.
+            </summary>
+            <param name="filePath">The file path from which to read mod header information.</param>
+            <returns>The requested mod header information or <c>null</c> if it could not be found or read.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.Write(System.IO.Stream)">
+            <summary>
+            Writes the mod header information to the specified stream.
+            </summary>
+            <param name="stream">The stream to which to write the mod header information.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.ReadOffset(System.IO.Stream)">
+            <summary>
+            Reads the byte offset information from the specified stream.
+            </summary>
+            <param name="stream">The stream from which to read the byte offset information.</param>
+            <returns>The requested byte offset information.</returns>
+            <exception cref="T:System.InvalidOperationException">Unable to read the platform asset bundle offset value from the file stream while reading a mod header.</exception>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModHeader.WriteOffset(System.IO.Stream,System.Nullable{System.Int64})">
+            <summary>
+            Writes the asset bundle byte offset information to the specified stream.
+            </summary>
+            <param name="stream">The stream to which to write the byte offset information.</param>
+            <param name="offset">The byte offset to write.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModLoadMessage">
+            <summary>
+            A message logged during the loading of a mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModLoadMessage.#ctor(Jundroo.ModTools.ModInfo,System.String,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModLoadMessage"/> class.
+            </summary>
+            <param name="mod">The mod for which the message is being logged.</param>
+            <param name="message">The message.</param>
+            <param name="args">The message format arguments.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModLoadMessage.DateTime">
+            <summary>
+            Gets the date and time that the message was created.
+            </summary>
+            <value>
+            The date and time that the message was created.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModLoadMessage.Message">
+            <summary>
+            Gets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModLoadMessage.Mod">
+            <summary>
+            Gets the mod for which the message was logged.
+            </summary>
+            <value>
+            The mod for which the message was logged.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.IModManagerBase">
+            <summary>
+            An interface for interacting with the mod manager.
+            </summary>
+        </member>
+        <member name="E:Jundroo.ModTools.Core.IModManagerBase.ApiVersionMismatch">
+            <summary>
+            Occurs when there is an API version mismatch while loading a mod.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.IModManagerBase.KnownMods">
+            <summary>
+            Gets the mods known, but not necessarily loaded, by the system.
+            </summary>
+            <value>
+            The mods known, but not necessarily loaded, by the system.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.IModManagerBase.LoadedMods">
+            <summary>
+            Gets the mods that have been loaded.
+            </summary>
+            <value>
+            The mods that have been loaded
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.IModManagerBase.ModLoadErrors">
+            <summary>
+            Gets any errors that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any errors that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.IModManagerBase.ModLoadMessages">
+            <summary>
+            Gets any messages that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any messages that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.IModManagerBase.ModLoadWarnings">
+            <summary>
+            Gets any warnings that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any warnings that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.DeleteMod(Jundroo.ModTools.ModInfo)">
+            <summary>
+            Deletes the specified mod file.
+            This will throw an exception if the mod is enabled or pending disable.
+            </summary>
+            <param name="mod">The mod info associated with the mod file to be deleted.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.GetModAssemblies">
+            <summary>
+            Gets all of the currently loaded mod assemblies.
+            </summary>
+            <returns>All of the currently loaded mod assemblies.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.LoadEnabledMods(System.Boolean)">
+            <summary>
+            Loads all enabled mods.
+            </summary>
+            <param name="allowApiVersionMismatch">If set to <c>true</c> mods will be loaded even if there is an API version mismatch.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.LoadMod(Jundroo.ModTools.ModInfo,System.Boolean)">
+            <summary>
+            Loads the specified mod.
+            </summary>
+            <param name="mod">The mod to load.</param>
+            <param name="allowApiVersionMismatch">If set to <c>true</c> mods will be loaded even if there is an API version mismatch.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.LoadMods(System.Collections.Generic.List{Jundroo.ModTools.ModInfo},System.Boolean)">
+            <summary>
+            Loads the specified mods.
+            </summary>
+            <param name="mods">The mods to load.</param>
+            <param name="allowApiVersionMismatch">If set to <c>true</c> mods will be loaded even if there is an API version mismatch.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.SaveModLoadLog(System.String)">
+            <summary>
+            Saves the mod load log to file.
+            </summary>
+            <param name="filePath">The file path for the log file to be saved.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.IModManagerBase.ScanForMods(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Scans the specified directory for mods.
+            </summary>
+            <param name="directory">The directory to scan.</param>
+            <param name="recursive">If set to <c>true</c> the directory will be recursively scanned.</param>
+            <param name="createIfNotFound">If set to <c>true</c> the directory will be created if it is not found.</param>
+            <returns>The mods found by the scan.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModManagerBase">
+            <summary>
+            A manager class for interacting with mods.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.IsAndroidBuild">
+            <summary>
+            A value indicating whether the application is built for the Android platform.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.IsLinuxBuild">
+            <summary>
+            A value indicating whether the application is built for the Linux platform.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.IsMacOSBuild">
+            <summary>
+            A value indicating whether the application is built for the MacOS platform.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.IsUnityEditor">
+            <summary>
+            A value indicating whether the application is running within the Unity editor.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.IsWindowsBuild">
+            <summary>
+            A value indicating whether the application is built for the Windows platform.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase._allModLoadMessages">
+            <summary>
+            A collection of all mod load messages (messages, warnings, errors) in the same order in which they were created.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase._knownMods">
+            <summary>
+            The list of mods known by the system.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase._loadedMods">
+            <summary>
+            The list of mods currently loaded.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase._modAssemblies">
+            <summary>
+            The list of assemblies loaded from mods.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase._scanResults">
+            <summary>
+            The list of mod file paths and associated mod information objects found by scans.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Core.ModManagerBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModManagerBase"/> class.
+            </summary>
+        </member>
+        <member name="E:Jundroo.ModTools.Core.ModManagerBase.PreProcessAssembly">
+            <summary>
+            Occurs when an assembly is being pre-processed.
+            </summary>
+        </member>
+        <member name="E:Jundroo.ModTools.Core.ModManagerBase.ApiVersionMismatch">
+            <summary>
+            Occurs when there is an API version mismatch while loading a mod.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.KnownMods">
+            <summary>
+            Gets the mods known, but not necessarily loaded, by the system.
+            </summary>
+            <value>
+            The mods known, but not necessarily loaded, by the system.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.LoadedMods">
+            <summary>
+            Gets the mods that have been loaded.
+            </summary>
+            <value>
+            The mods that have been loaded
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.ModLoadErrors">
+            <summary>
+            Gets any errors that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any errors that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.ModLoadMessages">
+            <summary>
+            Gets any messages that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any messages that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.ModLoadWarnings">
+            <summary>
+            Gets any warnings that may have occurred during the loading of mods.
+            </summary>
+            <value>
+            Any warnings that may have occurred during the loading of mods.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.SupportsCodeExecution">
+            <summary>
+            Gets a value indicating whether the current platform/build supports code execution from mods.
+            </summary>
+            <value>
+            <c>true</c> if the current platform/build supports code execution from mods; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.Assemblies">
+            <summary>
+            Gets the assemblies loaded by the mod.
+            </summary>
+            <value>
+            The assemblies loaded by the mod.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.DeleteMod(Jundroo.ModTools.ModInfo)">
+            <summary>
+            Deletes the specified mod file.
+            This will throw an exception if the mod is enabled or pending disable.
+            </summary>
+            <param name="mod">The mod info associated with the mod file to be deleted.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.GetModAssemblies">
+            <summary>
+            Gets all of the currently loaded mod assemblies.
+            </summary>
+            <returns>All of the currently loaded mod assemblies.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadEnabledMods(System.Boolean)">
+            <summary>
+            Loads all enabled mods.
+            </summary>
+            <param name="allowApiVersionMismatch">If set to <c>true</c> mods will be loaded even if there is an API version mismatch.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadMod(Jundroo.ModTools.ModInfo,System.Boolean)">
+            <summary>
+            Loads the specified mod.
+            </summary>
+            <param name="mod">The mod to load.</param>
+            <param name="allowApiVersionMismatch">If set to <c>true</c> mods will be loaded even if there is an API version mismatch.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadMods(System.Collections.Generic.List{Jundroo.ModTools.ModInfo},System.Boolean)">
+            <summary>
+            Loads the specified mods.
+            </summary>
+            <param name="mods">The mods to load.</param>
+            <param name="allowApiVersionMismatch">If set to <c>true</c> mods will be loaded even if there is an API version mismatch.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.SaveModLoadLog(System.String)">
+            <summary>
+            Saves the mod load log to file.
+            </summary>
+            <param name="filePath">The file path for the log file to be saved.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.ScanForMods(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Scans the specified directory for mods.
+            </summary>
+            <param name="directory">The directory to scan.</param>
+            <param name="recursive">If set to <c>true</c> the directory will be recursively scanned.</param>
+            <param name="createIfNotFound">If set to <c>true</c> the directory will be created if it is not found.</param>
+            <returns>
+            The mods found by the scan.
+            </returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.AssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the assembly resolve event for the app domain, looking for the assembly in the list of assemblies loaded from mods.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.ResolveEventArgs"/> instance containing the event data.</param>
+            <returns>The requested assembly if found, otherwise <c>null</c>.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.GetGameModObjectType">
+            <summary>
+            Gets the type of the game mod object.
+            </summary>
+            <returns>The game mod object type.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.GetModFilePaths(System.String,System.Boolean)">
+            <summary>
+            Gets the paths of any mod files in the specified directory.
+            </summary>
+            <param name="directory">The directory to search.</param>
+            <param name="recursive">If set to <c>true</c> the directory will be recursively scanned.</param>
+            <returns>The paths of any mod files in the specified directory.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LogLoadError(Jundroo.ModTools.ModInfo,System.String,System.Object[])">
+            <summary>
+            Logs the mod load error.
+            </summary>
+            <param name="mod">The mod for which the error is being logged.</param>
+            <param name="message">The message.</param>
+            <param name="args">The message arguments.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LogLoadMessage(Jundroo.ModTools.ModInfo,System.String,System.Object[])">
+            <summary>
+            Logs the mod load message.
+            </summary>
+            <param name="mod">The mod for which the message is being logged.</param>
+            <param name="message">The message.</param>
+            <param name="args">The message arguments.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LogLoadWarning(Jundroo.ModTools.ModInfo,System.String,System.Object[])">
+            <summary>
+            Logs the mod load warning.
+            </summary>
+            <param name="mod">The mod for which the warning is being logged.</param>
+            <param name="message">The message.</param>
+            <param name="args">The message arguments.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.OnGameModObjectInitialized(Jundroo.ModTools.GameModBase)">
+            <summary>
+            Called when a game mod object is initialized.
+            </summary>
+            <param name="mod">The mod that was initialized.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.OnModLoaded(Jundroo.ModTools.Core.LoadedMod,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Called when a mod is loaded.
+            </summary>
+            <param name="mod">The mod that was loaded.</param>
+            <param name="manifest">The mod manifest of the mod that was loaded.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.RaiseApiVersionMismatch(Jundroo.ModTools.ModInfo,System.Version,System.Version,System.String)">
+            <summary>
+            Raises the API version mismatch event.
+            </summary>
+            <param name="mod">The mod.</param>
+            <param name="currentApiVersion">The current API version.</param>
+            <param name="modApiVersion">The mod API version.</param>
+            <param name="apiName">Name of the API.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.ScanLoadedAssembly(Jundroo.ModTools.Core.LoadedMod,System.Reflection.Assembly,System.Collections.Generic.IReadOnlyList{System.Type})">
+            <summary>
+            Scans the assembly loaded from the mod for types that may need acted upon.
+            </summary>
+            <param name="mod">The mod to which the assembly belongs.</param>
+            <param name="assembly">The assembly that was loaded.</param>
+            <param name="types">The types that were found in the assembly.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.VerifyApiVersions(Jundroo.ModTools.ModInfo,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Verifies the current API versions match the API version that the mod was created with.
+            </summary>
+            <param name="mod">The mod.</param>
+            <param name="modManifest">The mod manifest.</param>
+            <returns><c>true</c> if API versions match; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.GetModManifest(System.String,UnityEngine.AssetBundle)">
+            <summary>
+            Gets the mod manifest from the asset bundle.
+            </summary>
+            <param name="modNameOrPath">The mod name or path.</param>
+            <param name="assetBundle">The asset bundle.</param>
+            <returns>The mod manifest.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.InitializeGameModObjects(Jundroo.ModTools.Core.LoadedMod,System.Collections.Generic.IReadOnlyList{System.Type})">
+            <summary>
+            Initializes the game mod objects.
+            </summary>
+            <param name="mod">The mod for which to initialize the game mod objects.</param>
+            <param name="types">The types that were found in the assembly.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadAssetBundleFromMod(Jundroo.ModTools.ModInfo,System.String,Jundroo.ModTools.Core.ModHeader@)">
+            <summary>
+            Loads the appropriate asset bundle from a mod at the specified path.
+            </summary>
+            <param name="modInfo">The mod info. If <c>null</c>, mod load warnings/errors will not be logged.</param>
+            <param name="modFilePath">The mod file path.</param>
+            <param name="header">The mod header that was read from the mod file.</param>
+            <returns>The loaded asset bundle or <c>null</c> if it could not be loaded.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadModAssemblies(Jundroo.ModTools.Core.LoadedMod,Jundroo.ModTools.Core.ModManifest)">
+            <summary>
+            Loads the mod assemblies.
+            </summary>
+            <param name="mod">The mod.</param>
+            <param name="manifest">The mod manifest.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.PreprocessAssembly(System.Byte[],Jundroo.ModTools.Core.LoadedMod,Jundroo.ModTools.Core.ModManifest,System.String)">
+            <summary>
+            Preprocesses the assembly potentially changing assembly code before the assembly is loaded.
+            </summary>
+            <param name="assemblyBytes">The assembly bytes.</param>
+            <param name="mod">The loaded mod.</param>
+            <param name="manifest">The mod manifest.</param>
+            <param name="assemblyPath">The assembly path in the asset bundle.</param>
+            <returns>The new (or unchanged) assembly bytes.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.ReadModFileInfo(System.String)">
+            <summary>
+            Reads the mod file information from the mod at the specified path.
+            </summary>
+            <param name="modFile">The mod file path.</param>
+            <returns>The information about the specified mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.ScanLoadedAssembly(Jundroo.ModTools.Core.LoadedMod,System.Reflection.Assembly)">
+            <summary>
+            Scans the assembly loaded from the mod for types that may need acted upon.
+            </summary>
+            <param name="mod">The mod to which the assembly belongs.</param>
+            <param name="assembly">The assembly that was loaded.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.TypeResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the type resolve event for the app domain, looking for the type in the list of assemblies loaded from mods.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.ResolveEventArgs"/> instance containing the event data.</param>
+            <returns>The assembly containing the type or <c>null</c> if it could not be found.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly">
+            <summary>
+            A class representing an assembly that has been loaded by a mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly._assemblyHashCode">
+            <summary>
+            The assembly hash code.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly.#ctor(System.Reflection.Assembly,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly"/> class.
+            </summary>
+            <param name="assembly">The assembly.</param>
+            <param name="bytes">The assembly bytes.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly.Assembly">
+            <summary>
+            Gets the assembly.
+            </summary>
+            <value>
+            The assembly.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly.AssemblyBytes">
+            <summary>
+            Gets the assembly bytes.
+            </summary>
+            <value>
+            The assembly bytes.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly.AssemblyHashCode">
+            <summary>
+            Gets the hash code for the assembly.
+            </summary>
+            <value>
+            The hash code for the assembly.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly.Name">
+            <summary>
+            Gets the name of the assembly.
+            </summary>
+            <value>
+            The name of the assembly.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManagerBase.LoadedModAssembly.GenerateAssemblyHashCode">
+            <summary>
+            Generates the assembly hash code.
+            </summary>
+            <returns>The assembly hash code.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModManifest">
+            <summary>
+            A wrapper class for the XML based mod manifest file which contains information about what is stored in a mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManifest._mod">
+            <summary>
+            The 'Mod' element in the mod manifest XML.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManifest._root">
+            <summary>
+            The root element in the mod manifest xmlXML.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModManifest._steam">
+            <summary>
+            The 'Steam' element in the mod manifest XML.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManifest.#ctor(System.Xml.Linq.XDocument)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModManifest"/> class.
+            </summary>
+            <param name="xml">The XML content.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.AssemblyPaths">
+            <summary>
+            Gets the assembly paths.
+            </summary>
+            <value>
+            The assembly paths.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.Author">
+            <summary>
+            Gets the mod author.
+            </summary>
+            <value>
+            The mod author.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.BuildGameVersion">
+            <summary>
+            Gets the game version that was used to build the mod.
+            </summary>
+            <value>
+            The game version that was used to build the mod.
+            This will return <c>null</c> for mods built with ModTools from game version 0.8.107 and below.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.BuildID">
+            <summary>
+            Gets the build identifier for the mod if it has one.
+            </summary>
+            <value>
+            The build identifier for the mod if it has one.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.BuildOperatingSystem">
+            <summary>
+            Gets the operating system that was used to build the mod.
+            </summary>
+            <value>
+            The operating system that was used to build the mod.
+            This will return <c>null</c> for mods built with ModTools from game version 0.8.107 and below.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.BuildUnityVersion">
+            <summary>
+            Gets the Unity version that was used to build the mod.
+            </summary>
+            <value>
+            The Unity version that was used to build the mod.
+            This will return <c>null</c> for mods built with ModTools from game version 0.8.107 and below.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.Description">
+            <summary>
+            Gets the mod description.
+            </summary>
+            <value>
+            The mod author.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.HasSteamInfo">
+            <summary>
+            Gets a value indicating whether the manifest has Steam Workshop publishing information.
+            </summary>
+            <value>
+            <c>true</c> if the manifest has Steam Workshop publishing information; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.LastUpdated">
+            <summary>
+            Gets the last updated date time of the mod.
+            </summary>
+            <value>
+            The last updated date time of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.LoadPriority">
+            <summary>
+            Gets the load priority for the mod.
+            Mods with a lower priority number will be loaded before mods with a higher number.
+            The default priority for mods is 1000;
+            </summary>
+            <value>
+            The load priority for the mod.
+            Mods with a lower priority number will be loaded before mods with a higher number.
+            The default priority for mods is 1000;
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.MaterialShaderMap">
+            <summary>
+            Gets the material shader map that maps the material name of all mod materials to the name of the shader used by that material.
+            </summary>
+            <value>
+            The material shader map that maps the material name of all mod materials to the name of the shader used by that material.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.Name">
+            <summary>
+            Gets the name of the mod.
+            </summary>
+            <value>
+            The name of the mod.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.OtherAssetPaths">
+            <summary>
+            Gets the asset paths for miscellaneous mod assets that do not belong to any special category.
+            </summary>
+            <value>
+            The asset paths for miscellaneous mod assets that do not belong to any special category.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.PrefabPaths">
+            <summary>
+            Gets the asset paths.
+            </summary>
+            <value>
+            The asset paths.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.SteamDescription">
+            <summary>
+            Gets the description of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The description of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.SteamLanguage">
+            <summary>
+            Gets the language of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The language of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.SteamPreviewPath">
+            <summary>
+            Gets the preview image path of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The preview image path of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.SteamTags">
+            <summary>
+            Gets the tags of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The tags of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.SteamTitle">
+            <summary>
+            Gets the title of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The title of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.SteamVisibility">
+            <summary>
+            Gets the visibility of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The visibility of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifest.Version">
+            <summary>
+            Gets the version number of the mod.
+            </summary>
+            <value>
+            The version number of the mod.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManifest.GetApiVersion">
+            <summary>
+            Gets the API version that was used to create this mod.
+            </summary>
+            <returns>The API version that was used to create this mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManifest.GetApiVersionCommon">
+            <summary>
+            Gets the common API version that was used to create this mod.
+            </summary>
+            <returns>The common API version that was used to create this mod.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManifest.GetElement(System.String)">
+            <summary>
+            Gets the specified element of the mod manifest.
+            </summary>
+            <param name="elementName">The name of the mod manifest element to get.</param>
+            <returns>The requested mod manifest element or <c>null</c> if it could not be found.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModManifestGameObject">
+            <summary>
+            An object representing a game object entry in the mod manifest.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModManifestGameObject.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModManifestGameObject"/> struct.
+            </summary>
+            <param name="name">The name of the game object.</param>
+            <param name="path">The path of the game object in the mod.</param>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifestGameObject.Name">
+            <summary>
+            Gets the name of the game object.
+            </summary>
+            <value>
+            The name of the game object.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModManifestGameObject.Path">
+            <summary>
+            Gets the path of the game object in the mod.
+            </summary>
+            <value>
+            The path of the game object in the mod.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModResourceLoader">
+            <summary>
+            A resource loader class for a mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModResourceLoader._assetBundle">
+            <summary>
+            The asset bundle associated with the mod.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModResourceLoader.#ctor(Jundroo.ModTools.ModInfo,Jundroo.ModTools.Core.ModManifest,UnityEngine.AssetBundle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jundroo.ModTools.Core.ModResourceLoader"/> class.
+            </summary>
+            <param name="mod">The mod information.</param>
+            <param name="modManifest">The mod manifest.</param>
+            <param name="assetBundle">The asset bundle for the mod.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if the asset bundle or game object name/path map are <c>null</c>.</exception>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.ModResourceLoader.ModInfo">
+            <summary>
+            Gets the mod information.
+            </summary>
+            <value>
+            The mod information.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModResourceLoader.LoadAsset``1(System.String)">
+            <summary>
+            Loads the asset at the specified path.
+            </summary>
+            <typeparam name="T">The type of the asset to load.</typeparam>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <returns>The requested asset or <c>null</c> if an asset of the requested type at the specified path could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModResourceLoader.LoadAsset(System.String,System.Type)">
+            <summary>
+            Loads the asset at the specified path.
+            </summary>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <param name="type">The type of the asset to load.</param>
+            <returns>The requested asset or <c>null</c> if an asset of the requested type at the specified path could not be found.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModResourceLoader.LoadAssetAsync(System.String,System.Type)">
+            <summary>
+            Asynchronously loads the asset at the specified path.
+            </summary>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <param name="type">The type of the asset to load.</param>
+            <returns>The asynchronous request for the asset.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Core.ModResourceLoader.LoadAssetAsync``1(System.String)">
+            <summary>
+            Asynchronously loads the asset at the specified path.
+            </summary>
+            <typeparam name="T">The type of the asset to load.</typeparam>
+            <param name="path">The path of the asset to load. (Example: "Assets/Textures/MyTexture.png")</param>
+            <returns>The asynchronous request for the asset.</returns>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.ModTargetPlatform">
+            <summary>
+            An enumeration defining the target platform for a mod.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.Windows">
+            <summary>
+            A value indicating a target platform of Windows.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.MacOS">
+            <summary>
+            A value indicating a target platform of MacOS.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.Linux">
+            <summary>
+            A value indicating a target platform of Linux.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.Android">
+            <summary>
+            A value indicating a target platform of Android.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.Standalone">
+            <summary>
+            A value indicating a target platform of standalone players.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.ModTargetPlatform.Steam">
+            <summary>
+            A value indicating a target platform of the Steam Workshop.
+            </summary>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.SteamPublishInfo">
+            <summary>
+            A collection of information needed for publishing a mod to the Steam Workshop.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.SteamPublishInfo.Description">
+            <summary>
+            Gets or sets the description of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The description of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.SteamPublishInfo.Language">
+            <summary>
+            Gets or sets the language of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The language of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.SteamPublishInfo.PreviewPath">
+            <summary>
+            Gets or sets the preview image path of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The preview image path of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.SteamPublishInfo.Tags">
+            <summary>
+            Gets or sets the tags of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The tags of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.SteamPublishInfo.Title">
+            <summary>
+            Gets or sets the title of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The title of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="P:Jundroo.ModTools.Core.SteamPublishInfo.Visibility">
+            <summary>
+            Gets or sets the visibility of the mod for the Steam Workshop.
+            </summary>
+            <value>
+            The visibility of the mod for the Steam Workshop.
+            </value>
+        </member>
+        <member name="T:Jundroo.ModTools.Core.SteamVisibility">
+            <summary>
+            An enumeration defining the different types of visibility of mods in the Steam Workshop.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.SteamVisibility.Public">
+            <summary>
+            A value indicating that a mod should be publicly visible.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.SteamVisibility.FriendsOnly">
+            <summary>
+            A value indicating that a mod should be visible to friends only.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Core.SteamVisibility.Private">
+            <summary>
+            A value indicating that a mod should not be visible to anyone except the author of the mod.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout name="CraftPartsPanel" xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <ContentButton class="list-item" buttonColors="Transparent|Button|ButtonPressed|Button" navigation="None" preferredHeight="32" rectAlignment="UpperCenter" raycastTarget="true" hoverClass="list-item-hover" onClick="OnListItemClicked(this);" onMouseEnter="OnMouseEnterListItem(this);" onMouseExit="OnMouseExitListItem(this);" />
+    <ContentButton class="list-item-selected" buttonColors="Primary|PrimaryHover|ButtonPressed|Button" />
+    <ContentButton class="hide-button" onClickSound="Ui/Audio/ButtonClicked" audioMode="OneShot" buttonColors="ButtonHover|ButtonPressed|White|Button" navigation="None" image="Ui/Sprites/Design/IconHidden" width="26" height="19" onClick="OnHideButtonClicked(this);" active="false" tooltip="Toggle part visibility" />
+    <ContentButton class="list-item-hover:hide-button" active="true" />
+    <ContentButton class="hide-button-toggled" active="true" buttonColors="White|White|ButtonPressed|Button" />
+  </Defaults>
+  <Panel class="no-image" height="100%">
+    <Panel class="no-image" height="32" padding="0 2 0 0" offsetXY="0 0" rectAlignment="UpperCenter">
+      <TextMeshProInputField id="search-input" text="" class="search-input" onValueChanged="FilterItems(value);">
+        <TMP_Placeholder text="Search..." />
+        <TMP_Text text="" />
+      </TextMeshProInputField>
+    </Panel>
+    <Panel height="32" color="ButtonPressed" offsetXY="0 -32" rectAlignment="UpperCenter">
+      <TextMeshPro id="part-count" offsetMin="10 0" alignment="Left" rectAlignment="MiddleLeft" text="35 Parts" width="65%" />
+      <Button class="btn btn-sm" rectAlignment="MiddleRight" width="30%" offsetXY="-95 0" onClick="OnToggleListAllPartsClicked();">
+        <TextMeshPro id="list-all-parts-button-text" text="List All" />
+      </Button>
+      <Button class="btn btn-sm" rectAlignment="MiddleRight" width="30%" offsetXY="-5 0" onClick="OnToggleAllVisibilityClicked();">
+        <TextMeshPro id="toggle-all-button-text" text="Hide All" />
+      </Button>
+    </Panel>
+    <VerticalScrollView id="scrollview" class="no-image" pivot="0 1" offsetMax="0 -65">
+      <VerticalLayout id="content" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" padding="0 0 0 40">
+        <ContentButton id="template" class="list-item btn" active="false">
+          <TextMeshPro internalId="name" offsetMin="10 0" alignment="Left" text="Part Name" />
+          <Image class="border" rectAlignment="LowerCenter" height="1" />
+          <ContentButton internalId="hide-button" class="hide-button" rectAlignment="MiddleRight" offsetXY="-5 0" />
+        </ContentButton>
+      </VerticalLayout>
+    </VerticalScrollView>
+  </Panel>
+</XmlLayout>
