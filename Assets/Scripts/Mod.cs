@@ -53,7 +53,7 @@ namespace Assets.Scripts {
                 { OrbitalElementExpression.XmlName, (typeof(OrbitalElementExpression), () => new OrbitalElementExpression()) },
                 { AdvancedOrbitalElementExpression.XmlName, (typeof(AdvancedOrbitalElementExpression), () => new AdvancedOrbitalElementExpression()) },
                 { CartesianStateVectorExpression.XmlName, (typeof(CartesianStateVectorExpression), () => new CartesianStateVectorExpression()) },
-                { TargetCraftIdExpression.XmlName, (typeof(TargetCraftIdExpression), () => new TargetCraftIdExpression()) }
+                { TargetCraftIdExpression.XmlName, (typeof(TargetCraftIdExpression), () => new TargetCraftIdExpression()) },
                 { ClosestApproachExpression.XmlName, (typeof(ClosestApproachExpression), () => new ClosestApproachExpression()) },
             };
 
