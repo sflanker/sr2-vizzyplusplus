@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="SolarPanel1" path="Craft/Parts/Prefabs/SolarPanel1.prefab">
+  <GameObject name="Panel">
+    <GameObject name="SolarPanel">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="Collider">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+  </GameObject>
+</GameObject>

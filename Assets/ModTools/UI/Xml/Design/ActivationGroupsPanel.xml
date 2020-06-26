@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults></Defaults>
+  <VerticalScrollView class="no-image" offsetMax="0 0">
+    <VerticalLayout id="content" class="no-image" childForceExpandHeight="false" contentSizeFitter="vertical" pivot="0 1" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="10" spacing="5">
+      <Panel id="template" class="ag-item no-image" preferredHeight="30" active="false">
+        <TextMeshPro internalId="number-text" text="1" rectAlignment="MiddleLeft" width="30" alignment="Center" />
+        <Panel class="no-image" offsetMin="30 0" offsetMax="-60 0" padding="0">
+          <TextMeshProInputField internalId="name-input" text="" class="">
+            <TMP_Placeholder internalId="name-placeholder" text="" />
+            <TMP_Text text="" />
+          </TextMeshProInputField>
+        </Panel>
+        <Toggle internalId="active-on-start-toggle" rectAlignment="MiddleRight" tooltip="Activate on start" tooltipPosition="Above" />
+      </Panel>
+    </VerticalLayout>
+  </VerticalScrollView>
+  <Panel class="no-image" active="true"></Panel>
+</XmlLayout>

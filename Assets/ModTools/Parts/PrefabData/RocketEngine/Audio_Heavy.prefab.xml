@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Audio_Heavy" path="Craft/Parts/Prefabs/RocketEngine/Audio_Heavy.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+</GameObject>

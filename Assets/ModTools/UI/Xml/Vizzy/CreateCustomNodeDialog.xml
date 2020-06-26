@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Panel class="column-left" width="50%" rectAlignment="MiddleLeft" />
+    <Panel class="column-right" width="50%" rectAlignment="MiddleRight" padding="10 10 0 0" />
+    <TextMeshPro class="node-instruction:node-header" text="CREATE CUSTOM INSTRUCTION" />
+    <TextMeshPro class="node-instruction:node-description" text="Custom instructions can be used to define a custom sequence of instructions to execute when called, but they cannot return a value. They are similar to a procedure in imperative programming." />
+    <TextMeshPro class="node-instruction:node-description-ext" text="After being created, this definition block will be placed in your program so you can define the exact instructions that this custom instruction should execute. Also, a new block will be created in the Custom Instructions panel on the left that you can use to call/execute this instruction in your program." />
+    <TextMeshPro class="node-expression:node-header" text="CREATE CUSTOM EXPRESSION" />
+    <TextMeshPro class="node-expression:node-description" text="Custom expressions can be used to return a combination of expressions and return a value, but they cannot execute instructions. They are similar to a function in functional programming." />
+    <TextMeshPro class="node-expression:node-description-ext" text="After being created, this definition block will be placed in your program so you can define what exactly it will return. Also, a new block will be created in the Custom Expressions panel on the left that you can use to call/execute this expression in your program." />
+  </Defaults>
+  <Panel id="panel" showAnimation="FadeIn" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="640" contentSizeFitter="vertical" spacing="10" padding="20">
+      <TextMeshPro class="text-header node-header" />
+      <TextMeshPro class="node-description label" />
+      <TextMeshPro class="node-description-ext label" />
+      <Panel id="node-panel" preferredHeight="80" color="DarkPanel"></Panel>
+      <HorizontalLayout preferredHeight="40" spacing="10">
+        <Button class="btn" onClick="OnCancelButtonClicked();">
+          <TextMeshPro text="Cancel" />
+        </Button>
+        <Button class="btn" onClick="OnAddTextButtonClicked();">
+          <TextMeshPro text="Add Text" />
+        </Button>
+        <Button class="btn" onClick="OnAddParameterButtonClicked();">
+          <TextMeshPro text="Add Parameter" />
+        </Button>
+        <Button class="btn btn-primary" onClick="OnCreateButtonClicked();">
+          <TextMeshPro text="Create" />
+        </Button>
+      </HorizontalLayout>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <VerticalLayout class="seated" device="mobile" offsetXY="90 0" />
+  </Defaults>
+  <Panel id="eva-panel" class="no-image">
+    <VerticalLayout device="mobile" class="flight-panel" padding="0" spacing="0" rectAlignment="LowerRight" contentSizeFitter="vertical" childAlignment="LowerCenter" width="50" height="0" childForceExpandHeight="false">
+      <TextMeshPro id="fuel-percentage" preferredHeight="25" fontSize="12" color="Primary" alignment="Center" tooltip="Remaining jet pack fuel." />
+      <ContentButton id="jump-button" class="btn" preferredHeight="50" buttonColors="Transparent|ButtonHover|ButtonPressed|Button" tooltipPosition="Left">
+        <Image color="Border" height="1" rectAlignment="UpperCenter" />
+        <Image sprite="Ui/Sprites/Flight/IconEvaJump" width="32" height="32" color="Warning" />
+      </ContentButton>
+    </VerticalLayout>
+    <VerticalLayout id="tether-panel" class="flight-panel" color="DarkPanel" padding="0" spacing="0" rectAlignment="LowerLeft" contentSizeFitter="vertical" childAlignment="LowerCenter" width="80" height="0" childForceExpandHeight="false">
+      <Panel id="tether-slider" class="input-panel" color="DarkPanel" active="true">
+        <Image color="Border" width="1" rectAlignment="UpperRight" height="25" />
+        <TextMeshPro text="TETHER" class="label" rectAlignment="LowerCenter" alignment="Center" height="20" fontSize="12" offsetXY="0 188" />
+        <TextMeshPro text="EXTEND" class="label" rectAlignment="LowerCenter" alignment="Center" height="20" fontSize="10" offsetXY="0 175" />
+        <TextMeshPro text="RETRACT" class="label" rectAlignment="LowerCenter" alignment="Center" height="20" fontSize="10" />
+        <Panel width="32" border="Button" rectAlignment="LowerCenter" height="150" offsetXY="0 25" color="DarkPanel" padding="5">
+          <Panel internalId="slider-click-area">
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.0" anchorMax="1.0 0.0" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.125" anchorMax="0.75 0.125" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.25" anchorMax="1.0 0.25" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.375" anchorMax="0.75 0.375" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.5" anchorMax="1.0 0.5" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.625" anchorMax="0.75 0.625" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 0.75" anchorMax="1.0 0.75" />
+            <Image class="input-slider-line" height="2" anchorMin="0.25 0.875" anchorMax="0.75 0.875" />
+            <Image class="input-slider-line" height="2" anchorMin="0.0 1.0" anchorMax="1.0 1.0" />
+            <Panel internalId="slider-handle" class="input-slider-handle" />
+          </Panel>
+        </Panel>
+      </Panel>
+      <ContentButton id="tether-button" class="btn" preferredHeight="40" buttonColors="Transparent|ButtonHover|ButtonPressed|Button" tooltip="Grapple" tooltipPosition="Left">
+        <Image color="Border" height="1" rectAlignment="UpperCenter" />
+        <Image sprite="Ui/Sprites/Flight/IconEvaGrapple" width="32" height="32" color="Warning" />
+      </ContentButton>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

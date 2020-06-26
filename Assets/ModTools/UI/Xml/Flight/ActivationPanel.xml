@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <TextMeshPro class="activation:@TextMeshPro" color="LabelText" fontSize="14" />
+    <Image class="activation-button" color="Button" hoverClass="activation-hover" preferredHeight="20" />
+    <Image class="activation-hover" color="ButtonHover" />
+    <Image class="selected" color="Primary" opacity="1.0" />
+    <TextMeshPro class="selected&gt;@TextMeshPro" color="ValueText" />
+    <Image class="activation-button-separator" color="#ffffff20" width="1" rectAlignment="MiddleLeft" offsetXY="30 0" />
+  </Defaults>
+  <VerticalLayout name="ActivationPanel" id="activation-panel" class="flight-panel border activation" padding="10" spacing="5" rectAlignment="LowerRight" offsetXY="-90 0" contentSizeFitter="vertical" childAlignment="LowerCenter" width="200" height="0" childForceExpandHeight="false">
+    <Panel id="no-ag-panel" class="no-image" preferredHeight="20">
+      <TextMeshPro id="no-activation-groups-text" text="No Activation Groups" fontSize="12" rectAlignment="MiddleRight" />
+    </Panel>
+    <Image id="activation-button-template" class="activation-button audio-btn-click" active="0" raycastTarget="true">
+      <Image class="activation-button-separator" raycastTarget="false" />
+      <TextMeshPro internalId="name" text="Solar Panels" offsetXY="16 0" />
+      <TextMeshPro internalId="number" text="1" width="32" rectAlignment="MiddleLeft" alignment="Center" />
+    </Image>
+  </VerticalLayout>
+</XmlLayout>

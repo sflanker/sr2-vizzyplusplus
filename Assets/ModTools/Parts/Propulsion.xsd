@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Propulsion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Fuels">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Fuel">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                        <xs:element name="Visual">
+                                            <xs:complexType>
+                                                <xs:attribute name="exhaustIntensity" type="xs:decimal" use="optional">
+                                                    <xs:annotation>
+                                                        <xs:documentation>The exhaust intensity.</xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="exhaustDetailIntensity" type="xs:decimal" use="optional">
+                                                    <xs:annotation>
+                                                        <xs:documentation>The exhaust detail intensity.</xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="exhaustColor" type="xs:string" use="optional">
+                                                    <xs:annotation>
+                                                        <xs:documentation>The color of the exhaust, which must be in the form #RRGGBB or #RRGGBBAA.</xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                                <xs:attribute name="smokeIntensity" type="xs:decimal" use="optional">
+                                                    <xs:annotation>
+                                                        <xs:documentation>The smoke intensity.</xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>The identifier for the fuel type.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="name" type="xs:string" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>The name of the fuel type.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="gamma" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The ratio of specific heats.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="density" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The density in kg/L.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="molecularWeight" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The molecular weight in kg/kmol.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="combustionTemperature" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The combustion temperature in K.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="price" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The price per kilogram.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="explosivePower" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The explosive power of the fuel.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="fuelTransferRate" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The fuel transfer rate.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="enginePriceScale" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The scale that is applied to a rocket engine that uses this fuel. Some fuels are more costly to build engines with.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="storageOverhead" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The storage overhead of the fuel. For each unit of volume, this is how much of that volume that cannot hold fuel. It approximates storage overhead such as pumps, pipes, structure, etc in the fuel tank. In the case of solid fuel, this could be used to approximate the combustion chamber hollowed out in the middle of the fuel tank.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="description" type="xs:string" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>The description of the fuel type.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="displayInDesigner" type="xs:bool" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>Determines whether this fuel type should be displayed in the designer.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="RocketEngines">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="RocketEngine" type="RocketEngineType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="RocketNozzles">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" maxOccurs="unbounded" name="RocketNozzle">
+                                <xs:complexType>
+                                    <xs:attribute name="id" type="xs:string" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>The identifier for the rocket engine nozzle type.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="name" type="xs:string" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>The name of the rocket engine nozzle.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="prefabId" type="xs:string" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The prefab identifier. If not specified, the "id" attribute will be used as the prefab identifier.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="extensionPrefabId" type="xs:string" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The extension prefab identifier. If not specified, the "id" attribute will be used as the prefab identifier.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="extensionRadius" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The rate at which the nozzle exit radius increases with each unit of length from the nozzle extension.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="extensionMin" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The minimum extension.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="extensionMax" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The maximum extension.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="extensionOverlap" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The extension overlap.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="nozzleRadius" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The nozzle radius.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="nozzleLength" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The nozzle length.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="throatRadius" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The throat radius in meters.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="density" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The nozzle density.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="exhaustRadiusScale" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The exhaust radius scale.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="altitudeCompensation" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The base altitude compensation.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="altitudeCompensationScale" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The altitude compensation scale that adjusts altitude compensation with extension length.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="thickness" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The thickness of the nozzle used for mass calculation.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="priceScale" type="xs:decimal" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The price scale.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="textureStyleIds" type="xs:string" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The comma separated list of texture style IDs supported by the rocket engine nozzle (Subpart 2).</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="extensionTextureStyleIds" type="xs:string" use="optional">
+                                        <xs:annotation>
+                                            <xs:documentation>The comma separated list of texture style IDs supported by the rocket engine nozzle extension (Subpart 3).</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RocketEngine" type="RocketEngineType"/>
+    <xs:complexType name="RocketEngineType">
+        <xs:sequence minOccurs="0">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="SubType" type="RocketEngineType" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The identifier for the rocket engine type.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The name of the rocket engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="prefabId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The prefab identifier. If not specified, the "id" attribute will be used as the prefab identifier.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="subPrefabId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The sub prefab identifier if a sub prefab is used.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="basePrice" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The base price of the engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="priceScale" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The multiplier used in scaling the price with engine thrust.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="baseMass" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The base mass of the engine type in kg.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="massScale" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The mass scale, which is multiplied by the engine's normalized mass flow to determine the total mass of the chamber.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="baseScale" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The base scale for this engine type.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="fuels" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The comma separated list of fuels supported by this engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="efficiency" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The efficiency of the engine from 0-1. This is multiplied by the theoretical maximum thrust to calculate actual thrust, which affects the Isp of the engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="radius" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The radius, which is used to determine how large to resize fuselage fuel tanks when connecting the engine to a fuel tank.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="minThrottle" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The minimum throttle available for this engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="throttleResponse" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The throttle response, which is how quickly the engine responds to throttle changes over time. A value of 0.5 indicates that the throttle can achieve 50% throttle in one second. A value of 10 would indicate the engine could achieve 100% throttle in 1/10th of a second.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="chamberPressure" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The chamber pressure of the engine in megapascals.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="nozzles" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The comma separated list of rocket nozzle ids that define the rocket nozzles supported by this engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="nozzleRadiusScale" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The nozzle radius scale, which allows scaling the nozzle throat and exit radiuses down for certain engine types so they can use the same nozzles even though the engines are capable of very different mass flow rates.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="gimbalId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The gimbal type identifier. This is used to identify the prefab to load with the gimbal actuators.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="gimbalRange" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The maximum gimbal range in degrees.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="gimbalSpeed" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The gimbal speed.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="wattsPerThrustPower" type="xs:decimal" use="optional">
+            <xs:annotation>
+                <xs:documentation>The electrical consumption of the engine in watts per unit of thrust power.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="audio" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The ID for the audio type to use for this engine.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="supportsDeactivation" type="xs:boolean" use="optional">
+            <xs:annotation>
+                <xs:documentation>A value indicating whether the engine can be deactivated after it has been turned on.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="textureStyleIds" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The comma separated list of texture style IDs supported by the rocket engine (Subpart 0).</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="subTextureStyleIds" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The comma separated list of texture style IDs supported by the rocket engine (Subpart 1).</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="BeaconLight1" path="Craft/Parts/Prefabs/BeaconLight1.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Lights.LightPartComponents" />
+  <GameObject name="LightMount">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="LightContainer">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+</GameObject>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Wheel-Double" path="Craft/Parts/Prefabs/LandingGear/Wheel-Double.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.LandingGear.WheelStyleTransformDataScript" />
+  <GameObject name="WheelAssembly">
+    <GameObject name="Collider" />
+    <GameObject name="SlantRoot">
+      <GameObject name="SuspensionTravelRoot">
+        <GameObject name="SuspensionArm">
+          <GameObject name="LowerSupportMesh">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="UnityEngine.CapsuleCollider" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+        </GameObject>
+        <GameObject name="TurnRoot">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <GameObject name="SpinRoot">
+            <GameObject name="Wheels">
+              <GameObject name="LandingGearTire1">
+                <Component type="UnityEngine.MeshFilter" />
+                <Component type="UnityEngine.MeshRenderer" />
+                <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                <GameObject name="LandingGearRim1">
+                  <Component type="UnityEngine.MeshFilter" />
+                  <Component type="UnityEngine.MeshRenderer" />
+                  <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                </GameObject>
+                <GameObject name="MeshCollider">
+                  <Component type="UnityEngine.MeshCollider" />
+                </GameObject>
+              </GameObject>
+              <GameObject name="LandingGearTire2">
+                <Component type="UnityEngine.MeshFilter" />
+                <Component type="UnityEngine.MeshRenderer" />
+                <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                <GameObject name="MeshCollider">
+                  <Component type="UnityEngine.MeshCollider" />
+                </GameObject>
+                <GameObject name="LandingGearRim2">
+                  <Component type="UnityEngine.MeshFilter" />
+                  <Component type="UnityEngine.MeshRenderer" />
+                  <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                </GameObject>
+              </GameObject>
+            </GameObject>
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

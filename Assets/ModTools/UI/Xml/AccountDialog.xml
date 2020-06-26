@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults></Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout class="panel border" width="420" contentSizeFitter="vertical" spacing="10" padding="20">
+      <VerticalLayout id="form" contentSizeFitter="vertical" spacing="10" padding="20">
+        <Panel class="row toggle-buttons" rectAlignment="UpperCenter" preferredHeight="30">
+          <ToggleGroup>
+            <ToggleButton id="toggle-login">
+              <TextMeshPro text="Login" />
+            </ToggleButton>
+            <ToggleButton id="toggle-register" rectAlignment="MiddleRight" isOn="true">
+              <TextMeshPro text="Register" />
+            </ToggleButton>
+          </ToggleGroup>
+        </Panel>
+        <TextMeshPro id="header-text" class="value text-lg" text="CREATE NEW ACCOUNT" minHeight="50" />
+        <Panel class="row" padding="0">
+          <TextMeshProInputField id="username-input" text="">
+            <TMP_Placeholder text="Username" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel class="row" padding="0">
+          <TextMeshProInputField id="password-input" text="" contentType="Password">
+            <TMP_Placeholder text="Password" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel class="row hide-row" padding="0">
+          <TextMeshProInputField id="confirm-password-input" text="" contentType="Password">
+            <TMP_Placeholder text="Confirm Password" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel class="row hide-row" padding="0">
+          <TextMeshProInputField id="email-input" text="" contentType="EmailAddress">
+            <TMP_Placeholder text="Email" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <VerticalLayout id="terms" class="hide-row">
+          <HorizontalLayout spacing="10" childForceExpandWidth="false" childAlignment="MiddleCenter">
+            <Toggle id="terms-toggle" toggleBackgroundImage="" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" checkColor="ValueText" navigation="None" />
+            <TextMeshPro text="I agree to the " />
+            <TextMeshPro class="link" text="Terms of Use" onClick="OnTermsOfUseClicked();" />
+          </HorizontalLayout>
+          <TextMeshPro preferredHeight="60" class="text-sm" text="Note: If you have a SimplePlanes account, then you don't need to create a new account." color="ValueText" opacity="0.7" />
+        </VerticalLayout>
+        <HorizontalLayout id="lost-password" active="false" class="hide-row" preferredHeight="40" spacing="10" childForceExpandHeight="true" childForceExpandWidth="false" childAlignment="MiddleCenter">
+          <TextMeshPro text="Lost your password? " />
+          <TextMeshPro class="link" text="Click Here" onClick="OnLostPasswordClicked();" />
+        </HorizontalLayout>
+      </VerticalLayout>
+      <Panel id="profile" minHeight="128">
+        <Panel rectAlignment="MiddleLeft" width="50%">
+          <TextMeshPro text="Loading..." />
+          <RawImage id="profile-image" width="128" height="128" />
+        </Panel>
+        <VerticalLayout rectAlignment="MiddleRight" width="50%">
+          <TextMeshPro text="Logged in as:" alignment="Left" opacity=".75" />
+          <TextMeshPro id="profile-username" alignment="Left" />
+          <TextMeshPro class="link" alignment="Left" onClick="OnViewProfileClicked();">View Profile</TextMeshPro>
+        </VerticalLayout>
+      </Panel>
+      <Panel preferredHeight="50">
+        <Button id="cancel-button" class="btn audio-btn-back" rectAlignment="LowerLeft" width="150">
+          <TextMeshPro id="cancel-button-text" text="CLOSE" />
+        </Button>
+        <Button id="okay-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="150">
+          <TextMeshPro id="okay-button-text" text="OKAY" />
+        </Button>
+        <Button id="logout-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="150" active="false">
+          <TextMeshPro text="LOG OUT" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

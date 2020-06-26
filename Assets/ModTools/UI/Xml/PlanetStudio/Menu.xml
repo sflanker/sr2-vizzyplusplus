@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults></Defaults>
+  <RectTransform id="main-panel" class="safe-area">
+    <VerticalLayout id="file-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="20" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperLeft" width="225" childForceExpandHeight="false" offsetXY="5 -5" spacing="10" pivot="0 1">
+      <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
+      <Panel class="no-image" preferredHeight="30" />
+      <Button internalId="button-upload-planetary-system" class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnUploadPlanetarySystemButtonClicked();">
+        <TextMeshPro text="UPLOAD PLANETARY SYSTEM" />
+      </Button>
+      <Button internalId="button-upload-celestial-body" class="btn btn-primary" rectAlignment="LowerLeft" onClick="OnUploadCelestialBodyButtonClicked();">
+        <TextMeshPro text="UPLOAD CELESTIAL BODY" />
+      </Button>
+      <Image class="separator" />
+      <Button internalId="button-save-planetary-system" class="btn" rectAlignment="LowerLeft" onClick="OnSavePlanetarySystemButtonClicked();">
+        <TextMeshPro text="SAVE PLANETARY SYSTEM" />
+      </Button>
+      <Button internalId="button-save-celestial-body" class="btn" rectAlignment="LowerLeft" onClick="OnSaveCelestialBodyButtonClicked();">
+        <TextMeshPro text="SAVE CELESTIAL BODY" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnLoadPlanetarySystemButtonClicked();">
+        <TextMeshPro text="LOAD PLANETARY SYSTEM" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnLoadCelestialBodyButtonClicked();">
+        <TextMeshPro text="LOAD CELESTIAL BODY" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnSettingsButtonClicked();">
+        <TextMeshPro text="SETTINGS" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnPhotoLibraryButtonClicked();">
+        <TextMeshPro text="PHOTO LIBRARY" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnExitButtonClicked();">
+        <TextMeshPro text="EXIT" />
+      </Button>
+    </VerticalLayout>
+    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonMenu" rectAlignment="UpperLeft" offsetXY="5 -5" onClick="OnMenuButtonClicked();" />
+    <VerticalLayout id="debug-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="20" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="225" childForceExpandHeight="false" offsetXY="-230 -5" spacing="10" pivot="0 1">
+      <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
+      <Panel class="no-image" preferredHeight="30" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildButtonClicked();">
+        <TextMeshPro text="Build (Full)" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildFastButtonClicked();">
+        <TextMeshPro text="Build (Fast)" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnResetViewButtonClicked();">
+        <TextMeshPro text="Recenter Camera" />
+      </Button>
+    </VerticalLayout>
+    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonMenu" rectAlignment="UpperRight" offsetXY="-5 -5" onClick="OnDebugMenuButtonClicked();" />
+    <TextMeshPro id="loading-text" class="text-lg" rectAlignment="LowerRight" width="160" height="30" text="Loading..." active="false" />
+  </RectTransform>
+</XmlLayout>

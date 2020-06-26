@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Detacher1" path="Craft/Parts/Prefabs/Detacher1.prefab">
+  <Component type="UnityEngine.AudioSource" />
+  <GameObject name="Collider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.FuselageColliderScript" />
+  </GameObject>
+</GameObject>

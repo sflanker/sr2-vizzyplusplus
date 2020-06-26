@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="tool-button" tooltipPosition="Right" />
+  </Defaults>
+  <VerticalLayout id="tool-buttons" class="no-image" childForceExpandHeight="false" width="50" offsetXY="0 0" rectAlignment="UpperLeft">
+    <Panel name="ToolPanel.MovePartTool" class="toggle-button tool-button audio-btn-click" tooltip="Move Part Tool" data-tool-id="MovePartTool" onClick="OnToolButtonClicked(this);">
+      <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonMovePartTool" />
+    </Panel>
+    <Panel class="toggle-button tool-button audio-btn-click" tooltip="Translate Part Tool" data-tool-id="NudgePartTool" onClick="OnToolButtonClicked(this);">
+      <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonNudgeTool" />
+    </Panel>
+    <Panel class="toggle-button tool-button audio-btn-click" tooltip="Rotate Part Tool" data-tool-id="RotatePartTool" onClick="OnToolButtonClicked(this);">
+      <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonRotateTool" />
+    </Panel>
+    <Panel class="toggle-button tool-button audio-btn-click" tooltip="Part Shape Tool" data-tool-id="FuselageShapeTool" onClick="OnToolButtonClicked(this);">
+      <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonFuselageShapeTool" />
+    </Panel>
+    <Panel class="toggle-button tool-button audio-btn-click" tooltip="Paint Tool" data-tool-id="PaintTool" onClick="OnToolButtonClicked(this);">
+      <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonPaint" />
+    </Panel>
+  </VerticalLayout>
+  <Panel class="no-image" offsetMin="52 0" height="100%">
+    <ChildXmlLayout id="FuselageShapeTool" viewPath="Ui/Xml/Design/FuselageShapePanel" controller="Assets.Scripts.Design.FuselageShapePanelScript" active="true" />
+    <ChildXmlLayout id="PaintTool" viewPath="Ui/Xml/Design/PaintPanel" controller="Assets.Scripts.Design.Paint.PaintPanelScript" active="true" />
+    <ChildXmlLayout id="RotatePartTool" viewPath="Ui/Xml/Design/RotatePartPanel" controller="Assets.Scripts.Design.RotatePartPanelScript" active="true" />
+    <ChildXmlLayout id="NudgePartTool" viewPath="Ui/Xml/Design/NudgePartPanel" controller="Assets.Scripts.Design.NudgePartPanelScript" active="true" />
+    <ChildXmlLayout id="MovePartTool" viewPath="Ui/Xml/Design/MovePartPanel" controller="Assets.Scripts.Design.MovePartPanelScript" active="true" />
+  </Panel>
+</XmlLayout>

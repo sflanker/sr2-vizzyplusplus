@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="toggle-flyout" tooltipPosition="Right" />
+    <TextMeshPro class="message-text" offsetXY="0 -10" />
+    <TextMeshPro class="level-in-progress" offsetXY="0 -50" />
+    <Image class="finger-button" sprite="Ui/Sprites/Design/FingerToolButton" color="#00000050" width="42" height="36" raycastTarget="true" />
+    <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolSelectPart" width="34" height="34" />
+    <Image class="finger-button-selected" color="Primary" />
+  </Defaults>
+  <Panel class="no-image">
+    <VerticalLayout id="debug-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="20" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="225" childForceExpandHeight="false" offsetXY="-230 -5" spacing="10" pivot="0 1">
+      <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
+      <Panel class="no-image" preferredHeight="30" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildButtonClicked();">
+        <TextMeshPro text="Build (Full)" />
+      </Button>
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildFastButtonClicked();">
+        <TextMeshPro text="Build (Fast)" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnRefreshDatabaseClicked();">
+        <TextMeshPro text="Refresh DB" />
+      </Button>
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnResetViewButtonClicked();">
+        <TextMeshPro text="Recenter Camera" />
+      </Button>
+    </VerticalLayout>
+    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonMenu" rectAlignment="UpperRight" offsetXY="-5 -5" onClick="OnDebugMenuButtonClicked();" />
+  </Panel>
+</XmlLayout>

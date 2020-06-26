@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Nozzle_Military" path="Craft/Parts/Prefabs/JetEngine/Nozzle_Military.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+  <GameObject name="ExhaustParticleSystem">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+  </GameObject>
+  <GameObject name="SmokeParticleSystem">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.SmokeTrailScript" />
+  </GameObject>
+  <GameObject name="DistortionEffect">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.DistortionEffectScript" />
+  </GameObject>
+  <GameObject name="NozzleBase">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+  <GameObject name="Blades">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.VariableNozzleAnimationScript" />
+    <GameObject name="NozzleInnerBlades1">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades2">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades3">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades4">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades5">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades6">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades7">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades8">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades9">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades10">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades11">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades12">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleInnerBlades13">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades1">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades2">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades3">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades4">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades5">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades6">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades7">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades8">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades9">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades10">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades11">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="NozzleOuterBlades12">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="Collider">
+    <Component type="UnityEngine.MeshCollider" />
+  </GameObject>
+</GameObject>

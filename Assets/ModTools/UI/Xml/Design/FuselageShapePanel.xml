@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults></Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout id="content-root" class="no-image" childForceExpandHeight="false" pivot="0 1" contentSizeFitter="vertical" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="20" spacing="10">
+      <Panel class="spinner row no-image">
+        <TextMeshPro class="label tooltip" text="Grid Size" tooltip="Changes how far to move with each step" />
+        <Spinner id="spinner-grid-size" numericFormat="0.##" onNumericValueChanged="OnGridSizeSpinnerChanged();" stepSize="0.05" minValue="0" maxValue="2">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <TextMeshPro id="message-text" />
+      <VerticalLayout id="joint-panel" class="no-image" spacing="10" padding="0 0 0 50">
+        <Panel class="row" preferredHeight="40">
+          <ContentButton class="btn btn-primary" onClick="OnBackwardsClicked();" rectAlignment="MiddleLeft" width="45%" tooltip="Change selection" tooltipPosition="Above">
+            <Image sprite="Ui/Sprites/Design/IconArrowRightLong" setNativeSize="true" rotation="0 0 180" />
+          </ContentButton>
+          <ContentButton class="btn btn-primary" onClick="OnForwardsClicked();" rectAlignment="MiddleRight" width="45%" tooltip="Change selection" tooltipPosition="Above">
+            <Image sprite="Ui/Sprites/Design/IconArrowRightLong" setNativeSize="true" />
+          </ContentButton>
+        </Panel>
+        <Panel class="spinner row">
+          <TextMeshPro class="label tooltip" text="Width" tooltip="The width of the part cross section" />
+          <Spinner id="spinner-width" numericFormat="0.####" onNumericValueChanged="OnWidthChanged(selectedValue);">
+            <TextMeshProInputField>
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel class="spinner row">
+          <TextMeshPro class="label tooltip" text="Depth" tooltip="The depth of the part cross section" />
+          <Spinner id="spinner-depth" numericFormat="0.####" onNumericValueChanged="OnDepthChanged(selectedValue);">
+            <TextMeshProInputField>
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Corner Radius" tooltip="Higher means rounded edges. Lower means harder edges" />
+          <TextMeshPro name="slider-value" class="value" text="None" />
+          <Slider id="corner-radius-all" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Corner 1" />
+          <TextMeshPro name="slider-value" class="value" text="None" />
+          <Slider id="corner-radius-1" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Corner 2" />
+          <TextMeshPro name="slider-value" class="value" text="None" />
+          <Slider id="corner-radius-2" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Corner 3" />
+          <TextMeshPro name="slider-value" class="value" text="None" />
+          <Slider id="corner-radius-3" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Corner 4" />
+          <TextMeshPro name="slider-value" class="value" text="None" />
+          <Slider id="corner-radius-4" />
+        </Panel>
+        <Panel id="add-section-row" class="row" preferredHeight="40">
+          <Image color="Border" height="1" rectAlignment="UpperCenter" />
+          <Button class="btn btn-primary" onClick="OnAddSectionClicked();" rectAlignment="LowerCenter" width="80%">
+            <TextMeshPro text="Add Section" />
+          </Button>
+        </Panel>
+      </VerticalLayout>
+      <VerticalLayout id="fuselage-panel" class="no-image" spacing="10" active="false">
+        <Panel class="row" preferredHeight="40">
+          <ContentButton class="btn btn-primary" onClick="OnBackwardsClicked();" rectAlignment="MiddleLeft" width="45%" tooltip="Change part selection" tooltipPosition="Above">
+            <Image sprite="Ui/Sprites/Design/IconArrowRightLong" setNativeSize="true" rotation="0 0 180" />
+          </ContentButton>
+          <ContentButton class="btn btn-primary" onClick="OnForwardsClicked();" rectAlignment="MiddleRight" width="45%" tooltip="Change part selection" tooltipPosition="Above">
+            <Image sprite="Ui/Sprites/Design/IconArrowRightLong" setNativeSize="true" />
+          </ContentButton>
+        </Panel>
+        <Panel class="spinner row">
+          <TextMeshPro class="label tooltip" text="Length" tooltip="The length of the part" />
+          <Spinner id="spinner-offset-y" numericFormat="0.####" onNumericValueChanged="OnFuselageOffsetChanged();">
+            <TextMeshProInputField>
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel class="spinner row">
+          <TextMeshPro class="label tooltip" text="X-Offset" tooltip="The change along the x-axis for the part" />
+          <Spinner id="spinner-offset-x" numericFormat="0.####" onNumericValueChanged="OnFuselageOffsetChanged();">
+            <TextMeshProInputField>
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+        <Panel class="spinner row">
+          <TextMeshPro class="label tooltip" text="Z-Offset" tooltip="The change along the z-axis for the part" />
+          <Spinner id="spinner-offset-z" numericFormat="0.####" onNumericValueChanged="OnFuselageOffsetChanged();">
+            <TextMeshProInputField>
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Spinner>
+        </Panel>
+      </VerticalLayout>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

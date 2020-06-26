@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="JetEngine1" path="Craft/Parts/Prefabs/JetEngine1.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.JetEngineComponentsScript" />
+  <GameObject name="Internals">
+    <GameObject name="Fan">
+      <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+      <GameObject name="CoreFront">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+      </GameObject>
+      <GameObject name="InletCone" />
+      <GameObject name="FanMainFront" />
+      <GameObject name="FanCoreFront">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+    </GameObject>
+    <GameObject name="Core">
+      <GameObject name="CoreStart">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+      </GameObject>
+      <GameObject name="CoreMiddle">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+      </GameObject>
+      <GameObject name="CoreEnd">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+        <GameObject name="FanCoreRear">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="AfterBurner">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+      </GameObject>
+      <GameObject name="Nozzle">
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineComponentScript" />
+      </GameObject>
+      <GameObject name="CoreCollider">
+        <Component type="UnityEngine.BoxCollider" />
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="Collider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.FuselageColliderScript" />
+  </GameObject>
+  <GameObject name="Audio">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+    <GameObject name="AfterburnerAudio">
+      <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+    </GameObject>
+  </GameObject>
+</GameObject>

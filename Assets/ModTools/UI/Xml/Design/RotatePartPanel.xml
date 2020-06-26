@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Spinner class="angle-spinner" numericFormat="0.##" stepSize="30.0" minValue="-180" maxValue="180" numericWrap="true" />
+  </Defaults>
+  <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" pivot="0 1">
+    <VerticalLayout id="content" class="no-image" childForceExpandHeight="false" spacing="10" pivot="0 1">
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Angle Snap" tooltip="Changes how many degrees to rotate with each step" />
+        <Spinner id="spinner-snap" numericFormat="0.##" onNumericValueChanged="OnSnapChanged();" stepSize="5.0" minValue="0" maxValue="45">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Mode" tooltip="Indicates the parts that will be rotated" />
+        <Spinner id="spinner-mode" value="Connected" values="Self;Connected" onValueChanged="OnModeChanged(selectedValue);">
+          <TextMeshPro />
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Direction" tooltip="The orientation to use when rotating" />
+        <Spinner id="spinner-orientation" value="World" values="Local;World" onValueChanged="OnOrientationChanged(selectedValue);">
+          <TextMeshPro />
+        </Spinner>
+      </Panel>
+      <Panel class="slider">
+        <TextMeshPro class="label tooltip" text="Sensitivity" tooltip="Indicates how sensitive the rotation gizmo is to dragging" />
+        <TextMeshPro id="sensitivity-text" class="value" text="None" />
+        <Slider id="sensitivity-slider" onValueChanged="OnSensitivityChanged(selectedValue);" />
+      </Panel>
+      <Panel id="template-header" class="header">
+        <Panel height="35" rectAlignment="LowerCenter">
+          <TextMeshPro internalId="label" text="Rotation" fontStyle="Bold,UpperCase" />
+        </Panel>
+        <Image class="separator" />
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="X-Angle" tooltip="Part's current rotation around the X-axis" />
+        <Spinner id="spinner-x" class="angle-spinner" onNumericValueChanged="OnAngleChanged();">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Y-Angle" tooltip="Part's current rotation around the Y-axis" />
+        <Spinner id="spinner-y" class="angle-spinner" onNumericValueChanged="OnAngleChanged();">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Z-Angle" tooltip="Part's current rotation around the Z-axis" />
+        <Spinner id="spinner-z" class="angle-spinner" onNumericValueChanged="OnAngleChanged();">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+    </VerticalLayout>
+    <TextMeshPro id="message-text" text="Message Text" preferredHeight="50" />
+  </VerticalLayout>
+</XmlLayout>

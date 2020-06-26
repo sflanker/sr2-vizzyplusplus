@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Spinner class="position-spinner" numericFormat="0.##" stepSize="0.1" minValue="-9999" maxValue="9999" />
+  </Defaults>
+  <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" pivot="0 1">
+    <VerticalLayout id="content" class="no-image" childForceExpandHeight="false" spacing="10" pivot="0 1">
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Grid Size" tooltip="Changes how far to move the part with each step" />
+        <Spinner id="spinner-grid-size" numericFormat="0.##" onNumericValueChanged="OnGridSizeSpinnerChanged();" stepSize="0.05" minValue="0" maxValue="2">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Mode" tooltip="Indicates the parts that will be moved" />
+        <Spinner id="spinner-mode" value="Connected" values="Self;Connected" onValueChanged="OnModeChanged(selectedValue);">
+          <TextMeshPro />
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Direction" tooltip="The orientation to use when moving" />
+        <Spinner id="spinner-orientation" value="World" values="Local;World" onValueChanged="OnOrientationChanged(selectedValue);">
+          <TextMeshPro />
+        </Spinner>
+      </Panel>
+      <Panel id="template-header" class="header">
+        <Panel height="35" rectAlignment="LowerCenter">
+          <TextMeshPro internalId="label" text="Position" fontStyle="Bold,UpperCase" />
+        </Panel>
+        <Image class="separator" />
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="X-Pos" tooltip="Part's current X-position" />
+        <Spinner id="spinner-x" class="position-spinner" onNumericValueChanged="OnPositionSpinnerChanged();">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Y-Pos" tooltip="Part's current Y-position" />
+        <Spinner id="spinner-y" class="position-spinner" onNumericValueChanged="OnPositionSpinnerChanged();">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+      <Panel class="spinner row">
+        <TextMeshPro class="label tooltip" text="Z-Pos" tooltip="Part's current Z-position" />
+        <Spinner id="spinner-z" class="position-spinner" onNumericValueChanged="OnPositionSpinnerChanged();">
+          <TextMeshProInputField>
+            <TMP_Text />
+          </TextMeshProInputField>
+        </Spinner>
+      </Panel>
+    </VerticalLayout>
+    <TextMeshPro id="message-text" text="Message Text" preferredHeight="50" />
+  </VerticalLayout>
+</XmlLayout>

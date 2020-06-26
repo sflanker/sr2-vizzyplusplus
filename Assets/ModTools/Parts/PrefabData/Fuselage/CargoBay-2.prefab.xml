@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CargoBay-2" path="Craft/Parts/Prefabs/Fuselage/CargoBay-2.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Fuselage.MeshDefinitionScript" />
+  <GameObject name="Bottom">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+  <GameObject name="Bottom Inside">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+  <GameObject name="HingeLeft">
+    <GameObject name="RotationRoot">
+      <GameObject name="Door-2">
+        <GameObject name="Collider-End">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshCollider" />
+        </GameObject>
+        <GameObject name="Collider-Root">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshCollider" />
+        </GameObject>
+        <GameObject name="Mesh">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+        <GameObject name="Mesh Inside">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="HingeRight">
+    <GameObject name="RotationRoot">
+      <GameObject name="Door-1">
+        <GameObject name="Collider-End">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshCollider" />
+        </GameObject>
+        <GameObject name="Collider-Root">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshCollider" />
+        </GameObject>
+        <GameObject name="Mesh">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+        <GameObject name="Mesh Inside">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

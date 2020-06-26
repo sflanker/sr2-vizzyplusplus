@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Light1" path="Craft/Parts/Prefabs/Light1.prefab">
+  <Component type="Assets.Scripts.Craft.Parts.Modifiers.Lights.LightPartComponents" />
+  <GameObject name="LightMount">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="LightArm1">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="LightArm2">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="LightContainer" />
+</GameObject>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="RetroRim" path="Craft/Parts/Prefabs/Wheels/RetroRim.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+</GameObject>

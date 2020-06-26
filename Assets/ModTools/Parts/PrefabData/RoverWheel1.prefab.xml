@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="RoverWheel1" path="Craft/Parts/Prefabs/RoverWheel1.prefab">
+  <GameObject name="TrackContainer">
+    <GameObject name="TrackRenderer">
+      <Component type="Assets.Scripts.CustomWheelCollider.TireTrackRenderer" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="TurningRoot">
+    <GameObject name="WheelRoot">
+      <GameObject name="Wheel">
+        <GameObject name="VisualMeshes">
+          <GameObject name="LunarRim">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="RoverTireLunar">
+            <Component type="UnityEngine.MeshFilter" />
+            <Component type="UnityEngine.MeshRenderer" />
+            <Component type="ModApi.Craft.Parts.PartMeshScript" />
+          </GameObject>
+          <GameObject name="NoSuspensionCollider">
+            <Component type="UnityEngine.SphereCollider" />
+          </GameObject>
+          <GameObject name="SphereCollider">
+            <Component type="UnityEngine.SphereCollider" />
+          </GameObject>
+        </GameObject>
+        <GameObject name="MeshCollider">
+          <Component type="UnityEngine.MeshCollider" />
+        </GameObject>
+        <GameObject name="ClickyCollider">
+          <Component type="UnityEngine.MeshCollider" />
+          <Component type="ModApi.Craft.Parts.PartColliderScript" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="Physics">
+        <Component type="Assets.Scripts.CustomWheelCollider.ResizableWheelCollider" />
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

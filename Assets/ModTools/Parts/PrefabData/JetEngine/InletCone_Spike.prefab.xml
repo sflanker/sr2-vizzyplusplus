@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="InletCone_Spike" path="Craft/Parts/Prefabs/JetEngine/InletCone_Spike.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+</GameObject>

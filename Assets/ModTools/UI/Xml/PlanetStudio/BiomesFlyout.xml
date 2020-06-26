@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Image class="header-arrow" color="LabelText" pivot="0.5 0.5" offsetXY="5 0" sprite="Ui/Sprites/Common/IconTriangleRight" width="12" height="12" rectAlignment="MiddleLeft" rotation="0 0 -90" />
+    <Image class="collapsed:header-arrow" rotation="0 0 0" />
+    <Panel class="header" preferredHeight="30" />
+    <Image class="header-background" color="Button" offsetMax="10 0" hoverClass="header-hover" raycastTarget="true" />
+    <Image class="header-hover" color="ButtonHover" />
+    <TextMeshPro class="header-text" color="White" fontStyle="Bold,UpperCase" alignment="Left" rectAlignment="MiddleLeft" width="300" offsetXY="25 0" />
+  </Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperLeft" rectAlignment="UpperLeft">
+      <Panel class="property-row spinner row">
+        <TextMeshPro internalId="label" class="label" text="Biome" />
+        <Spinner internalId="spinner" value="Tundra">
+          <TextMeshPro offsetMin="32 0" offsetMax="-32 0" text="Tundra" />
+        </Spinner>
+      </Panel>
+      <Panel id="style-header" class="header">
+        <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+        <Image internalId="arrow" class="header-arrow collapsed" />
+        <TextMeshPro internalId="label" class="header-text" text="SUB-BIOME" />
+        <TextMeshPro internalId="label" class="label" text="0m to 1,000m" alignment="Right" offsetXY="-10 0" fontSize="12" />
+      </Panel>
+      <Panel id="style-header" class="header">
+        <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
+        <Image internalId="arrow" class="header-arrow expanded" />
+        <TextMeshPro internalId="label" class="header-text" text="SUB-BIOME" />
+        <TextMeshPro internalId="label" class="label" text="800m to 2,500m" alignment="Right" offsetXY="-10 0" fontSize="12" />
+      </Panel>
+      <!--<Panel class="row">
+            <TextMeshPro class="label" alignment="Center" text="Altitude Range (meters)" rectAlignment="MiddleLeft" />
+         </Panel>
+
+         <Panel class="row">
+            <TextMeshProInputField text="0" width="40%" height="100%" rectAlignment="MiddleLeft">
+               <TMP_Placeholder text="0" alignment="Left" />
+               <TMP_Text alignment="Left" />
+            </TextMeshProInputField>
+            <TextMeshPro text="to" class="label" alignment="Center" />
+            <TextMeshProInputField text="1000" width="40%" height="100%" rectAlignment="MiddleRight">
+               <TMP_Placeholder alignment="Left" />
+               <TMP_Text alignment="Left" />
+            </TextMeshProInputField>
+         </Panel>-->
+      <Panel class="property-row row" active="true">
+        <TextMeshPro internalId="label" class="label" width="50%" text="Biome Height (m)" alignment="Left" rectAlignment="MiddleLeft" />
+        <TextMeshProInputField internalId="input-field" width="50%" height="100%" rectAlignment="MiddleRight" text="1500">
+          <TMP_Text alignment="Right" />
+        </TextMeshProInputField>
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Blend Range" />
+        <TextMeshPro internalId="slider-value" class="value" text="20%" />
+        <Slider internalId="slider" value="0.2" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Metallicness" />
+        <TextMeshPro internalId="slider-value" class="value" text="0%" />
+        <Slider internalId="slider" value="0" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Smoothness" />
+        <TextMeshPro internalId="slider-value" class="value" text="0%" />
+        <Slider internalId="slider" value="0" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Tire Track Strength" />
+        <TextMeshPro internalId="slider-value" class="value" text="25%" />
+        <Slider internalId="slider" value="0.25" />
+      </Panel>
+      <Panel preferredHeight="120">
+        <Panel width="50%" rectAlignment="UpperLeft">
+          <TextMeshPro class="label" text="Color" alignment="Top" />
+          <Image color="White" rectAlignment="LowerCenter" width="100" height="100" />
+        </Panel>
+        <Panel width="50%" rectAlignment="UpperRight">
+          <TextMeshPro class="label" text="Texture" alignment="Top" />
+          <RawImage texture="Ui/Sprites/Common/DeleteThis_PlaceholderTexture" rectAlignment="LowerCenter" width="100" height="100" />
+        </Panel>
+      </Panel>
+      <Image class="separator" />
+      <Panel class="row">
+        <TextMeshPro class="label" alignment="Center" text="High Slope Variation" rectAlignment="MiddleLeft" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Start Angle" />
+        <TextMeshPro internalId="slider-value" class="value" text="20°" />
+        <Slider internalId="slider" value="0.2" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Full Blended Angle" />
+        <TextMeshPro internalId="slider-value" class="value" text="35°" />
+        <Slider internalId="slider" value="0.35" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Metallicness" />
+        <TextMeshPro internalId="slider-value" class="value" text="0%" />
+        <Slider internalId="slider" value="0" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Smoothness" />
+        <TextMeshPro internalId="slider-value" class="value" text="0%" />
+        <Slider internalId="slider" value="0" />
+      </Panel>
+      <Panel class="property-row slider">
+        <TextMeshPro internalId="slider-label" class="label" text="Tire Track Strength" />
+        <TextMeshPro internalId="slider-value" class="value" text="25%" />
+        <Slider internalId="slider" value="0.25" />
+      </Panel>
+      <Panel preferredHeight="120">
+        <Panel width="50%" rectAlignment="UpperLeft">
+          <TextMeshPro class="label" text="Color" alignment="Top" />
+          <Image color="White" rectAlignment="LowerCenter" width="100" height="100" />
+        </Panel>
+        <Panel width="50%" rectAlignment="UpperRight">
+          <TextMeshPro class="label" text="Texture" alignment="Top" />
+          <RawImage texture="Ui/Sprites/Common/DeleteThis_PlaceholderTexture" rectAlignment="LowerCenter" width="100" height="100" />
+        </Panel>
+      </Panel>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

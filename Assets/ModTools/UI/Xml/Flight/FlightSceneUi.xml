@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Flight/FlightStyles.xml" />
+  <Defaults>
+    <Image class="toggle-icon" opacity="0.5" hoverClass="hover" />
+    <Image class="hover" opacity="0.75" />
+    <ChildXmlLayout class="animated" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.05" />
+    <Image class="radial-progress-bar" sprite="Ui/Sprites/CircleProgressBar" type="Filled" fillMethod="Radial360" rotation="0 0 -72" />
+    <Button class="menu-button" rectAlignment="LowerLeft" width="220" />
+    <TextMeshPro class="target-text" offsetXY="0 -35" width="200" />
+    <TextMeshPro class="target-text-flipped" offsetXY="0 35" />
+    <Panel class="instrument-panel" width="340" height="64" device="mobile" />
+    <Panel class="instrument-panel" width="525" height="76" device="desktop" />
+    <Panel class="analog-control" width="160" height="160" raycastTarget="true" />
+    <Image class="analog-control&gt;analog-background" sprite="Ui/Sprites/Flight/AnalogStickArea" color="#333333" opacity="0.5" />
+    <Image class="analog-control&gt;analog-stick" sprite="Ui/Sprites/Flight/AnalogStick" width="38%" height="38%" color="#333333" opacity="0.9" />
+    <Image class="analog-control&gt;analog-stick&gt;translation-mode-icon" sprite="Ui/Sprites/Flight/IconNavSphereTranslationMode" width="76%" height="76%" color="#999999" opacity="0.666" />
+    <Button class="icon-button" preferredWidth="40" preferredHeight="40" />
+  </Defaults>
+  <RectTransform class="safe-area">
+    <ChildXmlLayout id="time-panel" viewPath="Ui/Xml/Flight/TimePanel" controller="Assets.Scripts.Flight.UI.TimePanelController" />
+    <ChildXmlLayout id="staging-panel" viewPath="Ui/Xml/Flight/StagingPanel" controller="Assets.Scripts.Flight.UI.StagingPanelController" />
+    <ChildXmlLayout id="view-panel" viewPath="Ui/Xml/Flight/ViewPanel" controller="Assets.Scripts.Flight.UI.ViewPanelController" />
+    <ChildXmlLayout id="fuel-transfer-panel" viewPath="Ui/Xml/Flight/FuelTransferPanel" controller="Assets.Scripts.Flight.UI.FuelTransferPanelController" />
+    <ChildXmlLayout id="eva-panel" class="hide-on-start" viewPath="Ui/Xml/Flight/EvaPanel" controller="Assets.Scripts.Flight.UI.EvaPanelController" />
+    <TextMeshPro id="message" text="Message text....." width="90%" height="50" rectAlignment="UpperCenter" offsetXY="0 -50" raycastTarget="false" />
+    <Panel id="analog-control-left" class="analog-control" rectAlignment="LowerLeft" offsetXY="120 70" device="mobile">
+      <Image class="analog-background" />
+      <Image class="analog-stick" rectAlignment="MiddleCenter">
+        <Image class="translation-mode-icon" rectAlignment="MiddleCenter" />
+      </Image>
+    </Panel>
+    <Panel id="analog-control-right" class="analog-control" rectAlignment="LowerRight" offsetXY="-120 70" device="mobile">
+      <Image class="analog-background" />
+      <Image class="analog-stick" rectAlignment="MiddleCenter">
+        <Image class="translation-mode-icon" rectAlignment="MiddleCenter" />
+      </Image>
+    </Panel>
+    <Panel id="mobile-throttle-panel" class="no-image" rectAlignment="LowerLeft" width="87" height="300" device="mobile">
+      <Image color="FlightPanel" sprite="Ui/Sprites/Flight/ThrottlePanel" />
+      <Image color="#33333390" id="throttle-rect" offsetXY="5 25" width="31" height="250" rectAlignment="LowerLeft" name="Throttle.SliderPanel" />
+      <Image color="Warning" id="throttle-fill" sprite="Ui/Sprites/Flight/ThrottleSlider" offsetXY="5 25" width="31" height="250" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
+      <Image id="throttle-input" color="Transparent" opacity="0.25" offsetXY="0 0" width="50" height="305" rectAlignment="LowerLeft" raycastTarget="true" />
+      <TextMeshPro text="MAX" color="#444444" width="42" height="20" fontSize="12" rectAlignment="LowerLeft" alignment="Center" offsetXY="0 278" />
+      <TextMeshPro id="throttle-text" name="throttle-text" color="Warning" width="46" height="20" fontSize="12" rectAlignment="LowerLeft" alignment="Center" offsetXY="0 2" />
+      <Image color="#33333390" sprite="Ui/Sprites/Flight/ThrottlePanelFuelSlider" offsetXY="44 6" width="12" height="269" rectAlignment="LowerLeft" />
+      <Image color="Primary" id="fuel-fill" sprite="Ui/Sprites/Flight/ThrottlePanelFuelSlider" offsetXY="44 6" width="12" height="269" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
+      <Image color="#33333390" offsetXY="65 6" width="5" height="177" rectAlignment="LowerLeft" />
+      <Image color="Green" id="battery-fill" sprite="Ui/Sprites/Common/White" offsetXY="65 6" width="5" height="177" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
+      <Image color="#33333390" offsetXY="74 6" width="5" height="177" rectAlignment="LowerLeft" />
+      <Image color="#AAAAAA" id="mono-fill" sprite="Ui/Sprites/Common/White" offsetXY="74 6" width="5" height="177" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
+    </Panel>
+    <Panel class="flight-panel panel-angled instrument-panel" rectAlignment="LowerCenter" offsetXY="0 -6" height="50" device="mobile">
+      <TextMeshPro class="label audio-btn-click" id="craft-speed-type" text="SURFACE" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" offsetXY="40 10" onClick="OnSpeedTypeClicked();" raycastTarget="true" />
+      <TextMeshPro class="value" id="craft-speed" text="123,412m/s" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" offsetXY="40 -10" />
+      <TextMeshPro class="label audio-btn-click" id="craft-altitude-type" text="ALTITUDE" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" offsetXY="-40 10" onClick="OnAltitudeTypeClicked();" raycastTarget="true" />
+      <TextMeshPro class="value" id="craft-altitude" text="53,412m" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" offsetXY="-40 -10" />
+    </Panel>
+    <Panel class="flight-panel panel-angled instrument-panel" rectAlignment="LowerCenter" offsetXY="0 -6" device="desktop">
+      <TextMeshPro class="label audio-btn-click" id="craft-speed-type" text="SURFACE" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" fontSize="18" offsetXY="40 10" onClick="OnSpeedTypeClicked();" raycastTarget="true" />
+      <TextMeshPro class="value" id="craft-speed" text="123,412m/s" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" fontSize="18" offsetXY="40 -10" />
+      <TextMeshPro class="label audio-btn-click" id="craft-altitude-type" text="ALTITUDE" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" fontSize="18" offsetXY="-40 10" onClick="OnAltitudeTypeClicked();" raycastTarget="true" />
+      <TextMeshPro class="value" id="craft-altitude" text="53,412m" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" fontSize="18" offsetXY="-40 -10" />
+      <Panel class="no-image" width="90" height="90" scale="1.0" offsetXY="0 -13">
+        <Image class="radial-progress-bar" color="ProgressBarBackground" fillAmount="0.6" />
+        <Image id="throttle-fill" class="radial-progress-bar" color="Warning" fillAmount="0.4" />
+      </Panel>
+      <Panel class="no-image" width="90" height="90" scale="0.82" offsetXY="0 -13">
+        <Image class="radial-progress-bar" color="ProgressBarBackground" fillAmount="0.6" rotation="0 0 -72" />
+        <Image id="fuel-fill" class="radial-progress-bar" color="Primary" fillAmount="0.4" />
+      </Panel>
+      <Panel class="no-image">
+        <TextMeshPro id="fuel-text" text="100%" color="Primary" width="50" height="20" fontSize="14" offsetXY="2 -2" tooltip="Remaining fuel in stage" tooltipPosition="Above" raycastTarget="true" />
+        <TextMeshPro id="throttle-text" name="throttle-text" text="100%" color="Warning" width="50" height="20" fontSize="14" offsetXY="2 -18" tooltip="Throttle" tooltipPosition="Above" raycastTarget="true" />
+      </Panel>
+    </Panel>
+    <ChildXmlLayout id="activation-panel" class="animated hide-on-start" viewPath="Ui/Xml/Flight/ActivationPanel" controller="Assets.Scripts.Flight.UI.ActivationPanelController" />
+    <ChildXmlLayout id="input-slider-panel" viewPath="Ui/Xml/Flight/InputSliderPanel" controller="Assets.Scripts.Flight.UI.InputSliderPanelController" />
+    <ChildXmlLayout id="nav-panel" viewPath="Ui/Xml/Flight/NavPanel" controller="Assets.Scripts.Flight.UI.NavPanelController" />
+    <Panel id="target-panel" class="no-image" width="32" height="32">
+      <Image internalId="target-box" sprite="Ui/Sprites/Border/Target-1px" type="Sliced" />
+      <Image internalId="target-arrow" sprite="Ui/Sprites/Flight/TargetArrow" active="false" />
+      <TextMeshPro internalId="target-name" class="target-text" />
+    </Panel>
+    <Panel id="menu" class="no-image" active="false">
+      <Panel class="panel flyout" width="250" offsetXY="0 0">
+        <Panel class="flyout-header">
+          <TextMeshPro text="FLIGHT MENU" />
+          <Image class="flyout-close-button audio-btn-click" onClick="ToggleMenu();" />
+        </Panel>
+        <Panel class="flyout-content no-image">
+          <VerticalScrollView class="no-image">
+            <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10">
+              <Button class="btn menu-button btn-primary" onClick="OnExitButtonClicked();">
+                <TextMeshPro text="END FLIGHT" />
+              </Button>
+              <Button class="btn menu-button" onClick="OnRelaunchButtonClicked();" id="relaunch-button">
+                <TextMeshPro text="RELAUNCH" />
+              </Button>
+              <Button class="btn menu-button" onClick="OnSwitchLocationButtonClicked();" id="switch-location-button">
+                <TextMeshPro text="SWITCH LOCATION" />
+              </Button>
+              <Button class="btn menu-button" onClick="OnSaveLocationButtonClicked();">
+                <TextMeshPro text="SAVE LOCATION" />
+              </Button>
+              <Image preferredHeight="2" color="Border" />
+              <Panel class="no-image" preferredHeight="40">
+                <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconSettings" rectAlignment="MiddleLeft" offsetXY="15 0" onClick="OnSettingsButtonClicked();" tooltip="Settings" tooltipPosition="Above" />
+                <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconButtonShare" rectAlignment="MiddleCenter" onClick="OnShareSandboxButtonClicked();" tooltip="Share Sandbox" tooltipPosition="Above" id="share-sandbox-button" />
+                <Button class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconButtonCamera" rectAlignment="MiddleRight" offsetXY="-15 0" onClick="OnPhotoLibraryButtonClicked();" tooltip="Photo Library" tooltipPosition="Above" id="photo-library-button" />
+              </Panel>
+              <Image preferredHeight="2" color="Border" />
+              <Panel class="no-image" preferredHeight="50">
+                <Button class="btn menu-button" onClick="OnQuickSaveButtonClicked();" width="46%" rectAlignment="MiddleLeft" height="45">
+                  <TextMeshPro text="QUICK SAVE" />
+                </Button>
+                <Button class="btn menu-button" onClick="OnQuickLoadButtonClicked();" width="46%" rectAlignment="MiddleRight" height="45">
+                  <TextMeshPro text="QUICK LOAD" />
+                </Button>
+              </Panel>
+              <Image preferredHeight="2" color="Border" />
+              <Button class="btn menu-button" onClick="OnToggleFpsClicked();">
+                <TextMeshPro text="TOGGLE FPS" />
+              </Button>
+              <Button id="benchmark-button" class="btn menu-button" onClick="OnRunBenchmarkButtonClicked();" active="false">
+                <TextMeshPro text="RUN BENCHMARK" />
+              </Button>
+              <Button class="btn menu-button" onClick="OnReportBugButtonClicked();">
+                <TextMeshPro text="REPORT A BUG" />
+              </Button>
+            </VerticalLayout>
+          </VerticalScrollView>
+        </Panel>
+      </Panel>
+    </Panel>
+  </RectTransform>
+</XmlLayout>

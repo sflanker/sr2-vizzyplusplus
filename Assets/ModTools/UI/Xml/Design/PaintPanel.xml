@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Image class="color-button" color="Border" hoverClass="color-button-hover" pressClass="color-button-press" raycastTarget="true" borderSprite="Ui/Sprites/Border/Target-2px" borderOffset="-2 2 2 -2" />
+    <Image class="color-button-hover" border="ButtonHover" />
+    <Image class="color-button-press" border="Primary" />
+    <Image class="color-button-selected" border="Primary" />
+    <Panel class="color-picker" preferredHeight="30" raycastTarget="true" />
+    <Image class="color-picker-selection" color="White" rectAlignment="MiddleCenter" width="18" offsetMin="0 -2" offsetMax="0 2" type="Sliced" fillCenter="false" image="Ui/Sprites/Border/Square-2px" />
+  </Defaults>
+  <VerticalScrollView class="no-image">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" pivot="0 1" contentSizeFitter="vertical" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="20 20 20 50" spacing="10">
+      <Panel class="spinner">
+        <TextMeshPro class="label tooltip" text="Target" tooltip="Indicates which area of a part to paint" />
+        <Spinner id="target-spinner" value="Primary" values="All;Primary;Trim 1;Trim 2;Trim 3;Trim 4" onValueChanged="OnTargetSpinnerChanged(selectedvalue);">
+          <TextMeshPro />
+        </Spinner>
+      </Panel>
+      <Image preferredHeight="1" width="100%" color="Border" />
+      <Panel class="spinner">
+        <TextMeshPro class="label tooltip" text="Theme" tooltip="The currently selected theme" />
+        <Spinner id="theme-spinner" value="Custom" onValueChanged="OnThemeSpinnerChanged(selectedvalue);">
+          <TextMeshPro />
+        </Spinner>
+      </Panel>
+      <GridLayout id="color-buttons" class="no-image" spacing="8" cellSize="32" padding="10 10 10 10">
+        <Image id="color-button-template" class="color-button audio-btn-click" active="false">
+          <Image internalId="color" color="Red" offsetMax="-1 -1" offsetMin="1 1" />
+          <Image internalId="gloss-overlay" sprite="Ui/Sprites/Design/IconPaintPreviewGlossOverlay" offsetMax="-1 -1" offsetMin="1 1" opacity="0" />
+        </Image>
+      </GridLayout>
+      <VerticalLayout id="edit-color-panel" class="no-image" spacing="15" childForceExpandHeight="false" childAlignment="UpperCenter">
+        <Panel class="header">
+          <TextMeshPro text="EDIT COLOR" />
+          <Image class="separator" />
+        </Panel>
+        <Panel id="hue-color-picker" class="color-picker">
+          <Image offsetMin="-2 -2" offsetMax="2 2" color="Button" />
+          <RawImage raycastTarget="false" />
+          <Image class="color-picker-selection" />
+        </Panel>
+        <Panel id="shade-color-picker" class="color-picker">
+          <Image offsetMin="-2 -2" offsetMax="2 2" color="Button" />
+          <RawImage raycastTarget="false" />
+          <Image class="color-picker-selection" />
+        </Panel>
+        <Panel class="row">
+          <TextMeshPro class="label tooltip" text="Color" tooltip="The hex value of the color, in the form of #RRGGBB." />
+          <TextMeshProInputField id="color-input" text="" width="65%" height="100%" rectAlignment="MiddleRight">
+            <TMP_Placeholder text="#RRGGBB" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel class="spinner">
+          <TextMeshPro class="label tooltip" text="Style" tooltip="Style preset that changes how smooth and metallic the color should look" />
+          <Spinner id="style-spinner" value="Flat">
+            <TextMeshPro />
+          </Spinner>
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Smoothness" tooltip="Indicates how smooth the current color should look" />
+          <TextMeshPro id="smoothness-slider-text" class="value" text="None" />
+          <Slider id="smoothness-slider" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Metallic" tooltip="Indicates how metallic the current color should look" />
+          <TextMeshPro id="metallic-slider-text" class="value" text="None" />
+          <Slider id="metallic-slider" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Emission" tooltip="The emission strength for the current color" />
+          <TextMeshPro id="emission-slider-text" class="value" text="None" />
+          <Slider id="emission-slider" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Detail" tooltip="The strength of the detail texturing for the current color" />
+          <TextMeshPro id="detail-slider-text" class="value" text="None" />
+          <Slider id="detail-slider" />
+        </Panel>
+      </VerticalLayout>
+    </VerticalLayout>
+  </VerticalScrollView>
+</XmlLayout>

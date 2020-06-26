@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults></Defaults>
+  <Panel id="panel" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" class="dialog-background">
+    <VerticalLayout id="form" class="panel border" width="400" contentSizeFitter="vertical" spacing="0" padding="25">
+      <VerticalLayout contentSizeFitter="vertical" spacing="0" padding="0">
+        <TextMeshPro id="header-text" class="value" text="NEW GAME" minHeight="25" fontSize="18" />
+        <Panel preferredHeight="10" />
+        <Panel class="row" padding="0">
+          <TextMeshProInputField id="name-input" text="">
+            <TMP_Placeholder text="Company Name" alignment="Center" />
+            <TMP_Text text="" alignment="Center" />
+          </TextMeshProInputField>
+        </Panel>
+        <Panel preferredHeight="20" />
+        <TextMeshPro class="label" text="GAME TYPE" preferredHeight="30" active="false" />
+        <Panel preferredHeight="10" active="false" />
+        <Panel class="row toggle-buttons" rectAlignment="UpperCenter" preferredHeight="30" active="false">
+          <ToggleGroup>
+            <ToggleButton id="toggle-career" onValueChanged="OnGameTypeChanged(true);">
+              <TextMeshPro text="Career" />
+            </ToggleButton>
+            <ToggleButton id="toggle-sandbox" rectAlignment="MiddleRight" isOn="true" onValueChanged="OnGameTypeChanged(false);">
+              <TextMeshPro text="Sandbox" />
+            </ToggleButton>
+          </ToggleGroup>
+        </Panel>
+        <Panel color="#0000004A" preferredHeight="100" padding="10" active="false">
+          <TextMeshPro id="description-career" text="Career mode isn't implemented yet, but this is where you'll find it when we get around to it." active="false" />
+          <TextMeshPro id="description-sandbox" text="There is no money and no research in Sandbox Mode. All parts are unlocked so you can build whatever you want right from the start." />
+        </Panel>
+        <Panel preferredHeight="10" active="false" />
+        <TextMeshPro class="label" text="PLANETARY SYSTEM" preferredHeight="30" active="true" />
+        <Panel preferredHeight="10" active="true" />
+        <Button id="planetary-system-button" class="btn audio-btn-back" onClick="OnPlanetarySystemButtonClicked();">
+          <TextMeshPro text="Planetary System Name" />
+        </Button>
+        <Panel preferredHeight="20" />
+        <TextMeshPro id="validation-text" color="Warning" text="Please enter a Company Name above." active="false" />
+      </VerticalLayout>
+      <Panel preferredHeight="50">
+        <Button id="cancel-button" class="btn audio-btn-back" rectAlignment="LowerLeft" width="150" onClick="OnCancelButtonClicked();">
+          <TextMeshPro text="CANCEL" />
+        </Button>
+        <Button id="okay-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="150" onClick="OnOkayButtonClicked();">
+          <TextMeshPro text="OKAY" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+    <TextMeshPro id="loading" text="Loading..." active="false" />
+  </Panel>
+</XmlLayout>

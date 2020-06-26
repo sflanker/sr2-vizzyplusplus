@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="BaseHinge" path="Craft/Parts/Prefabs/Solar/BaseHinge.prefab">
+  <Component type="UnityEngine.MeshFilter" />
+  <Component type="UnityEngine.MeshRenderer" />
+  <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  <GameObject name="SolarPanel">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+</GameObject>

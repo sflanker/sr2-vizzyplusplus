@@ -1,0 +1,423 @@
+Unknown Type
+   UISprite
+   Background
+   InputFieldBackground
+
+UnityEngine.AudioClip
+   Ui/Audio/ButtonBack
+   Ui/Audio/ButtonClicked
+   Ui/Audio/ButtonClickedBig
+
+UnityEngine.Font
+   Ui/Fonts/AnitaSemiSquare/Anita semi square
+   Ui/Fonts/FutureEarth/Future Earth
+   Fonts/Arial
+   Fonts/Arial Bold
+   Fonts/Arial Italic
+   Fonts/Courier New
+   Fonts/Courier New Bold
+
+TMPro.TMP_FontAsset
+   Ui/Fonts/AnitaSemiSquare/Anita semi square SDF
+   Ui/Fonts/FutureEarth/Future Earth SDF
+
+UnityEditor.DefaultAsset
+   Ui/Fonts/AnitaSemiSquare/CC BY SA License
+
+UnityEngine.GameObject
+   Ui/InspectorPanel
+   Ui/Prefabs/Dialog
+   Ui/Prefabs/XmlLayout/BasicCanvas
+   Ui/Prefabs/XmlLayout/BasicGridLayout
+   Ui/Prefabs/XmlLayout/BasicHorizontalLayout
+   Ui/Prefabs/XmlLayout/BasicHorizontalScrollView
+   Ui/Prefabs/XmlLayout/BasicPanel
+   Ui/Prefabs/XmlLayout/BasicVerticalLayout
+   Ui/Prefabs/XmlLayout/BasicVerticalScrollView
+   Ui/Prefabs/XmlLayout/ContentButton
+   Ui/Prefabs/XmlLayout/ImagePanel
+   Ui/Prefabs/XmlLayout/RectTransform
+   Ui/Prefabs/XmlLayout/Slider
+   Ui/Prefabs/XmlLayout/Spinner
+   Ui/Prefabs/XmlLayout/TextButton
+   Ui/Prefabs/XmlLayout/Toggle
+   Ui/Prefabs/XmlLayout/ToggleButton
+   Ui/Vizzy/BoolExpressionElement
+   Ui/Vizzy/CustomExpressionElement
+   Ui/Vizzy/CustomInstructionElement
+   Ui/Vizzy/EventInstructionElement
+   Ui/Vizzy/ExpressionSlotElement
+   Ui/Vizzy/InstructionBlockElement
+   Ui/Vizzy/InstructionElement
+   Ui/Vizzy/ListElement
+   Ui/Vizzy/TextElement
+   Ui/Vizzy/TextExpressionElement
+   Ui/Vizzy/TextInputElement
+   Ui/Vizzy/VariableExpressionElement
+   Ui/Vizzy/Vizzy
+   XmlLayout Prefabs/Button
+   XmlLayout Prefabs/Canvas
+   XmlLayout Prefabs/DataTable
+   XmlLayout Prefabs/Dropdown
+   XmlLayout Prefabs/GridLayout
+   XmlLayout Prefabs/HorizontalLayout
+   XmlLayout Prefabs/HorizontalScrollView
+   XmlLayout Prefabs/Image
+   XmlLayout Prefabs/InputField
+   XmlLayout Prefabs/Mask
+   XmlLayout Prefabs/PagedRect/Page
+   XmlLayout Prefabs/Panel
+   XmlLayout Prefabs/ProgressBar
+   XmlLayout Prefabs/Slider
+   XmlLayout Prefabs/Text
+   XmlLayout Prefabs/TextMeshPro/TextMeshPro - Dropdown
+   XmlLayout Prefabs/Toggle
+   XmlLayout Prefabs/ToggleButton
+   XmlLayout Prefabs/ToggleGroup
+   XmlLayout Prefabs/Tooltip
+   XmlLayout Prefabs/UIObject3D/UIObject3D
+   XmlLayout Prefabs/VerticalLayout
+   XmlLayout Prefabs/VerticalScrollView
+   XmlLayout Prefabs/XmlLayout
+   Prefabs/TableLayout/Cell
+   Prefabs/TableLayout/Row
+   Prefabs/TableLayout/TableLayout
+
+UnityEngine.Sprite
+   Ui/Sprites/Border/Angled-1px
+   Ui/Sprites/Border/Angled-2px
+   Ui/Sprites/Border/Edge-Left-1px
+   Ui/Sprites/Border/Square-1px
+   Ui/Sprites/Border/Square-2px
+   Ui/Sprites/Border/Target-1px
+   Ui/Sprites/Border/Target-2px
+   Ui/Sprites/Border/TooltipBorder-1px
+   Ui/Sprites/Circle
+   Ui/Sprites/CircleProgressBar
+   Ui/Sprites/Common/DefaultAlbumThumbnail
+   Ui/Sprites/Common/IconAddScreenshot
+   Ui/Sprites/Common/IconArrowUp
+   Ui/Sprites/Common/IconButtonAperture
+   Ui/Sprites/Common/IconButtonCamera
+   Ui/Sprites/Common/IconButtonDetails
+   Ui/Sprites/Common/IconButtonLandscape
+   Ui/Sprites/Common/IconButtonLoad
+   Ui/Sprites/Common/IconButtonMenu
+   Ui/Sprites/Common/IconButtonPortrait
+   Ui/Sprites/Common/IconButtonShare
+   Ui/Sprites/Common/IconButtonSquare
+   Ui/Sprites/Common/IconButtonToggleUI
+   Ui/Sprites/Common/IconChevronLeft
+   Ui/Sprites/Common/IconChevronRight
+   Ui/Sprites/Common/IconCloseFlyout
+   Ui/Sprites/Common/IconDeltaV
+   Ui/Sprites/Common/IconDepthOfFieldFocalPoint
+   Ui/Sprites/Common/IconMenu
+   Ui/Sprites/Common/IconQuestionMark
+   Ui/Sprites/Common/IconSearch
+   Ui/Sprites/Common/IconSettings
+   Ui/Sprites/Common/IconStagingEngine
+   Ui/Sprites/Common/IconStagingFairing
+   Ui/Sprites/Common/IconStagingInterstage
+   Ui/Sprites/Common/IconStagingLandingLeg
+   Ui/Sprites/Common/IconStagingParachute
+   Ui/Sprites/Common/IconTriangleRight
+   Ui/Sprites/Common/White
+   Ui/Sprites/Design/AttachPointFuelLine
+   Ui/Sprites/Design/DropZone
+   Ui/Sprites/Design/FingerToolButton
+   Ui/Sprites/Design/FingerToolCloneGroup
+   Ui/Sprites/Design/FingerToolClonePart
+   Ui/Sprites/Design/FingerToolDetachPart
+   Ui/Sprites/Design/FingerToolMenu
+   Ui/Sprites/Design/FingerToolMovePart
+   Ui/Sprites/Design/FingerToolSelectPart
+   Ui/Sprites/Design/FingerToolStem
+   Ui/Sprites/Design/IconAddScreenshot
+   Ui/Sprites/Design/IconAddStage
+   Ui/Sprites/Design/IconArrowRight
+   Ui/Sprites/Design/IconArrowRightLong
+   Ui/Sprites/Design/IconAutoRecalculateStaging
+   Ui/Sprites/Design/IconButtonAddStage
+   Ui/Sprites/Design/IconButtonCamera
+   Ui/Sprites/Design/IconButtonCenterGizmo
+   Ui/Sprites/Design/IconButtonCraftParts
+   Ui/Sprites/Design/IconButtonDeleteItem
+   Ui/Sprites/Design/IconButtonDisable
+   Ui/Sprites/Design/IconButtonDisableAllAttachPoints
+   Ui/Sprites/Design/IconButtonDisableAttachPoints
+   Ui/Sprites/Design/IconButtonDisconnectPart
+   Ui/Sprites/Design/IconButtonEdit
+   Ui/Sprites/Design/IconButtonFingerTool
+   Ui/Sprites/Design/IconButtonFuselageShapeTool
+   Ui/Sprites/Design/IconButtonGroupParts
+   Ui/Sprites/Design/IconButtonMenu
+   Ui/Sprites/Design/IconButtonMirrorLeft
+   Ui/Sprites/Design/IconButtonMirrorPart
+   Ui/Sprites/Design/IconButtonMirrorRight
+   Ui/Sprites/Design/IconButtonMovePartTool
+   Ui/Sprites/Design/IconButtonNudgeTool
+   Ui/Sprites/Design/IconButtonPaint
+   Ui/Sprites/Design/IconButtonParts
+   Ui/Sprites/Design/IconButtonPlay
+   Ui/Sprites/Design/IconButtonProperties
+   Ui/Sprites/Design/IconButtonReconnectPart
+   Ui/Sprites/Design/IconButtonRedo
+   Ui/Sprites/Design/IconButtonRotateTool
+   Ui/Sprites/Design/IconButtonStaging
+   Ui/Sprites/Design/IconButtonSymmetry
+   Ui/Sprites/Design/IconButtonTrash
+   Ui/Sprites/Design/IconButtonUndo
+   Ui/Sprites/Design/IconButtonView
+   Ui/Sprites/Design/IconButtonViewFront
+   Ui/Sprites/Design/IconButtonViewSide
+   Ui/Sprites/Design/IconButtonViewTop
+   Ui/Sprites/Design/IconHidden
+   Ui/Sprites/Design/IconPaintPreviewGlossOverlay
+   Ui/Sprites/Design/IconPartCategoryFallback
+   Ui/Sprites/Design/IconPartCategorySubs
+   Ui/Sprites/Design/IconResetStaging
+   Ui/Sprites/Design/IconSliderHandle
+   Ui/Sprites/Design/IconSpinnerArrowLeft
+   Ui/Sprites/Design/IconSpinnerArrowRight
+   Ui/Sprites/Design/IconTutorialRestartStep
+   Ui/Sprites/Design/IconTutorialSkipStep
+   Ui/Sprites/Design/OffscreenArrow
+   Ui/Sprites/Design/ShapeCircle
+   Ui/Sprites/Design/ShapeSquare
+   Ui/Sprites/Design/ShapeTriangle
+   Ui/Sprites/Flight/AnalogStick
+   Ui/Sprites/Flight/AnalogStickArea
+   Ui/Sprites/Flight/ButtonPanelToggle
+   Ui/Sprites/Flight/IconActivateStage
+   Ui/Sprites/Flight/IconActivationPanelToggle
+   Ui/Sprites/Flight/IconAddInputSlider
+   Ui/Sprites/Flight/IconCameraChase
+   Ui/Sprites/Flight/IconCameraFirstPerson
+   Ui/Sprites/Flight/IconCameraFlyBy
+   Ui/Sprites/Flight/IconCameraFlyByStationary
+   Ui/Sprites/Flight/IconCameraParts
+   Ui/Sprites/Flight/IconCameraPlanetAligned
+   Ui/Sprites/Flight/IconCameraRecenter
+   Ui/Sprites/Flight/IconCameraSpaceAligned
+   Ui/Sprites/Flight/IconCameraThirdPerson
+   Ui/Sprites/Flight/IconChangeCamera
+   Ui/Sprites/Flight/IconEvaGrapple
+   Ui/Sprites/Flight/IconEvaJump
+   Ui/Sprites/Flight/IconFuelTransferDrain
+   Ui/Sprites/Flight/IconFuelTransferFill
+   Ui/Sprites/Flight/IconFuelTransferNone
+   Ui/Sprites/Flight/IconMapView
+   Ui/Sprites/Flight/IconNavPanelToggle
+   Ui/Sprites/Flight/IconNavSphereHide
+   Ui/Sprites/Flight/IconNavSphereLock
+   Ui/Sprites/Flight/IconNavSphereLockPrograde
+   Ui/Sprites/Flight/IconNavSphereLockRetrograde
+   Ui/Sprites/Flight/IconNavSphereTargetMode
+   Ui/Sprites/Flight/IconNavSphereTranslationMode
+   Ui/Sprites/Flight/IconPartInspectorActivate
+   Ui/Sprites/Flight/IconPartInspectorExplode
+   Ui/Sprites/Flight/IconPartInspectorFocus
+   Ui/Sprites/Flight/IconPartInspectorSelectPod
+   Ui/Sprites/Flight/IconPartInspectorUndock
+   Ui/Sprites/Flight/IconQuit
+   Ui/Sprites/Flight/IconRemoveInputSlider
+   Ui/Sprites/Flight/IconRetry
+   Ui/Sprites/Flight/IconStatusBattery
+   Ui/Sprites/Flight/IconStatusFuel
+   Ui/Sprites/Flight/IconStatusMono
+   Ui/Sprites/Flight/IconStatusThrottle
+   Ui/Sprites/Flight/IconTimeFastForward
+   Ui/Sprites/Flight/IconTimePlay
+   Ui/Sprites/Flight/IconTimeSlowMotion
+   Ui/Sprites/Flight/IconTimeWarp
+   Ui/Sprites/Flight/IconToggleAnalogSticks
+   Ui/Sprites/Flight/IconToggleFlightInfoPanel
+   Ui/Sprites/Flight/IconTriangle
+   Ui/Sprites/Flight/RequirementFail
+   Ui/Sprites/Flight/RequirementPass
+   Ui/Sprites/Flight/TargetArrow
+   Ui/Sprites/Flight/ThrottlePanel
+   Ui/Sprites/Flight/ThrottlePanelFuelSlider
+   Ui/Sprites/Flight/ThrottleSlider
+   Ui/Sprites/Layout/Button
+   Ui/Sprites/Layout/Viewport
+   Ui/Sprites/MapView/IconAutoBurn
+   Ui/Sprites/MapView/IconNodeLocked
+   Ui/Sprites/MapView/IconPlayer
+   Ui/Sprites/MapView/IconRenameNode
+   Ui/Sprites/MapView/IconSelectNode
+   Ui/Sprites/MapView/IconSetTarget
+   Ui/Sprites/MapView/IconTakeControl
+   Ui/Sprites/MapView/IconTrash
+   Ui/Sprites/MapView/IconWarpToNode
+   Ui/Sprites/Menu/IconButtonBack
+   Ui/Sprites/Menu/IconButtonBuild
+   Ui/Sprites/Menu/IconButtonMenu
+   Ui/Sprites/Menu/IconButtonPlay
+   Ui/Sprites/Menu/IconButtonTrash
+   Ui/Sprites/Menu/IconButtonWhatsNew
+   Ui/Sprites/Menu/IconComplete
+   Ui/Sprites/Menu/IconExclamation
+   Ui/Sprites/Menu/JundrooLogo
+   Ui/Sprites/Menu/LevelIcons/DockingPractice
+   Ui/Sprites/Menu/LevelIcons/EscapeSoi
+   Ui/Sprites/Menu/LevelIcons/LandingPractice
+   Ui/Sprites/Menu/LevelIcons/LevelAltitude100
+   Ui/Sprites/Menu/LevelIcons/LevelDefault
+   Ui/Sprites/Menu/LevelIcons/LevelDesignerTutorial
+   Ui/Sprites/Menu/LevelIcons/LevelFlightTutorial
+   Ui/Sprites/Menu/LevelIcons/LowFlyer
+   Ui/Sprites/Menu/LevelIcons/LowOrbit
+   Ui/Sprites/Menu/LevelIcons/MaximumSpeed
+   Ui/Sprites/Menu/LevelIcons/MaximumThrust
+   Ui/Sprites/Menu/LevelIcons/MediumOrbit
+   Ui/Sprites/Menu/LevelIcons/MoonLanding
+   Ui/Sprites/Menu/LevelIcons/MoonOrbit
+   Ui/Sprites/Menu/LevelIcons/MoonPunch
+   Ui/Sprites/Menu/LevelIcons/OptimumTrajectory
+   Ui/Sprites/Menu/LevelIcons/ParachuteLanding
+   Ui/Sprites/Menu/LevelIcons/PolarOrbit
+   Ui/Sprites/Menu/LevelIcons/SandboxBuild
+   Ui/Sprites/Menu/LevelIcons/SandboxLaunch
+   Ui/Sprites/Menu/LevelIcons/SatelliteRendezvous
+   Ui/Sprites/Menu/LevelIcons/ShuttleLanding
+   Ui/Sprites/Menu/LevelIcons/TimedOrbit
+   Ui/Sprites/Menu/SimpleRockets2Logo
+   Ui/Sprites/Menu/Team
+   Ui/Sprites/Panel
+   Ui/Sprites/Panel-Angled
+   Ui/Sprites/Panel-Angled-Right
+   Ui/Sprites/Panel-Pin
+   Ui/Sprites/Settings/CalibrationArrow
+   Ui/Sprites/Settings/graphic-center-stick
+   Ui/Sprites/Settings/graphic-move-stick
+   Ui/Sprites/Settings/IconInvertControlAxis
+   Ui/Vizzy/BoolExpression
+   Ui/Vizzy/ConnectingLine
+   Ui/Vizzy/EventInstruction
+   Ui/Vizzy/Instruction
+   Ui/Vizzy/InstructionBlock
+   Ui/Vizzy/InstructionBlockBottom
+   Ui/Vizzy/ListItemTypeDegrees
+   Ui/Vizzy/ListItemTypeList
+   Ui/Vizzy/ListItemTypeNone
+   Ui/Vizzy/ListItemTypeNumber
+   Ui/Vizzy/ListItemTypeRadians
+   Ui/Vizzy/ListItemTypeText
+   Ui/Vizzy/ListItemTypeVector
+   Ui/Vizzy/TextExpression
+   Ui/Vizzy/ToolboxIconCraft
+   Ui/Vizzy/ToolboxIconCustomExpressions
+   Ui/Vizzy/ToolboxIconCustomInstructions
+   Ui/Vizzy/ToolboxIconEvents
+   Ui/Vizzy/ToolboxIconExpressions
+   Ui/Vizzy/ToolboxIconFlow
+   Ui/Vizzy/ToolboxIconLists
+   Ui/Vizzy/ToolboxIconOperators
+   Ui/Vizzy/ToolboxIconVariables
+   Sprites/Outline
+   Sprites/Outline_Sharp
+   Sprites/Outline_With_Background
+   Sprites/Elements/Background_XmlLayout
+   Sprites/Elements/Checkmark
+   Sprites/Elements/DropdownArrow
+   Sprites/Elements/ToggleGroup_Background
+   Sprites/Elements/ToggleGroup_Selected
+   Sprites/Elements/TriangleRight
+   Sprites/Elements/UISprite_XmlLayout
+
+UnityEngine.Texture2D
+   Ui/Sprites/Common/DeleteThis_PlaceholderTexture
+   Cursors/DefaultCursor
+
+UI.Xml.XmlLayoutCustomResourceDatabase
+   Ui/UIResourceDatabase
+   Prefab Resource Database
+   XmlLayout Standard Assets
+
+UnityEngine.TextAsset
+   Ui/Xml/AccountDialog
+   Ui/Xml/Design/ActivationGroupsPanel
+   Ui/Xml/Design/CraftPartsPanel
+   Ui/Xml/Design/DesignerUi
+   Ui/Xml/Design/DesignStyles
+   Ui/Xml/Design/FuselageShapePanel
+   Ui/Xml/Design/LevelUIDefault
+   Ui/Xml/Design/LoadCraftPanel
+   Ui/Xml/Design/MenuPanel
+   Ui/Xml/Design/MovePartPanel
+   Ui/Xml/Design/NudgePartPanel
+   Ui/Xml/Design/PaintPanel
+   Ui/Xml/Design/PartConnectionsPanel
+   Ui/Xml/Design/PartListPanel
+   Ui/Xml/Design/PartPropertiesPanel
+   Ui/Xml/Design/RotatePartPanel
+   Ui/Xml/Design/StagingEditorPanel
+   Ui/Xml/Design/SymmetryPanel
+   Ui/Xml/Design/ToolPanel
+   Ui/Xml/Design/TutorialPanel
+   Ui/Xml/Design/ViewOptionsPanel
+   Ui/Xml/Flight/ActivationPanel
+   Ui/Xml/Flight/EndFlightDialog
+   Ui/Xml/Flight/EvaPanel
+   Ui/Xml/Flight/FlightSceneUi
+   Ui/Xml/Flight/FlightStyles
+   Ui/Xml/Flight/FlightTutorialPanel
+   Ui/Xml/Flight/FuelTransferPanel
+   Ui/Xml/Flight/InputSliderPanel
+   Ui/Xml/Flight/LevelUIDefault
+   Ui/Xml/Flight/NavPanel
+   Ui/Xml/Flight/RetryFlightDialog
+   Ui/Xml/Flight/StagingPanel
+   Ui/Xml/Flight/TimePanel
+   Ui/Xml/Flight/ViewPanel
+   Ui/Xml/InfoPanel/InfoPanelStyles
+   Ui/Xml/InputDialog
+   Ui/Xml/InspectorPanel
+   Ui/Xml/Map/MapViewUi
+   Ui/Xml/Menu/About
+   Ui/Xml/Menu/ListView
+   Ui/Xml/Menu/MenuUi
+   Ui/Xml/Menu/NewGameDialog
+   Ui/Xml/MessageDialog
+   Ui/Xml/Mods/RequiredModsDialog
+   Ui/Xml/PlanetStudio/BiomesFlyout
+   Ui/Xml/PlanetStudio/BrushFlyout
+   Ui/Xml/PlanetStudio/CelestialBodyDesigner
+   Ui/Xml/PlanetStudio/Menu
+   Ui/Xml/PlanetStudio/MenuFlyout
+   Ui/Xml/PlanetStudio/PlanetStudioUI
+   Ui/Xml/PlanetStudio/TexturesFlyout
+   Ui/Xml/ScenarioDialog
+   Ui/Xml/Settings/AxisCalibratorDialog
+   Ui/Xml/Settings/BindInputDialog
+   Ui/Xml/Settings/CalibrateControllerDialog
+   Ui/Xml/Settings/ControlSettingsDialog
+   Ui/Xml/Settings/SettingsDialog
+   Ui/Xml/Sharing/DownloadContentDialog
+   Ui/Xml/Sharing/PhotoLibraryDialog
+   Ui/Xml/Sharing/PhotoLibraryImageViewer
+   Ui/Xml/Sharing/ScreenshotDialog
+   Ui/Xml/Sharing/ScreenshotList
+   Ui/Xml/Sharing/UploadContentDialog
+   Ui/Xml/Styles
+   Ui/Xml/Vizzy/CreateCustomNodeDialog
+   Ui/Xml/Vizzy/VizzyToolbox
+   Ui/Xml/Vizzy/VizzyUI
+   XmlLayout Prefabs/TableLayout/Note
+
+UnityEngine.AnimationClip
+   Animation/FadeIn
+   Animation/FadeOut
+   Animation/Shrink
+   Animation/Shrink_Horizontal
+   Animation/Shrink_Vertical
+   Animation/SlideIn_Left
+   Animation/SlideIn_Top
+   Animation/SlideOut_Bottom
+   Animation/SlideOut_Right
+
+UnityEditor.Animations.AnimatorController
+   Animation/XmlLayoutAnimationController
+

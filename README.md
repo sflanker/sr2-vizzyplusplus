@@ -34,9 +34,15 @@
 * _e_ - Euler's Number (base of natural logarithms).
 * c - The speed of light in meters per second.
 
+# Contributing
+
+I welcome contributions to this mod and I would like to make it as easy as possible. If you want to work on something just submit a pull request changing this README file to have your SR2 Website username next to the roadmap item you are working on, and then submit another pull request with the functionality implemented. Following the existing coding style is appreciated, but beyond that if it works and doesn't add unnecessary files I will merge it.
+
+This mod is currently using Unity 2019.2.3f1, and the SimpleRockets 0.9.307 version of the ModAPI.
+
 # Roadmap
 
- * String Expressions (Contains, Starts/Ends With, Regex Match)
+ * \[In Progress - @sflanker\] String Expressions (Contains, Starts/Ends With, Regex Match)
  * Additional Current Craft Information
      * NavSphere settings: Pitch/Heading
      * Staging information
@@ -49,7 +55,7 @@
      * Set camera part orientation (in craft local coordinates)
      * Lock camera part orientation (prevent user movement with the mouse)
  * Prompt user for input (using a dialog, pauses the game)
- * Additional Craft (by Id) Information
+ * \[In Progress - @AnotherFireFox\] Closest Approach Information
      * Time of next closest approach
      * Distance at closest approach
  * Burn Node Manipulation

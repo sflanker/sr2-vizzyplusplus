@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="TestPilotSitting" path="Craft/Parts/Prefabs/TestPilotSitting.prefab">
+  <GameObject name="Robot-1">
+    <GameObject name="EVA">
+      <Component type="UnityEngine.SkinnedMeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    </GameObject>
+    <GameObject name="Hips">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="UnityEngine.Rigidbody" />
+      <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+      <GameObject name="LeftHip">
+        <Component type="UnityEngine.CapsuleCollider" />
+        <Component type="UnityEngine.Rigidbody" />
+        <Component type="UnityEngine.CharacterJoint" />
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+        <GameObject name="LeftKnee">
+          <Component type="UnityEngine.CapsuleCollider" />
+          <Component type="UnityEngine.Rigidbody" />
+          <Component type="UnityEngine.CharacterJoint" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+          <GameObject name="LeftAnkle" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="RightHip">
+        <Component type="UnityEngine.CapsuleCollider" />
+        <Component type="UnityEngine.Rigidbody" />
+        <Component type="UnityEngine.CharacterJoint" />
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+        <GameObject name="RightKnee">
+          <Component type="UnityEngine.CapsuleCollider" />
+          <Component type="UnityEngine.Rigidbody" />
+          <Component type="UnityEngine.CharacterJoint" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+          <GameObject name="RightAnkle" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="Spine">
+        <GameObject name="Chest">
+          <Component type="UnityEngine.BoxCollider" />
+          <Component type="UnityEngine.Rigidbody" />
+          <Component type="UnityEngine.CharacterJoint" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+          <GameObject name="UpperChest">
+            <GameObject name="LeftShoulder">
+              <Component type="UnityEngine.CapsuleCollider" />
+              <Component type="UnityEngine.Rigidbody" />
+              <Component type="UnityEngine.CharacterJoint" />
+              <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+              <GameObject name="LeftElbow">
+                <Component type="UnityEngine.CapsuleCollider" />
+                <Component type="UnityEngine.Rigidbody" />
+                <Component type="UnityEngine.CharacterJoint" />
+                <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+                <GameObject name="LeftWrist" />
+              </GameObject>
+            </GameObject>
+            <GameObject name="Neck">
+              <GameObject name="Head">
+                <Component type="UnityEngine.SphereCollider" />
+                <Component type="UnityEngine.Rigidbody" />
+                <Component type="UnityEngine.CharacterJoint" />
+                <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+              </GameObject>
+            </GameObject>
+            <GameObject name="RightShoulder">
+              <Component type="UnityEngine.CapsuleCollider" />
+              <Component type="UnityEngine.Rigidbody" />
+              <Component type="UnityEngine.CharacterJoint" />
+              <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+              <GameObject name="RightElbow">
+                <Component type="UnityEngine.CapsuleCollider" />
+                <Component type="UnityEngine.Rigidbody" />
+                <Component type="UnityEngine.CharacterJoint" />
+                <Component type="Assets.Scripts.Craft.Parts.Modifiers.TestPilotBuoyancyConfigScript" />
+                <GameObject name="RightWrist" />
+              </GameObject>
+            </GameObject>
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+    <GameObject name="BuoyancyCollider">
+      <Component type="UnityEngine.BoxCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+  </GameObject>
+</GameObject>

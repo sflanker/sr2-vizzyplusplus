@@ -1,0 +1,19 @@
+0,Default
+1,TransparentFX
+2,Ignore Raycast
+4,Water
+5,UI
+8,ScaledSpace
+9,PartPicture
+10,MapView
+11,MapViewItem
+12,AttachPoint
+13,AttachPointSurface
+14,AttachPointLayerCantReceive
+15,CustomPostEffectIgnore
+26,TerrainFeature
+27,NavSphere
+28,DockingPort
+29,Terrain
+30,IgnoreCraft
+31,Craft

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Eva" path="Craft/Parts/Prefabs/Eva.prefab">
+  <GameObject name="CharacterCollider">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.CapsuleCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+  <GameObject name="Root">
+    <Component type="UnityEngine.Animator" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Eva.TransformInfoScript" />
+    <GameObject name="Offset">
+      <GameObject name="SkinnedMesh">
+        <Component type="UnityEngine.SkinnedMeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+      <GameObject name="Hips">
+        <GameObject name="LeftHip">
+          <GameObject name="LeftKnee">
+            <GameObject name="LeftAnkle">
+              <GameObject name="LeftToes" />
+            </GameObject>
+          </GameObject>
+        </GameObject>
+        <GameObject name="RightHip">
+          <GameObject name="RightKnee">
+            <GameObject name="RightAnkle">
+              <GameObject name="RightToes" />
+              <GameObject name="ClickyCollider">
+                <Component type="UnityEngine.BoxCollider" />
+              </GameObject>
+            </GameObject>
+            <GameObject name="ClickyCollider">
+              <Component type="UnityEngine.BoxCollider" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="ClickyCollider">
+            <Component type="UnityEngine.BoxCollider" />
+          </GameObject>
+        </GameObject>
+        <GameObject name="Spine">
+          <GameObject name="Chest">
+            <GameObject name="UpperChest">
+              <GameObject name="EVAChestPlate">
+                <Component type="UnityEngine.MeshFilter" />
+                <Component type="UnityEngine.MeshRenderer" />
+                <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                <GameObject name="JetPackNozzleBottomLeft">
+                  <GameObject name="ParticleSystem">
+                    <Component type="UnityEngine.ParticleSystem" />
+                    <Component type="UnityEngine.ParticleSystemRenderer" />
+                  </GameObject>
+                  <GameObject name="JetPackNozzleBottomLeft">
+                    <Component type="UnityEngine.MeshFilter" />
+                    <Component type="UnityEngine.MeshRenderer" />
+                    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                  </GameObject>
+                </GameObject>
+                <GameObject name="JetPackNozzleBottomRight">
+                  <GameObject name="JetPackNozzleBottomRight">
+                    <Component type="UnityEngine.MeshFilter" />
+                    <Component type="UnityEngine.MeshRenderer" />
+                    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                  </GameObject>
+                  <GameObject name="ParticleSystem">
+                    <Component type="UnityEngine.ParticleSystem" />
+                    <Component type="UnityEngine.ParticleSystemRenderer" />
+                  </GameObject>
+                </GameObject>
+                <GameObject name="JetPackNozzleTopLeft">
+                  <GameObject name="ParticleSystem">
+                    <Component type="UnityEngine.ParticleSystem" />
+                    <Component type="UnityEngine.ParticleSystemRenderer" />
+                  </GameObject>
+                  <GameObject name="JetPackNozzleTopLeft">
+                    <Component type="UnityEngine.MeshFilter" />
+                    <Component type="UnityEngine.MeshRenderer" />
+                    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                  </GameObject>
+                </GameObject>
+                <GameObject name="JetPackNozzleTopRight">
+                  <GameObject name="ParticleSystem">
+                    <Component type="UnityEngine.ParticleSystem" />
+                    <Component type="UnityEngine.ParticleSystemRenderer" />
+                  </GameObject>
+                  <GameObject name="JetPackNozzleTopRight">
+                    <Component type="UnityEngine.MeshFilter" />
+                    <Component type="UnityEngine.MeshRenderer" />
+                    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+                  </GameObject>
+                </GameObject>
+              </GameObject>
+              <GameObject name="LeftClavicle">
+                <GameObject name="LeftShoulder">
+                  <GameObject name="LeftElbow">
+                    <GameObject name="LeftHand">
+                      <GameObject name="LeftIndexFinger">
+                        <GameObject name="LeftIndexFingerUpper">
+                          <GameObject name="LeftIndexFingerLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="LeftMiddleFinger">
+                        <GameObject name="LeftMiddleFingerUpper">
+                          <GameObject name="LeftMiddleFingerLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="LeftPinky">
+                        <GameObject name="LeftPinkyUpper">
+                          <GameObject name="LeftPinkyLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="LeftRingFinger">
+                        <GameObject name="LeftRingFingerUpper">
+                          <GameObject name="LeftRingFingerLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="LeftThumb">
+                        <GameObject name="LeftThumbMid">
+                          <GameObject name="LeftThumbTip" />
+                        </GameObject>
+                      </GameObject>
+                    </GameObject>
+                  </GameObject>
+                </GameObject>
+              </GameObject>
+              <GameObject name="Neck">
+                <GameObject name="Head">
+                  <GameObject name="HeadCenter" />
+                </GameObject>
+              </GameObject>
+              <GameObject name="RightClavicle">
+                <GameObject name="RightShoulder">
+                  <GameObject name="RightElbow">
+                    <GameObject name="RightHand">
+                      <GameObject name="RightIndexFinger">
+                        <GameObject name="RightIndexFingerUpper">
+                          <GameObject name="RightIndexFingerLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="RightMiddleFinger">
+                        <GameObject name="RightMiddleFingerUpper">
+                          <GameObject name="RightMiddleFingerLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="RightPinky">
+                        <GameObject name="RightPinkyUpper">
+                          <GameObject name="RightPinkyLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="RightRingFinger">
+                        <GameObject name="RightRingFingerUpper">
+                          <GameObject name="RightRingFingerLower" />
+                        </GameObject>
+                      </GameObject>
+                      <GameObject name="RightThumb">
+                        <GameObject name="RightThumbMid">
+                          <GameObject name="RightThumbTip" />
+                        </GameObject>
+                      </GameObject>
+                    </GameObject>
+                  </GameObject>
+                </GameObject>
+              </GameObject>
+              <GameObject name="ClickyCollider">
+                <Component type="UnityEngine.BoxCollider" />
+              </GameObject>
+            </GameObject>
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

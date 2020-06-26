@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Engine1" path="Craft/Parts/Prefabs/Engine1.prefab">
+  <GameObject name="MageIBasePlate">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+  </GameObject>
+  <GameObject name="SmokeParticleSystem">
+    <Component type="UnityEngine.ParticleSystem" />
+    <Component type="UnityEngine.ParticleSystemRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.SmokeTrailScript" />
+  </GameObject>
+  <GameObject name="Actuator1">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineActuatorScript" />
+    <GameObject name="UpperArmHinge1">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <GameObject name="UpperArm1">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="LowerArm1">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="Actuator2">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineActuatorScript" />
+    <GameObject name="UpperArmHinge2">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <GameObject name="UpperArm2">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        <GameObject name="LowerArm2">
+          <Component type="UnityEngine.MeshFilter" />
+          <Component type="UnityEngine.MeshRenderer" />
+          <Component type="ModApi.Craft.Parts.PartMeshScript" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+  </GameObject>
+  <GameObject name="Nozzle">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+    <GameObject name="GimbalTarget1" />
+    <GameObject name="GimbalTarget2" />
+    <GameObject name="ExhaustParticleSystem">
+      <Component type="UnityEngine.ParticleSystem" />
+      <Component type="UnityEngine.ParticleSystemRenderer" />
+      <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+    </GameObject>
+    <GameObject name="MageIBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    </GameObject>
+  </GameObject>
+  <GameObject name="Collider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="LoopingAudio">
+    <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+  </GameObject>
+</GameObject>

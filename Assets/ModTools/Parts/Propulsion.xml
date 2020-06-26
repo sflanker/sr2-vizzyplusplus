@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Propulsion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Content/Craft/Parts/Propulsion.xsd">
+   <Fuels>
+      <Fuel id="Battery" name="Battery" gamma="0" density="0" molecularWeight="0" combustionTemperature="0" price="0.00" explosivePower="2.5" fuelTransferRate="1000" description="Battery is used by gyroscopes, wheels, etc, and it can be recharged with solar panels." />
+      <Fuel id="Jet" name="Jet Fuel" gamma="0" density="0.80" molecularWeight="0" combustionTemperature="0" price="1.23" explosivePower="25" description="Special kerosene for use in jet engines. Note: Jet engines don't need to be directly connected to fuel tanks with jet fuel. As long as your craft has some, they will work." />
+      <Fuel id="LOX/RP1" name="Kerolox" gamma="1.22" density="1.02" molecularWeight="21.6" combustionTemperature="3526" price="1.14" explosivePower="25" description="Liquid oxygen and kerosene for use in rocket engines. It's cheap and only moderately cryogenic so it's safer and easier to work with. The downside is that it's not as efficient as some of the other fuels.">
+         <Visual exhaustIntensity="1.0" exhaustDetailIntensity="3.0" exhaustColor="#FFA851FF" smokeIntensity="0.25" />
+      </Fuel>
+      <Fuel id="LOX/LH2" name="Hydrolox" gamma="1.21" density="0.32" molecularWeight="11.8" combustionTemperature="3304" price="3.50" enginePriceScale="1.10" explosivePower="25" description="Liquid oxygen and Liquid hydrogen for use in rocket engines. Hydrolox is very efficient, but it has extremely low density and therefore requires larger fuel tanks.">
+         <Visual exhaustIntensity="0.125" exhaustDetailIntensity="0.0625" exhaustColor="#FFFFFFFF" smokeIntensity="0.10" />
+      </Fuel>
+      <Fuel id="LOX/CH4" name="Methalox" gamma="1.21" density="0.79" molecularWeight="19.6" combustionTemperature="3379" price="1.35" enginePriceScale="1.05" explosivePower="25" description="Liquid oxygen and liquid methane for use in rocket engines. Somewhat more efficient than kerolox, but easier to work with than hydrolox.">
+         <Visual exhaustIntensity="0.5" exhaustDetailIntensity="2" exhaustColor="#77AFFFFF" smokeIntensity="0.10" />
+      </Fuel>
+      <Fuel id="LH2" name="Liquid Hydrogen" gamma="1.21" density="0.071" molecularWeight="2.016" combustionTemperature="2700" price="1.35" enginePriceScale="1.10" explosivePower="25" description="Liquid hydrogen for use in rocket engines. Without the oxidizer the liquid hydrogen is even more efficient, but it can only be used in nuclear rocket engines.">
+         <Visual exhaustIntensity="0.125" exhaustDetailIntensity="0.0625" exhaustColor="#FFFFFFFF" smokeIntensity="0.10" />
+      </Fuel>
+      <Fuel id="H2O" name="Water" gamma="1.21" density="1.0" molecularWeight="11.8" combustionTemperature="3304" price="0.01" explosivePower="0" description="Now that's what I call high-quality H2O.">
+         <Visual exhaustIntensity="0.125" exhaustDetailIntensity="0.0625" exhaustColor="#FFFFFFFF" smokeIntensity="0.10" />
+      </Fuel>
+      <Fuel id="Monopropellant" name="Monopropellant" gamma="0" density="1.021" molecularWeight="0" combustionTemperature="0" price="176.00" explosivePower="25" description="Monopropellant is used by RCS nozzles for attitude control." />
+      <Fuel id="Solid" name="Solid" gamma="1.26" density="1.7" storageOverhead="0.6" molecularWeight="25.7" combustionTemperature="3450" price="5.00" explosivePower="25" fuelTransferRate="0" description="Solid fuel for use in rocket engines. It packs a lot of impulse into a small space, but it is heavy and expensive.">
+         <Visual exhaustIntensity="1.25" exhaustDetailIntensity="3.25" exhaustColor="#FFA851FF" smokeIntensity="1" />
+      </Fuel>
+      <Fuel id="Xenon" name="Xenon" gamma="0" density="1.80" molecularWeight="0" combustionTemperature="0" price="850.00" description="Xenon is used by ion engines. It's an inert gas, so it won't cause huge explosions. Depending on what you're going for that might be a good thing or a bad thing." />
+      <Fuel id="Jetpack" name="Jetpack" gamma="0" density="1.021" molecularWeight="0" combustionTemperature="0" price="176.00" description="It's for jetpacks...also this shouldn't be showing up anywhere." displayInDesigner="false" />
+   </Fuels>
+   <RocketEngines>
+      <RocketEngine id="Liquid" name="Liquid" prefabId="Liquid" fuels="LOX/RP1,LOX/LH2,LOX/CH4" nozzleRadiusScale="0.75" priceScale="2.5" textureStyleIds="RocketEngine_Type" subTextureStyleIds="RocketEngine_SubType">
+         <SubType id="GasGenerator1" name="Gas Generator I" subPrefabId="GasGenerator1" chamberPressure="7.5" baseMass="125" massScale="3.5" throttleResponse="0.75" efficiency="0.75" baseScale="0.4" nozzles="Bell,Cone,Bravo,Aerospike" radius="2.25" gimbalRange="10" gimbalSpeed="2.5" basePrice="15000" audio="Medium" />
+         <SubType id="GasGenerator2" name="Gas Generator II" subPrefabId="GasGenerator2" chamberPressure="10.0" baseMass="250" massScale="3.5" throttleResponse="0.5" efficiency="0.74" baseScale="0.6" nozzles="Bell,Cone,Bravo,Omega,Aerospike" radius="3.0" gimbalRange="2.5" gimbalSpeed="1" basePrice="25000" audio="Heavy" />
+         <SubType id="Staged1" name="Staged" prefabId="Staged1" chamberPressure="15.0" baseMass="200" massScale="4.5" efficiency="0.85" throttleResponse="0.5" baseScale="0.5" nozzles="Bell,Cone,Delta,Alpha,Aerospike" radius="2.0" gimbalRange="5" gimbalSpeed="2" gimbalId="Staged" basePrice="50000" priceScale="3.50" audio="Large" />
+         <SubType id="Staged2" name="Full Flow Staged" prefabId="Staged2" chamberPressure="25.0" baseMass="250" massScale="5" efficiency="0.90" throttleResponse="0.5" baseScale="0.5" nozzles="Bell,Cone,Delta,Alpha,Aerospike" radius="2.0" gimbalRange="5" gimbalSpeed="2" gimbalId="Staged" basePrice="100000" priceScale="3.50" audio="Large" />
+         <SubType id="PressureFed" name="Pressure-Fed" prefabId="PressureFed" chamberPressure="1" baseMass="5" massScale="5" efficiency="0.80" throttleResponse="1" baseScale="0.2" nozzles="Bell,Cone,Delta,Aerospike" radius="1.5" gimbalRange="20" gimbalSpeed="3" gimbalId="" basePrice="5000" audio="Small" />
+         <SubType id="Electric" name="Electric" subPrefabId="Electric" chamberPressure="2.5" baseMass="10" massScale="3.5" efficiency="0.77" throttleResponse="2" baseScale="0.3" nozzles="Bell,Cone,Delta,Aerospike" radius="1.5" gimbalRange="15" gimbalSpeed="3" basePrice="10000" audio="Small" />
+      </RocketEngine>
+      <RocketEngine id="Solid" name="Solid" prefabId="Solid" chamberPressure="7.5" baseMass="25" massScale="0.5" fuels="Solid" throttleResponse="0.5" baseScale="0.6" efficiency="0.74" nozzles="Bell,Cone,Delta,Aerospike,Echo" nozzleRadiusScale="1.00" minThrottle="1" supportsDeactivation="false" gimbalRange="0" gimbalId="" priceScale="1.0" basePrice="10000" audio="Solid">
+      </RocketEngine>
+      <RocketEngine id="Nuclear" name="Nuclear Thermal" prefabId="Nuclear" fuels="LH2,H2O" chamberPressure="4.0" throttleResponse="0.1" baseMass="250" massScale="100" efficiency="0.95" baseScale="0.4" nozzles="Bell,Cone,Delta,Aerospike" nozzleRadiusScale="0.50" gimbalRange="5" gimbalSpeed="2.5" priceScale="25" basePrice="250000" audio="Medium">
+      </RocketEngine>
+   </RocketEngines>
+   <RocketNozzles>
+      <RocketNozzle id="Bell" name="Bell" prefabId="Base" extensionPrefabId="Bell" extensionRadius="0.30" nozzleRadius="0.5" extensionMin="0.5" extensionMax="4.5" extensionOverlap="0.01" throatRadius="0.5" nozzleLength="1" density="400" exhaustRadiusScale="0.95" textureStyleIds="RocketEngine_Nozzle" extensionTextureStyleIds="RocketEngine_Extension,RocketEngine_Extension2,RocketEngine_Extension3,RocketEngine_Extension4" />
+      <RocketNozzle id="Cone" name="Cone" prefabId="Base" extensionPrefabId="Cone" extensionRadius="0.26" nozzleRadius="0.5" extensionMin="0.5" extensionMax="4.5" extensionOverlap="0.01" throatRadius="0.5" nozzleLength="1" density="400" exhaustRadiusScale="0.95" textureStyleIds="RocketEngine_Nozzle" extensionTextureStyleIds="RocketEngine_Extension,RocketEngine_Extension2,RocketEngine_Extension3,RocketEngine_Extension4"/>
+      <RocketNozzle id="Bravo" name="Bravo" throatRadius="0.50" nozzleRadius="1.5" nozzleLength="4.749401" textureStyleIds="RocketEngine_Nozzle"/>
+      <RocketNozzle id="Delta" name="Delta" throatRadius="0.50" nozzleRadius="1.108" nozzleLength="4.749401" extensionPrefabId="Delta" extensionRadius="0.26" extensionMin="0.1" extensionMax="2.5" exhaustRadiusScale="0.95" textureStyleIds="RocketEngine_Nozzle" extensionTextureStyleIds="RocketEngine_Extension,RocketEngine_Extension2,RocketEngine_Extension3,RocketEngine_Extension4"/>
+      <RocketNozzle id="Alpha" name="Alpha" throatRadius="0.50" nozzleRadius="1.85" nozzleLength="3.813335" textureStyleIds="RocketEngine_Nozzle" />
+      <RocketNozzle id="Omega" name="Omega" throatRadius="0.65" nozzleRadius="2.5" nozzleLength="5.458097" textureStyleIds="RocketEngine_Nozzle" />
+      <RocketNozzle id="Echo" name="Echo" throatRadius="0.55" nozzleRadius="1.066" nozzleLength="2.456163" textureStyleIds="RocketEngine_Nozzle" />
+      <RocketNozzle id="Aerospike" name="Aerospike" throatRadius="0.45" nozzleRadius="0.0" nozzleLength="0.8133829" extensionMin="0.5" extensionMax="1.5" extensionRadius="0" extensionPrefabId="Aerospike" extensionOverlap="0.375" altitudeCompensation="0.990" altitudeCompensationScale="0.004" density="700" thickness="1" priceScale="20" textureStyleIds="RocketEngine_Nozzle" />
+   </RocketNozzles>
+</Propulsion>

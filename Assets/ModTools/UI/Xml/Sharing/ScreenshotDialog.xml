@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Image class="screenshot-guide" color="#000000F9" />
+    <Image class="icon-button" width="32" height="32" color="ButtonIcon" tooltipPosition="Below" />
+    <Button class="icon-button" tooltipPosition="Below" />
+    <Image class="camera-focus" color="Primary" hoverClass="camera-focus-hover" pressClass="camera-focus-press" />
+    <Image class="camera-focus-hover" color="PrimaryHover" />
+    <Image class="camera-focus-press" color="PrimaryPressed" />
+  </Defaults>
+  <RectTransform id="main-panel">
+    <Panel id="screenshot-guides" class="no-image">
+      <Image name="Top" class="screenshot-guide top-bottom" rectAlignment="UpperCenter" height="100" pivot="0.5 1" />
+      <Image name="Bottom" class="screenshot-guide top-bottom" rectAlignment="LowerCenter" height="100" pivot="0.5 0" />
+      <Image name="Left" class="screenshot-guide left-right" rectAlignment="MiddleLeft" width="100" pivot="0.0 0.5" />
+      <Image name="Right" class="screenshot-guide left-right" rectAlignment="MiddleRight" width="100" pivot="1 0.5" />
+    </Panel>
+    <RectTransform class="safe-area">
+      <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonBack" rectAlignment="UpperLeft" offsetXY="10 -10" tooltip="Back" onClick="OnBackClicked();" />
+      <HorizontalLayout class="no-image" contentSizeFitter="horizontal" offsetXY="-10 -10" height="40" rectAlignment="UpperRight" pivot="1 1" childForceExpandHeight="false" childForceExpandWidth="false" childAlignment="MiddleRight" spacing="10">
+        <Button id="toggle-ui" class="icon-button" icon="Ui/Sprites/Common/IconButtonToggleUI" onClick="OnToggleUiClicked(this);" tooltip="Toggle UI" />
+        <Button id="orientation-portrait" class="icon-button orientation" icon="Ui/Sprites/Common/IconButtonPortrait" onClick="OnPortraitClicked();" tooltip="Portrait" />
+        <Button id="orientation-landscape" class="icon-button orientation" icon="Ui/Sprites/Common/IconButtonLandscape" onClick="OnLandscapeClicked();" tooltip="Landscape" />
+        <Button id="orientation-square" class="icon-button orientation" icon="Ui/Sprites/Common/IconButtonSquare" onClick="OnSquareClicked();" tooltip="Square" />
+        <Button id="effect-button-dof" class="icon-button" icon="Ui/Sprites/Common/IconButtonAperture" onClick="OnDepthOfFieldClicked();" tooltip="Depth of Field" />
+      </HorizontalLayout>
+      <Panel id="effect-panel-dof" class="no-image" active="false">
+        <VerticalLayout rectAlignment="UpperRight" contentSizeFitter="vertical" spacing="10" width="250" height="150" padding="15" class="panel" offsetXY="-10 -60">
+          <TextMeshPro text="Depth of Field" />
+          <Panel id="slider-aperture" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" alignment="Left" text="Aperture" />
+            <TextMeshPro internalId="slider-value" class="value" text="None" />
+            <Slider internalId="slider" minValue="0" maxValue="1" />
+          </Panel>
+          <Panel id="slider-focal-size" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" alignment="Left" text="Focal Size" />
+            <TextMeshPro internalId="slider-value" class="value" text="None" />
+            <Slider internalId="slider" minValue="0" maxValue="1" />
+          </Panel>
+        </VerticalLayout>
+        <Image id="camera-focus" class="camera-focus" sprite="Ui/Sprites/Common/IconDepthOfFieldFocalPoint" width="32" height="32" pivot="0.5,0.5" rectAlignment="MiddleCenter" raycastTarget="true" allowDragging="true" restrictDraggingToParentBounds="true" returnToOriginalPositionWhenReleased="false" />
+      </Panel>
+      <Button class="icon-button btn-primary" icon="Ui/Sprites/Common/IconButtonCamera" rectAlignment="LowerCenter" offsetXY="0 20" iconWidth="40" width="50" height="50" onClick="OnScreenshotClicked();" />
+    </RectTransform>
+  </RectTransform>
+</XmlLayout>
