@@ -33,21 +33,17 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
             return this._type;
         }
 
-        public override string SetListValue(string listId, string value) {
+        public override void SetListValue(string listId, string value) {
             this._type = value;
         }
 
-        public override void OnDeserialized(XElement xml) {
-            base.OnDeserialized(xml);
-        }
-
-        private ExpressionResult GetExpressionResult(Int32 TargetCraftId) {
+        public override ExpressionResult Evaluate(IThreadContext context) {
             if (this._type == "time-of") {
-                return new ExpressionResult {};
+                return new ExpressionResult { TextValue = "TODO time-of" };
             } else if (this._type == "distance-at") {
-                return new ExpressionResult {};
+                return new ExpressionResult { TextValue = "TODO distance-at" };
             } else {
-                Debug.Log("Target Craft not set");
+                Debug.LogWarning($"Expression type not recognized: {this._type}");
                 return new ExpressionResult {};
             }
         }
