@@ -18,12 +18,12 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
             return new List<ListItemInfo> {
                 new ListItemInfo(
                     "time-of",
-                    "Time of",
+                    "Time",
                     "Time of next Closest Approach.",
                     ListItemInfoType.Number),
                 new ListItemInfo(
                     "distance-at",
-                    "Distance at",
+                    "Distance",
                     "Distance at next Closest Approach.",
                     ListItemInfoType.Number)
             };
