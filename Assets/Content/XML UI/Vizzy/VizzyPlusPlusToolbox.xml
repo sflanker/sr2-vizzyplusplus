@@ -8,10 +8,10 @@
         <Style id="orbital-element" color="ExtCraftExpression" format="orbital element [x] of (0)" tooltip="Get an orbital element of a craft or planet by craft id or name." />
         <Style id="advanced-orbital-element" color="ExtCraftExpression" format="advanced orbital element [x] of (0)" tooltip="Get an advanced orbital element of a craft or planet by craft id or name." />
         <Style id="cartesian-state" color="ExtCraftExpression" format="cartesian state vector [x] of (0)" tooltip="Get a cartesian state vector (position or velocity) of a craft or planet by node id." />
-        <style id="constant-pi" color="ExtOperator" format="π" tooltip="3.14159..." />
-        <style id="constant-g" color="ExtOperator" format="G" tooltip="Universal Gravitational Constant (in cubic meters per kilogram per seconds squared)." />
-        <style id="constant-e" color="ExtOperator" format="e" tooltip="Euler's Number (base of natural logarithms)." />
-        <style id="constant-c" color="ExtOperator" format="c" tooltip="The speed of light in meters per second." />
+        <Style id="constant-pi" color="ExtOperator" format="π" tooltip="3.14159..." />
+        <Style id="constant-g" color="ExtOperator" format="G" tooltip="Universal Gravitational Constant (in cubic meters per kilogram per seconds squared)." />
+        <Style id="constant-e" color="ExtOperator" format="e" tooltip="Euler's Number (base of natural logarithms)." />
+        <Style id="constant-c" color="ExtOperator" format="c" tooltip="The speed of light in meters per second." />
         <Style id="target-craft-id" color="ExtCraftExpression" format="Target Craft ID" tooltip="Gets the target craft ID if a craft is currently targeted (returns -1 if no craft is targeted)." />
     </Styles>
     <Categories>
