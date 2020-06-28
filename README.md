@@ -23,9 +23,16 @@
 * Cartesian State Vector¹ ...
     * Position - The position of the craft or planet relative to its parent.
     * Velocity - The velocity of the craft or planet.
-* Target Craft ID - Craft names are sometimes duplicated, so this is more reliable for use with the other expressions.
+* Get Craft ID - Gets the ID of a specific craft: Targeted, Current, or Active. Craft names are sometimes duplicated, so this is more reliable for use with the other expressions.
 
 ¹ _These expressions can take a Planet Name, a Craft Name, or a Craft Id and return the specified value for that object's orbit. If the specified value is blank or a negative number, then the value for the current craft will be returned._
+
+## Text Expressions
+
+ * Text Comparison - Compares pieces of text.
+ * Text Transform - Returns the result of a transform of a single text value.
+ * Split Text - Returns a list of strings by splitting the input on the specified separators.
+
 
 ## Constant Expressions
 
@@ -50,7 +57,6 @@ Crafts with Flight Programs that test the Expressions and Instructions should be
 
 # Roadmap
 
- * \[In Progress - @sflanker\] String Expressions (Contains, Starts/Ends With, Regex Match)
  * Additional Current Craft Information
      * NavSphere settings: Pitch/Heading
      * Staging information
