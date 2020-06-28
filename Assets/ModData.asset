@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: -1366777262, guid: c37b925f2b4978342b2e0b83a8fa404a, type: 3}
   m_Name: ModData
   m_EditorClassIdentifier: 
-  _assemblies: []
+  _assemblies:
+  - VizzyPlusPlus.dll
   _author: sflanker
   _description: A collection of general purpose Vizzy expressions and instructions.
   _loadPriority: 1000
@@ -26,10 +27,11 @@ MonoBehaviour:
   _steamTitle: 
   _steamVisibility: 0
   _versionMajor: 0
-  _versionMinor: 1
+  _versionMinor: 2
   _partCategories: []
   _parts: []
   _partStyleExtensions: []
   _partTextureStyles: []
   _persistentObjects: []
-  _uiResourceDatabases: []
+  _uiResourceDatabases:
+  - {fileID: 11400000, guid: 8f2a7f4fff8204cf785060aa1d2f09b7, type: 2}
