@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
+using Assets.Scripts.Craft.Parts.Modifiers;
+using Assets.Scripts.Vizzy;
 using Assets.Scripts.Vizzy.Constants;
 using Assets.Scripts.Vizzy.CraftInformation;
 using Assets.Scripts.Vizzy.Operators;
 using Assets.Scripts.Vizzy.UI;
+using ModApi.Craft;
 using ModApi.Craft.Program;
+using ModApi.Craft.Program.Instructions;
 using ModApi.Ui;
 using ModApi.Ui.Events;
 using UnityEngine;
@@ -141,6 +145,77 @@ namespace Assets.Scripts {
                     Debug.Log("VizzyPlusPlus: Unable to load VizzyPlusPlusToolbox.");
                 }
             }
+        }
+
+        public override Boolean IsModRequiredForCraft(CraftData craft) {
+            return base.IsModRequiredForCraft(craft) || this.DoesCraftUseVizzyPlusPlus(craft);
+        }
+
+        private Boolean DoesCraftUseVizzyPlusPlus(CraftData craft) {
+            Debug.Log($"Checking craft {craft.Name} for VizzyPlusPlus usage.");
+            if (craft.Assembly != null) {
+                foreach (var part in craft.Assembly.Parts) {
+                    var flightProgramData = part.GetModifier<FlightProgramData>();
+
+                    if (flightProgramData != null) {
+                        var flightProgram = flightProgramData.Script.FlightProgram ??
+                            new ProgramSerializer().DeserializeFlightProgram(flightProgramData.FlightProgramXml);
+                        if (ContainsVizzyPlusPlus(flightProgram.RootInstructions) ||
+                            ContainsVizzyPlusPlus(flightProgram.RootExpressions) ||
+                            ContainsVizzyPlusPlus(flightProgram.CustomExpressions) ||
+                            ContainsVizzyPlusPlus(flightProgram.CustomInstructions)) {
+
+                            Debug.Log($"Flight Program on part {part.Name} contains VizzyPlusPlus.");
+                            return true;
+                        } else {
+                            Debug.Log($"Flight Program on part {part.Name} does not contain VizzyPlusPlus.");
+                        }
+                    }
+                }
+            } else {
+                Debug.LogWarning("Unable to check craft for VizzyPlusPlus because Assembly is null.");
+            }
+
+            return false;
+        }
+
+        private Boolean ContainsVizzyPlusPlus(IEnumerable<ProgramInstruction> instructions) {
+            var instructionStack = new Stack<ProgramInstruction>(instructions);
+            while (instructionStack.Count> 0) {
+                var instruction = instructionStack.Pop();
+                if (instruction is IVizzyPlusPlusProgramNode) {
+                    return true;
+                }
+
+                if (instruction.Expressions != null && ContainsVizzyPlusPlus(instruction.Expressions)) {
+                    return true;
+                }
+
+                if (instruction.Next != null) {
+                    instructionStack.Push(instruction.Next);
+                }
+                if (instruction.SupportsChildren) {
+                    instructionStack.Push(instruction.FirstChild);
+                }
+            }
+
+            return false;
+        }
+
+        private Boolean ContainsVizzyPlusPlus(IEnumerable<ProgramExpression> expressions) {
+            var expressionStack = new Stack<ProgramExpression>(expressions);
+            while (expressionStack.Count > 0) {
+                var expression = expressionStack.Pop();
+                if (expression is IVizzyPlusPlusProgramNode) {
+                    return true;
+                } else if (expression.Expressions != null) {
+                    foreach (var child in expression.Expressions.Reverse()) {
+                        expressionStack.Push(child);
+                    }
+                }
+            }
+
+            return false;
         }
 
         private static void MergeToolbox(

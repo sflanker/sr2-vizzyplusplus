@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.Operators {
     [Serializable]
-    public class StringTransformExpression : ProgramExpression {
+    public class StringTransformExpression : ProgramExpression, IVizzyPlusPlusProgramNode {
         public const String XmlName = "UnaryStringTransform";
         /// <summary>The operator.</summary>
         [ProgramNodeProperty] private String _op = "to-lower";

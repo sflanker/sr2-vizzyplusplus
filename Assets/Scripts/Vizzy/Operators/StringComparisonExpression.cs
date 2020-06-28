@@ -2,12 +2,13 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using ModApi.Craft.Program;
 using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.Operators {
     [Serializable]
-    public class StringComparisonExpression : ProgramExpression {
+    public class StringComparisonExpression : ProgramExpression, IVizzyPlusPlusProgramNode {
         public const String XmlName = "StringComparison";
 
         private ConcurrentDictionary<String, Regex> regexCache =

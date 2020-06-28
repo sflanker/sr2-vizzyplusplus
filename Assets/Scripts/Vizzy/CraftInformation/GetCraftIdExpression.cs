@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.CraftInformation {
     [Serializable]
-    public class GetCraftIdExpression : ProgramExpression {
+    public class GetCraftIdExpression : ProgramExpression, IVizzyPlusPlusProgramNode {
         public const String LegacyXmlName = "TargetCraftId";
         public const String XmlName = "GetCraftId";
 

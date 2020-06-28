@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.Constants {
     [Serializable]
-    public class NumericConstantExpression : ProgramExpression {
+    public class NumericConstantExpression : ProgramExpression, IVizzyPlusPlusProgramNode {
         public const String XmlName = "NumericConstant";
 
         private String _type;

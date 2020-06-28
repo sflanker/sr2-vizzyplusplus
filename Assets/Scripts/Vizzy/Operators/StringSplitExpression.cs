@@ -4,7 +4,7 @@ using ModApi.Craft.Program;
 
 namespace Assets.Scripts.Vizzy.Operators {
     [Serializable]
-    public class StringSplitExpression : ProgramExpression {
+    public class StringSplitExpression : ProgramExpression, IVizzyPlusPlusProgramNode {
         public const String XmlName = "Split";
 
         public override Boolean IsBoolean => false;

@@ -4,7 +4,7 @@ using ModApi.Flight.Sim;
 using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.CraftInformation {
-    public abstract class OrbitNodeInformationExpression : ProgramExpression {
+    public abstract class OrbitNodeInformationExpression : ProgramExpression, IVizzyPlusPlusProgramNode {
         public override ExpressionResult Evaluate(IThreadContext context) {
             var selectedNodeExpression = this.GetExpression(0).Evaluate(context);
             IOrbitNode node;
