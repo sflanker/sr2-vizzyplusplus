@@ -1062,6 +1062,75 @@
             <param name="value">The value to be written.</param>
             <param name="context">The serialization context.</param>
         </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer">
+            <summary>
+            An interface for a XML attribute based serializer for Unity.
+            </summary>
+        </member>
+        <member name="P:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.SupportsCollections">
+            <summary>
+            Gets a value indicating whether this serializer supports collections.
+            </summary>
+            <value>
+              <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The value read from the attribute.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the values from the specified XML attribute.
+            </summary>
+            <param name="attribute">The attribute from which the values should be read.</param>
+            <param name="type">The type of the values to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The values read from the attribute.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.WriteValues(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified values to the XML attribute.
+            </summary>
+            <param name="attribute">The XML attribute to which the values should be written.</param>
+            <param name="values">The values to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
+        <member name="T:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer">
+            <summary>
+            An interface for a XML element based serializer for Unity.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Reads the value from the specified XML element.
+            </summary>
+            <param name="element">The element from which the value should be read.</param>
+            <param name="type">The type of the value to read.</param>
+            <param name="context">The serialization context.</param>
+            <returns>The value read from the element.</returns>
+        </member>
+        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer.WriteValue(System.Xml.Linq.XElement,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
+            <summary>
+            Writes the specified value to the XML element.
+            </summary>
+            <param name="element">The XML element to which the value should be written.</param>
+            <param name="value">The value to be written.</param>
+            <param name="context">The serialization context.</param>
+        </member>
         <member name="T:Jundroo.ModTools.Serialization.Xml.Int16XmlSerializer">
             <summary>
             A XML serializer for <see cref="T:System.Int32"/>.
@@ -1188,75 +1257,6 @@
             Writes the specified value to the XML attribute.
             </summary>
             <param name="attribute">The XML attribute to which the value should be written.</param>
-            <param name="value">The value to be written.</param>
-            <param name="context">The serialization context.</param>
-        </member>
-        <member name="T:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer">
-            <summary>
-            An interface for a XML attribute based serializer for Unity.
-            </summary>
-        </member>
-        <member name="P:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.SupportsCollections">
-            <summary>
-            Gets a value indicating whether this serializer supports collections.
-            </summary>
-            <value>
-              <c>true</c> if this serializer supports collections; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.ReadValue(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
-            <summary>
-            Reads the value from the specified XML attribute.
-            </summary>
-            <param name="attribute">The attribute from which the value should be read.</param>
-            <param name="type">The type of the value to read.</param>
-            <param name="context">The serialization context.</param>
-            <returns>The value read from the attribute.</returns>
-        </member>
-        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.ReadValues(System.Xml.Linq.XAttribute,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
-            <summary>
-            Reads the values from the specified XML attribute.
-            </summary>
-            <param name="attribute">The attribute from which the values should be read.</param>
-            <param name="type">The type of the values to read.</param>
-            <param name="context">The serialization context.</param>
-            <returns>The values read from the attribute.</returns>
-        </member>
-        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.WriteValue(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
-            <summary>
-            Writes the specified value to the XML attribute.
-            </summary>
-            <param name="attribute">The XML attribute to which the value should be written.</param>
-            <param name="value">The value to be written.</param>
-            <param name="context">The serialization context.</param>
-        </member>
-        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlAttributeSerializer.WriteValues(System.Xml.Linq.XAttribute,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
-            <summary>
-            Writes the specified values to the XML attribute.
-            </summary>
-            <param name="attribute">The XML attribute to which the values should be written.</param>
-            <param name="values">The values to be written.</param>
-            <param name="context">The serialization context.</param>
-        </member>
-        <member name="T:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer">
-            <summary>
-            An interface for a XML element based serializer for Unity.
-            </summary>
-        </member>
-        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer.ReadValue(System.Xml.Linq.XElement,System.Type,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
-            <summary>
-            Reads the value from the specified XML element.
-            </summary>
-            <param name="element">The element from which the value should be read.</param>
-            <param name="type">The type of the value to read.</param>
-            <param name="context">The serialization context.</param>
-            <returns>The value read from the element.</returns>
-        </member>
-        <member name="M:Jundroo.ModTools.Serialization.Xml.IUnityXmlElementSerializer.WriteValue(System.Xml.Linq.XElement,System.Object,Jundroo.ModTools.Serialization.Xml.UnityXmlSerializerContext)">
-            <summary>
-            Writes the specified value to the XML element.
-            </summary>
-            <param name="element">The XML element to which the value should be written.</param>
             <param name="value">The value to be written.</param>
             <param name="context">The serialization context.</param>
         </member>
@@ -2356,27 +2356,27 @@
             A class for reading and writing data that is culture invariant.
             </summary>
         </member>
-        <member name="F:System.DataIO._Culture">
+        <member name="F:System.DataIO.Culture">
             <summary>
             The invariant culture.
             </summary>
         </member>
-        <member name="F:System.DataIO._DateTimeFormat">
+        <member name="F:System.DataIO.DateTimeFormat">
             <summary>
             The invariant culture date time format.
             </summary>
         </member>
-        <member name="F:System.DataIO._NumberFormat">
+        <member name="F:System.DataIO.NumberFormat">
             <summary>
             The invariant culture number format.
             </summary>
         </member>
-        <member name="F:System.DataIO._NumberStyleDouble">
+        <member name="F:System.DataIO.NumberStyleDouble">
             <summary>
             The double number style.
             </summary>
         </member>
-        <member name="F:System.DataIO._NumberStyleFloat">
+        <member name="F:System.DataIO.NumberStyleFloat">
             <summary>
             The float number style.
             </summary>

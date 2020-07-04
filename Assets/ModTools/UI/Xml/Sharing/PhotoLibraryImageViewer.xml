@@ -22,12 +22,12 @@
         </VerticalLayout>
       </Panel>
       <Button id="select-photo-button" active="false" class="btn btn-primary" width="150" rectAlignment="LowerCenter" offsetXY="0 20" onClick="OnSelectPhotoClicked();">
-        <TextMeshPro text="SELECT PHOTO" />
+        <TextMeshPro text="SELECT" />
       </Button>
       <Button id="share-photo-button" class="icon-button audio-btn-big" icon="Ui/Sprites/Common/IconButtonShare" active="false" offsetXY="-10 10" rectAlignment="LowerRight" width="40" height="40" onClick="OnSharePhotoClicked()" tooltip="Share Photo" tooltipPosition="Above" />
       <Panel width="100%" height="40" rectAlignment="UpperCenter" class="panel">
         <Image class="icon-button" offsetXY="10 0" sprite="Ui/Sprites/Menu/IconButtonBack" rectAlignment="MiddleLeft" onClick="OnCloseButtonClicked();" tooltip="Back to album" />
-        <Image class="icon-button toggled" offsetXY="-10 0" sprite="Ui/Sprites/Common/IconButtonDetails" rectAlignment="MiddleRight" onClick="OnDetailsButtonClicked(this);" tooltip="Show photo details" />
+        <Image class="icon-button toggled" offsetXY="-10 0" sprite="Ui/Sprites/Common/IconButtonDetails" rectAlignment="MiddleRight" onClick="OnDetailsButtonClicked(this);" tooltip="Show details" />
         <ContentButton class="arrow-button" offsetXY="-75 0" onClick="OnPreviousClicked()" color="Transparent">
           <Image />
         </ContentButton>

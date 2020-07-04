@@ -2,32 +2,83 @@
 <XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
   <Include path="Ui/Xml/Flight/FlightStyles.xml" />
   <Defaults>
-    <ContentButton class="panel-button" preferredWidth="40" preferredHeight="40" color="Transparent" tooltipPosition="Left" hoverClass="panel-button-hover" />
+    <ContentButton class="panel-button" preferredWidth="40" preferredHeight="45" color="Transparent" tooltipPosition="Left" hoverClass="panel-button-hover" offsetXY="0.5 0" />
     <Image class="panel-button-icon" width="32" height="32" opacity="0.5" color="PanelButton" />
     <Image class="nav-sphere-icon" width="32" height="32" opacity="0.25" />
     <Image class="panel-button-hover:panel-button-icon" opacity="0.75" />
     <Image class="panel-button-hover:nav-sphere-icon" opacity="0.5" />
     <Image class="toggled" opacity="1.0" />
     <Image class="panel-button-icon-toggled:panel-button-icon" opacity="1.0" color="Primary" />
+    <Image class="nav-sphere-row:panel-button-icon-toggled:panel-button-icon" opacity="1.0" color="White" />
     <Image class="panel-button-icon-toggled:nav-sphere-icon" opacity="1.0" />
+    <HorizontalLayout class="nav-sphere-row" width="200" />
   </Defaults>
   <Panel class="no-image" rectAlignment="UpperRight" width="100" height="280" offsetXY="0 -100" pivot="1 1">
-    <VerticalLayout id="nav-sphere-panel" class="flight-panel" padding="5" childForceExpandWidth="false" childForceExpandHeight="false" offsetXY="-60 0" childAlignment="UpperRight" spacing="5" rectAlignment="UpperRight" width="50" pivot="1 1" contentSizeFitter="vertical" name="NavSpherePanel">
-      <ContentButton id="nav-sphere-visible" class="panel-button audio-btn-click" onClick="OnVisibleClicked();" tooltip="Show/Hide Nav Sphere" name="NavSpherePanel.ToggleNavSphere">
-        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereHide" />
-      </ContentButton>
-      <ContentButton id="nav-sphere-lock" class="panel-button audio-btn-click" onClick="OnLockHeadingClicked();" tooltip="Lock Current Heading" name="NavSpherePanel.LockNavSphere">
-        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLock" />
-      </ContentButton>
-      <ContentButton id="nav-sphere-prograde" class="panel-button audio-btn-click" onClick="OnProgradeClicked();" tooltip="Lock Velocity Prograde" name="NavSpherePanel.LockPrograde">
-        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockPrograde" />
-      </ContentButton>
-      <ContentButton id="nav-sphere-retrograde" class="panel-button audio-btn-click" onClick="OnRetrogradeClicked();" tooltip="Lock Velocity Retrograde" name="NavSpherePanel.LockRetrograde">
-        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockRetrograde" />
-      </ContentButton>
-      <ContentButton id="nav-sphere-target" class="panel-button audio-btn-click" onClick="OnTargetClicked();" tooltip="Lock Target" name="NavSpherePanel.LockTarget">
-        <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereTargetMode" />
-      </ContentButton>
+    <VerticalLayout id="nav-sphere-panel" class="flight-panel" padding="5" childForceExpandWidth="false" childForceExpandHeight="false" offsetXY="-60 0" childAlignment="UpperRight" spacing="0" rectAlignment="UpperRight" width="100" pivot="1 1" contentSizeFitter="vertical" name="NavSpherePanel">
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-visible" class="panel-button audio-btn-click" onClick="OnVisibleClicked();" tooltip="Show/Hide Nav Sphere" name="NavSpherePanel.ToggleNavSphere">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereHide" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-lock" class="panel-button audio-btn-click" onClick="OnLockHeadingClicked();" tooltip="Lock Current Heading" name="NavSpherePanel.LockNavSphere">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLock" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-prograde" class="panel-button audio-btn-click" tooltip="Lock Velocity Prograde" name="NavSpherePanel.LockVelocityPrograde">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockPrograde" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-retrograde" class="panel-button audio-btn-click" tooltip="Lock Velocity Retrograde" name="NavSpherePanel.LockVelocityRetrograde">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockRetrograde" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-radial-in" class="panel-button audio-btn-click" tooltip="Lock Radial In" name="NavSpherePanel.LockRadialIn">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockRadialIn" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-radial-out" class="panel-button audio-btn-click" tooltip="Lock Radial Out" name="NavSpherePanel.LockRadialOut">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockRadialOut" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-normal" class="panel-button audio-btn-click" tooltip="Lock Normal" name="NavSpherePanel.LockNormal">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockNormal" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-anti-normal" class="panel-button audio-btn-click" tooltip="Lock Anti-Normal" name="NavSpherePanel.LockAntiNormal">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockAntiNormal" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-target" class="panel-button audio-btn-click" tooltip="Lock Target" name="NavSpherePanel.LockTarget">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockTarget" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-anti-target" class="panel-button audio-btn-click" tooltip="Lock Anti-Target" name="NavSpherePanel.LockAntiTarget">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockAntiTarget" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-north" class="panel-button audio-btn-click" tooltip="Lock North" name="NavSpherePanel.LockNorth">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockNorth" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-east" class="panel-button audio-btn-click" tooltip="Lock East" name="NavSpherePanel.LockEast">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockEast" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-south" class="panel-button audio-btn-click" tooltip="Lock South" name="NavSpherePanel.LockSouth">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockSouth" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-west" class="panel-button audio-btn-click" tooltip="Lock West" name="NavSpherePanel.LockWest">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockWest" />
+        </ContentButton>
+      </HorizontalLayout>
+      <HorizontalLayout class="nav-sphere-row">
+        <ContentButton id="nav-sphere-up" class="panel-button audio-btn-click" tooltip="Lock Up" name="NavSpherePanel.LockUp">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockUp" />
+        </ContentButton>
+        <ContentButton id="nav-sphere-down" class="panel-button audio-btn-click" tooltip="Lock Down" name="NavSpherePanel.LockDown">
+          <Image class="panel-button-icon" sprite="Ui/Sprites/Flight/IconNavSphereLockDown" />
+        </ContentButton>
+      </HorizontalLayout>
     </VerticalLayout>
     <VerticalLayout name="NavPanel" class="flight-panel" padding="5" childForceExpandWidth="false" childForceExpandHeight="false" offsetXY="0 0" childAlignment="UpperRight" spacing="5" rectAlignment="UpperRight" width="50" pivot="1 1" contentSizeFitter="vertical">
       <ContentButton class="panel-button audio-btn-click" onClick="OnToggleNavPanelClicked(this);" tooltip="Toggle Nav Sphere Panel" name="NavPanel.ToggleNavSpherePanel">

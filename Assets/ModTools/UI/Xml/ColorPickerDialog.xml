@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Defaults>
+    <Panel class="column-left" width="50%" rectAlignment="MiddleLeft" />
+    <Panel class="column-right" width="50%" rectAlignment="MiddleRight" />
+  </Defaults>
+  <Panel id="panel" color="#00000000" class="dialog-background">
+    <VerticalLayout class="panel border draggable" width="580" contentSizeFitter="vertical" spacing="10" padding="20">
+      <Panel preferredHeight="320">
+        <Panel rectAlignment="MiddleLeft" width="55%">
+          <Panel id="hue-selector" sprite="Ui/Sprites/Common/ColorPickerWheel" width="280" height="280" raycastTarget="true"></Panel>
+          <Image id="color-selector" color="white" width="130" height="130" raycastTarget="true">
+            <Panel id="color-selector-point" color="Primary" sprite="Ui/Sprites/Common/CircleBorder" width="16" height="16" />
+          </Image>
+          <Panel id="hue-selector-point" width="269" height="7">
+            <Panel sprite="Ui/Sprites/Common/CircleBorder" width="32" height="32" rectAlignment="MiddleRight" />
+          </Panel>
+        </Panel>
+        <VerticalLayout rectAlignment="MiddleRight" width="40%" childForceExpandHeight="false" spacing="5">
+          <Panel preferredHeight="15">
+            <TextMeshPro rectAlignment="MiddleLeft" width="50%" text="OLD" class="label" />
+            <TextMeshPro rectAlignment="MiddleRight" width="50%" text="NEW" class="label" />
+          </Panel>
+          <Panel preferredHeight="30">
+            <Image id="color-preview-old" rectAlignment="MiddleLeft" width="50%" onClick="OnOldColorClicked();" />
+            <Image id="color-preview-new" rectAlignment="MiddleRight" width="50%" />
+          </Panel>
+          <Panel id="slider-red" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Red" />
+            <TextMeshPro internalId="slider-value" class="value" text="255" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel id="slider-green" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Green" />
+            <TextMeshPro internalId="slider-value" class="value" text="255" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel id="slider-blue" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Blue" />
+            <TextMeshPro internalId="slider-value" class="value" text="255" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel id="slider-alpha" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Alpha" />
+            <TextMeshPro internalId="slider-value" class="value" text="255" />
+            <Slider internalId="slider" />
+          </Panel>
+          <Panel preferredHeight="5" />
+          <Panel class="row toggle-buttons" rectAlignment="UpperCenter" preferredHeight="25">
+            <ToggleGroup>
+              <ToggleButton>
+                <TextMeshPro text="HSV" />
+              </ToggleButton>
+              <ToggleButton id="toggle-rgb" rectAlignment="MiddleRight" isOn="true">
+                <TextMeshPro text="RGB" />
+              </ToggleButton>
+            </ToggleGroup>
+          </Panel>
+          <Panel preferredHeight="5" />
+          <Panel class="no-image" preferredHeight="30">
+            <Panel class="column-left">
+              <TextMeshPro internalId="label" class="label" text="Hex" alignment="Center" />
+            </Panel>
+            <Panel class="column-right" padding="0">
+              <TextMeshProInputField id="hex-input">
+                <TMP_Text alignment="Center" />
+              </TextMeshProInputField>
+            </Panel>
+          </Panel>
+        </VerticalLayout>
+      </Panel>
+      <Panel preferredHeight="50">
+        <Button id="cancel-button" class="btn audio-btn-back" rectAlignment="LowerLeft" width="150">
+          <TextMeshPro id="cancel-button-text" text="CANCEL" />
+        </Button>
+        <Button id="okay-button" class="btn btn-primary audio-btn-big" rectAlignment="LowerRight" width="150">
+          <TextMeshPro id="okay-button-text" text="OKAY" />
+        </Button>
+      </Panel>
+    </VerticalLayout>
+  </Panel>
+</XmlLayout>

@@ -14,16 +14,35 @@
       <Button id="undo-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-10 10" icon="Ui/Sprites/Design/IconButtonUndo" onClick="OnUndoButtonClicked();" tooltip="Undo" tooltipPosition="Left" />
       <Button id="redo-button" class="icon-button" rectAlignment="LowerRight" offsetXY="-10 60" icon="Ui/Sprites/Design/IconButtonRedo" onClick="OnRedoButtonClicked();" tooltip="Redo" tooltipPosition="Left"  />
       -->
+    <ChildXmlLayout id="time-panel" viewPath="Ui/Xml/Flight/TimePanel" controller="Assets.Scripts.PlanetStudio.UI.PlanetStudioTimePanelController" />
     <Panel class="panel" rectAlignment="MiddleLeft" height="100%" width="51" border="Border">
       <VerticalLayout class="no-image" childForceExpandHeight="false" padding="1 1 0 0">
         <Panel preferredHeight="30" color="#171717"></Panel>
         <Panel internalId="flyout-menu" class="toggle-button toggle-flyout audio-btn-click" tooltip="Menu" onClick="OnToggleFlyoutButtonClicked(this);">
           <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonMenu" />
         </Panel>
-        <!--<Panel internalId="flyout-menu" class="toggle-button toggle-flyout audio-btn-click ps-only" tooltip="Brush" onClick="OnToggleFlyoutButtonClicked(this);">
-               <Image class="toggle-button-icon" sprite="Ui/Sprites/Design/IconButtonView"/>
-            </Panel>-->
+        <Panel internalId="flyout-system-properties" class="toggle-button toggle-flyout audio-btn-click ps-only" tooltip="Properties" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/PlanetStudio/IconButtonProperties" />
+        </Panel>
+        <Panel internalId="flyout-system-launch-locations" class="toggle-button toggle-flyout audio-btn-click ps-only" tooltip="Launch Locations" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/PlanetStudio/IconAddLaunchLocation" />
+        </Panel>
+        <Panel internalId="flyout-body-objects" class="toggle-button toggle-flyout audio-btn-click cb-only" tooltip="Objects" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/PlanetStudio/IconPlanetObjects" />
+        </Panel>
+        <Panel internalId="flyout-body-properties" class="toggle-button toggle-flyout audio-btn-click cb-only" tooltip="Properties" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/PlanetStudio/IconButtonProperties" />
+        </Panel>
+        <Panel internalId="flyout-body-terrain-textures" class="toggle-button toggle-flyout audio-btn-click cb-only" tooltip="Terrain Textures" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/PlanetStudio/IconTerrainTextures" />
+        </Panel>
+        <Panel internalId="flyout-body-biomes" class="toggle-button toggle-flyout audio-btn-click cb-only" tooltip="Biomes" onClick="OnToggleFlyoutButtonClicked(this);">
+          <Image class="toggle-button-icon" sprite="Ui/Sprites/PlanetStudio/IconAltitudeBiomes" />
+        </Panel>
       </VerticalLayout>
+    </Panel>
+    <Panel class="no-image cb-only">
+      <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/CelestialBodyDesigner" controller="Assets.Scripts.PlanetStudio.CelestialBodyDesignerController" />
     </Panel>
     <Panel id="flyout-menu" class="panel flyout" width="225" active="false">
       <Panel class="flyout-header">
@@ -34,20 +53,64 @@
         <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/MenuFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.MenuFlyoutScript" />
       </Panel>
     </Panel>
-    <Panel class="no-image cb-only">
-      <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/CelestialBodyDesigner" controller="Assets.Scripts.PlanetStudio.CelestialBodyDesignerController" />
+    <Panel id="flyout-body-objects" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="PLANET OBJECTS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/PlanetObjectsFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.PlanetObjectsFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-body-properties" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="PROPERTIES" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/InspectorModelFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.CelestialBodyPropertiesFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-system-properties" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="SYSTEM PROPERTIES" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/InspectorModelFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.SolarSystemPropertiesFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-system-launch-locations" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="LAUNCH LOCATIONS" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/SystemLaunchLocationsFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.SolarSystemLaunchLocationsFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-body-terrain-textures" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="TERRAIN TEXTURES" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/InspectorModelFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.TerrainTexturesFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel id="flyout-body-biomes" class="panel flyout" width="350" active="false">
+      <Panel class="flyout-header">
+        <TextMeshPro text="BIOMES" />
+        <Image class="flyout-close-button audio-btn-back" />
+      </Panel>
+      <Panel class="flyout-content no-image">
+        <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/InspectorModelFlyout" controller="Assets.Scripts.PlanetStudio.Flyouts.BiomesFlyoutScript" />
+      </Panel>
+    </Panel>
+    <Panel active="false">
+      <ChildXmlLayout id="inspector-panel" viewPath="Ui/Xml/InspectorPanel" />
     </Panel>
     <!--
-      <Panel id="flyout-brush" class="panel flyout" width="300" active="false">
-         <Panel class="flyout-header">
-            <TextMeshPro text="BRUSH" />
-            <Image class="flyout-close-button audio-btn-back" />
-         </Panel>
-         <Panel class="flyout-content no-image">
-            <ChildXmlLayout viewPath="Ui/Xml/PlanetStudio/BrushFlyout" controller="Assets.Scripts.Design.MenuPanelScript" />
-         </Panel>
-      </Panel>
-      
       <Panel id="flyout-biomes" class="panel flyout" width="350" active="false">
          <Panel class="flyout-header">
             <TextMeshPro text="BIOMES" />

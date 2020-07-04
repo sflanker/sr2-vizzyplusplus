@@ -25,6 +25,9 @@
       <ContentButton id="mode-warp" class="time-button audio-btn-click" offsetXY="-20 0" tooltip="Warp Speed" onClick="OnWarpModeClicked();" name="TimePanel.Warp">
         <Image sprite="Ui/Sprites/Flight/IconTimeWarp" />
       </ContentButton>
+      <ContentButton id="reverse-time" class="time-button audio-btn-click" offsetXY="10 0" tooltip="Reverse" onClick="OnReverseTimeClicked();" active="false">
+        <Image sprite="Ui/Sprites/Flight/IconRetry" />
+      </ContentButton>
     </Panel>
     <Panel id="warp-panel" class="no-image" preferredHeight="40">
       <Panel class="flight-panel panel-angled" rotation="0 0 180" />

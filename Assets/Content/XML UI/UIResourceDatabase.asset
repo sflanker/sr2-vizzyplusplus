@@ -19,7 +19,7 @@ MonoBehaviour:
   AutomaticallyRemoveEntries: 1
   entries:
   - path: VizzyPlusPlus/Sprites/Constants
-    resource: {fileID: 21300000, guid: 22d367050d08f48fab03f469973516ea, type: 3}
+    resource: {fileID: 102900000, guid: d874a6038bb1848f083ca5d61e18abb9, type: 3}
   - path: VizzyPlusPlus/Sprites/Orbits
     resource: {fileID: 21300000, guid: 3dbe9af1757dbb04497cff42f4f70d15, type: 3}
   - path: VizzyPlusPlus/UIResourceDatabase

@@ -109,11 +109,15 @@
             <Button class="btn" rectAlignment="MiddleLeft" width="150" onClick="OnCloseButtonClicked();">
               <TextMeshPro text="CLOSE" />
             </Button>
+            <Panel id="quick-details" rectAlignment="MiddleCenter" active="false" width="375">
+              <TextMeshPro internalId="text" color="LabelText" offsetXY="0 0" />
+            </Panel>
             <HorizontalLayout class="no-image" spacing="10" childForceExpandWidth="false" childAlignment="MiddleRight" pivot="1 0" contentSizeFitter="horizontal">
               <Button id="select-photo-button" active="false" class="btn btn-primary" preferredWidth="150" onClick="OnSelectPhotoClicked();">
-                <TextMeshPro text="SELECT PHOTO" />
+                <TextMeshPro text="SELECT" />
               </Button>
-              <Button id="take-photo-button" class="icon-button btn-primary" preferredWidth="40" height="40" icon="Ui/Sprites/Common/IconButtonCamera" tooltip="Add Photo" onClick="OnAddScreenshotClicked();" />
+              <Button id="take-photo-button" class="icon-button btn-primary" preferredWidth="40" height="40" icon="Ui/Sprites/Common/IconButtonCamera" tooltip="Add Screenshot" onClick="OnAddScreenshotClicked();" />
+              <Button id="browse-photo-button" class="icon-button btn-primary" preferredWidth="40" height="40" icon="Ui/Sprites/Common/IconAdd" tooltip="Browse" onClick="OnBrowseClicked();" />
             </HorizontalLayout>
           </Panel>
           <Panel id="bulk-action-panel" class="no-image" active="false" height="40" rectAlignment="LowerCenter">

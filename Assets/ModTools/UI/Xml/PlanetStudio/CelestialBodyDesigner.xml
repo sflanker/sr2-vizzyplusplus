@@ -10,7 +10,7 @@
     <Image class="finger-button-selected" color="Primary" />
   </Defaults>
   <Panel class="no-image">
-    <VerticalLayout id="debug-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="20" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="225" childForceExpandHeight="false" offsetXY="-230 -5" spacing="10" pivot="0 1">
+    <VerticalLayout id="debug-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="5 5 0 0" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="225" childForceExpandHeight="false" offsetXY="-230 -5" spacing="10" pivot="0 1">
       <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
       <Panel class="no-image" preferredHeight="30" />
       <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildButtonClicked();">

@@ -9,8 +9,6 @@
     <Button class="menu-button" rectAlignment="LowerLeft" width="220" />
     <TextMeshPro class="target-text" offsetXY="0 -35" width="200" />
     <TextMeshPro class="target-text-flipped" offsetXY="0 35" />
-    <Panel class="instrument-panel" width="340" height="64" device="mobile" />
-    <Panel class="instrument-panel" width="525" height="76" device="desktop" />
     <Panel class="analog-control" width="160" height="160" raycastTarget="true" />
     <Image class="analog-control&gt;analog-background" sprite="Ui/Sprites/Flight/AnalogStickArea" color="#333333" opacity="0.5" />
     <Image class="analog-control&gt;analog-stick" sprite="Ui/Sprites/Flight/AnalogStick" width="38%" height="38%" color="#333333" opacity="0.9" />
@@ -36,43 +34,91 @@
         <Image class="translation-mode-icon" rectAlignment="MiddleCenter" />
       </Image>
     </Panel>
-    <Panel id="mobile-throttle-panel" class="no-image" rectAlignment="LowerLeft" width="87" height="300" device="mobile">
+    <Panel id="mobile-throttle-panel" class="no-image" rectAlignment="LowerLeft" width="42" height="300" device="mobile">
       <Image color="FlightPanel" sprite="Ui/Sprites/Flight/ThrottlePanel" />
       <Image color="#33333390" id="throttle-rect" offsetXY="5 25" width="31" height="250" rectAlignment="LowerLeft" name="Throttle.SliderPanel" />
-      <Image color="Warning" id="throttle-fill" sprite="Ui/Sprites/Flight/ThrottleSlider" offsetXY="5 25" width="31" height="250" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
+      <Image color="Warning" id="mobile-throttle-fill" sprite="Ui/Sprites/Flight/ThrottleSlider" offsetXY="5 25" width="31" height="250" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
       <Image id="throttle-input" color="Transparent" opacity="0.25" offsetXY="0 0" width="50" height="305" rectAlignment="LowerLeft" raycastTarget="true" />
-      <TextMeshPro text="MAX" color="#444444" width="42" height="20" fontSize="12" rectAlignment="LowerLeft" alignment="Center" offsetXY="0 278" />
-      <TextMeshPro id="throttle-text" name="throttle-text" color="Warning" width="46" height="20" fontSize="12" rectAlignment="LowerLeft" alignment="Center" offsetXY="0 2" />
-      <Image color="#33333390" sprite="Ui/Sprites/Flight/ThrottlePanelFuelSlider" offsetXY="44 6" width="12" height="269" rectAlignment="LowerLeft" />
-      <Image color="Primary" id="fuel-fill" sprite="Ui/Sprites/Flight/ThrottlePanelFuelSlider" offsetXY="44 6" width="12" height="269" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
-      <Image color="#33333390" offsetXY="65 6" width="5" height="177" rectAlignment="LowerLeft" />
-      <Image color="Green" id="battery-fill" sprite="Ui/Sprites/Common/White" offsetXY="65 6" width="5" height="177" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
-      <Image color="#33333390" offsetXY="74 6" width="5" height="177" rectAlignment="LowerLeft" />
-      <Image color="#AAAAAA" id="mono-fill" sprite="Ui/Sprites/Common/White" offsetXY="74 6" width="5" height="177" rectAlignment="LowerLeft" type="Filled" fillMethod="Vertical" />
+      <TextMeshPro text="MAX" color="#777777" width="42" height="20" fontSize="12" rectAlignment="LowerLeft" alignment="Center" offsetXY="0 278" />
+      <TextMeshPro id="mobile-throttle-text" name="throttle-text" color="Warning" width="46" height="20" fontSize="12" rectAlignment="LowerLeft" alignment="Center" offsetXY="0 2" />
     </Panel>
-    <Panel class="flight-panel panel-angled instrument-panel" rectAlignment="LowerCenter" offsetXY="0 -6" height="50" device="mobile">
-      <TextMeshPro class="label audio-btn-click" id="craft-speed-type" text="SURFACE" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" offsetXY="40 10" onClick="OnSpeedTypeClicked();" raycastTarget="true" />
-      <TextMeshPro class="value" id="craft-speed" text="123,412m/s" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" offsetXY="40 -10" />
-      <TextMeshPro class="label audio-btn-click" id="craft-altitude-type" text="ALTITUDE" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" offsetXY="-40 10" onClick="OnAltitudeTypeClicked();" raycastTarget="true" />
-      <TextMeshPro class="value" id="craft-altitude" text="53,412m" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" offsetXY="-40 -10" />
-    </Panel>
-    <Panel class="flight-panel panel-angled instrument-panel" rectAlignment="LowerCenter" offsetXY="0 -6" device="desktop">
-      <TextMeshPro class="label audio-btn-click" id="craft-speed-type" text="SURFACE" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" fontSize="18" offsetXY="40 10" onClick="OnSpeedTypeClicked();" raycastTarget="true" />
-      <TextMeshPro class="value" id="craft-speed" text="123,412m/s" width="150" height="50" rectAlignment="MiddleLeft" alignment="Center" fontSize="18" offsetXY="40 -10" />
-      <TextMeshPro class="label audio-btn-click" id="craft-altitude-type" text="ALTITUDE" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" fontSize="18" offsetXY="-40 10" onClick="OnAltitudeTypeClicked();" raycastTarget="true" />
-      <TextMeshPro class="value" id="craft-altitude" text="53,412m" width="150" height="50" rectAlignment="MiddleRight" alignment="Center" fontSize="18" offsetXY="-40 -10" />
-      <Panel class="no-image" width="90" height="90" scale="1.0" offsetXY="0 -13">
-        <Image class="radial-progress-bar" color="ProgressBarBackground" fillAmount="0.6" />
-        <Image id="throttle-fill" class="radial-progress-bar" color="Warning" fillAmount="0.4" />
+    <Panel class="instrument-panel" rectAlignment="LowerCenter">
+      <!-- Navball -->
+      <Panel id="navball-container" class="">
+        <!-- Opener -->
+        <Panel class="navball-when-closed audio-btn-click" width="151" height="54" rectAlignment="LowerCenter" offsetXY="0 0" raycastTarget="true" onClick="OnToggleNavballClicked();" tooltip="Open the navball (FDAI)." tooltipPosition="Above">
+          <Panel height="17" rectAlignment="UpperCenter">
+            <Image sprite="Ui/Sprites/Flight/NavBallOpenButton" color="InstrumentsBackground" width="151" height="17" />
+            <TextMeshPro text="NAVBALL" alignment="Midline" fontSize="13" color="InstrumentsSecondary" />
+            <Image class="navball-chevron chevron-up" offsetXY="-48 0" />
+            <Image class="navball-chevron chevron-up" offsetXY="48 0" />
+          </Panel>
+        </Panel>
+        <!-- Actual navball -->
+        <Image class="navball-when-open" id="navball-renderer" prefabPath="Ui/Prefabs/Navball" width="255" height="255" rectAlignment="LowerCenter" offsetXY="0 -10" />
+        <Image class="navball-when-open direction-indicator" sprite="Ui/Sprites/Flight/WhichWayYouArePointingIndicator" width="113" height="33" rectAlignment="MiddleCenter" offsetXY="0 99" pivot="0.5 0.818181" scale="0.8 0.8 1" />
+        <Image id="player-position-arrow" class="navball-when-open position-indicator" sprite="Ui/Sprites/Flight/NavBallMapArrow" width="40" height="40" rectAlignment="MiddleCenter" offsetXY="0 99" pivot="0.5 0.4" opacity="0.75" color="#E57432" />
+        <Image id="map-north-up" class="navball-when-open position-indicator" sprite="Ui/Sprites/Flight/NorthUp" width="32" height="32" rectAlignment="MiddleCenter" offsetXY="-70 170" pivot="0.5 0.39" color="InstrumentsPrimary" raycastTarget="true" onClick="OnToggleNorthUpClicked()" />
+        <Image class="navball-when-open" sprite="Ui/Sprites/Flight/NavBallBezel" color="InstrumentsBackground" width="260" height="213" rectAlignment="LowerCenter" offsetXY="0 37" fillCenter="false" type="Sliced" />
+        <!-- Minimise button -->
+        <Panel class="navball-when-open audio-btn-click navball-side-button" offsetXY="122 37" onClick="OnToggleNavballClicked();" tooltip="Close the navball (FDAI)." tooltipPosition="Right">
+          <Image sprite="Ui/Sprites/Flight/NavBallSideButton" rectAlignment="LowerRight" offsetXY="-20 0" width="20" height="66" scale="-1 1 1" color="InstrumentsBackground">
+            <Image class="navball-chevron" offsetXY="0 7" rectAlignment="LowerCenter" />
+            <Image class="navball-chevron" offsetXY="0 21" rectAlignment="LowerCenter" />
+          </Image>
+        </Panel>
+        <!-- Map button -->
+        <Panel class="navball-when-open audio-btn-click navball-side-button map-button" tooltipPosition="Left" onClick="OnToggleMapClicked();">
+          <Image sprite="Ui/Sprites/Flight/NavBallSideButton" width="20" height="66" color="InstrumentsBackground" rectAlignment="LowerLeft">
+            <TextMeshPro class="map-text" text="MAP" rotation="0 0 90" width="50" height="20" rectAlignment="LowerLeft" alignment="Midline" offsetXY="20 0" />
+          </Image>
+        </Panel>
+        <!-- Map controls -->
+        <Panel class="map-controls" width="33" height="115" color="InstrumentsBackground" offsetXY="-141.5 76">
+          <Panel rectAlignment="UpperLeft" width="17" height="17" offsetXY="5 -5" color="InstrumentsPrimary">
+            <TextMeshPro text="+" alignment="MidlineGeoAligned" fontSize="23" />
+            <Panel width="35" height="35" offsetXY="4 -4" raycastTarget="true" onClick="IncreaseMapZoom();" />
+          </Panel>
+          <Panel rectAlignment="LowerLeft" width="17" height="17" offsetXY="5 2" color="InstrumentsPrimary" raycastTarget="true" onClick="DecreaseMapZoom();">
+            <TextMeshPro text="-" alignment="MidlineGeoAligned" fontSize="23" />
+            <Panel width="35" height="35" offsetXY="4 4" raycastTarget="true" onClick="DecreaseMapZoom();" />
+          </Panel>
+          <TextMeshPro id="map-zoom-level" rectAlignment="MiddleLeft" rotation="0 0 90" offsetXY="13.5 -35" width="70" height="17" fontSize="15" alignment="Midline" />
+        </Panel>
       </Panel>
-      <Panel class="no-image" width="90" height="90" scale="0.82" offsetXY="0 -13">
-        <Image class="radial-progress-bar" color="ProgressBarBackground" fillAmount="0.6" rotation="0 0 -72" />
-        <Image id="fuel-fill" class="radial-progress-bar" color="Primary" fillAmount="0.4" />
+      <!-- Bottom panel background (in front of navball) -->
+      <Image color="InstrumentsBackground" sprite="Ui/Sprites/Flight/NavBallBottomPanel.png" />
+      <Image color="InstrumentsBackground" height="10" anchorMin="0 0" anchorMax="1 0" pivot="0 1" />
+      <!-- Fuel/Throttle -->
+      <Panel class="no-image" pivot="1 0" offsetXY="-1 -14" width="103" height="20" name="InstrumentPanel.Throttle">
+        <Image sprite="Ui/Sprites/Flight/InstrumentRectFill" color="#7f4b00" />
+        <Image id="throttle-fill" sprite="Ui/Sprites/Flight/InstrumentRectFill" fillMethod="Horizontal" fillAmount="0.5" fillOrigin="1" type="Filled" color="#ff9600" />
+        <Image sprite="Ui/Sprites/Flight/IconCraftThrottle" opacity="0.35" rectAlignment="MiddleRight" offsetXY="-5 0" width="16" height="16" color="white" />
+        <TextMeshPro id="throttle-text" text="100%" color="white" offsetXY="20 0" alignment="Left" pivot="1 0" />
       </Panel>
-      <Panel class="no-image">
-        <TextMeshPro id="fuel-text" text="100%" color="Primary" width="50" height="20" fontSize="14" offsetXY="2 -2" tooltip="Remaining fuel in stage" tooltipPosition="Above" raycastTarget="true" />
-        <TextMeshPro id="throttle-text" name="throttle-text" text="100%" color="Warning" width="50" height="20" fontSize="14" offsetXY="2 -18" tooltip="Throttle" tooltipPosition="Above" raycastTarget="true" />
+      <Panel class="no-image" pivot="0 0" offsetXY="1 -14" width="103" height="20">
+        <Image sprite="Ui/Sprites/Flight/InstrumentRectFill" color="#006280" scale="-1 1 1" />
+        <Image id="fuel-fill" sprite="Ui/Sprites/Flight/InstrumentRectFill" scale="-1 1 1" fillMethod="Horizontal" fillAmount="0.5" fillOrigin="1" type="Filled" color="#00b7ed" />
+        <Image sprite="Ui/Sprites/Flight/IconCraftFuel" opacity="0.35" rectAlignment="MiddleLeft" offsetXY="5 0" width="16" height="16" color="white" />
+        <TextMeshPro id="fuel-text" text="100%" color="white" offsetXY="-20 0" alignment="Right" pivot="1 0" />
       </Panel>
+      <Panel sprite="Ui/Sprites/Flight/InstrumentRectFillSmall" pivot="1 0" offsetXY="-1 9" width="83" height="6" color="#666666">
+        <Image id="mono-fill" sprite="Ui/Sprites/Flight/InstrumentRectFillSmall" fillMethod="Horizontal" fillAmount="0.5" fillOrigin="1" type="Filled" color="#dddddd" />
+      </Panel>
+      <Panel sprite="Ui/Sprites/Flight/InstrumentRectFillSmall" scale="-1 1 1" pivot="1 0" offsetXY="1 9" width="83" height="6" color="#008000">
+        <Image id="battery-fill" sprite="Ui/Sprites/Flight/InstrumentRectFillSmall" fillMethod="Horizontal" fillAmount="0.5" fillOrigin="1" type="Filled" color="#00ff00" />
+      </Panel>
+      <!-- Indicators -->
+      <TextMeshPro id="craft-speed" class="instrument-value" text="0m/s" offsetXY="-153 4" />
+      <TextMeshPro id="craft-altitude" class="instrument-value" text="323m" offsetXY="153 4" />
+      <!-- Mode labels -->
+      <TextMeshPro id="craft-speed-type" class="instrument-type" offsetXY="-153 22" color="InstrumentsSecondary"><![CDATA[
+            S <b><color=#00B7ED>ORBT</color></b> T
+            ]]></TextMeshPro>
+      <TextMeshPro id="craft-altitude-type" class="instrument-type" offsetXY="152 22" color="InstrumentsSecondary" />
+      <!-- Mode buttons -->
+      <Panel class="audio-btn-click mode-button" offsetXY="-145 0" onClick="OnSpeedTypeClicked();" />
+      <Panel class="audio-btn-click mode-button" offsetXY="145 0" onClick="OnAltitudeTypeClicked();" />
     </Panel>
     <ChildXmlLayout id="activation-panel" class="animated hide-on-start" viewPath="Ui/Xml/Flight/ActivationPanel" controller="Assets.Scripts.Flight.UI.ActivationPanelController" />
     <ChildXmlLayout id="input-slider-panel" viewPath="Ui/Xml/Flight/InputSliderPanel" controller="Assets.Scripts.Flight.UI.InputSliderPanelController" />
@@ -112,10 +158,10 @@
               <Image preferredHeight="2" color="Border" />
               <Panel class="no-image" preferredHeight="50">
                 <Button class="btn menu-button" onClick="OnQuickSaveButtonClicked();" width="46%" rectAlignment="MiddleLeft" height="45">
-                  <TextMeshPro text="QUICK SAVE" />
+                  <TextMeshPro text="QUICK&#xA;SAVE" />
                 </Button>
                 <Button class="btn menu-button" onClick="OnQuickLoadButtonClicked();" width="46%" rectAlignment="MiddleRight" height="45">
-                  <TextMeshPro text="QUICK LOAD" />
+                  <TextMeshPro text="QUICK&#xA;LOAD" />
                 </Button>
               </Panel>
               <Image preferredHeight="2" color="Border" />

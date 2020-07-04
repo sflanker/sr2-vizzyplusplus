@@ -4,11 +4,42 @@
   <Defaults>
     <Color name="PanelButton" color="#5e6d80" />
     <Color name="PanelButtonHover" color="#8ea4bf" />
+    <Color name="InstrumentsPrimary" color="#00B7ED" />
+    <Color name="InstrumentsBackground" color="#121213" />
+    <Color name="InstrumentsSecondary" color="#6C7382" />
+    <Color name="NavballTop" color="#3D5C81FF" />
+    <Color name="NavballBottom" color="#262626FF" />
     <Panel class="input-slider" width="32" height="100%" />
     <Panel class="input-slider-handle" width="28" height="10" color="Primary" />
     <Image class="input-slider-line" color="LabelText" />
     <Panel class="input-panel" height="210" preferredHeight="210" />
     <Image class="slider-button" color="Button" width="25" height="25" hoverClass="slider-button-hover" />
     <Image class="slider-button-hover" color="ButtonHover" />
+    <Panel class="instrument-panel" width="444" height="37" />
+    <TextMeshPro class="instrument-value" alignment="Midline" rectAlignment="LowerCenter" fontSize="16" height="16" width="100" />
+    <TextMeshPro class="instrument-type" alignment="Midline" rectAlignment="LowerCenter" fontSize="11" height="11" width="70" />
+    <Panel class="mode-button" raycastTarget="true" rectAlignment="LowerCenter" width="86" height="37" />
+    <Image class="navball-when-open" active="false" />
+    <Panel class="navball-when-open" active="false" />
+    <Image class="navball-open:navball-when-open" active="true" />
+    <Panel class="navball-open:navball-when-open" active="true" />
+    <Panel class="navball-when-closed" active="true" />
+    <Panel class="navball-open:navball-when-closed" active="false" />
+    <Image class="navball-chevron" sprite="Ui/Sprites/Flight/NavBallChevronIcon" width="16" height="16" color="InstrumentsSecondary" />
+    <Image class="chevron-up" rotation="0 0 180" width="12" height="12" />
+    <Panel class="navball-side-button" rectAlignment="LowerCenter" width="40" height="70" raycastTarget="true" />
+    <TextMeshPro class="map-text" color="InstrumentsSecondary" />
+    <TextMeshPro class="map-active:map-text" color="InstrumentsPrimary" />
+    <Image class="map-active:direction-indicator" active="false" />
+    <Image class="position-indicator" active="false" />
+    <Image class="map-active:position-indicator" active="true" />
+    <Panel class="map-button" offsetXY="-122 37" tooltip="Switch to map mode." />
+    <Panel class="map-active:map-button" offsetXY="-178 37" tooltip="Switch to attitude mode." />
+    <Image class="map-button&gt;@Image" offsetXY="0 0" />
+    <Image class="map-active:map-button&gt;@Image" offsetXY="20 0" />
+    <Panel class="navball-open:map-button" active="true" />
+    <Panel class="map-disabled:map-button" active="false" />
+    <Panel class="map-controls" active="false" />
+    <Panel class="map-active:map-controls" active="true" />
   </Defaults>
 </XmlLayout>

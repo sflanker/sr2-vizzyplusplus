@@ -26,12 +26,12 @@
     </Panel>
     <TextMeshPro id="active-crafts-text" class="label hide-if-missing-files" rectAlignment="LowerLeft" width="200" offsetXY="20 70" alignment="BottomLeft" />
     <Button id="active-crafts-button" class="btn hide-if-missing-files" rectAlignment="LowerLeft" width="125" height="50" offsetXY="20 15" onClick="OnActiveCraftsButtonClicked();">
-      <TextMeshPro text="RESUME FLIGHT" />
+      <TextMeshPro text="RESUME&#xA;FLIGHT" />
     </Button>
     <TextMeshPro id="version-number-text" class="label" fontSize="12" rectAlignment="UpperRight" width="240" offsetXY="-20 -5" alignment="TopRight" />
     <TextMeshPro id="launch-location-text" class="label hide-if-missing-files" rectAlignment="LowerRight" width="200" offsetXY="-20 70" alignment="BottomRight" />
     <Button class="btn hide-if-missing-files" rectAlignment="LowerRight" width="125" height="50" offsetXY="-20 15" onClick="OnLaunchLocationButtonClicked();">
-      <TextMeshPro text="CHANGE LOCATION" />
+      <TextMeshPro text="CHANGE&#xA;LOCATION" />
     </Button>
     <TextMeshPro id="rocket-text" class="hide-if-missing-files" color="ValueText" rectAlignment="LowerCenter" offsetXY="0 80" alignment="Bottom" />
     <Panel class="panel panel-angled border-angled hide-if-missing-files" width="400" height="76" rectAlignment="LowerCenter" offsetXY="0 -6">
@@ -78,7 +78,10 @@
       <Button class="btn" rectAlignment="LowerLeft" onClick="OnModsButtonClicked();" id="menu-button-mods" device="-mobile">
         <TextMeshPro text="MODS" />
       </Button>
-      <Image class="separator" device="-ios" />
+      <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnTitleScreenButtonClicked();">
+        <TextMeshPro text="TITLE SCREEN" />
+      </Button>
       <Button class="btn" rectAlignment="LowerLeft" onClick="OnExitButtonClicked();" device="-ios">
         <TextMeshPro text="EXIT" />
       </Button>

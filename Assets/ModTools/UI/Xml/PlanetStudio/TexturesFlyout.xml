@@ -10,7 +10,7 @@
     <TextMeshPro class="header-text" color="White" fontStyle="Bold,UpperCase" alignment="Left" rectAlignment="MiddleLeft" width="300" offsetXY="25 0" />
   </Defaults>
   <VerticalScrollView class="no-image">
-    <VerticalLayout class="no-image" childForceExpandHeight="false" padding="20" spacing="10" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperLeft" rectAlignment="UpperLeft">
+    <VerticalLayout class="no-image" childForceExpandHeight="false" padding="5 5 0 0" spacing="10" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperLeft" rectAlignment="UpperLeft">
       <Panel id="style-header" class="header">
         <Image internalId="header-background" class="header-background" offsetMin="-10 0" offsetMax="10 0" />
         <Image internalId="arrow" class="header-arrow collapsed" />

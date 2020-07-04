@@ -3,8 +3,10 @@
   <Include path="Ui/Xml/Flight/FlightStyles.xml" />
   <Defaults>
     <Panel class="collapsed" width="25" height="25" />
+    <Panel class="input-slider-panel" device="desktop" offsetXY="0 0" />
+    <Panel class="input-slider-panel" device="mobile" offsetXY="50 0" />
   </Defaults>
-  <Panel name="InputSliderPanel" id="input-panel" class="flight-panel draggable input-panel" width="100" rectAlignment="LowerLeft" offsetXY="90 0" opacity="1.0">
+  <Panel name="InputSliderPanel" id="input-panel" class="flight-panel draggable input-panel input-slider-panel" width="100" rectAlignment="LowerLeft" opacity="1.0">
     <Image color="DarkPanel" rectAlignment="UpperCenter" height="25" />
     <Panel class="no-image" rectAlignment="LowerRight" width="25">
       <Image color="Border" width="1" rectAlignment="MiddleLeft" />

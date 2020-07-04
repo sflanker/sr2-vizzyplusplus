@@ -95,7 +95,7 @@
           <Button class="btn btn-primary audio-btn-big" preferredWidth="150" preferredHeight="40" onClick="OnPrimaryButtonClicked(this);">
             <TextMeshPro id="primary-button-text" />
           </Button>
-          <Button id="add-button" class="icon-button" preferredWidth="40" preferredHeight="40" icon="Ui/Sprites/Common/IconAddScreenshot" onClick="OnAddButtonClicked(this);" />
+          <Button id="add-button" class="icon-button" preferredWidth="40" preferredHeight="40" icon="Ui/Sprites/Common/IconAdd" onClick="OnAddButtonClicked(this);" />
         </HorizontalLayout>
       </Panel>
     </Panel>

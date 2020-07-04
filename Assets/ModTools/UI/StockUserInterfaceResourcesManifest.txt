@@ -3,30 +3,42 @@ Unknown Type
    Background
    InputFieldBackground
 
-UnityEngine.AudioClip
-   Ui/Audio/ButtonBack
-   Ui/Audio/ButtonClicked
-   Ui/Audio/ButtonClickedBig
-
-UnityEngine.Font
-   Ui/Fonts/AnitaSemiSquare/Anita semi square
-   Ui/Fonts/FutureEarth/Future Earth
-   Fonts/Arial
-   Fonts/Arial Bold
-   Fonts/Arial Italic
-   Fonts/Courier New
-   Fonts/Courier New Bold
-
-TMPro.TMP_FontAsset
-   Ui/Fonts/AnitaSemiSquare/Anita semi square SDF
-   Ui/Fonts/FutureEarth/Future Earth SDF
-
-UnityEditor.DefaultAsset
-   Ui/Fonts/AnitaSemiSquare/CC BY SA License
+UI.Xml.XmlLayoutCustomResourceDatabase
+   Prefab Resource Database
+   XmlLayout Standard Assets
+   Ui/UIResourceDatabase
 
 UnityEngine.GameObject
+   XmlLayout Prefabs/Button
+   XmlLayout Prefabs/Canvas
+   XmlLayout Prefabs/DataTable
+   XmlLayout Prefabs/Dropdown
+   XmlLayout Prefabs/GridLayout
+   XmlLayout Prefabs/HorizontalLayout
+   XmlLayout Prefabs/HorizontalScrollView
+   XmlLayout Prefabs/Image
+   XmlLayout Prefabs/InputField
+   XmlLayout Prefabs/Mask
+   XmlLayout Prefabs/PagedRect/Page
+   XmlLayout Prefabs/Panel
+   XmlLayout Prefabs/ProgressBar
+   XmlLayout Prefabs/Slider
+   XmlLayout Prefabs/Text
+   XmlLayout Prefabs/TextMeshPro/TextMeshPro - Dropdown
+   XmlLayout Prefabs/Toggle
+   XmlLayout Prefabs/ToggleButton
+   XmlLayout Prefabs/ToggleGroup
+   XmlLayout Prefabs/Tooltip
+   XmlLayout Prefabs/UIObject3D/UIObject3D
+   XmlLayout Prefabs/VerticalLayout
+   XmlLayout Prefabs/VerticalScrollView
+   XmlLayout Prefabs/XmlLayout
+   Prefabs/TableLayout/Cell
+   Prefabs/TableLayout/Row
+   Prefabs/TableLayout/TableLayout
    Ui/InspectorPanel
    Ui/Prefabs/Dialog
+   Ui/Prefabs/Navball
    Ui/Prefabs/XmlLayout/BasicCanvas
    Ui/Prefabs/XmlLayout/BasicGridLayout
    Ui/Prefabs/XmlLayout/BasicHorizontalLayout
@@ -55,35 +67,93 @@ UnityEngine.GameObject
    Ui/Vizzy/TextInputElement
    Ui/Vizzy/VariableExpressionElement
    Ui/Vizzy/Vizzy
-   XmlLayout Prefabs/Button
-   XmlLayout Prefabs/Canvas
-   XmlLayout Prefabs/DataTable
-   XmlLayout Prefabs/Dropdown
-   XmlLayout Prefabs/GridLayout
-   XmlLayout Prefabs/HorizontalLayout
-   XmlLayout Prefabs/HorizontalScrollView
-   XmlLayout Prefabs/Image
-   XmlLayout Prefabs/InputField
-   XmlLayout Prefabs/Mask
-   XmlLayout Prefabs/PagedRect/Page
-   XmlLayout Prefabs/Panel
-   XmlLayout Prefabs/ProgressBar
-   XmlLayout Prefabs/Slider
-   XmlLayout Prefabs/Text
-   XmlLayout Prefabs/TextMeshPro/TextMeshPro - Dropdown
-   XmlLayout Prefabs/Toggle
-   XmlLayout Prefabs/ToggleButton
-   XmlLayout Prefabs/ToggleGroup
-   XmlLayout Prefabs/Tooltip
-   XmlLayout Prefabs/UIObject3D/UIObject3D
-   XmlLayout Prefabs/VerticalLayout
-   XmlLayout Prefabs/VerticalScrollView
-   XmlLayout Prefabs/XmlLayout
-   Prefabs/TableLayout/Cell
-   Prefabs/TableLayout/Row
-   Prefabs/TableLayout/TableLayout
+
+UnityEngine.TextAsset
+   XmlLayout Prefabs/TableLayout/Note
+   Ui/Fonts/Roboto/LICENSE
+   Ui/Xml/AccountDialog
+   Ui/Xml/ColorPickerDialog
+   Ui/Xml/Design/ActivationGroupsPanel
+   Ui/Xml/Design/CraftPartsPanel
+   Ui/Xml/Design/DesignerUi
+   Ui/Xml/Design/DesignStyles
+   Ui/Xml/Design/FuselageShapePanel
+   Ui/Xml/Design/LevelUIDefault
+   Ui/Xml/Design/LoadCraftPanel
+   Ui/Xml/Design/MenuPanel
+   Ui/Xml/Design/MovePartPanel
+   Ui/Xml/Design/NudgePartPanel
+   Ui/Xml/Design/PaintPanel
+   Ui/Xml/Design/PartConnectionsPanel
+   Ui/Xml/Design/PartListPanel
+   Ui/Xml/Design/PartPropertiesPanel
+   Ui/Xml/Design/RotatePartPanel
+   Ui/Xml/Design/StagingEditorPanel
+   Ui/Xml/Design/SymmetryPanel
+   Ui/Xml/Design/ToolPanel
+   Ui/Xml/Design/TutorialPanel
+   Ui/Xml/Design/ViewOptionsPanel
+   Ui/Xml/Flight/ActivationPanel
+   Ui/Xml/Flight/EndFlightDialog
+   Ui/Xml/Flight/EvaPanel
+   Ui/Xml/Flight/FlightSceneUi
+   Ui/Xml/Flight/FlightStyles
+   Ui/Xml/Flight/FlightTutorialPanel
+   Ui/Xml/Flight/FuelTransferPanel
+   Ui/Xml/Flight/InputSliderPanel
+   Ui/Xml/Flight/LevelUIDefault
+   Ui/Xml/Flight/NavPanel
+   Ui/Xml/Flight/RetryFlightDialog
+   Ui/Xml/Flight/StagingPanel
+   Ui/Xml/Flight/TimePanel
+   Ui/Xml/Flight/ViewPanel
+   Ui/Xml/InfoPanel/InfoPanelStyles
+   Ui/Xml/InputDialog
+   Ui/Xml/InspectorPanel
+   Ui/Xml/Map/MapViewUi
+   Ui/Xml/Menu/About
+   Ui/Xml/Menu/ListView
+   Ui/Xml/Menu/MenuUi
+   Ui/Xml/Menu/NewGameDialog
+   Ui/Xml/MessageDialog
+   Ui/Xml/Mods/RequiredModsDialog
+   Ui/Xml/PlanetStudio/BiomesFlyout
+   Ui/Xml/PlanetStudio/CelestialBodyDesigner
+   Ui/Xml/PlanetStudio/InspectorModelFlyout
+   Ui/Xml/PlanetStudio/Menu
+   Ui/Xml/PlanetStudio/MenuFlyout
+   Ui/Xml/PlanetStudio/PlanetObjectsFlyout
+   Ui/Xml/PlanetStudio/PlanetStudioUI
+   Ui/Xml/PlanetStudio/SystemLaunchLocationsFlyout
+   Ui/Xml/PlanetStudio/TexturesFlyout
+   Ui/Xml/ScenarioDialog
+   Ui/Xml/Settings/AxisCalibratorDialog
+   Ui/Xml/Settings/BindInputDialog
+   Ui/Xml/Settings/CalibrateControllerDialog
+   Ui/Xml/Settings/ControlSettingsDialog
+   Ui/Xml/Settings/SettingsDialog
+   Ui/Xml/Sharing/DownloadContentDialog
+   Ui/Xml/Sharing/PhotoLibraryDialog
+   Ui/Xml/Sharing/PhotoLibraryImageViewer
+   Ui/Xml/Sharing/ScreenshotDialog
+   Ui/Xml/Sharing/ScreenshotList
+   Ui/Xml/Sharing/UploadContentDialog
+   Ui/Xml/Styles
+   Ui/Xml/Vizzy/CreateCustomNodeDialog
+   Ui/Xml/Vizzy/VizzyToolbox
+   Ui/Xml/Vizzy/VizzyUI
 
 UnityEngine.Sprite
+   Sprites/Outline
+   Sprites/Outline_Sharp
+   Sprites/Outline_With_Background
+   Sprites/Elements/Background_XmlLayout
+   Sprites/Elements/Checkmark
+   Sprites/Elements/DropdownArrow
+   Sprites/Elements/ToggleGroup_Background
+   Sprites/Elements/ToggleGroup_Selected
+   Sprites/Elements/TriangleRight
+   Sprites/Elements/UISprite_XmlLayout
    Ui/Sprites/Border/Angled-1px
    Ui/Sprites/Border/Angled-2px
    Ui/Sprites/Border/Edge-Left-1px
@@ -94,8 +164,10 @@ UnityEngine.Sprite
    Ui/Sprites/Border/TooltipBorder-1px
    Ui/Sprites/Circle
    Ui/Sprites/CircleProgressBar
+   Ui/Sprites/Common/CircleBorder
+   Ui/Sprites/Common/ColorPickerWheel
    Ui/Sprites/Common/DefaultAlbumThumbnail
-   Ui/Sprites/Common/IconAddScreenshot
+   Ui/Sprites/Common/IconAdd
    Ui/Sprites/Common/IconArrowUp
    Ui/Sprites/Common/IconButtonAperture
    Ui/Sprites/Common/IconButtonCamera
@@ -202,6 +274,8 @@ UnityEngine.Sprite
    Ui/Sprites/Flight/IconCameraSpaceAligned
    Ui/Sprites/Flight/IconCameraThirdPerson
    Ui/Sprites/Flight/IconChangeCamera
+   Ui/Sprites/Flight/IconCraftFuel
+   Ui/Sprites/Flight/IconCraftThrottle
    Ui/Sprites/Flight/IconEvaGrapple
    Ui/Sprites/Flight/IconEvaJump
    Ui/Sprites/Flight/IconFuelTransferDrain
@@ -211,8 +285,21 @@ UnityEngine.Sprite
    Ui/Sprites/Flight/IconNavPanelToggle
    Ui/Sprites/Flight/IconNavSphereHide
    Ui/Sprites/Flight/IconNavSphereLock
+   Ui/Sprites/Flight/IconNavSphereLockAntiNormal
+   Ui/Sprites/Flight/IconNavSphereLockAntiTarget
+   Ui/Sprites/Flight/IconNavSphereLockDown
+   Ui/Sprites/Flight/IconNavSphereLockEast
+   Ui/Sprites/Flight/IconNavSphereLockManeuver
+   Ui/Sprites/Flight/IconNavSphereLockNormal
+   Ui/Sprites/Flight/IconNavSphereLockNorth
    Ui/Sprites/Flight/IconNavSphereLockPrograde
+   Ui/Sprites/Flight/IconNavSphereLockRadialIn
+   Ui/Sprites/Flight/IconNavSphereLockRadialOut
    Ui/Sprites/Flight/IconNavSphereLockRetrograde
+   Ui/Sprites/Flight/IconNavSphereLockSouth
+   Ui/Sprites/Flight/IconNavSphereLockTarget
+   Ui/Sprites/Flight/IconNavSphereLockUp
+   Ui/Sprites/Flight/IconNavSphereLockWest
    Ui/Sprites/Flight/IconNavSphereTargetMode
    Ui/Sprites/Flight/IconNavSphereTranslationMode
    Ui/Sprites/Flight/IconPartInspectorActivate
@@ -234,12 +321,22 @@ UnityEngine.Sprite
    Ui/Sprites/Flight/IconToggleAnalogSticks
    Ui/Sprites/Flight/IconToggleFlightInfoPanel
    Ui/Sprites/Flight/IconTriangle
+   Ui/Sprites/Flight/InstrumentRectFill
+   Ui/Sprites/Flight/InstrumentRectFillSmall
+   Ui/Sprites/Flight/NavBallBezel
+   Ui/Sprites/Flight/NavBallBottomPanel
+   Ui/Sprites/Flight/NavBallChevronIcon
+   Ui/Sprites/Flight/NavBallMapArrow
+   Ui/Sprites/Flight/NavBallOpenButton
+   Ui/Sprites/Flight/NavBallSideButton
+   Ui/Sprites/Flight/NorthUp
    Ui/Sprites/Flight/RequirementFail
    Ui/Sprites/Flight/RequirementPass
    Ui/Sprites/Flight/TargetArrow
    Ui/Sprites/Flight/ThrottlePanel
    Ui/Sprites/Flight/ThrottlePanelFuelSlider
    Ui/Sprites/Flight/ThrottleSlider
+   Ui/Sprites/Flight/WhichWayYouArePointingIndicator
    Ui/Sprites/Layout/Button
    Ui/Sprites/Layout/Viewport
    Ui/Sprites/MapView/IconAutoBurn
@@ -285,10 +382,18 @@ UnityEngine.Sprite
    Ui/Sprites/Menu/LevelIcons/TimedOrbit
    Ui/Sprites/Menu/SimpleRockets2Logo
    Ui/Sprites/Menu/Team
-   Ui/Sprites/Panel
-   Ui/Sprites/Panel-Angled
    Ui/Sprites/Panel-Angled-Right
+   Ui/Sprites/Panel-Angled
    Ui/Sprites/Panel-Pin
+   Ui/Sprites/Panel
+   Ui/Sprites/PlanetStudio/IconAddLaunchLocation
+   Ui/Sprites/PlanetStudio/IconAddStructure
+   Ui/Sprites/PlanetStudio/IconAltitudeBiomes
+   Ui/Sprites/PlanetStudio/IconButtonBrush
+   Ui/Sprites/PlanetStudio/IconButtonProperties
+   Ui/Sprites/PlanetStudio/IconPlanetObjects
+   Ui/Sprites/PlanetStudio/IconTerrainTextures
+   Ui/Sprites/PlanetStudio/IconViewTarget
    Ui/Sprites/Settings/CalibrationArrow
    Ui/Sprites/Settings/graphic-center-stick
    Ui/Sprites/Settings/graphic-move-stick
@@ -316,96 +421,6 @@ UnityEngine.Sprite
    Ui/Vizzy/ToolboxIconLists
    Ui/Vizzy/ToolboxIconOperators
    Ui/Vizzy/ToolboxIconVariables
-   Sprites/Outline
-   Sprites/Outline_Sharp
-   Sprites/Outline_With_Background
-   Sprites/Elements/Background_XmlLayout
-   Sprites/Elements/Checkmark
-   Sprites/Elements/DropdownArrow
-   Sprites/Elements/ToggleGroup_Background
-   Sprites/Elements/ToggleGroup_Selected
-   Sprites/Elements/TriangleRight
-   Sprites/Elements/UISprite_XmlLayout
-
-UnityEngine.Texture2D
-   Ui/Sprites/Common/DeleteThis_PlaceholderTexture
-   Cursors/DefaultCursor
-
-UI.Xml.XmlLayoutCustomResourceDatabase
-   Ui/UIResourceDatabase
-   Prefab Resource Database
-   XmlLayout Standard Assets
-
-UnityEngine.TextAsset
-   Ui/Xml/AccountDialog
-   Ui/Xml/Design/ActivationGroupsPanel
-   Ui/Xml/Design/CraftPartsPanel
-   Ui/Xml/Design/DesignerUi
-   Ui/Xml/Design/DesignStyles
-   Ui/Xml/Design/FuselageShapePanel
-   Ui/Xml/Design/LevelUIDefault
-   Ui/Xml/Design/LoadCraftPanel
-   Ui/Xml/Design/MenuPanel
-   Ui/Xml/Design/MovePartPanel
-   Ui/Xml/Design/NudgePartPanel
-   Ui/Xml/Design/PaintPanel
-   Ui/Xml/Design/PartConnectionsPanel
-   Ui/Xml/Design/PartListPanel
-   Ui/Xml/Design/PartPropertiesPanel
-   Ui/Xml/Design/RotatePartPanel
-   Ui/Xml/Design/StagingEditorPanel
-   Ui/Xml/Design/SymmetryPanel
-   Ui/Xml/Design/ToolPanel
-   Ui/Xml/Design/TutorialPanel
-   Ui/Xml/Design/ViewOptionsPanel
-   Ui/Xml/Flight/ActivationPanel
-   Ui/Xml/Flight/EndFlightDialog
-   Ui/Xml/Flight/EvaPanel
-   Ui/Xml/Flight/FlightSceneUi
-   Ui/Xml/Flight/FlightStyles
-   Ui/Xml/Flight/FlightTutorialPanel
-   Ui/Xml/Flight/FuelTransferPanel
-   Ui/Xml/Flight/InputSliderPanel
-   Ui/Xml/Flight/LevelUIDefault
-   Ui/Xml/Flight/NavPanel
-   Ui/Xml/Flight/RetryFlightDialog
-   Ui/Xml/Flight/StagingPanel
-   Ui/Xml/Flight/TimePanel
-   Ui/Xml/Flight/ViewPanel
-   Ui/Xml/InfoPanel/InfoPanelStyles
-   Ui/Xml/InputDialog
-   Ui/Xml/InspectorPanel
-   Ui/Xml/Map/MapViewUi
-   Ui/Xml/Menu/About
-   Ui/Xml/Menu/ListView
-   Ui/Xml/Menu/MenuUi
-   Ui/Xml/Menu/NewGameDialog
-   Ui/Xml/MessageDialog
-   Ui/Xml/Mods/RequiredModsDialog
-   Ui/Xml/PlanetStudio/BiomesFlyout
-   Ui/Xml/PlanetStudio/BrushFlyout
-   Ui/Xml/PlanetStudio/CelestialBodyDesigner
-   Ui/Xml/PlanetStudio/Menu
-   Ui/Xml/PlanetStudio/MenuFlyout
-   Ui/Xml/PlanetStudio/PlanetStudioUI
-   Ui/Xml/PlanetStudio/TexturesFlyout
-   Ui/Xml/ScenarioDialog
-   Ui/Xml/Settings/AxisCalibratorDialog
-   Ui/Xml/Settings/BindInputDialog
-   Ui/Xml/Settings/CalibrateControllerDialog
-   Ui/Xml/Settings/ControlSettingsDialog
-   Ui/Xml/Settings/SettingsDialog
-   Ui/Xml/Sharing/DownloadContentDialog
-   Ui/Xml/Sharing/PhotoLibraryDialog
-   Ui/Xml/Sharing/PhotoLibraryImageViewer
-   Ui/Xml/Sharing/ScreenshotDialog
-   Ui/Xml/Sharing/ScreenshotList
-   Ui/Xml/Sharing/UploadContentDialog
-   Ui/Xml/Styles
-   Ui/Xml/Vizzy/CreateCustomNodeDialog
-   Ui/Xml/Vizzy/VizzyToolbox
-   Ui/Xml/Vizzy/VizzyUI
-   XmlLayout Prefabs/TableLayout/Note
 
 UnityEngine.AnimationClip
    Animation/FadeIn
@@ -420,4 +435,37 @@ UnityEngine.AnimationClip
 
 UnityEditor.Animations.AnimatorController
    Animation/XmlLayoutAnimationController
+
+UnityEngine.Texture2D
+   Cursors/DefaultCursor
+   Ui/Sprites/Common/DeleteThis_PlaceholderTexture
+
+UnityEngine.Font
+   Fonts/Arial Bold
+   Fonts/Arial Italic
+   Fonts/Arial
+   Fonts/Courier New Bold
+   Fonts/Courier New
+   Ui/Fonts/AnitaSemiSquare/Anita semi square
+   Ui/Fonts/FutureEarth/Future Earth
+   Ui/Fonts/Roboto/Roboto-Regular
+
+UnityEngine.AudioClip
+   Ui/Audio/ButtonBack
+   Ui/Audio/ButtonClicked
+   Ui/Audio/ButtonClickedBig
+
+TMPro.TMP_FontAsset
+   Ui/Fonts/AnitaSemiSquare/Anita semi square SDF
+   Ui/Fonts/FutureEarth/Future Earth SDF
+   Ui/Fonts/Roboto/Roboto-Regular SDF
+
+UnityEditor.DefaultAsset
+   Ui/Fonts/AnitaSemiSquare/CC BY SA License
+
+UnityEngine.Material
+   Ui/Materials/ColorPickerMaterial
+
+UnityEngine.Shader
+   Ui/Materials/ColorPickerShader
 

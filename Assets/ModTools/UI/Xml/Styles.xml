@@ -44,16 +44,16 @@
     <Panel class="spinner" preferredHeight="25" prefabPath="Ui/Prefabs/XmlLayout/BasicPanel" />
     <Panel class="row" preferredHeight="30" prefabPath="Ui/Prefabs/XmlLayout/BasicPanel" />
     <HorizontalLayout class="row" preferredHeight="30" padding="0" prefabPath="Ui/Prefabs/XmlLayout/BasicHorizontalLayout" />
-    <TextMeshPro font="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" fontSize="14" raycastTarget="false" />
+    <TextMeshPro font="Ui/Fonts/Roboto/Roboto-Regular SDF" fontSize="16" raycastTarget="false" />
     <TextMeshPro class="label" color="LabelText" />
     <TextMeshPro class="value" color="ValueText" />
     <TextMeshPro class="link" color="Primary" raycastTarget="true" />
-    <TextMeshPro class="text-sm" fontSize="12" />
-    <TextMeshPro class="text-lg" fontSize="18" />
-    <TextMeshPro class="text-header" color="Primary" fontSize="24" preferredHeight="32" />
+    <TextMeshPro class="text-sm" fontSize="14" />
+    <TextMeshPro class="text-lg" fontSize="20" />
+    <TextMeshPro class="text-header" color="Primary" fontSize="28" preferredHeight="32" />
     <TextMeshProDropdown image="" color="Button" dropdownBackgroundImage="" dropdownBackgroundColor="Button" itemBackgroundColors="Button|ButtonHover|Button|Button" />
-    <TMP_OptionTextTemplate font="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" color="LabelText" image="" />
-    <TMP_DropdownLabel font="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" color="ValueText" />
+    <TMP_OptionTextTemplate font="Ui/Fonts/Roboto/Roboto-Regular SDF" color="LabelText" image="" />
+    <TMP_DropdownLabel font="Ui/Fonts/Roboto/Roboto-Regular SDF" color="ValueText" />
     <Button class="icon-button" onClickSound="Ui/Audio/ButtonClicked" audioMode="OneShot" width="40" height="40" preferredWidth="40" preferredHeight="40" sprite="" colors="Button|ButtonHover|Button|ButtonDisabled" iconColor="ButtonIcon" iconHoverColor="ButtonIconSelected" navigation="None" tooltipPosition="Right" />
     <Button class="btn" onClickSound="Ui/Audio/ButtonClicked" audioMode="OneShot" prefabPath="Ui/Prefabs/XmlLayout/TextButton" sprite="" preferredHeight="30" height="30" raycastTarget="true" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" textColors="ButtonText|ButtonText|ButtonText|ButtonDisabledText" navigation="None" />
     <Button class="transparent" colors="TransparentPanel|ButtonHover|Button|Button" />
@@ -74,15 +74,15 @@
     <ContentButton class="btn-warning" buttonColors="Warning|WarningHover|WarningPressed|Button" />
     <ContentButton class="btn-success" buttonColors="Success|SuccessHover|SuccessPressed|Button" />
     <Button class="btn-sm" preferredHeight="20" height="20" />
-    <TextMeshPro class="btn-sm:@TextMeshPro" fontSize="12" />
+    <TextMeshPro class="btn-sm:@TextMeshPro" fontSize="14" />
     <Button class="btn-lg" preferredHeight="40" height="40" />
-    <TextMeshPro class="btn-lg:@TextMeshPro" fontSize="18" />
+    <TextMeshPro class="btn-lg:@TextMeshPro" fontSize="20" />
     <Button class="btn-tall" preferredHeight="40" height="40" />
     <TextMeshProInputField lineType="SingleLine" color="Button" sprite="" raycastTarget="true" selectClass="input-select" hoverClass="input-hover" />
     <TextMeshProInputField class="input-hover" border="ButtonHover" />
     <TextMeshProInputField class="input-select" border="Primary" />
-    <TMP_Placeholder text="Placeholder..." color="#ffffff15" font="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" fontSize="16" fontStyle="Normal" raycastTarget="false" />
-    <TMP_Text font="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" fontSize="14" raycastTarget="false" color="White" />
+    <TMP_Placeholder text="Placeholder..." color="#ffffff15" font="Ui/Fonts/Roboto/Roboto-Regular SDF" fontSize="16" fontStyle="Normal" raycastTarget="false" />
+    <TMP_Text font="Ui/Fonts/Roboto/Roboto-Regular SDF" fontSize="16" raycastTarget="false" color="White" />
     <Panel class="toggle-buttons" preferredHeight="50" />
     <TextMeshPro class="toggle-buttons&gt;@TextMeshPro" height="20" pivot="0.5 1" rectAlignment="UpperCenter" />
     <ToggleGroup class="toggle-buttons" height="25" pivot="0.5 0" rectAlignment="LowerCenter" />
@@ -100,8 +100,8 @@
     <Image class="btn-danger&gt;@Image" color="White" />
     <Image class="btn-warning&gt;@Image" color="White" />
     <Image class="btn-success&gt;@Image" color="White" />
-    <Tooltip device="mobile" tooltipWidth="300" tooltipDelayTime="1.25" tooltipBorderColor="Border" tooltipBackgroundColor="DarkPanel" tooltipTextColor="ValueText" tooltipBorderImage="Ui/Sprites/Border/TooltipBorder-1px" tooltipBackgroundImage="Ui/Sprites/Panel" tooltipUseTextMeshPro="true" tooltipFont="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" tooltipOffset="25" />
-    <Tooltip device="desktop" tooltipWidth="400" tooltipDelayTime="0.65" tooltipBorderColor="Border" tooltipBackgroundColor="DarkPanel" tooltipTextColor="ValueText" tooltipBorderImage="Ui/Sprites/Border/TooltipBorder-1px" tooltipBackgroundImage="Ui/Sprites/Panel" tooltipUseTextMeshPro="true" tooltipFont="Ui/Fonts/AnitaSemiSquare/Anita semi square SDF" />
+    <Tooltip device="mobile" tooltipFontSize="16" tooltipWidth="300" tooltipDelayTime="1.25" tooltipBorderColor="Border" tooltipBackgroundColor="DarkPanel" tooltipTextColor="ValueText" tooltipBorderImage="Ui/Sprites/Border/TooltipBorder-1px" tooltipBackgroundImage="Ui/Sprites/Panel" tooltipUseTextMeshPro="true" tooltipFont="Ui/Fonts/Roboto/Roboto-Regular SDF" tooltipOffset="25" />
+    <Tooltip device="desktop" tooltipFontSize="16" tooltipWidth="400" tooltipDelayTime="0.65" tooltipBorderColor="Border" tooltipBackgroundColor="DarkPanel" tooltipTextColor="ValueText" tooltipBorderImage="Ui/Sprites/Border/TooltipBorder-1px" tooltipBackgroundImage="Ui/Sprites/Panel" tooltipUseTextMeshPro="true" tooltipFont="Ui/Fonts/Roboto/Roboto-Regular SDF" />
     <TableLayout class="panel" color="Panel" />
     <Panel class="panel" color="Panel" />
     <VerticalLayout class="panel" color="Panel" />
@@ -132,6 +132,7 @@
     <TextMeshPro class="slider&gt;value" alignment="Right" rectAlignment="MiddleRight" offsetXY="0 12" height="20" />
     <Slider prefabPath="Ui/Prefabs/XmlLayout/Slider" fillColor="Primary" backgroundColor="ButtonHover" handleColor="Primary" />
     <Slider class="slider:@Slider" rectAlignment="LowerCenter" width="100%" offsetXY="0 -10" />
+    <Slider class="bipolar:@Slider" fillColor="Transparent" />
     <Panel class="header" preferredHeight="30" />
     <TextMeshPro class="header:@TextMeshPro" color="LabelText" fontStyle="Bold" />
     <Image class="separator" rectAlignment="LowerCenter" preferredHeight="1" height="1" width="100%" color="Border" offsetMin="-10 0" offsetMax="10 1" />
@@ -139,7 +140,7 @@
     <TextMeshPro class="spinner:label" rectAlignment="MiddleLeft" width="35%" />
     <Spinner class="spinner:@Spinner" width="65%" rectAlignment="MiddleRight" />
     <Spinner class="label" onClickSound="Ui/Audio/ButtonClicked" audioMode="OneShot" />
-    <TextMeshPro class="@Spinner:@TextMeshPro" offsetMin="15 0" offsetMax="-15 0" />
+    <TextMeshPro class="@Spinner:@TextMeshPro" offsetMin="30 0" offsetMax="-30 0" />
     <TextMeshProInputField class="@Spinner&gt;@TextMeshProInputField" width="60%" height="100%" />
     <TMP_Text class="@Spinner:@TMP_Text" alignment="Center" />
     <VerticalScrollView movementType="Elastic" image="" maskImage="" color="#00000000" scrollSensitivity="50" scrollbarBackgroundColor="#222" verticalScrollbarWidth="5" height="100%" width="100%" verticalScrollbarVisibility="AutoHide" scrollbarColors="Button|ButtonHover|Button|Button" scrollbarImage="" />

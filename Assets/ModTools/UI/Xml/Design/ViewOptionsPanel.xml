@@ -19,7 +19,7 @@
     <Panel class="no-image" preferredHeight="40">
       <Button id="gizmo-com" class="gizmo-toggle-button" iconColor="CenterOfMass" iconHoverColor="CenterOfMass" offsetXY="-60 0" tooltip="Toggle Center of Mass indicator" />
       <Button id="gizmo-col" class="gizmo-toggle-button" iconColor="CenterOfLift" iconHoverColor="CenterOfLift" offsetXY="0 0" tooltip="Toggle Center of Lift indicator" />
-      <Button id="gizmo-cot" class="gizmo-toggle-button" iconColor="CenterOfThrust" iconHoverColor="CenterOfThrust" offsetXY="60 0" tooltip="Toggle Center of Thrust indicator" />
+      <Button id="gizmo-cot" class="gizmo-toggle-button" iconColor="CenterOfThrust" iconHoverColor="CenterOfThrust" offsetXY="60 0" tooltip="Toggle Center of Thrust indicator. Engine thrust is calculated using the altitude currently set in the Performance Analyzer." />
     </Panel>
     <Panel class="spinner row">
       <TextMeshPro class="label tooltip" text="Stage" width="50%" tooltip="View Center indicators with respect to a specific stage" />

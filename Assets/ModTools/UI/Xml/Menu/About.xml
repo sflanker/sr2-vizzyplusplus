@@ -33,6 +33,10 @@
             <TextMeshPro text="CORE TEAM" class="credit-header" />
             <TextMeshPro text="from left to right" color="LabelText" />
             <Panel class="credit">
+              <TextMeshPro class="name" text="Nicky Pike" />
+              <TextMeshPro class="job" text="Code" />
+            </Panel>
+            <Panel class="credit">
               <TextMeshPro class="name" text="Nathan Mikeska" />
               <TextMeshPro class="job" text="Code" />
             </Panel>
@@ -55,8 +59,8 @@
           </VerticalLayout>
           <VerticalLayout contentSizeFitter="vertical" childForceExpandWidth="false" childForceExpandHeight="false" rectAlignment="UpperRight" width="40%" childAlignment="UpperCenter" spacing="5" pivot="0.5 1">
             <TextMeshPro text="ASSETS" class="credit-header" />
-            <TextMeshPro text="Anita Semi Square Font" />
-            <TextMeshPro text="by Gustavo Paz" color="LabelText" />
+            <TextMeshPro text="Roboto Font" />
+            <TextMeshPro text="by Christian Robertson" color="LabelText" />
           </VerticalLayout>
         </Panel>
       </VerticalLayout>
