@@ -115,7 +115,7 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                         NumberValue = node.Orbit.MeanMotion
                     };
                 default:
-                    Debug.Log("Unrecognized orbital element: ");
+                    Debug.LogWarning("Unrecognized orbital element: " + this._element);
                     return new ExpressionResult {
                         NumberValue = 0
                     };

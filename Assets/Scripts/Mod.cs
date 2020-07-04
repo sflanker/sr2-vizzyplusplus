@@ -59,6 +59,7 @@ namespace Assets.Scripts {
                 { CartesianStateVectorExpression.XmlName, (typeof(CartesianStateVectorExpression), () => new CartesianStateVectorExpression()) },
                 { GetCraftIdExpression.XmlName, (typeof(GetCraftIdExpression), () => new GetCraftIdExpression()) },
                 { GetCraftIdExpression.LegacyXmlName, (typeof(GetCraftIdExpression), () => new GetCraftIdExpression()) },
+                { AdvancedPlanetInformationExpression.XmlName, (typeof(AdvancedPlanetInformationExpression), () => new AdvancedPlanetInformationExpression()) },
                 { StringComparisonExpression.XmlName, (typeof(StringComparisonExpression), () => new StringComparisonExpression()) },
                 { StringTransformExpression.XmlName, (typeof(StringTransformExpression), () => new StringTransformExpression()) },
                 { StringSplitExpression.XmlName, (typeof(StringSplitExpression), () => new StringSplitExpression()) },

@@ -16,6 +16,7 @@
         <Style id="constant-e" color="ExtOperator" format="e" tooltip="Euler's Number (base of natural logarithms)." />
         <Style id="constant-c" color="ExtOperator" format="c" tooltip="The speed of light in meters per second." />
         <Style id="get-craft-id" color="ExtExpression" format="[type] Craft ID" tooltip="Gets the ID of the specified craft." />
+        <Style id="advanced-planet-info" color="ExtExpression" format="advanced planet (0) info [info]" tooltip="Gets advanced information about the specified planet." />
     </Styles>
     <Categories>
         <Category name="Operators" icon="Ui/Vizzy/ToolboxIconOperators">
@@ -42,6 +43,9 @@
                 <Constant number="0" />
             </CartesianStateVector>
             <GetCraftId style="get-craft-id" type="current" />
+            <AdvancedPlanetInformation style="advanced-planet-info" info="soi-distance">
+                <Constant text="Droo" />
+            </AdvancedPlanetInformation>
         </Category>
         <Category name="Constants" icon="VizzyPlusPlus/Sprites/Constants">
             <NumericConstant style="constant-pi" type="PI" />

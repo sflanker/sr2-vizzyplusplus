@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using ModApi.Craft.Program;
 using ModApi.Flight.Sim;
 using UnityEngine;
 
 namespace Assets.Scripts.Vizzy.CraftInformation {
+    [Serializable]
     public class CartesianStateVectorExpression  : OrbitNodeInformationExpression {
         public const String XmlName = "CartesianStateVector";
 
@@ -54,7 +56,7 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                         VectorValue = node.Orbit.Velocity
                     };
                 default:
-                    Debug.Log(
+                    Debug.LogWarning(
                         $"Unrecognized cartesian state vector: {this._vector}"
                     );
                     return new ExpressionResult {
@@ -75,6 +77,11 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                     this._vectorType = default;
                     break;
             }
+        }
+
+        public override void OnDeserialized(XElement xml) {
+            base.OnDeserialized(xml);
+            this.OnVectorChanged();
         }
     }
 
