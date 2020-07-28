@@ -8,6 +8,7 @@
         <Style id="string-compare" color="ExtExpression" format="text (0) [op] (1)" tooltip="Compares pieces of text." />
         <Style id="string-transform" color="ExtExpression" format="[op] (0)" tooltip="Returns the result of a transform of a single text value." />
         <Style id="string-split" color="ExtExpression" format="split (0) by separators (1)" tooltip="Returns a list of strings by splitting the input on the specified separators." />
+        <Style id="advanced-math-unary" color="ExtExpression" format="[op] (0)" tooltip="Returns the result of running the math function on the specified number." />
         <Style id="orbital-element" color="ExtExpression" format="orbital element [x] of (0)" tooltip="Get an orbital element of a craft or planet by craft id or name." />
         <Style id="advanced-orbital-element" color="ExtExpression" format="advanced orbital element [x] of (0)" tooltip="Get an advanced orbital element of a craft or planet by craft id or name." />
         <Style id="cartesian-state" color="ExtExpression" format="cartesian state vector [x] of (0)" tooltip="Get a cartesian state vector (position or velocity) of a craft or planet by node id." />
@@ -20,6 +21,9 @@
     </Styles>
     <Categories>
         <Category name="Operators" icon="Ui/Vizzy/ToolboxIconOperators">
+            <AdvancedUnaryMath style="advanced-math-unary" op="exp">
+                <Constant number="0" />
+            </AdvancedUnaryMath>
             <StringComparison style="string-compare" op="equals">
                 <Constant text="text1" />
                 <Constant text="text2" />
