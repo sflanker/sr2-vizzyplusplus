@@ -153,27 +153,27 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                                     NumberValue = planet.PlanetData.SeaLevel
                                 };
                                 break;
-                            // case PlanetInformation.StructureNames:
-                            //     result = new ExpressionResult(
-                            //         planet.PlanetData.StructureNodes
-                            //             .Select(n => n.Name)
-                            //             .ToList()
-                            //     );
-                            //     break;
-                            // case PlanetInformation.StructureLocations:
-                            //     result = new ExpressionResult(
-                            //         planet.PlanetData.StructureNodes
-                            //             .Select(n => $"({n.Latitude:R}, {n.Longitude:R}, {n.Elevation})")
-                            //             .ToList()
-                            //     );
-                            //     break;
-                            // case PlanetInformation.StructureHeadings:
-                            //     result = new ExpressionResult(
-                            //         planet.PlanetData.StructureNodes
-                            //             .Select(n => n.Heading.ToString("R"))
-                            //             .ToList()
-                            //     );
-                            //     break;
+                            case PlanetInformation.StructureNames:
+                                result = new ExpressionResult(
+                                    planet.PlanetData.StructureNodes
+                                        .Select(n => n.Name)
+                                        .ToList()
+                                );
+                                break;
+                            case PlanetInformation.StructureLocations:
+                                result = new ExpressionResult(
+                                    planet.PlanetData.StructureNodes
+                                        .Select(n => $"({n.Latitude:R}, {n.Longitude:R}, {n.Elevation})")
+                                        .ToList()
+                                );
+                                break;
+                            case PlanetInformation.StructureHeadings:
+                                result = new ExpressionResult(
+                                    planet.PlanetData.StructureNodes
+                                        .Select(n => n.Heading.ToString("R"))
+                                        .ToList()
+                                );
+                                break;
                             case PlanetInformation.LaunchLocationNames:
                                 result = new ExpressionResult(
                                     planet.PlanetData.DefaultLaunchLocations

@@ -38,7 +38,12 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                     "eccentricity",
                     "Eccentricity",
                     "The shape of the orbit, from circular (0), to parabolic (1), to hyperbolic (>1).",
-                    ListItemInfoType.Number)
+                    ListItemInfoType.Number),
+                new ListItemInfo(
+                    "period",
+                    "Period",
+                    "The period of the orbit in seconds.",
+                    ListItemInfoType.Number),
             };
         }
 
@@ -88,6 +93,10 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                     return new ExpressionResult {
                         NumberValue = node.Orbit.Eccentricity
                     };
+                case OrbitalElement.Period:
+                    return new ExpressionResult {
+                        NumberValue = node.Orbit.Period
+                    };
                 default:
                     Debug.Log("Unrecognized orbital element: ");
                     return new ExpressionResult {
@@ -116,6 +125,9 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                 case "eccentricity":
                     this._elementType = OrbitalElement.Eccentricity;
                     break;
+                case "period":
+                    this._elementType = OrbitalElement.Period;
+                    break;
                 default:
                     this._elementType = default;
                     break;
@@ -129,6 +141,7 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
         ArgumentOfPeriapsis,
         TrueAnomaly,
         SemiMajorAxis,
-        Eccentricity
+        Eccentricity,
+        Period
     }
 }

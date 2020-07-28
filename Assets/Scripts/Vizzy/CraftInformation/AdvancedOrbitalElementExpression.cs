@@ -112,7 +112,7 @@ namespace Assets.Scripts.Vizzy.CraftInformation {
                     };
                 case AdvancedOrbitalElement.MeanMotion:
                     return new ExpressionResult {
-                        NumberValue = node.Orbit.MeanMotion
+                        NumberValue = node.Orbit.MeanMotion / Math.PI * 180
                     };
                 default:
                     Debug.LogWarning("Unrecognized orbital element: " + this._element);

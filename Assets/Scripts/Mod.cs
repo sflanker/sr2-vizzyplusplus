@@ -158,18 +158,22 @@ namespace Assets.Scripts {
                 foreach (var part in craft.Assembly.Parts) {
                     var flightProgramData = part.GetModifier<FlightProgramData>();
 
-                    if (flightProgramData != null) {
-                        var flightProgram = flightProgramData.Script.FlightProgram ??
-                            new ProgramSerializer().DeserializeFlightProgram(flightProgramData.FlightProgramXml);
-                        if (ContainsVizzyPlusPlus(flightProgram.RootInstructions) ||
-                            ContainsVizzyPlusPlus(flightProgram.RootExpressions) ||
-                            ContainsVizzyPlusPlus(flightProgram.CustomExpressions) ||
-                            ContainsVizzyPlusPlus(flightProgram.CustomInstructions)) {
-
-                            Debug.Log($"Flight Program on part {part.Name} contains VizzyPlusPlus.");
-                            return true;
-                        } else {
-                            Debug.Log($"Flight Program on part {part.Name} does not contain VizzyPlusPlus.");
+                    if (flightProgramData?.FlightProgramXml != null) {
+                        try {
+                            var flightProgram = flightProgramData.Script.FlightProgram ??
+                                new ProgramSerializer().DeserializeFlightProgram(flightProgramData.FlightProgramXml);
+                            if (ContainsVizzyPlusPlus(flightProgram.RootInstructions) ||
+                                ContainsVizzyPlusPlus(flightProgram.RootExpressions) ||
+                                ContainsVizzyPlusPlus(flightProgram.CustomExpressions) ||
+                                ContainsVizzyPlusPlus(flightProgram.CustomInstructions)) {
+                                Debug.Log($"Flight Program on part {part.Name} contains VizzyPlusPlus.");
+                                return true;
+                            } else {
+                                Debug.Log($"Flight Program on part {part.Name} does not contain VizzyPlusPlus.");
+                            }
+                        } catch (Exception ex) {
+                            Debug.LogWarning($"Unable to deserialize Flight Program: {flightProgramData.FlightProgramXml}");
+                            Debug.LogError(ex);
                         }
                     }
                 }
@@ -182,7 +186,7 @@ namespace Assets.Scripts {
 
         private Boolean ContainsVizzyPlusPlus(IEnumerable<ProgramInstruction> instructions) {
             var instructionStack = new Stack<ProgramInstruction>(instructions);
-            while (instructionStack.Count> 0) {
+            while (instructionStack.Count > 0) {
                 var instruction = instructionStack.Pop();
                 if (instruction is IVizzyPlusPlusProgramNode) {
                     return true;
@@ -195,6 +199,7 @@ namespace Assets.Scripts {
                 if (instruction.Next != null) {
                     instructionStack.Push(instruction.Next);
                 }
+
                 if (instruction.SupportsChildren) {
                     instructionStack.Push(instruction.FirstChild);
                 }
