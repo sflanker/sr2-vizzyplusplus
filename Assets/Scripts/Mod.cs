@@ -8,6 +8,7 @@ using Assets.Scripts.Craft.Parts.Modifiers;
 using Assets.Scripts.Vizzy;
 using Assets.Scripts.Vizzy.Constants;
 using Assets.Scripts.Vizzy.CraftInformation;
+using Assets.Scripts.Vizzy.FlowInstructions;
 using Assets.Scripts.Vizzy.Operators;
 using Assets.Scripts.Vizzy.UI;
 using ModApi.Craft;
@@ -64,6 +65,7 @@ namespace Assets.Scripts {
                 { StringTransformExpression.XmlName, (typeof(StringTransformExpression), () => new StringTransformExpression()) },
                 { StringSplitExpression.XmlName, (typeof(StringSplitExpression), () => new StringSplitExpression()) },
                 { AdvancedUnaryMathExpression.XmlName, (typeof(AdvancedUnaryMathExpression), () => new AdvancedUnaryMathExpression()) },
+                { ContinueInstruction.XmlName, (typeof(ContinueInstruction), () => new ContinueInstruction()) }
             };
 
             var programNodeCreatorType =

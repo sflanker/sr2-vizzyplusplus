@@ -5,6 +5,7 @@
         <Color id="ExtOperator" color="#2e80b7" />
     </Colors>
     <Styles>
+        <Style id="continue" color="ExtExpression" format="continue" tooltip="Executes the next iteration of the closest loop without executing any more instructions in the current iteration." />
         <Style id="string-compare" color="ExtExpression" format="text (0) [op] (1)" tooltip="Compares pieces of text." />
         <Style id="string-transform" color="ExtExpression" format="[op] (0)" tooltip="Returns the result of a transform of a single text value." />
         <Style id="string-split" color="ExtExpression" format="split (0) by separators (1)" tooltip="Returns a list of strings by splitting the input on the specified separators." />
@@ -20,6 +21,9 @@
         <Style id="advanced-planet-info" color="ExtExpression" format="advanced planet (0) info [info]" tooltip="Gets advanced information about the specified planet." />
     </Styles>
     <Categories>
+        <Category name="Program Flow" icon="Ui/Vizzy/ToolboxIconFlow">
+            <Continue style="continue" />
+        </Category>
         <Category name="Operators" icon="Ui/Vizzy/ToolboxIconOperators">
             <AdvancedUnaryMath style="advanced-math-unary" op="exp">
                 <Constant number="0" />
