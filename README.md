@@ -11,6 +11,7 @@
     * True Anomaly - The angle between the direction of the periapse and the current position from the main focus of the orbital ellipse.
     * Semi-Major Axis - Half of the sum of the apoapse and periapse distances.
     * Eccentricity - The shape of the orbit, from circular (0), to parabolic (1), to hyperbolic (>1).
+    * Period - The period of the orbit in seconds.
 * Advanced Orbital Element¹ ...
     * Angular Momentum - A vector representing the body's rate of rotation around its parent.
     * Apoapse - A vector representing the apoapse of the orbit.
@@ -74,7 +75,7 @@ Crafts with Flight Programs that test the Expressions and Instructions should be
 
  * Additional Current Craft Information
      * NavSphere settings: Pitch/Heading
-     * Staging information
+     * \[In Progress - @MJBWater\] Staging information
          * Current stage number
          * Number of stages remaining
          * List of parts activated by a stage (by stage number)
