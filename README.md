@@ -34,12 +34,27 @@
  * Split Text - Returns a list of strings by splitting the input on the specified separators.
 
 
+## Math Expressions
+
+ * Advanced Unary Math
+     * exp - Returns the Euler's Number raised to the specified exponent.
+     * sinh - Hyperbolic Sine
+     * cosh - Hyperbolic Cosine
+     * tanh - Hyperbolic Tangent
+     * asinh - Inverse Hyperbolic Sine
+     * acosh - Inverse Hyperbolic Cosine
+     * atanh - Inverse Hyperbolic Tangent
+
 ## Constant Expressions
 
 * π - The mathematical constant PI, 3.14159...
 * G - The Universal Gravitation Constant (in cubic meters per kilogram per seconds squared).
 * _e_ - Euler's Number (base of natural logarithms).
 * c - The speed of light in meters per second.
+
+## Flow Instructions
+
+ * Continue - Stops the execution of the _current iteration_ through a loop, and _continues_ executing the loop from the top, starting with any state change or condition checks.
 
 # Contributing
 
