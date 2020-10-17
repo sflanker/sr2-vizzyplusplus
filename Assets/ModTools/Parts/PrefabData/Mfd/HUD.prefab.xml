@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="HUD" path="Craft/Parts/Prefabs/Mfd/HUD.prefab">
+  <GameObject name="Canvas">
+    <Component type="UnityEngine.RectTransform" />
+    <Component type="UnityEngine.Canvas" />
+    <Component type="UnityEngine.UI.CanvasScaler" />
+    <Component type="UnityEngine.UI.GraphicRaycaster" />
+    <Component type="UnityEngine.CanvasRenderer" />
+    <Component type="UnityEngine.UI.Image" />
+    <Component type="UnityEngine.UI.RectMask2D" />
+    <Component type="ModApi.Craft.Parts.EnabledScript" />
+  </GameObject>
+  <GameObject name="Collider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="Quad">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.EnabledScript" />
+  </GameObject>
+  <GameObject name="FlightMask">
+    <Component type="UnityEngine.MeshFilter" />
+    <Component type="UnityEngine.MeshRenderer" />
+    <Component type="ModApi.Craft.Parts.EnabledScript" />
+    <Component type="ModApi.Craft.Parts.PartMeshScript" />
+  </GameObject>
+</GameObject>

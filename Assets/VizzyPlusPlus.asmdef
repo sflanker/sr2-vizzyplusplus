@@ -1,3 +1,8 @@
 {
-	"name": "VizzyPlusPlus"
+	"name": "VizzyPlusPlus",
+	"references": [
+		"UnityEngine.UI",
+		"Unity.TextMeshPro",
+		"Unity.Mathematics"
+	]
 }

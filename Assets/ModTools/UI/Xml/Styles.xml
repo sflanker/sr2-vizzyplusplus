@@ -51,9 +51,9 @@
     <TextMeshPro class="text-sm" fontSize="14" />
     <TextMeshPro class="text-lg" fontSize="20" />
     <TextMeshPro class="text-header" color="Primary" fontSize="28" preferredHeight="32" />
-    <TextMeshProDropdown image="" color="Button" dropdownBackgroundImage="" dropdownBackgroundColor="Button" itemBackgroundColors="Button|ButtonHover|Button|Button" />
-    <TMP_OptionTextTemplate font="Ui/Fonts/Roboto/Roboto-Regular SDF" color="LabelText" image="" />
-    <TMP_DropdownLabel font="Ui/Fonts/Roboto/Roboto-Regular SDF" color="ValueText" />
+    <TextMeshProDropdown prefabPath="Ui/Prefabs/XmlLayout/Dropdown" image="" color="Button" dropdownBackgroundImage="" arrowImage="Ui/Sprites/Common/DropdownArrow" checkColor="White" scrollbarBackgroundColor="#222" itemBackgroundColors="Transparent|ButtonHover|Button|Button" />
+    <TMP_OptionTextTemplate font="Ui/Fonts/Roboto/Roboto-Regular SDF" color="LabelText" image="" fontSize="16" />
+    <TMP_DropdownLabel font="Ui/Fonts/Roboto/Roboto-Regular SDF" color="ValueText" fontSize="16" enableAutoSizing="true" fontSizeMin="6" fontSizeMax="16" />
     <Button class="icon-button" onClickSound="Ui/Audio/ButtonClicked" audioMode="OneShot" width="40" height="40" preferredWidth="40" preferredHeight="40" sprite="" colors="Button|ButtonHover|Button|ButtonDisabled" iconColor="ButtonIcon" iconHoverColor="ButtonIconSelected" navigation="None" tooltipPosition="Right" />
     <Button class="btn" onClickSound="Ui/Audio/ButtonClicked" audioMode="OneShot" prefabPath="Ui/Prefabs/XmlLayout/TextButton" sprite="" preferredHeight="30" height="30" raycastTarget="true" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" textColors="ButtonText|ButtonText|ButtonText|ButtonDisabledText" navigation="None" />
     <Button class="transparent" colors="TransparentPanel|ButtonHover|Button|Button" />
@@ -120,6 +120,7 @@
     <VerticalLayout class="border-angled" borderSprite="Ui/Sprites/Border/Angled-1px" border="Border" />
     <Panel class="border-angled" borderSprite="Ui/Sprites/Border/Angled-1px" border="Border" />
     <Panel class="dialog-background" color="#000000DF" raycastTarget="true" />
+    <Panel class="non-modal-dialog" color="#00000000" raycastTarget="false" />
     <Panel class="panel-angled" sprite="Ui/Sprites/Panel-Angled" />
     <Image class="panel-angled" sprite="Ui/Sprites/Panel-Angled" type="Sliced" />
     <VerticalLayout class="draggable" allowDragging="true" restrictDraggingToParentBounds="true" returnToOriginalPositionWhenReleased="false" />

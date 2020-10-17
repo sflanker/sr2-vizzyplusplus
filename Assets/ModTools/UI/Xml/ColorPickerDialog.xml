@@ -46,6 +46,11 @@
             <TextMeshPro internalId="slider-value" class="value" text="255" />
             <Slider internalId="slider" />
           </Panel>
+          <Panel id="slider-intensity" class="slider">
+            <TextMeshPro internalId="slider-label" class="label" text="Intensity" />
+            <TextMeshPro internalId="slider-value" class="value" text="0" />
+            <Slider internalId="slider" />
+          </Panel>
           <Panel preferredHeight="5" />
           <Panel class="row toggle-buttons" rectAlignment="UpperCenter" preferredHeight="25">
             <ToggleGroup>

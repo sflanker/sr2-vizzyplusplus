@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Parts>
   <Part name="Beacon Light">
-    <PartType id="BeaconLight1" includeInBodyDrag="true" name="Beacon Light" prefabPath="Craft/Parts/Prefabs/BeaconLight1.prefab" mass="1" price="500" partCollisions="Default" defaultMaterials="14,0,1,2,3" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <PartType id="BeaconLight1" includeInBodyDrag="true" name="Beacon Light" prefabPath="Craft/Parts/Prefabs/BeaconLight1.prefab" mass="1" price="500" partCollisions="Default" defaultMaterials="21,0,1,2,3" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <BeaconLight blinkFrequency="1" blinkOffset="0" blinkStyle="Steady" hideBase="true" intensity="1" powerConsumptionScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -14,7 +14,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Beacon Light" category="Gizmos" description="Small blinking lights." order="800" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="-30,0,-30" snapshotRotation="90,0,0">
+      <DesignerPart name="Beacon Light" category="Electronics" description="Small blinking lights." order="800" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="-30,0,-30" snapshotRotation="90,0,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="BeaconLight1" position="0,0,0" rotation="0,0,0">
@@ -38,7 +38,7 @@
   <Part name="Block">
     <PartType id="Block1" includeInBodyDrag="true" name="Block" prefabPath="Craft/Parts/Prefabs/Block1.prefab" mass="5" price="1000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
         <AttachPoint name="AttachPoint1" displayName="Top" position="0,0.25,0" rotation="270,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" />
@@ -76,7 +76,7 @@
   <Part name="Camera">
     <PartType id="Camera1" includeInBodyDrag="true" name="Camera" prefabPath="Craft/Parts/Prefabs/Camera1.prefab" mass="1" price="1000" partCollisions="Never" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="false" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="false" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CameraVantage autoCenterCamera="false" cameraOffset="0,0,0" enabledByDefault="true" isHidden="false" lookAtCommandPod="false" manualRegister="false" padPosition="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -87,7 +87,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Camera" category="Gizmos" description="" order="350" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,210,0">
+      <DesignerPart name="Camera" category="Command" description="" order="1100" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,210,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Camera1" position="0,0,0" rotation="0,0,0">
@@ -107,8 +107,8 @@
   <Part name="Cargo Bay">
     <PartType id="CargoBay1" includeInBodyDrag="true" name="Cargo Bay" prefabPath="Craft/Parts/Prefabs/CargoBay1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="true" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="CargoBay1" normalSmoothingAngle="55" offset="0,1.25,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="0.8,0.8" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="CargoBay1" normalSmoothingAngle="55" offset="0,1.25,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CargoBay open="false" openAngle="90" openSpeed="1" soundVolume="1" startOpen="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -240,22 +240,97 @@
       </SubpartStyles>
     </PartStyles>
   </Part>
-  <Part name="Command Chip">
-    <PartType id="CommandChip1" includeInBodyDrag="true" name="Command Chip" prefabPath="Craft/Parts/Prefabs/CommandChip1.prefab" mass="20" price="50000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+  <Part name="Cockpit1">
+    <PartType id="Cockpit1" includeInBodyDrag="true" name="Cockpit1" prefabPath="Craft/Parts/Prefabs/Cockpit1.prefab" mass="1000" price="500000" partCollisions="Default" defaultMaterials="0,3,16,2,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="500" collisionDisconnectVelocity="7.5" collisionExplodeImpulse="1000" collisionExplodeVelocity="15" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="BeforeDepthMask" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Plane" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="270,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CrewCompartment capacity="1" commandPodEnabledInCompartment="true" crewExitPosition="1,0,0" crewExitRotation="0,90,270" visibleInCompartment="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Cockpit inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
-        <AttachPoint name="AttachPoint1" displayName="Bottom" position="0,0,0" rotation="90,180,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
-        <AttachPoint name="AttachPoint2" displayName="Top" position="0,0.0275,0" rotation="270,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="false" canSeek="false" ignoreSurfaces="false" connectionType="Legacy" />
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0,-0.3715032" rotation="0,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" connectionType="Shell" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,0,-0.371" rotation="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="false" canSeek="true" ignoreSurfaces="false" />
+        <AttachPoint name="AttachPointSeat" displayName="Seat" position="0,0.06,-0.042" rotation="275,180,180" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" connectionType="Eva" />
+        <AttachPoint name="AttachPointPanel" displayName="Panel" surface="PanelCollider" canSeek="false" renderQueue="BeforeDepthMask" />
       </AttachPoints>
       <SubpartTypes>
         <SubpartType index="0" xmlName="" displayName="Part" />
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Command Chip" category="Gizmos" description="Compact and lightweight alternative to using a Command Pod for controlling a craft." order="1150" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Cockpit" category="Command" description="" order="900" showInDesigner="false" snapshotDistanceScaler="1" snapshotPartRotation="90,150,0" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="Cockpit1" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <CommandPod />
+              <FuelTank />
+              <CrewCompartment />
+              <Cockpit />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default">
+          <TextureStyles>
+            <TextureStyle id="Cockpit1" />
+          </TextureStyles>
+        </Style>
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
+  <Part name="Cockpit Canopy">
+    <PartType id="CockpitCanopy1" includeInBodyDrag="true" name="Cockpit Canopy" prefabPath="Craft/Parts/Prefabs/CockpitCanopy1.prefab" mass="100" price="5000" partCollisions="Default" defaultMaterials="0,23,23,24,24" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <SubPartRotator adjustableRate="true" currentEnabledPercent="0" designerIconEnabledPercent="0" disabledRotation="0,0,0" enabledRotation="-45,0,0" rotationRate="0.5" rotationSpeed="1" startEnabled="false" startEnabledLabel="Start Open" subPartPath="Offset/RotatingCanopy" syncActivationGroup="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPoint1" position="0,0.4541045,0" rotation="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" connectionType="Shell" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Cockpit Canopy" category="Command" description="" order="0" showInDesigner="false" snapshotDistanceScaler="1" snapshotPartRotation="90,150,0" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="CockpitCanopy1" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <SubPartRotator />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default" />
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
+  <Part name="Command Chip">
+    <PartType id="CommandChip1" includeInBodyDrag="true" name="Command Chip" prefabPath="Craft/Parts/Prefabs/CommandChip1.prefab" mass="20" price="50000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="500" collisionDisconnectVelocity="7.5" collisionExplodeImpulse="1000" collisionExplodeVelocity="15" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPoint1" displayName="Bottom" position="0,0,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
+        <AttachPoint name="AttachPoint2" displayName="Top" position="0,0.0275,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="false" canSeek="false" ignoreSurfaces="false" connectionType="Legacy" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Command Chip" category="Command" description="Compact and lightweight alternative to using a Space Capsule for controlling a craft." order="800" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="CommandChip1" position="0,0,0" rotation="0,0,0">
@@ -279,16 +354,16 @@
   <Part name="Command Pod">
     <PartType id="CommandPod1" includeInBodyDrag="true" name="Command Pod" prefabPath="Craft/Parts/Prefabs/CommandPod1.prefab" mass="1000" price="500000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="4" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="4" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Gyroscope electricalConsumption="0.3" mass="0" power="50" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
         <CrewCompartment capacity="3" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" visibleInCompartment="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
-        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.632,0" rotation="90,180,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" />
-        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.632,0" rotation="270,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.416" />
-        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.632,0" rotation="90,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" connectionType="Shell" />
+        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.632,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" />
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.632,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.416" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.632,0" rotation="90,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" connectionType="Shell" />
         <AttachPoint name="Surface" displayName="Surface" surface="CommandPodCollider" canSeek="false" connectionType="Eva" />
       </AttachPoints>
       <SubpartTypes>
@@ -296,7 +371,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Command Pod" category="Gizmos" description="Controls the craft. Every rocket must have at least one command pod. This command pod has a built-in gyroscope for attitude control. Batteries are included." order="1120" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Command Pod" category="Command" description="Controls the craft. Every rocket must have at least one command pod. This command pod has a built-in gyroscope for attitude control. Batteries are included." order="1120" showInDesigner="false" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="CommandPod1" position="0,0,0" rotation="0,0,0">
@@ -320,12 +395,276 @@
       </SubpartStyles>
     </PartStyles>
   </Part>
+  <Part name="Komodo Capsule">
+    <PartType id="CommandPod2" includeInBodyDrag="true" name="Komodo Capsule" prefabPath="Craft/Parts/Prefabs/CommandPod2.prefab" mass="1" price="1000000" partCollisions="Default" defaultMaterials="0,1,19,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1.5" buoyancyUserScale="1" centerOfMass="0,-0.3,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Gyroscope electricalConsumption="0.3" mass="0" power="50" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CrewCompartment capacity="1" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" visibleInCompartment="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="1000" fuel="1000" fuelType="LOX/RP1" priority="0" subPriority="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Engine electricalConsumption="0" fuelConsumption="100" fuelConsumptionScale="1" fuelType="LOX/RP1" gimbalRange="0" maxGimbalAngle="0" maxTorque="0" seaLevelEfficiency="1" supportsWarpBurn="false" thrust="250000" vacuumEfficiency="0.9" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <InputController activationGroup="7" currentValue="7" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" showActivationGroup="true" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <ScalablePod baseScale="1.25" engineBurnTime="7" engineEnabled="false" engineIsp="225" enginePrice="0" height="1.27" radiusBottom="0.8" radiusPercent="1" radiusTop="0.416" unscaledCenterOfMass="0,-0.1,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.635,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" radius="0.43" connectionType="Shell" />
+        <AttachPoint name="AttachPointTopLoad" displayName="Top" position="0,0.635,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.43" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.635,0" rotation="90,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" radius="0.8" connectionType="Shell" />
+        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.635,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" />
+        <AttachPoint name="SurfaceAstronaut" displayName="Astronaut" surface="SurfaceCollider" canSeek="false" connectionType="Eva" />
+        <AttachPoint name="Surface" displayName="Surface" surface="SurfaceCollider" canSeek="false" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Komodo Capsule" category="Command" description="Space capsule which includes a small amount of fuel and built-in engines." order="400" showInDesigner="false" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="CommandPod2" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <CommandPod />
+              <Gyroscope />
+              <FuelTank />
+              <CrewCompartment />
+              <FuelTank />
+              <Engine />
+              <InputController />
+              <ScalablePod />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default">
+          <TextureStyles>
+            <TextureStyle id="CommandPod2" />
+          </TextureStyles>
+        </Style>
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
+  <Part name="Patriot Capsule">
+    <PartType id="CommandPod3" includeInBodyDrag="true" name="Patriot Capsule" prefabPath="Craft/Parts/Prefabs/CommandPod3.prefab" mass="1" price="500000" partCollisions="Default" defaultMaterials="0,1,19,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Gyroscope electricalConsumption="0.3" mass="0" power="50" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CrewCompartment capacity="3" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" visibleInCompartment="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <ScalablePod baseScale="1.5" engineBurnTime="0" engineEnabled="false" engineIsp="0" enginePrice="0" height="0.84" radiusBottom="0.8" radiusPercent="1" radiusTop="0.416" unscaledCenterOfMass="0,-0.1,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.419,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" />
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.419,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.416" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.419,0" rotation="90,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" connectionType="Shell" />
+        <AttachPoint name="SurfaceAstronaut" displayName="Astronaut" surface="CommandPodCollider" canSeek="false" connectionType="Eva" />
+        <AttachPoint name="Surface" displayName="Surface" surface="CommandPodCollider" canSeek="false" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Patriot Capsule" category="Command" description="Space capsule that has a bit more leg room than the alternatives. Great capsule if you love your country and if you have the money." order="700" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="CommandPod3" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <CommandPod />
+              <Gyroscope />
+              <FuelTank />
+              <CrewCompartment />
+              <ScalablePod />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default">
+          <TextureStyles>
+            <TextureStyle id="CommandPod3" />
+          </TextureStyles>
+        </Style>
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
+  <Part name="Space Capsule">
+    <PartType id="CommandPod4" includeInBodyDrag="true" name="Space Capsule" prefabPath="Craft/Parts/Prefabs/CommandPod4.prefab" mass="1" price="500000" partCollisions="Default" defaultMaterials="0,1,19,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Gyroscope electricalConsumption="0.3" mass="0" power="50" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CrewCompartment capacity="3" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" visibleInCompartment="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <ScalablePod baseScale="1.25" engineBurnTime="7" engineEnabled="false" engineIsp="225" enginePrice="0" height="1.27" radiusBottom="0.8" radiusPercent="1" radiusTop="0.416" unscaledCenterOfMass="0,-0.1,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.632,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" />
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.632,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.416" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.632,0" rotation="90,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" connectionType="Shell" />
+        <AttachPoint name="SurfaceAstronaut" displayName="Astronaut" surface="CommandPodCollider" canSeek="false" connectionType="Eva" />
+        <AttachPoint name="Surface" displayName="Surface" surface="CommandPodCollider" canSeek="false" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Space Capsule" category="Command" description="Controls the craft. Every rocket must have at least one capsule or command chip. Includes built-in gyroscope for attitude control. Batteries are included." order="300" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="CommandPod4" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <CommandPod />
+              <Gyroscope />
+              <FuelTank />
+              <CrewCompartment />
+              <ScalablePod />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default">
+          <TextureStyles>
+            <TextureStyle id="CommandPod4" />
+          </TextureStyles>
+        </Style>
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
+  <Part name="Vroz Space Capsule">
+    <PartType id="CommandPod5" includeInBodyDrag="true" name="Vroz Space Capsule" prefabPath="Craft/Parts/Prefabs/CommandPod5.prefab" mass="1" price="500000" partCollisions="Default" defaultMaterials="0,1,19,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Gyroscope electricalConsumption="0.3" mass="0" power="50" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CrewCompartment capacity="3" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" visibleInCompartment="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <ScalablePod baseScale="1.25" engineBurnTime="7" engineEnabled="false" engineIsp="225" enginePrice="0" height="1.27" radiusBottom="0.8" radiusPercent="1" radiusTop="0.416" unscaledCenterOfMass="0,-0.1,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.666,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" />
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.664,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.32" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.666,0" rotation="90,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" connectionType="Shell" />
+        <AttachPoint name="SurfaceAstronaut" displayName="Astronaut" surface="CommandPodCollider" canSeek="false" connectionType="Eva" />
+        <AttachPoint name="Surface" displayName="Surface" surface="CommandPodCollider" canSeek="false" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Vroz Space Capsule" category="Command" description="Controls the craft. Every rocket must have at least one capsule or command chip. This capsule has a built-in gyroscope for attitude control. Batteries are included." order="500" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="CommandPod5" position="0,0,0" rotation="0,0,0" texture="Fuselage10">
+              <Config />
+              <CommandPod />
+              <Gyroscope />
+              <FuelTank />
+              <CrewCompartment />
+              <ScalablePod />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default">
+          <TextureStyles>
+            <TextureStyle id="Fuselage1" />
+            <TextureStyle id="Fuselage2" />
+            <TextureStyle id="Fuselage3" />
+            <TextureStyle id="Fuselage4" />
+            <TextureStyle id="Fuselage5" />
+            <TextureStyle id="Fuselage6" />
+            <TextureStyle id="Fuselage7" />
+            <TextureStyle id="Fuselage8" />
+            <TextureStyle id="Fuselage9" />
+            <TextureStyle id="Fuselage10" />
+            <TextureStyle id="Fuselage11" />
+          </TextureStyles>
+        </Style>
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
+  <Part name="Vroz Orbital Module">
+    <PartType id="CommandPod6" includeInBodyDrag="true" name="Vroz Orbital Module" prefabPath="Craft/Parts/Prefabs/CommandPod6.prefab" mass="1" price="500000" partCollisions="Default" defaultMaterials="0,1,19,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Detacher" supportsActivation="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Gyroscope electricalConsumption="0.3" mass="0" power="50" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CrewCompartment capacity="3" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" visibleInCompartment="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <ScalablePod baseScale="1.25" engineBurnTime="7" engineEnabled="false" engineIsp="225" enginePrice="0" height="1.27" radiusBottom="0.8" radiusPercent="1" radiusTop="0.416" unscaledCenterOfMass="0,-0.1,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Detacher detachOnActivated="false" force="1" targetAttachPoints="AttachPointBottomLoad,AttachPointBottom" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPointBottomLoad" displayName="Bottom" position="0,-0.852,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" jointType="Rigid" radius="0.32" />
+        <AttachPoint name="AttachPointTop" displayName="Top" position="0,0.813,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.416" />
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,-0.852,0" rotation="90,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" jointType="Rigid" radius="0.32" connectionType="Shell" />
+        <AttachPoint name="SurfaceAstronaut" displayName="Astronaut" surface="CommandPodCollider" canSeek="false" connectionType="Eva" />
+        <AttachPoint name="Surface" displayName="Surface" surface="CommandPodCollider" canSeek="false" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Vroz Orbital Module" category="Command" description="Spherical space capsulse that fits quite nicely on top of the Vroz Descent Module in case you want to bring more people into space." order="600" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="CommandPod6" position="0,0,0" rotation="0,0,0" texture="Fuselage10">
+              <Config />
+              <CommandPod />
+              <Gyroscope />
+              <FuelTank />
+              <CrewCompartment />
+              <ScalablePod />
+              <Detacher />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default">
+          <TextureStyles>
+            <TextureStyle id="Fuselage1" />
+            <TextureStyle id="Fuselage2" />
+            <TextureStyle id="Fuselage3" />
+            <TextureStyle id="Fuselage4" />
+            <TextureStyle id="Fuselage5" />
+            <TextureStyle id="Fuselage6" />
+            <TextureStyle id="Fuselage7" />
+            <TextureStyle id="Fuselage8" />
+            <TextureStyle id="Fuselage9" />
+            <TextureStyle id="Fuselage10" />
+            <TextureStyle id="Fuselage11" />
+          </TextureStyles>
+        </Style>
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
   <Part name="Interstage">
     <PartType id="Detacher1" includeInBodyDrag="true" name="Interstage" prefabPath="Craft/Parts/Prefabs/Detacher1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="0,0,2,4,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="22.5" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="Detacher" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Detacher1" normalSmoothingAngle="60" offset="0,1.4,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.8,0.8" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Detacher force="1" targetAttachPoints="AttachPointEngine,AttachPointTop" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="22.5" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Detacher" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Detacher1" normalSmoothingAngle="60" offset="0,1.4,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Detacher detachOnActivated="true" force="1" targetAttachPoints="AttachPointEngine,AttachPointTop" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CoverEngine coverEngine="true" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CrossFeed attachPointA="1" attachPointB="2" mode="Disabled" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -340,7 +679,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Interstage" category="Structural" description="Use this to split your craft into stages." order="10" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Interstage" category="Structural" description="Use this to split your craft into stages." order="6" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Detacher1" position="0,0,0" rotation="0,0,0">
@@ -399,8 +738,8 @@
   <Part name="Side Interstage">
     <PartType id="DetacherSide1" includeInBodyDrag="true" name="Side Interstage" prefabPath="Craft/Parts/Prefabs/DetacherSide1.prefab" mass="50" price="25000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false" mirrorRotationOffset="270,270,0">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="22.5" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="Detacher" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Detacher force="1" targetAttachPoints="AttachPoint1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="22.5" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Detacher" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Detacher detachOnActivated="true" force="1" targetAttachPoints="AttachPoint1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CrossFeed attachPointA="1" attachPointB="0" mode="Disabled" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -412,7 +751,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Side Interstage" category="Structural" description="Interstage that is designed to connect to the side of a fuel tank, but can connect to other places, too." order="10" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
+      <DesignerPart name="Side Interstage" category="Structural" description="Interstage that is designed to connect to the side of a fuel tank, but can connect to other places, too." order="7" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="DetacherSide1" position="0,0,0" rotation="0,0,0">
@@ -437,11 +776,11 @@
   <Part name="Docking Port">
     <PartType id="DockingPort1" includeInBodyDrag="true" name="Docking Port" prefabPath="Craft/Parts/Prefabs/DockingPort1.prefab" mass="200" price="50000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <DockingPort inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
-        <AttachPoint name="AttachPoint1" displayName="Base" position="0,-0.0715,0" rotation="90,180,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
+        <AttachPoint name="AttachPoint1" displayName="Base" position="0,-0.0715,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
         <AttachPoint name="DockingAttachPoint" displayName="Dock" position="0,0.0716,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" jointType="Rigid" />
       </AttachPoints>
       <SubpartTypes>
@@ -449,7 +788,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Docking Port" category="Gizmos" description="Allows connecting two crafts in flight so they can be friends and transfer fuel." order="700" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Docking Port" category="Command" description="Allows connecting two crafts in flight so they can be friends and transfer fuel." order="850" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="DockingPort1" position="0,0,0" rotation="0,0,0">
@@ -473,7 +812,7 @@
   <Part name="Electric Motor">
     <PartType id="ElectricMotor1" includeInBodyDrag="true" name="Electric Motor" prefabPath="Craft/Parts/Prefabs/ElectricMotor1.prefab" mass="100" price="50000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <ElectricMotor attachPointIndex="0" brakeTorque="0" powerUsagePerTorque="29" rpm="60" soundVolume="1" staticResistance="1" torque="500" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Slider1" invert="false" invertOnMirror="true" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="false" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Motor" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -486,7 +825,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Electric Motor" category="Gizmos" description="Motor that can continously rotate parts. Uses Electricity." order="750" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
+      <DesignerPart name="Electric Motor" category="Electronics" description="Motor that can continously rotate parts. Uses Electricity." order="750" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="ElectricMotor1" position="0,0,0" rotation="0,0,0">
@@ -511,7 +850,7 @@
   <Part name="Mage I Engine">
     <PartType id="Engine1" includeInBodyDrag="true" name="Mage I Engine" prefabPath="Craft/Parts/Prefabs/Engine1.prefab" mass="450" price="1000000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Engine electricalConsumption="0" fuelConsumption="100" fuelConsumptionScale="1" fuelType="LOX/RP1" gimbalRange="1" maxGimbalAngle="10" maxTorque="5" seaLevelEfficiency="0.9" supportsWarpBurn="false" thrust="250000" vacuumEfficiency="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -547,7 +886,7 @@
   <Part name="Pixie Engine">
     <PartType id="Engine2" includeInBodyDrag="true" name="Pixie Engine" prefabPath="Craft/Parts/Prefabs/Engine2.prefab" mass="75" price="150000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Engine electricalConsumption="0" fuelConsumption="16.5" fuelConsumptionScale="1" fuelType="LOX/RP1" gimbalRange="1" maxGimbalAngle="10" maxTorque="5" seaLevelEfficiency="0.93" supportsWarpBurn="false" thrust="50000" vacuumEfficiency="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -583,7 +922,7 @@
   <Part name="Apex I Engine">
     <PartType id="Engine3" includeInBodyDrag="true" name="Apex I Engine" prefabPath="Craft/Parts/Prefabs/Engine3.prefab" mass="1750" price="4250000" partCollisions="Default" defaultMaterials="0,3,2,1,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Engine electricalConsumption="0" fuelConsumption="650" fuelConsumptionScale="1" fuelType="LOX/RP1" gimbalRange="1" maxGimbalAngle="2.5" maxTorque="5" seaLevelEfficiency="0.9" supportsWarpBurn="false" thrust="1600000" vacuumEfficiency="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -619,21 +958,21 @@
   <Part name="Eva">
     <PartType id="Eva" includeInBodyDrag="true" name="Eva" prefabPath="Craft/Parts/Prefabs/Eva.prefab" mass="100" price="6000000" partCollisions="Always" allowIndividualPartRemoval="true" usePreferredNodeName="false" allowDesignerReorientationOnPullout="false" defaultMaterials="15,16,17,18,19" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="2.75" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="true" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
-        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="false" craftConfigType="Plane" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="2.75" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="true" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="BeforeDepthMask" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
+        <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" craftConfigAutoAssign="false" craftConfigType="Plane" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" reorientCraftOnConfigChange="true" replicateActivationGroups="None" replicateControls="false" replicateStageActivations="false" useDefaultPilotSeatRotation="true" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
         <Eva crewName="Crew member" grapplingHookEnabled="true" jetpackEnabled="true" jetpackPowerScalar="1" jumpPowerScalar="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CameraVantage autoCenterCamera="true" cameraOffset="0,0.75,0.08" enabledByDefault="false" isHidden="true" lookAtCommandPod="false" manualRegister="true" padPosition="false" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
         <FuelTank autoFuelType="false" capacity="6" fuel="6" fuelType="Jetpack" priority="0" subPriority="0" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="true" />
       </Modifiers>
       <AttachPoints>
-        <AttachPoint name="AttachPoint1" position="0,0,0" rotation="0,180,0" allowRotation="true" allowInvertedConnection="false" canReceive="false" canSeek="true" ignoreSurfaces="false" jointType="Rigid" connectionType="Eva" requiresPhysicsJoint="true" />
+        <AttachPoint name="AttachPoint1" displayName="Base" position="0,0,0" rotation="0,180,0" allowRotation="true" allowInvertedConnection="false" canReceive="false" canSeek="true" ignoreSurfaces="false" jointType="Rigid" connectionType="Eva" requiresPhysicsJoint="true" />
       </AttachPoints>
       <SubpartTypes>
         <SubpartType index="0" xmlName="" displayName="Part" />
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Astronaut" category="Gizmos" description="Drag onto a command pod to load into the crew compartment.  Exit and take control of the crew by clicking on the command pod while in flight and select the desired crew-member." order="0" showInDesigner="true" snapshotDistanceScaler="0.7" snapshotPartRotation="0,180,0" snapshotPartOffset="0,0.85,0" snapshotRotation="-5,10,0">
+      <DesignerPart name="Astronaut" category="Command" description="Drag onto a command pod to load into the crew compartment.  Exit and take control of the crew by clicking on the command pod while in flight and select the desired crew-member." order="100" showInDesigner="true" snapshotDistanceScaler="0.7" snapshotPartRotation="0,180,0" snapshotPartOffset="0,0.85,0" snapshotRotation="-5,10,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Eva" position="0,0,0" rotation="0,0,0">
@@ -660,7 +999,7 @@
   <Part name="Chair">
     <PartType id="EvaChair1" includeInBodyDrag="true" name="Chair" prefabPath="Craft/Parts/Prefabs/EvaChair1.prefab" mass="30" price="1000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <EvaChair inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <CrewCompartment capacity="1" commandPodEnabledInCompartment="true" crewExitPosition="0,0.9,0.7" crewExitRotation="0,0,0" visibleInCompartment="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -673,7 +1012,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Chair" category="Gizmos" description="Astronauts will stand as long as you ask them to, but sometimes it's nice to give them a break and let them sit down." order="5" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="0,180,0" snapshotRotation="30,30,0">
+      <DesignerPart name="Chair" category="Command" description="Astronauts will stand as long as you ask them to, but sometimes it's nice to give them a break and let them sit down." order="1000" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="0,180,0" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="EvaChair1" position="0,0,0" rotation="0,0,0">
@@ -709,8 +1048,8 @@
   <Part name="Fairing">
     <PartType id="Fairing1" includeInBodyDrag="true" name="Fairing" prefabPath="Craft/Parts/Prefabs/Fairing1.prefab" mass="1" price="0" partCollisions="Default" allowIndividualPartRemoval="true" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Fairing1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1.2,1.2" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Fairing1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="1.2,1.2" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Fairing fairingBase="false" jettisoned="false" jettisonSpin="1" jettisonVelocity="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -722,7 +1061,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Fairing" category="Structural" description="Protects precious cargo on its way to space. " order="7" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Fairing" category="Structural" description="Protects precious cargo on its way to space. " order="9" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Fairing1" position="0,0,0" rotation="0,0,0">
@@ -774,8 +1113,8 @@
   <Part name="Fairing Base">
     <PartType id="FairingBase1" includeInBodyDrag="true" name="Fairing Base" prefabPath="Craft/Parts/Prefabs/FairingBase1.prefab" mass="1" price="0" partCollisions="Default" allowIndividualPartRemoval="true" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="Fairing" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="Top" fuelPercentage="0" meshType="Fairing1" normalSmoothingAngle="60" offset="0,0.25,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Fairing" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="Top" fuelPercentage="0" meshType="Fairing1" normalSmoothingAngle="60" offset="0,0.25,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="1.2,1.2" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Fairing fairingBase="true" jettisoned="false" jettisonSpin="1" jettisonVelocity="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -787,7 +1126,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Fairing Base" category="Structural" description="The base of your fairings. When using fairings, this must be the first part you connect to your craft." order="6" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Fairing Base" category="Structural" description="The base of your fairings. When using fairings, this must be the first part you connect to your craft." order="8" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="FairingBase1" position="0,0,0" rotation="0,0,0">
@@ -839,8 +1178,8 @@
   <Part name="Fairing Nose Cone">
     <PartType id="FairingNoseCone1" includeInBodyDrag="true" name="Fairing Nose Cone" prefabPath="Craft/Parts/Prefabs/FairingNoseCone1.prefab" mass="1" price="0" partCollisions="Default" allowIndividualPartRemoval="true" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="Bottom" fuelPercentage="0" meshType="FairingNoseCone1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1.2,1.2" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="Bottom" fuelPercentage="0" meshType="FairingNoseCone1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Fairing fairingBase="false" jettisoned="false" jettisonSpin="1" jettisonVelocity="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -851,7 +1190,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Fairing Nose Cone" category="Structural" description="Nose cone specially designed to only connect to fairings." order="7" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Fairing Nose Cone" category="Structural" description="Nose cone specially designed to only connect to fairings." order="10" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="FairingNoseCone1" position="0,0,0" rotation="0,0,0">
@@ -935,12 +1274,12 @@
   <Part name="Fin">
     <PartType id="Fin1" includeInBodyDrag="false" name="Fin" prefabPath="Craft/Parts/Prefabs/Fin1.prefab" mass="2" price="5000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0.05" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0.05" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Wing airfoil="Symmetric" allowControlSurfaces="true" angleOfAttack="0" density="1" fuelPercentage="0" hingeDistanceFromTrailingEdge="0.3" invertAirfoil="false" minSectionLength="0.5" rootLeadingOffset="1" rootTrailingOffset="0.8" tipLeadingOffset="0.2" tipPosition="0,0.8,-0.2" tipTrailingOffset="0.2" wingPhysicsEnabled="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <ControlSurface deflectionSpeed="1" designerAutoAxesInfo="n/a" end="4" input="Auto" invert="false" maxDeflectionDegree="35" singleAxisWhenAuto="true" start="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
-        <AttachPoint name="AttachPoint1" displayName="Tip" position="0,0,0" rotation="270,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="false" ignoreSurfaces="false" />
+        <AttachPoint name="AttachPoint1" displayName="Tip" position="0,0,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="false" ignoreSurfaces="false" />
         <AttachPoint name="AttachPoint2" displayName="Base" position="0,0,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
       </AttachPoints>
       <SubpartTypes>
@@ -949,7 +1288,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Fin" category="Descent" description="Smaller wing section designed for rockets." order="1" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
+      <DesignerPart name="Fin" category="Control &amp; Descent" description="Smaller wing section designed for rockets." order="1" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Fin1" position="0,0,0" rotation="-90,0,0">
@@ -991,7 +1330,7 @@
   <Part name="Fuel Adapter">
     <PartType id="FuelAdapter1" includeInBodyDrag="true" name="Fuel Adapter" prefabPath="Craft/Parts/Prefabs/FuelAdapter1.prefab" mass="1" price="100" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="true" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="true" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
         <AttachPoint name="AttachPoint1" displayName="Base" position="0,0.1,0" rotation="270,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" fuelLine="true" />
@@ -1002,7 +1341,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Fuel Adapter" category="Gizmos" description="Makes it easier to connect engines to odd places on fuel tanks." order="950" showInDesigner="true" snapshotDistanceScaler="3" snapshotRotation="30,30,0">
+      <DesignerPart name="Fuel Adapter" category="Structural" description="Makes it easier to connect engines to odd places on fuel tanks." order="950" showInDesigner="true" snapshotDistanceScaler="3" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="FuelAdapter1" position="0,0,0" rotation="0,0,0">
@@ -1025,8 +1364,8 @@
   <Part name="Fuel Tank">
     <PartType id="Fuselage1" includeInBodyDrag="true" name="Fuel Tank" prefabPath="Craft/Parts/Prefabs/Fuselage1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="Body1" normalSmoothingAngle="60" offset="0,2.5,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="0.8,0.8" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="Body1" normalSmoothingAngle="60" offset="0,2.5,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <FuelTank autoFuelType="true" capacity="0" fuel="0" fuelType="LOX/RP1" priority="0" subPriority="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1094,8 +1433,8 @@
   <Part name="Gyroscope">
     <PartType id="Gyroscope1" includeInBodyDrag="true" name="Gyroscope" prefabPath="Craft/Parts/Prefabs/Gyroscope1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="Body1" normalSmoothingAngle="60" offset="0,0.8,0" subpartIndex="0" supportsXZOffset="false" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.8,0.8" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="Body1" normalSmoothingAngle="60" offset="0,0.8,0" subpartIndex="0" supportsXZOffset="false" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Gyroscope electricalConsumption="0.3" mass="4.79975653" power="1563.38843" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1111,7 +1450,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Gyroscope" category="Gizmos" description="Allows attitude control without thrust. &#xA;Uses electricity." order="300" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,15,0">
+      <DesignerPart name="Gyroscope" category="Control &amp; Descent" description="Allows attitude control without thrust. &#xA;Uses electricity." order="300" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,15,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Gyroscope1" position="0,0,0" rotation="0,0,0">
@@ -1163,8 +1502,8 @@
   <Part name="Heat Shield">
     <PartType id="HeatShield1" includeInBodyDrag="true" name="Heat Shield" prefabPath="Craft/Parts/Prefabs/HeatShield1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="4,4,4,4,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="2500" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="3000" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="false" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Cone1" normalSmoothingAngle="60" offset="0,0.1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.1,0.1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="2500" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="3000" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="false" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Cone1" normalSmoothingAngle="60" offset="0,0.1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.1,0.1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
         <AttachPoint name="AttachPointBottom" tag="Bottom" displayName="Base" position="0,-1,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
@@ -1175,7 +1514,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Heat Shield" category="Structural" description="Provides protection from intense heat during re-entry." order="14" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Heat Shield" category="Control &amp; Descent" description="Provides protection from intense heat during re-entry." order="14" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="HeatShield1" position="0,0,0" rotation="0,0,0">
@@ -1199,7 +1538,7 @@
   <Part name="Hinge Rotator">
     <PartType id="HingeRotator1" includeInBodyDrag="true" name="Hinge Rotator" prefabPath="Craft/Parts/Prefabs/HingeRotator1.prefab" mass="50" price="30000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <JointRotator allowFreeSpin="false" angle="0" attachPointIndex="0" baseMode="Normal" currentAngle="0" damperMultiplier="1" maxRange="90" maxSpeed="270" minRange="0" range="90" soundVolume="0" speed="0.5" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Slider1" invert="false" invertOnMirror="false" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="false" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="false" inputId="Rotator" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -1212,7 +1551,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Hinge Rotator" category="Gizmos" description="Small motor that can rotate parts around a hinge." order="600" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,-45,0">
+      <DesignerPart name="Hinge Rotator" category="Electronics" description="Small motor that can rotate parts around a hinge." order="600" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,-45,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="HingeRotator1" position="0,0,0" rotation="-90,-90,0">
@@ -1237,7 +1576,7 @@
   <Part name="Inlet">
     <PartType id="Inlet1" includeInBodyDrag="true" name="Inlet" prefabPath="Craft/Parts/Prefabs/Inlet1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="0,0,0,0,0" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="22.5" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="22.5" collisionExplodeImpulse="2500" collisionExplodeVelocity="37.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Fuselage autoResize="true" bottomScale="0.5,0.5" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Inlet1" normalSmoothingAngle="60" offset="0,0.4,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.5,0.5" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Inlet inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -1302,7 +1641,7 @@
   <Part name="Ion Engine">
     <PartType id="IonEngine1" includeInBodyDrag="true" name="Ion Engine" prefabPath="Craft/Parts/Prefabs/IonEngine1.prefab" mass="50" price="100000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Engine electricalConsumption="245" fuelConsumption="0.000226524557" fuelConsumptionScale="1" fuelType="Xenon" gimbalRange="0" maxGimbalAngle="0" maxTorque="0" seaLevelEfficiency="1" supportsWarpBurn="true" thrust="20" vacuumEfficiency="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1338,7 +1677,7 @@
   <Part name="Jet Engine">
     <PartType id="JetEngine1" includeInBodyDrag="true" name="Jet Engine" prefabPath="Craft/Parts/Prefabs/JetEngine1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="true">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Fuselage autoResize="false" bottomScale="0.2,0.2" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="None" fuelPercentage="1" meshType="JetEngineShroud1" normalSmoothingAngle="60" offset="0,0.5,0" subpartIndex="1" supportsXZOffset="true" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolIgnore="true" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.3,0.3" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
         <JetEngine afterburnerThrottleStart="0.8" bypassRatio="0.5" compressionRatio="7" hasAfterburner="false" mass="0" price="0" shroudCurvature="0.6" shroudLength="1" size="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Inlet inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
@@ -1504,10 +1843,41 @@
       </SubpartStyles>
     </PartStyles>
   </Part>
+  <Part name="Label">
+    <PartType id="Label1" includeInBodyDrag="true" name="Label" prefabPath="Craft/Parts/Prefabs/Label1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Label designText="Text" fontSize="1" height="0.5" horizontalAlignment="Center" verticalAlignment="Middle" width="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPoint1" position="0,0,0" rotation="0,180,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" hidden="true" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Label" category="Command" description="Displays text. For labeling stuff, or whatever." order="1200" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="0,180,0" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="Label1" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <Label />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default" />
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
   <Part name="Landing Gear">
     <PartType id="LandingGear1" includeInBodyDrag="true" name="Landing Gear" prefabPath="Craft/Parts/Prefabs/LandingGear1.prefab" mass="20" price="30000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="true">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1E+10" collisionDisconnectVelocity="15" collisionExplodeImpulse="2E+10" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1E+10" collisionDisconnectVelocity="15" collisionExplodeImpulse="2E+10" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="BeforeDepthMask" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <LandingGear bayLength="1" brakeTorque="5000" damperScale="1" extensionPercent="1" flipped="false" forwardOffset="0" gearRatio="1.5" heightOffset="0" lengthScale="1" maxTurningAngle="0" retractionSpeed="1" showUpperBraces="true" sideOffset="0" size="1" slantAngle="0" springForceScale="1" startExtended="true" supportArmEnabled="true" suspensionTravel="0.25" torque="0" tractionForward="1" tractionSideways="1" verticalAngleOffset="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Yaw" invert="false" invertOnMirror="false" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="true" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Turn" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="true" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Motor" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
@@ -1523,7 +1893,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Landing Gear" category="Gizmos" description="Customizable landing gear." order="400" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="-20,150,0">
+      <DesignerPart name="Landing Gear" category="Control &amp; Descent" description="Customizable landing gear." order="400" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="-20,150,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="LandingGear1" position="0,0,0" rotation="0,180,0" activationGroup="8">
@@ -1603,7 +1973,7 @@
   <Part name="Landing Leg">
     <PartType id="LandingLeg1" includeInBodyDrag="true" name="Landing Leg" prefabPath="Craft/Parts/Prefabs/LandingLeg1.prefab" mass="5" price="10000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="3000" collisionDisconnectVelocity="45" collisionExplodeImpulse="6000" collisionExplodeVelocity="90" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="5" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="LandingLeg" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="3000" collisionDisconnectVelocity="45" collisionExplodeImpulse="6000" collisionExplodeVelocity="90" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="5" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="LandingLeg" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <LandingLeg currentExtensionPosition="-0.09,3.693428,0" currentRotation="0,0,0" deployedAngle="45" deployedExtensionY="5.15" deploySpeed="25" scale="1" startDeployed="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1614,7 +1984,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Landing Leg" category="Descent" description="Useful for landing without smashing your engine into the ground." order="0" showInDesigner="true" snapshotDistanceScaler="1.1" snapshotRotation="30,30,0">
+      <DesignerPart name="Landing Leg" category="Control &amp; Descent" description="Useful for landing without smashing your engine into the ground." order="0" showInDesigner="true" snapshotDistanceScaler="1.1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="LandingLeg1" position="0,0,0" rotation="0,-90,0">
@@ -1636,9 +2006,9 @@
     </PartStyles>
   </Part>
   <Part name="Light">
-    <PartType id="Light1" includeInBodyDrag="true" name="Light" prefabPath="Craft/Parts/Prefabs/Light1.prefab" mass="1" price="1000" partCollisions="Default" defaultMaterials="14,0,1,2,3" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <PartType id="Light1" includeInBodyDrag="true" name="Light" prefabPath="Craft/Parts/Prefabs/Light1.prefab" mass="1" price="1000" partCollisions="Default" defaultMaterials="21,0,1,2,3" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <LightPart extension="0" hideBase="false" intensity="1" powerConsumptionScale="1" range="250" rotation="0" spotLightAngle="30" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Light color="1,1,1,1" intensity="1" lightType="Spot" offsetX="0" offsetY="0" offsetZ="0" partGlow="true" partGlowSelfShadowCasting="true" range="250" rotationX="0" rotationY="0" rotationZ="0" spotLightAngle="60" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" />
       </Modifiers>
@@ -1650,7 +2020,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Light" category="Gizmos" description="Use these to help light your way." order="850" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="-30,0,-30" snapshotRotation="90,0,0">
+      <DesignerPart name="Light" category="Electronics" description="Use these to help light your way." order="850" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="-30,0,-30" snapshotRotation="90,0,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Light1" position="0,0,0" rotation="0,0,0">
@@ -1683,11 +2053,45 @@
       </SubpartStyles>
     </PartStyles>
   </Part>
+  <Part name="Mfd1">
+    <PartType id="Mfd1" includeInBodyDrag="true" name="Mfd1" prefabPath="Craft/Parts/Prefabs/Mfd1.prefab" mass="1" price="1000" partCollisions="Default" defaultMaterials="22,3,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Mfd height="0.5" maxTextureSize="256" maxWidgets="100" mfdProgram="Default" resolution="256" width="0.5" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <FlightProgram maxCallStackSize="100" maxInstructionsPerFrame="25" maxThreads="50" outputToDevConsole="false" timeSinceLaunch="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPoint1" displayName="Base" position="0,0,0" rotation="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="Multi-function Display" category="Command" description="Runs special Vizzy programs to display interactive widgets during flight." order="1100" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="Mfd1" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <Mfd />
+              <FlightProgram />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default" />
+        <Style id="HUD" displayName="HUD" hidden="true" />
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
   <Part name="Nose Cone">
     <PartType id="NoseCone1" includeInBodyDrag="true" name="Nose Cone" prefabPath="Craft/Parts/Prefabs/NoseCone1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Fuselage autoResize="true" bottomScale="0.8,0.8" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="Bottom" fuelPercentage="0" meshType="Cone1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" flattenNormals="Bottom" fuelPercentage="0" meshType="Cone1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0,0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <FuelTank autoFuelType="true" capacity="0" fuel="0" fuelType="LOX/RP1" priority="0" subPriority="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1784,8 +2188,8 @@
   <Part name="Parachute">
     <PartType id="Parachute1" includeInBodyDrag="true" name="Parachute" prefabPath="Craft/Parts/Prefabs/Parachute1.prefab" mass="28.8" price="10000" partCollisions="AutoDisablePerPart" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="AutoDisablePerPart" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="Parachute" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
-        <Parachute size="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="AutoDisablePerPart" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Parachute" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Parachute baseSize="1.25" size="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
         <AttachPoint name="AttachPoint1" displayName="Base" position="0,0,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" jointType="Rigid" />
@@ -1796,7 +2200,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Parachute" category="Descent" description="Activate these in an atmosphere to reduce your chances of rapid unplanned disassembly." order="0" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Parachute" category="Control &amp; Descent" description="Activate these in an atmosphere to reduce your chances of rapid unplanned disassembly." order="0" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Parachute1" position="0,0,0" rotation="0,0,0">
@@ -1837,7 +2241,7 @@
   <Part name="Piston">
     <PartType id="Piston1" includeInBodyDrag="true" name="Piston" prefabPath="Craft/Parts/Prefabs/Piston1.prefab" mass="50" price="10000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Piston currentPosition="0" cycle="false" extend="true" preventBreaking="false" range="0.5" scale="1" speed="0.5" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Slider1" invert="false" invertOnMirror="false" invertType="Axis" max="1" min="0" outputCurveOffset="0" showActivationGroup="false" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="false" inputId="Piston" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -1850,7 +2254,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Piston" category="Gizmos" description="Push parts away from each other with a customizable hydraulic piston." order="550" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
+      <DesignerPart name="Piston" category="Electronics" description="Push parts away from each other with a customizable hydraulic piston." order="550" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Piston1" position="0,0,0" rotation="0,0,0">
@@ -1875,7 +2279,7 @@
   <Part name="RCS Nozzle">
     <PartType id="RCSNozzle1" includeInBodyDrag="true" name="RCS Nozzle" prefabPath="Craft/Parts/Prefabs/RCSNozzle1.prefab" mass="1" price="5000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <ReactionControlNozzle fuelConsumptionRate="0.7" multiDirection="false" power="2000" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1886,7 +2290,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="RCS Nozzle" category="Gizmos" description="Reaction control nozzles help provide precise attitude control. Uses monopropellant." order="100" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,-45,0">
+      <DesignerPart name="RCS Nozzle" category="Control &amp; Descent" description="Reaction control nozzles help provide precise attitude control. Uses monopropellant." order="100" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,-45,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="RCSNozzle1" position="0,0,0" rotation="-90,-90,0" activationGroup="10">
@@ -1910,7 +2314,7 @@
   <Part name="Multi Directional RCS">
     <PartType id="RCSNozzle2" includeInBodyDrag="true" name="Multi Directional RCS" prefabPath="Craft/Parts/Prefabs/RCSNozzle2.prefab" mass="10" price="25000" partCollisions="Default" defaultMaterials="0,0,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <ReactionControlNozzle fuelConsumptionRate="0.7" multiDirection="true" power="2000" powerScale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -1921,7 +2325,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Multi Directional RCS" category="Gizmos" description="Reaction control nozzle that can gimbal and provide far greater control than a standard RCS nozzle. Some say it can do the work of five normal RCS nozzles." order="150" showInDesigner="true" snapshotDistanceScaler="0.65" snapshotRotation="30,30,0">
+      <DesignerPart name="Multi Directional RCS" category="Control &amp; Descent" description="Reaction control nozzle that can gimbal and provide far greater control than a standard RCS nozzle. Some say it can do the work of five normal RCS nozzles." order="150" showInDesigner="true" snapshotDistanceScaler="0.65" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="RCSNozzle2" position="-0.125,0.125,0" rotation="-90,0,0" activationGroup="10">
@@ -1945,7 +2349,7 @@
   <Part name="Rocket Engine">
     <PartType id="RocketEngine1" includeInBodyDrag="true" name="Rocket Engine" prefabPath="Craft/Parts/Prefabs/RocketEngine1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="true">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="1500" collisionExplodeVelocity="22.5" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <RocketEngine chamberPressure="1" engineSubTypeId="GasGenerator" engineTypeId="Liquid" exhaustScale="1" fuelType="LOX/RP1" gimbalRange="1" mass="0" nozzleSize="1" nozzleThroatSize="0.75" nozzleTypeId="Bell" price="1" size="1" supportsWarpBurn="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2035,10 +2439,43 @@
       </SubpartStyles>
     </PartStyles>
   </Part>
+  <Part name="RotatingNoseCone1">
+    <PartType id="RotatingNoseCone1" includeInBodyDrag="true" name="RotatingNoseCone1" prefabPath="Craft/Parts/Prefabs/RotatingNoseCone1.prefab" mass="20" price="5000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+      <Modifiers>
+        <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <SubPartRotator adjustableRate="true" currentEnabledPercent="0" designerIconEnabledPercent="0" disabledRotation="0,0,0" enabledRotation="-190,0,0" rotationRate="0.5" rotationSpeed="1" startEnabled="false" startEnabledLabel="Start Open" subPartPath="Parent/NoseCone" syncActivationGroup="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <KomodoNoseCone autoResize="true" defaultRadius="0.5375" scale="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
+      </Modifiers>
+      <AttachPoints>
+        <AttachPoint name="AttachPointBottom" displayName="Bottom" position="0,0,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" connectionType="Shell" />
+      </AttachPoints>
+      <SubpartTypes>
+        <SubpartType index="0" xmlName="" displayName="Part" />
+      </SubpartTypes>
+    </PartType>
+    <DesignerParts>
+      <DesignerPart name="RotatingNoseCone1" category="Command" description="" order="0" showInDesigner="false" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+        <Assembly>
+          <Parts>
+            <Part id="1" partType="RotatingNoseCone1" position="0,0,0" rotation="0,0,0">
+              <Config />
+              <SubPartRotator />
+              <KomodoNoseCone />
+            </Part>
+          </Parts>
+        </Assembly>
+      </DesignerPart>
+    </DesignerParts>
+    <PartStyles>
+      <SubpartStyles subpartIndex="0">
+        <Style id="Default" displayName="Default" />
+      </SubpartStyles>
+    </PartStyles>
+  </Part>
   <Part name="Rotator">
     <PartType id="Rotator1" includeInBodyDrag="true" name="Rotator" prefabPath="Craft/Parts/Prefabs/Rotator1.prefab" mass="50" price="30000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <JointRotator allowFreeSpin="true" angle="0" attachPointIndex="0" baseMode="Normal" currentAngle="0" damperMultiplier="1" maxRange="180" maxSpeed="270" minRange="0" range="90" soundVolume="0" speed="0.5" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Slider1" invert="false" invertOnMirror="true" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="false" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="false" inputId="Rotator" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
@@ -2051,7 +2488,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Rotator" category="Gizmos" description="Small motor that can rotate parts." order="650" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,-45,0">
+      <DesignerPart name="Rotator" category="Electronics" description="Small motor that can rotate parts." order="650" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,-45,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Rotator1" position="0,0,0" rotation="-90,-90,0">
@@ -2076,7 +2513,7 @@
   <Part name="Rover Wheel">
     <PartType id="RoverWheel1" includeInBodyDrag="true" name="Rover Wheel" prefabPath="Craft/Parts/Prefabs/RoverWheel1.prefab" mass="20" price="30000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="true">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="20000" collisionDisconnectVelocity="300" collisionExplodeImpulse="40000" collisionExplodeVelocity="600" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="100" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="20000" collisionDisconnectVelocity="300" collisionExplodeImpulse="40000" collisionExplodeVelocity="600" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="100" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <ResizableWheel brakeTorque="2500" damper="1" direction="Normal" enableSuspension="false" gearRatio="1.5" maxAngularVelocity="300" maxRpm="2000" size="1.5" slipForwardAsymptote="0" slipForwardExtremum="0" slipSidewaysAsymptote="0" slipSidewaysExtremum="0" spring="1" torque="1000" tractionForward="1" tractionSideways="1" turningAngle="0" turningRate="150" width="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Yaw" invert="false" invertOnMirror="false" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="true" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Turn" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="-1" outputCurveOffset="0" showActivationGroup="true" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Motor" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
@@ -2091,7 +2528,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Rover Wheel" category="Gizmos" description="Resizable wheels that have a built-in electric motor. " order="450" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <DesignerPart name="Rover Wheel" category="Control &amp; Descent" description="Resizable wheels that have a built-in electric motor. " order="450" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="RoverWheel1" position="0,0,0" rotation="0,90,0">
@@ -2196,7 +2633,7 @@
   <Part name="Shock">
     <PartType id="Shock1" includeInBodyDrag="true" name="Shock" prefabPath="Craft/Parts/Prefabs/Shock1.prefab" mass="25" price="5000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="3000" collisionExplodeVelocity="45" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="3000" collisionExplodeVelocity="45" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Suspension damper="1" preventBreaking="false" size="1" spring="1" thickness="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2208,7 +2645,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Shock" category="Gizmos" description="Shocks are useful when you want to soften impact with terra firma." order="500" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
+      <DesignerPart name="Shock" category="Control &amp; Descent" description="Shocks are useful when you want to soften impact with terra firma." order="500" showInDesigner="true" snapshotDistanceScaler="1.25" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Shock1" position="0,0,0" rotation="0,0,0">
@@ -2230,9 +2667,9 @@
     </PartStyles>
   </Part>
   <Part name="Solar Panel">
-    <PartType id="SolarPanel1" includeInBodyDrag="true" name="Solar Panel" prefabPath="Craft/Parts/Prefabs/SolarPanel1.prefab" mass="1" price="10000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <PartType id="SolarPanel1" includeInBodyDrag="true" name="Solar Panel" prefabPath="Craft/Parts/Prefabs/SolarPanel1.prefab" mass="1" price="10000" partCollisions="Default" defaultMaterials="0,20,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="500" collisionDisconnectVelocity="7.5" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="500" collisionDisconnectVelocity="7.5" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <SolarPanel efficiency="0.46" length="1.3" width="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2243,7 +2680,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Solar Panel" category="Gizmos" description="Single, stationary solar panel that can be resized." order="200" showInDesigner="true" snapshotDistanceScaler="1.2" snapshotRotation="30,-45,0">
+      <DesignerPart name="Solar Panel" category="Electronics" description="Single, stationary solar panel that can be resized." order="200" showInDesigner="true" snapshotDistanceScaler="1.2" snapshotRotation="30,-45,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="SolarPanel1" position="0,0,0" rotation="-90,-90,0">
@@ -2267,9 +2704,9 @@
     </PartStyles>
   </Part>
   <Part name="Solar Panel Array">
-    <PartType id="SolarPanelArray" includeInBodyDrag="true" name="Solar Panel Array" prefabPath="Craft/Parts/Prefabs/SolarPanelArray.prefab" mass="1" price="10000" partCollisions="AutoDisablePerPart" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <PartType id="SolarPanelArray" includeInBodyDrag="true" name="Solar Panel Array" prefabPath="Craft/Parts/Prefabs/SolarPanelArray.prefab" mass="1" price="10000" partCollisions="AutoDisablePerPart" defaultMaterials="0,20,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="AutoDisablePerPart" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="AutoDisablePerPart" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <SolarPanelArray deploySpeed="1" efficiency="0.46" mainOpenPercentage="0" open="false" openingSideDepth="0" rows="3" rowSize="3" scale="1" sideOpenPercentage="0" startOpen="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2281,7 +2718,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Solar Panel Array" category="Gizmos" description="Configurable solar panel array that stows away into a remarkably small space." order="250" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,-45,0">
+      <DesignerPart name="Solar Panel Array" category="Electronics" description="Configurable solar panel array that stows away into a remarkably small space." order="250" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,-45,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="SolarPanelArray" position="0,0,0" rotation="-90,-90,0" activationGroup="9">
@@ -2314,7 +2751,7 @@
   <Part name="Structural Panel">
     <PartType id="StructuralPanel1" includeInBodyDrag="true" name="Structural Panel" prefabPath="Craft/Parts/Prefabs/StructuralPanel1.prefab" mass="2" price="5000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0.05" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0.05" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Wing airfoil="Symmetric" allowControlSurfaces="false" angleOfAttack="0" density="1" fuelPercentage="0" hingeDistanceFromTrailingEdge="0.3" invertAirfoil="false" minSectionLength="0.5" rootLeadingOffset="0.4" rootTrailingOffset="0.4" tipLeadingOffset="0.4" tipPosition="0,2.5,0" tipTrailingOffset="0.4" wingPhysicsEnabled="false" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2355,7 +2792,7 @@
   <Part name="Strut">
     <PartType id="Strut1" includeInBodyDrag="true" name="Strut" prefabPath="Craft/Parts/Prefabs/Strut1.prefab" mass="1" price="0" partCollisions="Default" defaultMaterials="2,2,2,2,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="30" collisionExplodeImpulse="4000" collisionExplodeVelocity="60" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Fuselage autoResize="true" bottomScale="0.2,0.2" buoyancy="0" cornerRadiuses="0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5" deadWeight="0" flattenNormals="None" fuelPercentage="0" meshType="Body1" normalSmoothingAngle="60" offset="0,1,0" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="true" topScale="0.1,0.1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2371,7 +2808,7 @@
       <DesignerPart name="Strut" category="Structural" description="Resizable strut that can help bolster your crafts." order="0" showInDesigner="true" snapshotDistanceScaler="1.1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
-            <Part id="1" partType="Strut1" position="0,0,0" rotation="0,0,0">
+            <Part id="1" partType="Strut1" position="0,0,0" rotation="0,0,0" texture="Fuselage11">
               <Config />
               <Fuselage />
             </Part>
@@ -2419,7 +2856,7 @@
   <Part name="TestPilot">
     <PartType id="TestPilot" includeInBodyDrag="false" name="TestPilot" prefabPath="Craft/Parts/Prefabs/TestPilot.prefab" mass="100" price="25000" partCollisions="Default" allowDesignerReorientationOnPullout="false" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="2.4" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="2.4" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="OmniDirectional" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="true" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <TestPilot anchorFeet="false" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
@@ -2431,7 +2868,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Test Dummy" category="Gizmos" description="Human like device that can be used to monitor the safety of your crafts." order="900" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="0,210,0">
+      <DesignerPart name="Test Dummy" category="Command" description="Human like device that can be used to monitor the safety of your crafts." order="200" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="0,210,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="TestPilot" position="0,0,0" rotation="0,0,0">
@@ -2466,12 +2903,12 @@
   <Part name="Wing">
     <PartType id="Wing1" includeInBodyDrag="false" name="Wing" prefabPath="Craft/Parts/Prefabs/Wing1.prefab" mass="2" price="10000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
       <Modifiers>
-        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0.05" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0.05" buoyancyUserScale="1" centerOfMass="0,0,0" collisionDisconnectImpulse="1000" collisionDisconnectVelocity="15" collisionExplodeImpulse="2000" collisionExplodeVelocity="30" collisionPreventExternalDisconnections="false" collisionVelocityMode="NormalOnly" dragScale="1" fuelLine="false" heatShield="0" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" massScale="1" maxDamage="100" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" preventDebris="false" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <Wing airfoil="Symmetric" allowControlSurfaces="true" angleOfAttack="0" density="1" fuelPercentage="1" hingeDistanceFromTrailingEdge="0.3" invertAirfoil="false" minSectionLength="0.5" rootLeadingOffset="1.2" rootTrailingOffset="1.2" tipLeadingOffset="0.2" tipPosition="0,6,-0.6" tipTrailingOffset="0.6" wingPhysicsEnabled="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
         <ControlSurface deflectionSpeed="1" designerAutoAxesInfo="n/a" end="12" input="Auto" invert="false" maxDeflectionDegree="35" singleAxisWhenAuto="true" start="5" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" />
       </Modifiers>
       <AttachPoints>
-        <AttachPoint name="AttachPoint1" displayName="Tip" position="0,0,0" rotation="270,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="false" ignoreSurfaces="false" />
+        <AttachPoint name="AttachPoint1" displayName="Tip" position="0,0,0" rotation="270,180,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="false" ignoreSurfaces="false" />
         <AttachPoint name="AttachPoint2" displayName="Base" position="0,0,0" rotation="90,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
       </AttachPoints>
       <SubpartTypes>
@@ -2480,7 +2917,7 @@
       </SubpartTypes>
     </PartType>
     <DesignerParts>
-      <DesignerPart name="Wing" category="Descent" description="Large wing section designed with airplanes in mind." order="1" showInDesigner="true" snapshotDistanceScaler="1.1" snapshotRotation="30,30,0">
+      <DesignerPart name="Wing" category="Control &amp; Descent" description="Large wing section designed with airplanes in mind." order="1" showInDesigner="true" snapshotDistanceScaler="1.1" snapshotRotation="30,30,0">
         <Assembly>
           <Parts>
             <Part id="1" partType="Wing1" position="0,0,0" rotation="-90,-90,0">

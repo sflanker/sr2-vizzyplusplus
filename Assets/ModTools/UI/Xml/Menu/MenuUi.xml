@@ -39,10 +39,14 @@
       <Button class="icon-button btn-primary" width="50" height="50" iconColor="White" icon="Ui/Sprites/Menu/IconButtonPlay" rectAlignment="MiddleCenter" offsetXY="0 0" onClick="OnLaunchButtonClicked();" tooltip="Start Playing!" tooltipPosition="Above" />
       <Button class="icon-button" width="50" height="50" icon="Ui/Sprites/Common/IconButtonLoad" rectAlignment="MiddleCenter" offsetXY="80 0" onClick="OnLoadCraftButtonClicked();" tooltip="Load a different craft" tooltipPosition="Above" />
     </Panel>
-    <Panel id="whats-new" active="false" color="Panel" border="Border" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="500" height="90%" offsetXY="-20 -20" pivot="1 1">
+    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonWhatsNew" rectAlignment="UpperRight" offsetXY="-20 -20" onClick="OnWhatsNewButtonClicked();" />
+    <Panel id="whats-new" active="false" color="Panel" border="Border" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="500" height="100%" pivot="1 1">
       <TextMeshPro ignoreLayout="true" text="WHAT'S NEW" fontSize="18" color="LabelText" offsetXY="0 0" height="50" rectAlignment="UpperCenter" />
       <Button class="btn btn-primary" rectAlignment="UpperLeft" width="100" offsetXY="10 -12" height="25" onClick="OnRoadmapButtonClicked();" tooltip="Check out what we're working on next." tooltipPosition="Above">
         <TextMeshPro text="ROADMAP" />
+      </Button>
+      <Button class="btn btn-default" rectAlignment="UpperRight" width="100" offsetXY="-10 -12" height="25" onClick="OnWhatsNewButtonClicked();">
+        <TextMeshPro text="CLOSE" />
       </Button>
       <RectTransform>
         <RectTransform>
@@ -54,7 +58,6 @@
         </RectTransform>
       </RectTransform>
     </Panel>
-    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonWhatsNew" rectAlignment="UpperRight" offsetXY="-20 -20" onClick="OnWhatsNewButtonClicked();" />
     <VerticalLayout id="file-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="20" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperLeft" width="225" childForceExpandHeight="false" offsetXY="20 -20" spacing="10" pivot="0 1">
       <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
       <Panel class="no-image" preferredHeight="30" />

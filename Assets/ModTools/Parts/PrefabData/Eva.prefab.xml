@@ -9,6 +9,7 @@
   <GameObject name="Root">
     <Component type="UnityEngine.Animator" />
     <Component type="Assets.Scripts.Craft.Parts.Modifiers.Eva.TransformInfoScript" />
+    <Component type="RootMotion.FinalIK.FullBodyBipedIK" />
     <GameObject name="Offset">
       <GameObject name="SkinnedMesh">
         <Component type="UnityEngine.SkinnedMeshRenderer" />
@@ -94,6 +95,7 @@
                 <GameObject name="LeftShoulder">
                   <GameObject name="LeftElbow">
                     <GameObject name="LeftHand">
+                      <Component type="RootMotion.FinalIK.HandPoser" />
                       <GameObject name="LeftIndexFinger">
                         <GameObject name="LeftIndexFingerUpper">
                           <GameObject name="LeftIndexFingerLower" />
@@ -132,6 +134,7 @@
                 <GameObject name="RightShoulder">
                   <GameObject name="RightElbow">
                     <GameObject name="RightHand">
+                      <Component type="RootMotion.FinalIK.HandPoser" />
                       <GameObject name="RightIndexFinger">
                         <GameObject name="RightIndexFingerUpper">
                           <GameObject name="RightIndexFingerLower" />

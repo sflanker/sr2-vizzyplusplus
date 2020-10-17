@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CockpitCanopy1" path="Craft/Parts/Prefabs/CockpitCanopy1.prefab">
+  <GameObject name="Offset">
+    <GameObject name="BaseCollider">
+      <Component type="UnityEngine.CapsuleCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="CockpiCanopyFrameBack">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="CockpitBaseGlass">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="RotatingCanopy">
+      <GameObject name="Collider">
+        <Component type="UnityEngine.CapsuleCollider" />
+        <Component type="ModApi.Craft.Parts.PartColliderScript" />
+      </GameObject>
+      <GameObject name="ColliderRight">
+        <Component type="UnityEngine.CapsuleCollider" />
+        <Component type="ModApi.Craft.Parts.PartColliderScript" />
+      </GameObject>
+      <GameObject name="ColliderLeft">
+        <Component type="UnityEngine.CapsuleCollider" />
+        <Component type="ModApi.Craft.Parts.PartColliderScript" />
+      </GameObject>
+      <GameObject name="CockpitCanopyFrame">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+      <GameObject name="CockpitCanopyGlass">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+    </GameObject>
+  </GameObject>
+</GameObject>

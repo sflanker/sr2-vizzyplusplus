@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="list-item" />
+    <Image class="list-item-highlight" color="#00000000" hoverClass="list-item-hover" pressClass="list-item-press" onClick="OnListItemClicked(this);" />
+    <Image class="list-item-hover" color="Button" />
+    <Image class="list-item-press" color="ButtonHover" />
+    <Image class="selected&gt;list-item-highlight" color="Primary" />
+    <Image class="selected&gt;list-item-hover" color="Primary" />
+    <ContentButton class="context-button" width="40" height="35" navigation="None" tooltipPosition="Above" rectAlignment="MiddleLeft" />
+    <Image class="header-arrow" color="LabelText" pivot="0.5 0.5" offsetXY="10 0" sprite="Ui/Sprites/Common/IconTriangleRight" width="12" height="12" rectAlignment="MiddleLeft" rotation="0 0 -90" />
+    <Image class="collapsed:header-arrow" rotation="0 0 0" />
+    <TextMeshPro class="name-text" offsetMin="50 0" alignment="Left" color="ValueText" />
+    <Image class="element-icon" width="20" height="20" offsetXY="25 0" rectAlignment="MiddleLeft" />
+    <Image class="icon-pass" sprite="Ui/Sprites/PlanetStudio/IconNoisePass" color="LabelText" />
+    <Image class="icon-container" sprite="Ui/Sprites/PlanetStudio/IconNoiseContainer" color="LabelText" />
+    <Image class="icon-modifier" sprite="Ui/Sprites/PlanetStudio/IconNoiseModifier" color="#4eff5a" />
+    <TextMeshPro class="disabled:name-text" color="#808697ff" />
+    <Image class="hide-button&gt;@Image" sprite="Ui/Sprites/PlanetStudio/IconNoiseShowEmpty" />
+    <Image class="enabled&gt;@Image" sprite="Ui/Sprites/PlanetStudio/IconNoiseHideEmpty" />
+    <Image class="data-marker" pivot="0 1" anchorMin="0 0" anchorMax="0 0" ignoreLayout="true" raycastTarget="true" tooltipPosition="Above" tooltipDelayTime="0" />
+    <Image class="data-output" sprite="Ui/Sprites/PlanetStudio/DataSlotOutput" width="16" color="Primary" type="Sliced" hoverClass="hover-data-output" />
+    <Image class="hover-data-output" color="PrimaryHover" />
+    <Image class="data-input" sprite="Ui/Sprites/PlanetStudio/DataSlotInput" width="16" height="16" color="Green" />
+    <Image class="input-color-1" color="Warning" />
+    <Image class="input-color-2" color="Yellow" />
+    <Image class="input-color-3" color="#d56fff" />
+    <Image class="data-flow-grid" sprite="Ui/Sprites/PlanetStudio/DataSlotGridRow" pivot="0 0" width="205" height="16" rectAlignment="MiddleRight" offsetXY="-220 -8" color="#3e454a" />
+    <Image class="biome-pass" sprite="" color="#3e454a" tooltip="Data from previous passes are not automatically available to biome passes. GetCommonData must be used to pull data from a previous common pass into a biome pass. Also, a biome's data is reset after each pass and biomes cannot share data." />
+    <Image class="main-panel:data-flow-grid" active="false" />
+    <Image class="hidden" active="false" />
+    <Image class="data-flow-enabled:data-flow-grid" active="true" />
+    <Image class="icon-view-mode" sprite="Ui/Sprites/Common/IconFeatures" />
+    <Image class="icon-view-mode-advanced" sprite="Ui/Sprites/Common/IconNoise" />
+  </Defaults>
+  <Panel id="main-panel" class="main-panel no-image" offsetMin="0 40">
+    <VerticalScrollView id="scroll-view" class="no-image" rectAlignment="UpperCenter">
+      <VerticalLayout class="no-image" childForceExpandHeight="false" padding="0" spacing="0" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperCenter" rectAlignment="UpperLeft">
+        <Panel id="row-template" class="no-image list-item audio-btn-click" preferredHeight="32" active="false">
+          <Image class="list-item-highlight" raycastTarget="true" width="350" rectAlignment="MiddleLeft" />
+          <Panel internalId="inner-panel">
+            <Image internalId="arrow" class="header-arrow" raycastTarget="true" />
+            <Image internalId="icon" class="element-icon" />
+            <TextMeshPro internalId="name" class="name-text" text="Name" />
+            <Image class="data-flow-grid" internalId="grid" />
+          </Panel>
+          <Image class="border" height="1" rectAlignment="LowerCenter" />
+        </Panel>
+        <Panel name="insert-indicator" id="insert-indicator" raycastTarget="false" preferredHeight="0" active="false">
+          <Image color="Primary" raycastTarget="false" height="2" />
+        </Panel>
+        <Panel id="data-flow-panel" ignoreLayout="true">
+          <Image id="template-data-output" class="data-marker data-output" active="false" />
+          <Image id="template-data-input" class="data-marker data-input" active="false" />
+        </Panel>
+      </VerticalLayout>
+    </VerticalScrollView>
+  </Panel>
+  <HorizontalLayout color="DarkPanel" offsetXY="-1 0" height="40" rectAlignment="LowerCenter" spacing="0">
+    <ContentButton class="btn btn-primary context-button view-basic" onClick="OnViewModeButtonClicked();" tooltip="Currently viewing basic terrain features. Click to switch to the advanced view and see all terrain generation modifiers.">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconFeatures" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button view-advanced" onClick="OnViewModeButtonClicked();" tooltip="Currently viewing advanced terrain generation modifiers. Click to switch to viewing basic terrain features.">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconFeatures" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button view-advanced" onClick="OnAddButtonClicked();" tooltip="Add New Noise Modifier">
+      <Image sprite="Ui/Sprites/Common/IconAdd" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button view-advanced" offsetXY="40 0" onClick="OnAddContainerButtonClicked();" tooltip="Add New Container">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconNoiseAddContainer" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button view-advanced" offsetXY="120 0" onClick="OnDuplicateButtonClicked();" tooltip="Duplicates the selected element.">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconNoiseDuplicateNode" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton id="delete-button" class="btn context-button visible-selected view-advanced" onClick="OnDeleteButtonClicked();" tooltip="Delete selected object.">
+      <Image sprite="Ui/Sprites/Menu/IconButtonTrash" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button" offsetXY="80 0" onClick="OnRandomizeButtonClicked();" tooltip="Randomizes the selected element's seed (and all children if there are any).">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconNoiseRandomizeNode" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button" offsetXY="80 0" onClick="OnExpandButtonClicked();" tooltip="Expand selected element (and all children if there are any).">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconNoiseExpandNode" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton class="btn context-button" offsetXY="120 0" onClick="OnCollapseButtonClicked();" tooltip="Collapse selected element (and all children if there are any).">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconNoiseCollapseNode" internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton id="hide-empty-button" class="btn context-button hide-button enabled view-advanced" offsetXY="160 0" onClick="OnHideEmptyButtonClicked();" tooltip="Hide/show passes that are empty.">
+      <Image internalId="image" width="20" height="20" />
+    </ContentButton>
+    <ContentButton id="toggle-data-flow-button" class="btn context-button hide-button view-advanced" offsetXY="200 0" onClick="OnToggleDataFlowButtonClicked();" tooltip="Toggle the data flow display.">
+      <Image sprite="Ui/Sprites/PlanetStudio/IconNoiseShowDataFlow" internalId="image" width="20" height="20" />
+    </ContentButton>
+  </HorizontalLayout>
+  <Panel id="drag-parent" class="no-image" active="true"></Panel>
+</XmlLayout>

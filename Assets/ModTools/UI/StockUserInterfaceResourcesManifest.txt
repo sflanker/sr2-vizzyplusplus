@@ -37,7 +37,16 @@ UnityEngine.GameObject
    Prefabs/TableLayout/Row
    Prefabs/TableLayout/TableLayout
    Ui/InspectorPanel
+   Ui/Prefabs/CurveEditor
    Ui/Prefabs/Dialog
+   Ui/Prefabs/GradientEditor
+   Ui/Prefabs/Mfd/MfdLabel
+   Ui/Prefabs/Mfd/MfdLine
+   Ui/Prefabs/Mfd/MfdMap
+   Ui/Prefabs/Mfd/MfdNavball
+   Ui/Prefabs/Mfd/MfdRadialGauge
+   Ui/Prefabs/Mfd/MfdSprite
+   Ui/Prefabs/Mfd/MfdTexture
    Ui/Prefabs/Navball
    Ui/Prefabs/XmlLayout/BasicCanvas
    Ui/Prefabs/XmlLayout/BasicGridLayout
@@ -47,6 +56,7 @@ UnityEngine.GameObject
    Ui/Prefabs/XmlLayout/BasicVerticalLayout
    Ui/Prefabs/XmlLayout/BasicVerticalScrollView
    Ui/Prefabs/XmlLayout/ContentButton
+   Ui/Prefabs/XmlLayout/Dropdown
    Ui/Prefabs/XmlLayout/ImagePanel
    Ui/Prefabs/XmlLayout/RectTransform
    Ui/Prefabs/XmlLayout/Slider
@@ -119,13 +129,16 @@ UnityEngine.TextAsset
    Ui/Xml/Mods/RequiredModsDialog
    Ui/Xml/PlanetStudio/BiomesFlyout
    Ui/Xml/PlanetStudio/CelestialBodyDesigner
+   Ui/Xml/PlanetStudio/FeaturesFlyout
    Ui/Xml/PlanetStudio/InspectorModelFlyout
    Ui/Xml/PlanetStudio/Menu
    Ui/Xml/PlanetStudio/MenuFlyout
+   Ui/Xml/PlanetStudio/NoiseFlyout
    Ui/Xml/PlanetStudio/PlanetObjectsFlyout
    Ui/Xml/PlanetStudio/PlanetStudioUI
    Ui/Xml/PlanetStudio/SystemLaunchLocationsFlyout
    Ui/Xml/PlanetStudio/TexturesFlyout
+   Ui/Xml/PlanetStudio/UndoHistoryFlyout
    Ui/Xml/ScenarioDialog
    Ui/Xml/Settings/AxisCalibratorDialog
    Ui/Xml/Settings/BindInputDialog
@@ -167,6 +180,8 @@ UnityEngine.Sprite
    Ui/Sprites/Common/CircleBorder
    Ui/Sprites/Common/ColorPickerWheel
    Ui/Sprites/Common/DefaultAlbumThumbnail
+   Ui/Sprites/Common/DropdownArrow
+   Ui/Sprites/Common/Grid-32
    Ui/Sprites/Common/IconAdd
    Ui/Sprites/Common/IconArrowUp
    Ui/Sprites/Common/IconButtonAperture
@@ -386,14 +401,44 @@ UnityEngine.Sprite
    Ui/Sprites/Panel-Angled
    Ui/Sprites/Panel-Pin
    Ui/Sprites/Panel
+   Ui/Sprites/PlanetStudio/DataSlotGridRow
+   Ui/Sprites/PlanetStudio/DataSlotInput
+   Ui/Sprites/PlanetStudio/DataSlotOutput
    Ui/Sprites/PlanetStudio/IconAddLaunchLocation
    Ui/Sprites/PlanetStudio/IconAddStructure
    Ui/Sprites/PlanetStudio/IconAltitudeBiomes
    Ui/Sprites/PlanetStudio/IconButtonBrush
    Ui/Sprites/PlanetStudio/IconButtonProperties
+   Ui/Sprites/PlanetStudio/IconCameraRecenter
+   Ui/Sprites/PlanetStudio/IconCopy
+   Ui/Sprites/PlanetStudio/IconEdit
+   Ui/Sprites/PlanetStudio/IconFeatures
+   Ui/Sprites/PlanetStudio/IconNoise
+   Ui/Sprites/PlanetStudio/IconNoiseAddContainer
+   Ui/Sprites/PlanetStudio/IconNoiseCollapseNode
+   Ui/Sprites/PlanetStudio/IconNoiseContainer
+   Ui/Sprites/PlanetStudio/IconNoiseDuplicateNode
+   Ui/Sprites/PlanetStudio/IconNoiseExpandNode
+   Ui/Sprites/PlanetStudio/IconNoiseHideEmpty
+   Ui/Sprites/PlanetStudio/IconNoiseModifier
+   Ui/Sprites/PlanetStudio/IconNoisePass
+   Ui/Sprites/PlanetStudio/IconNoiseRandomizeNode
+   Ui/Sprites/PlanetStudio/IconNoiseShowDataFlow
+   Ui/Sprites/PlanetStudio/IconNoiseShowEmpty
    Ui/Sprites/PlanetStudio/IconPlanetObjects
+   Ui/Sprites/PlanetStudio/IconRebuildPlanet
+   Ui/Sprites/PlanetStudio/IconRebuildPlanetFull
    Ui/Sprites/PlanetStudio/IconTerrainTextures
+   Ui/Sprites/PlanetStudio/IconTrash
    Ui/Sprites/PlanetStudio/IconViewTarget
+   Ui/Sprites/PlanetStudio/IconWater
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Asteroid
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Desert Planet
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Earth Analog
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Gas Giant
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Ice Planet
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Lava Planet
+   Ui/Sprites/PlanetStudio/PlanetTemplates/Moon
    Ui/Sprites/Settings/CalibrationArrow
    Ui/Sprites/Settings/graphic-center-stick
    Ui/Sprites/Settings/graphic-move-stick
@@ -404,6 +449,7 @@ UnityEngine.Sprite
    Ui/Vizzy/Instruction
    Ui/Vizzy/InstructionBlock
    Ui/Vizzy/InstructionBlockBottom
+   Ui/Vizzy/ListItemTypeBool
    Ui/Vizzy/ListItemTypeDegrees
    Ui/Vizzy/ListItemTypeList
    Ui/Vizzy/ListItemTypeNone
@@ -411,6 +457,8 @@ UnityEngine.Sprite
    Ui/Vizzy/ListItemTypeRadians
    Ui/Vizzy/ListItemTypeText
    Ui/Vizzy/ListItemTypeVector
+   Ui/Vizzy/RadialGauge
+   Ui/Vizzy/RadialGaugeNeedle
    Ui/Vizzy/TextExpression
    Ui/Vizzy/ToolboxIconCraft
    Ui/Vizzy/ToolboxIconCustomExpressions
@@ -419,6 +467,7 @@ UnityEngine.Sprite
    Ui/Vizzy/ToolboxIconExpressions
    Ui/Vizzy/ToolboxIconFlow
    Ui/Vizzy/ToolboxIconLists
+   Ui/Vizzy/ToolboxIconMfd
    Ui/Vizzy/ToolboxIconOperators
    Ui/Vizzy/ToolboxIconVariables
 
@@ -465,7 +514,13 @@ UnityEditor.DefaultAsset
 
 UnityEngine.Material
    Ui/Materials/ColorPickerMaterial
+   Ui/Materials/GradientMaterial
+   Ui/Prefabs/Mfd/Mfd-Roboto-Regular-SDF
+   Ui/Prefabs/Mfd/MfdHudMaskMaterial
+   Ui/Prefabs/Mfd/MfdMaskMaterial
+   Ui/Prefabs/Mfd/MfdUIMaterial
 
 UnityEngine.Shader
    Ui/Materials/ColorPickerShader
+   Ui/Materials/GradientShader
 

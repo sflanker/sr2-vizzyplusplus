@@ -1742,6 +1742,7 @@
           <xs:enumeration value="CaplineJustified" />
           <xs:enumeration value="CaplineFlush" />
           <xs:enumeration value="CaplineGeoAligned" />
+          <xs:enumeration value="Converted" />
         </xs:restriction>
       </xs:simpleType>
     </xs:union>

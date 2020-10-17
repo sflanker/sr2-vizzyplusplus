@@ -37,7 +37,7 @@ namespace Assets.Scripts {
                         ModApi.Common.Game.Instance.UserInterface.ResourceDatabase.GetResource<TextAsset>("VizzyPlusPlus/Vizzy/VizzyPlusPlusToolbox");
                     if (vizzyGLToolboxXml != null) {
                         _vizzyGLToolbox =
-                            new VizzyToolbox(XElement.Parse(vizzyGLToolboxXml.text));
+                            new VizzyToolbox(XElement.Parse(vizzyGLToolboxXml.text), false);
                     } else {
                         Debug.Log("VizzyPlusPlus: The VizzyPlusPlusToolbox Resource Was Not Found.");
                     }
@@ -52,7 +52,6 @@ namespace Assets.Scripts {
                 typeof(VizzyToolbox).GetField("_colors", BindingFlags.NonPublic | BindingFlags.Instance);
             VizzyToolboxStylesField =
                 typeof(VizzyToolbox).GetField("_styles", BindingFlags.NonPublic | BindingFlags.Instance);
-
             ModExpressionAndInstructions = new Dictionary<string, (Type, Func<ProgramNode>)> {
                 { NumericConstantExpression.XmlName, (typeof(NumericConstantExpression), () => new NumericConstantExpression()) },
                 { OrbitalElementExpression.XmlName, (typeof(OrbitalElementExpression), () => new OrbitalElementExpression()) },

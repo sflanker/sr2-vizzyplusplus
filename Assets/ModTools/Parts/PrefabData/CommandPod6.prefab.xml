@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CommandPod6" path="Craft/Parts/Prefabs/CommandPod6.prefab">
+  <GameObject name="PodParent">
+    <Component type="UnityEngine.AudioSource" />
+    <GameObject name="CommandPodCollider">
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="CommandPod">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="AttachPointPositions">
+      <GameObject name="AttachPointBottomLoad" />
+      <GameObject name="AttachPointTop" />
+      <GameObject name="AttachPointBottom" />
+    </GameObject>
+  </GameObject>
+</GameObject>

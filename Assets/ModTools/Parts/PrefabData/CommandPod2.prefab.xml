@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CommandPod2" path="Craft/Parts/Prefabs/CommandPod2.prefab">
+  <GameObject name="PodParent">
+    <GameObject name="Engines">
+      <GameObject name="LoopingAudio">
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.LoopingAudioScript" />
+      </GameObject>
+      <GameObject name="Nozzle-0">
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+        <GameObject name="ExhaustParticleSystem">
+          <Component type="UnityEngine.ParticleSystem" />
+          <Component type="UnityEngine.ParticleSystemRenderer" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="Nozzle-1">
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+        <GameObject name="ExhaustParticleSystem">
+          <Component type="UnityEngine.ParticleSystem" />
+          <Component type="UnityEngine.ParticleSystemRenderer" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="Nozzle-2">
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+        <GameObject name="ExhaustParticleSystem">
+          <Component type="UnityEngine.ParticleSystem" />
+          <Component type="UnityEngine.ParticleSystemRenderer" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="Nozzle-3">
+        <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.EngineNozzleScript" />
+        <GameObject name="ExhaustParticleSystem">
+          <Component type="UnityEngine.ParticleSystem" />
+          <Component type="UnityEngine.ParticleSystemRenderer" />
+          <Component type="Assets.Scripts.Craft.Parts.Modifiers.Propulsion.ParticleExhaustSystemScript" />
+        </GameObject>
+      </GameObject>
+    </GameObject>
+    <GameObject name="DragonNoseCone">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="DragonBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="SurfaceCollider">
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.EnabledScript" />
+    </GameObject>
+    <GameObject name="AttachPointPositions">
+      <GameObject name="AttachPointTop" />
+      <GameObject name="AttachPointTopLoad" />
+      <GameObject name="AttachPointBottom" />
+      <GameObject name="AttachPointBottomLoad" />
+    </GameObject>
+  </GameObject>
+</GameObject>

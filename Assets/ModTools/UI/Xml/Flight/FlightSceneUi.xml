@@ -76,11 +76,11 @@
         <!-- Map controls -->
         <Panel class="map-controls" width="33" height="115" color="InstrumentsBackground" offsetXY="-141.5 76">
           <Panel rectAlignment="UpperLeft" width="17" height="17" offsetXY="5 -5" color="InstrumentsPrimary">
-            <TextMeshPro text="+" alignment="MidlineGeoAligned" fontSize="23" />
+            <TextMeshPro text="+" alignment="CenterGeoAligned" fontSize="23" />
             <Panel width="35" height="35" offsetXY="4 -4" raycastTarget="true" onClick="IncreaseMapZoom();" />
           </Panel>
           <Panel rectAlignment="LowerLeft" width="17" height="17" offsetXY="5 2" color="InstrumentsPrimary" raycastTarget="true" onClick="DecreaseMapZoom();">
-            <TextMeshPro text="-" alignment="MidlineGeoAligned" fontSize="23" />
+            <TextMeshPro text="-" alignment="CenterGeoAligned" fontSize="23" />
             <Panel width="35" height="35" offsetXY="4 4" raycastTarget="true" onClick="DecreaseMapZoom();" />
           </Panel>
           <TextMeshPro id="map-zoom-level" rectAlignment="MiddleLeft" rotation="0 0 90" offsetXY="13.5 -35" width="70" height="17" fontSize="15" alignment="Midline" />

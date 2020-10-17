@@ -799,6 +799,46 @@
             The 'VersionMinor' serialized property.
             </value>
         </member>
+        <member name="T:Jundroo.ModTools.Editor.ModToolsInstaller">
+            <summary>
+            A class used for 'installing' the mod tools, initializing some project settings and installing required packages.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packageAddRequest">
+            <summary>
+            The current package add request.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packageAddRequestId">
+            <summary>
+            The package identifier for the current package add request.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packageListRequest">
+            <summary>
+            The current package list request.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._packagesPendingInstall">
+            <summary>
+            The current list of packages pending install.
+            </summary>
+        </member>
+        <member name="F:Jundroo.ModTools.Editor.ModToolsInstaller._requiredPackages">
+            <summary>
+            The list of required packages.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModToolsInstaller.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Jundroo.ModTools.Editor.ModToolsInstaller"/> class.
+            </summary>
+        </member>
+        <member name="M:Jundroo.ModTools.Editor.ModToolsInstaller.EditorUpdate">
+            <summary>
+            The editor update callback used to process the asynchronous work.
+            </summary>
+        </member>
         <member name="T:Jundroo.ModTools.Editor.MonoCecilTools">
             <summary>
             A collection of utilities and tools that make use of Mono.Cecil.

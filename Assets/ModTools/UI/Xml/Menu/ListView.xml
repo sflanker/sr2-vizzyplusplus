@@ -12,9 +12,8 @@
     <TextMeshPro class="detail-property:value" alignment="Right" />
     <Panel class="column-left" anchorMin="0 0" anchorMax="0.30 1" />
     <Panel class="column-middle" anchorMin="0.30 0" anchorMax="0.70 1" />
-    <Panel class="column-right" anchorMin="0.6 0" anchorMax="1 1" />
+    <Panel class="column-right" anchorMin="0.7 0" anchorMax="1 1" />
     <Panel class="no-preview" maxSize="960 600" border="Border" color="DarkPanel" />
-    <Panel class="no-preview:column-left" anchorMin="0 0" anchorMax="0.3 1" />
     <Panel class="no-preview:items" anchorMin="0 0" anchorMax="0.5 1" />
     <Panel class="no-preview:footer" anchorMin="0.55 0" anchorMax="0.95 1" />
     <Panel class="no-preview:header" minWidth="320" />
@@ -24,7 +23,8 @@
     <Image class="status-exclamation" opacity="1.0" sprite="Ui/Sprites/Menu/IconExclamation" />
   </Defaults>
   <Panel id="click-blocker" opacity="0" height="100%" width="100%" raycastTarget="true" />
-  <Panel id="panel" class="safe-area" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.2">
+  <Panel id="panel" class="safe-area">
+    <Panel id="preview-drag-handler" anchorMin="0.325 0.20" anchorMax="0.675 0.80" raycastTarget="true"></Panel>
     <Panel class="column-left no-image">
       <Button class="icon-button audio-btn-back" width="40" height="40" icon="Ui/Sprites/Menu/IconButtonBack" rectAlignment="UpperLeft" offsetXY="20 -20" onClick="OnCloseButtonClicked();" />
       <Panel class="no-image" height="40" padding="70 10 0 0" offsetXY="0 -20" rectAlignment="UpperCenter">
@@ -40,16 +40,23 @@
     <Panel class="column-left items no-image">
       <Panel class="no-image" offsetMin="20 10" offsetMax="0 -100">
         <VerticalScrollView class="no-image">
-          <VerticalLayout id="items-parent" class="no-image" contentSizeFitter="vertical" spacing="10" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" rectAlignment="UpperLeft" padding="0 0 0 70">
+          <GridLayout active="false" id="grid-items-parent" class="no-image" cellSize="160 195" contentSizeFitter="vertical" spacing="10" childAlignment="UpperCenter" pivot="0 1" rectAlignment="UpperLeft" padding="0 0 0 70">
+            <ContentButton id="grid-list-icon-item-template" class="btn list-item" active="false" navigation="None">
+              <Image internalId="icon" width="150" height="150" active="true" rectAlignment="UpperCenter" offsetXY="0 -5" />
+              <TextMeshPro internalId="title" class="text-lg" enableWordWrapping="false" color="ValueText" rectAlignment="LowerCenter" alignment="Bottom" text="Falcon A" offsetXY="0 10" />
+              <Image internalId="status-icon" class="status-icon" />
+            </ContentButton>
+          </GridLayout>
+          <VerticalLayout active="false" id="items-parent" class="no-image" contentSizeFitter="vertical" spacing="10" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" rectAlignment="UpperLeft" padding="0 0 0 70">
             <ContentButton id="list-icon-item-template" class="btn list-item" active="false" navigation="None">
               <Image internalId="icon" width="64" height="64" active="true" rectAlignment="MiddleLeft" offsetXY="4 0" />
               <TextMeshPro internalId="title" class="text-lg" enableWordWrapping="false" color="ValueText" offsetMin="90 0" offsetXY="0 20" alignment="Left" text="Falcon A" />
-              <TextMeshPro internalId="subtitle" offsetMin="90 0" offsetXY="0 -25" alignment="Left" text="Subtitle" />
+              <TextMeshPro internalId="subtitle" offsetMin="90 0" offsetXY="0 -25" alignment="Left" text="Subtitle" overflowMode="Ellipsis" enableWordWrapping="false" />
               <Image internalId="status-icon" class="status-icon" />
             </ContentButton>
             <ContentButton id="list-item-template" class="btn list-item" active="false" navigation="None">
               <TextMeshPro internalId="title" class="text-lg" enableWordWrapping="false" color="ValueText" offsetMin="20 0" offsetXY="0 20" alignment="Left" text="Falcon A" />
-              <TextMeshPro internalId="subtitle" offsetMin="20 0" offsetXY="0 -25" alignment="Left" text="Subtitle" />
+              <TextMeshPro internalId="subtitle" offsetMin="20 0" offsetXY="0 -25" alignment="Left" text="Subtitle" overflowMode="Ellipsis" enableWordWrapping="false" />
               <Image internalId="status-icon" class="status-icon" />
             </ContentButton>
           </VerticalLayout>

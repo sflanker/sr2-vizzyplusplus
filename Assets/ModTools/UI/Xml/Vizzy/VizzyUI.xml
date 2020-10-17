@@ -8,7 +8,9 @@
   </Defaults>
   <RectTransform class="safe-area">
     <Panel id="program-container" raycastTarget="true" color="#2C2E33">
-      <Panel name="ProgramPanel" id="program-panel" anchorMin="0.5 1" anchorMax="0.5 1"></Panel>
+      <Panel name="ProgramPanel" id="program-panel" anchorMin="0.5 1" anchorMax="0.5 1">
+        <Image sprite="Ui/Sprites/Common/Grid-32" color="#636363" opacity="0.075" width="100000" height="100000" raycastTarget="false" type="Tiled" />
+      </Panel>
       <Image id="connection-hint-line" color="Primary" sprite="Ui/Vizzy/ConnectingLine" width="100" height="6" active="false" type="Sliced" />
     </Panel>
     <Panel id="main-ui" opacity="1">

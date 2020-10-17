@@ -42,8 +42,11 @@
     </VerticalLayout>
     <Panel id="template-header-element" class="inspector-panel-row inspector-template" preferredHeight="25">
       <Panel class="inspector-header" offsetMin="-20 0" offsetMax="30 0" />
-      <Image internalId="arrow" class="header-arrow" />
-      <TextMeshPro internalId="label" offsetXY="20 0" class="label" fontStyle="Bold,UpperCase" color="LabelText" fontSize="16" text="Header" alignment="Left" />
+      <Panel internalId="header-content">
+        <Image internalId="arrow" class="header-arrow" />
+        <TextMeshPro internalId="label" offsetXY="20 0" class="label" fontStyle="Bold,UpperCase" color="LabelText" fontSize="16" alignment="Left" />
+        <TextMeshPro internalId="subtitle" offsetXY="0 0" class="label" color="LabelText" fontSize="16" alignment="Right" active="false" />
+      </Panel>
     </Panel>
     <Panel id="template-label-element" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="15">
       <TextMeshPro internalId="label" class="label" raycastTarget="true" />
@@ -53,7 +56,7 @@
     </Panel>
     <Panel id="template-text-element" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="15">
       <TextMeshPro internalId="label" class="label column-left" />
-      <TextMeshPro internalId="value" class="value column-right" />
+      <TextMeshPro internalId="value" class="value column-right" raycastTarget="true" />
     </Panel>
     <Panel id="template-text-button-element" class="inspector-panel-row inspector-template no-image" navigation="None">
       <ContentButton internalId="button" class="btn stretch">
@@ -76,7 +79,7 @@
     </Panel>
     <Panel id="template-spinner-element" class="inspector-panel-row inspector-template no-image" preferredHeight="30" navigation="None">
       <Spinner internalId="spinner">
-        <TextMeshPro />
+        <TextMeshPro raycastTarget="true" />
       </Spinner>
     </Panel>
     <Panel id="template-progress-bar-element" class="inspector-panel-row inspector-template no-image" preferredHeight="30" navigation="None">
@@ -99,7 +102,7 @@
         <Toggle internalId="toggle" toggleBackgroundImage="" anchorMax="1, .5" anchorMin="1, .5" pivot="1, .5" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" navigation="None" />
       </Panel>
     </Panel>
-    <Panel id="template-dropdown-element" class="inspector-panel-row inspector-template tooltip-row no-image" navigation="None">
+    <Panel id="template-dropdown-element" class="inspector-panel-row inspector-template tooltip-row no-image" navigation="None" preferredHeight="30">
       <TextMeshPro internalId="label" class="label column-left" />
       <Panel class="column-right no-image">
         <TextMeshProDropdown internalId="dropdown" width="100%" height="100%">
@@ -127,6 +130,31 @@
       <TextMeshPro internalId="label" class="label column-left" />
       <Panel class="column-right" padding="0 0 0 0">
         <TextMeshProInputField internalId="input-field">
+          <TMP_Text internalId="value" />
+        </TextMeshProInputField>
+      </Panel>
+    </Panel>
+    <Panel id="template-vector-input" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="60" height="60">
+      <TextMeshPro internalId="label" class="label column-left" anchorMin="0 0.5" anchorMax="1 1" text="test" />
+      <HorizontalLayout class="no-image" anchorMin="0 0" anchorMax="1 0.5" spacing="3" childForceExpandWidth="false">
+        <TextMeshProInputField internalId="input-field-x" preferredWidth="250">
+          <TMP_Text internalId="value" alignment="Right" />
+        </TextMeshProInputField>
+        <TextMeshProInputField internalId="input-field-y" preferredWidth="250">
+          <TMP_Text internalId="value" alignment="Right" />
+        </TextMeshProInputField>
+        <TextMeshProInputField internalId="input-field-z" preferredWidth="250">
+          <TMP_Text internalId="value" alignment="Right" />
+        </TextMeshProInputField>
+      </HorizontalLayout>
+    </Panel>
+    <Panel id="template-vector2-input" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="30" height="30">
+      <TextMeshPro internalId="label" class="label column-left" />
+      <Panel class="column-right">
+        <TextMeshProInputField internalId="input-field-x" anchorMin="0 0" anchorMax="0.5 1" offsetMin="0 0" offsetMax="-2 0">
+          <TMP_Text internalId="value" alignment="Right" />
+        </TextMeshProInputField>
+        <TextMeshProInputField internalId="input-field-y" anchorMin="0.5 0" anchorMax="1 1" offsetMin="2 0" offsetMax="0 0">
           <TMP_Text internalId="value" alignment="Right" />
         </TextMeshProInputField>
       </Panel>
@@ -135,6 +163,18 @@
       <TextMeshPro internalId="label" class="label column-left" />
       <Panel class="column-right" padding="0 0 0 0">
         <Image internalId="color" raycastTarget="true" />
+      </Panel>
+    </Panel>
+    <Panel id="template-curve" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="30">
+      <TextMeshPro internalId="label" class="label column-left" />
+      <Panel class="column-right" padding="0 0 0 0">
+        <RawImage internalId="image" raycastTarget="true" />
+      </Panel>
+    </Panel>
+    <Panel id="template-gradient" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="30">
+      <TextMeshPro internalId="label" class="label column-left" />
+      <Panel class="column-right" padding="0 0 0 0">
+        <RectTransform internalId="image" />
       </Panel>
     </Panel>
     <Panel id="template-texture" class="inspector-panel-row inspector-template tooltip-row no-image" preferredHeight="200">

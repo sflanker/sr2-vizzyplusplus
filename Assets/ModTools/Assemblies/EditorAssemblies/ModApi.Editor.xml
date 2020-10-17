@@ -9,6 +9,11 @@
             An asset postprocessor for various project assets.
             </summary>
         </member>
+        <member name="M:ModApi.Editor.AssetPostprocessor.OnDecalsChanged">
+            <summary>
+            Called when any of the decals are added, removed, or changed.
+            </summary>
+        </member>
         <member name="M:ModApi.Editor.AssetPostprocessor.OnDesignerPartCategoriesChanged">
             <summary>
             Called when the designer part categories change.
@@ -693,9 +698,21 @@
             A value indicating whether this mesh is used as a collider and not for rendering.
             </summary>
         </member>
+        <member name="F:ModApi.Editor.Craft.Parts.PartMeshImportData._antiDistortion">
+            <summary>
+            The anti distortion flag that applies a q-parameter to the UV coordinates to counteract distortion
+            on some meshes that are conical.
+            </summary>
+        </member>
         <member name="F:ModApi.Editor.Craft.Parts.PartMeshImportData._mesh">
             <summary>
             The mesh reference.
+            </summary>
+        </member>
+        <member name="F:ModApi.Editor.Craft.Parts.PartMeshImportData._sortOrderOverride">
+            <summary>
+            The sort order override.
+            This is a comma separated list of original submesh indices starting at 0.
             </summary>
         </member>
         <member name="F:ModApi.Editor.Craft.Parts.PartMeshImportData._submeshMap">
@@ -721,6 +738,14 @@
             </summary>
             <param name="mesh">The mesh.</param>
         </member>
+        <member name="P:ModApi.Editor.Craft.Parts.PartMeshImportData.AntiDistortion">
+            <summary>
+            Gets or sets a value indicating whether this mesh is used as a collider and not for rendering.
+            </summary>
+            <value>
+              <c>true</c> if this mesh is used as a collider and not for rendering; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:ModApi.Editor.Craft.Parts.PartMeshImportData.IsCollider">
             <summary>
             Gets or sets a value indicating whether this mesh is used as a collider and not for rendering.
@@ -736,6 +761,13 @@
             <value>
             The mesh reference.
             </value>
+        </member>
+        <member name="P:ModApi.Editor.Craft.Parts.PartMeshImportData.SortOrderOverride">
+            <summary>
+            Gets the sort order override.
+            This is a comma separated list of original submesh indices starting at 0.
+            </summary>
+            <value>The sort order override.</value>
         </member>
         <member name="P:ModApi.Editor.Craft.Parts.PartMeshImportData.SubmeshMap">
             <summary>
@@ -755,12 +787,22 @@
             The subpart id.
             </value>
         </member>
-        <member name="M:ModApi.Editor.Craft.Parts.PartMeshImportData.Refresh(System.Int32,System.Boolean)">
+        <member name="M:ModApi.Editor.Craft.Parts.PartMeshImportData.Refresh(System.Int32,System.Boolean,System.Boolean,System.String)">
             <summary>
             Refreshes the data in this item.
             </summary>
             <param name="submeshCount">The submesh count.</param>
             <param name="isCollider">A value indicating if this mesh is used as a collider and not for rendering.</param>
+            <param name="antiDistortion">if set to <c>true</c> then apply anti-distortion to the UV coordinates.</param>
+            <param name="sortOrderOverride">The sort order override setting. This is a comma separated list of original submesh indices starting at 0.</param>
+        </member>
+        <member name="M:ModApi.Editor.Craft.Parts.PartMeshImportData.StripInvalidCharactersForSortOrderOverride(System.String,System.Int32)">
+            <summary>
+            Strips the invalid characters for the sort order override.
+            </summary>
+            <param name="sortOrderOverride">The sort order override.</param>
+            <param name="submeshCount">The submesh count.</param>
+            <returns>The validated sort order override string.</returns>
         </member>
         <member name="T:ModApi.Editor.Craft.Parts.PartMeshImportDataDrawer">
             <summary>
@@ -1905,6 +1947,12 @@
             <param name="obj">The root model object.</param>
             <param name="postProcessor">The asset post processor.</param>
         </member>
+        <member name="M:ModApi.Editor.Importers.PartModelImporter.UpdateUVsWithQTerm(UnityEngine.Mesh)">
+            <summary>
+            Updates the mesh's UVs to take advantage of the q term to reduce distortion on some meshes.
+            </summary>
+            <param name="mesh">The mesh.</param>
+        </member>
         <member name="M:ModApi.Editor.Importers.PartModelImporter.OnPostprocessModel(UnityEngine.GameObject)">
             <summary>
             This function is called before the final prefab is created and before it is written to disk.
@@ -2682,11 +2730,6 @@
         <member name="F:ModApi.Editor.Planet.Modifiers.VertexData.VertexDataPlanetModifierEditor._name">
             <summary>
             The name property.
-            </summary>
-        </member>
-        <member name="F:ModApi.Editor.Planet.Modifiers.VertexData.VertexDataPlanetModifierEditor._order">
-            <summary>
-            The order property.
             </summary>
         </member>
         <member name="F:ModApi.Editor.Planet.Modifiers.VertexData.VertexDataPlanetModifierEditor._pass">

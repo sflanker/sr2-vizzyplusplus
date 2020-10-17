@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="CommandPod4" path="Craft/Parts/Prefabs/CommandPod4.prefab">
+  <GameObject name="PodParent">
+    <GameObject name="CommandPodCollider">
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    </GameObject>
+    <GameObject name="CommandPod">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+    </GameObject>
+    <GameObject name="AttachPointPositions">
+      <GameObject name="AttachPointBottomLoad" />
+      <GameObject name="AttachPointTop" />
+      <GameObject name="AttachPointBottom" />
+    </GameObject>
+  </GameObject>
+</GameObject>

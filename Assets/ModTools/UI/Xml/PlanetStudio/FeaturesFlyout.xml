@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="list-item" hoverClass="list-item-hover" pressClass="list-item-press" onClick="OnListItemClicked(this);" />
+    <Panel class="list-item-hover" color="Button" />
+    <Panel class="list-item-press" color="ButtonHover" />
+    <Panel class="selected" color="Primary" />
+    <Panel class="context-button" navigation="None" tooltipPosition="Above" />
+  </Defaults>
+  <Panel class="no-image" anchorMin="0 0.35" anchorMax="1 1">
+    <VerticalScrollView class="no-image" rectAlignment="UpperCenter">
+      <VerticalLayout class="no-image" childForceExpandHeight="false" padding="0" spacing="0" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperCenter" rectAlignment="UpperLeft">
+        <Panel id="row-template" class="list-item audio-btn-click" preferredHeight="32" raycastTarget="true" active="false">
+          <TextMeshPro offsetMin="10 0" internalId="name" alignment="Left" color="ValueText" />
+          <TextMeshPro offsetMax="-10 0" internalId="subtitle" alignment="Right" color="LabelText" />
+          <Image class="border" height="1" rectAlignment="LowerCenter" />
+        </Panel>
+      </VerticalLayout>
+    </VerticalScrollView>
+  </Panel>
+  <Panel color="DarkPanel" offsetXY="-1 0" height="40" rectAlignment="LowerCenter">
+    <!--<ContentButton class="btn btn-primary context-button" width="40" height="35" rectAlignment="MiddleLeft" onClick="OnAddLaunchLocationClicked();" tooltip="Add New Launch Location">
+         <Image sprite="Ui/Sprites/PlanetStudio/IconAddLaunchLocation" internalId="image" width="20" height="20" />
+      </ContentButton>-->
+  </Panel>
+</XmlLayout>

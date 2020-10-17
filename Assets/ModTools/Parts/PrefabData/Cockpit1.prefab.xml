@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObject name="Cockpit1" path="Craft/Parts/Prefabs/Cockpit1.prefab">
+  <GameObject name="CrewExit_forReferenceOnly" />
+  <GameObject name="Collider">
+    <Component type="UnityEngine.BoxCollider" />
+    <Component type="ModApi.Craft.Parts.PartColliderScript" />
+  </GameObject>
+  <GameObject name="CockPit1">
+    <GameObject name="CockpitBase">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+    </GameObject>
+    <GameObject name="PanelCollider">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshCollider" />
+      <Component type="ModApi.Craft.Parts.EnabledScript" />
+    </GameObject>
+    <GameObject name="CockpitRudderRight">
+      <GameObject name="RightRudderMesh">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+      <GameObject name="FootPosition" />
+    </GameObject>
+    <GameObject name="CockpitRudderLeft">
+      <GameObject name="LeftRudderMesh">
+        <Component type="UnityEngine.MeshFilter" />
+        <Component type="UnityEngine.MeshRenderer" />
+        <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      </GameObject>
+      <GameObject name="FootPosition" />
+    </GameObject>
+    <GameObject name="CockpitStencil">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <Component type="ModApi.Craft.Parts.DepthMaskScript" />
+      <Component type="UnityEngine.CapsuleCollider" />
+    </GameObject>
+    <GameObject name="Joystick">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <GameObject name="HandPosition">
+        <GameObject name="RightHand">
+          <Component type="RootMotion.FinalIK.InteractionTarget" />
+          <GameObject name="RightIndexFinger">
+            <GameObject name="RightIndexFingerUpper">
+              <GameObject name="RightIndexFingerLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="RightMiddleFinger">
+            <GameObject name="RightMiddleFingerUpper">
+              <GameObject name="RightMiddleFingerLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="RightPinky">
+            <GameObject name="RightPinkyUpper">
+              <GameObject name="RightPinkyLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="RightRingFinger">
+            <GameObject name="RightRingFingerUpper">
+              <GameObject name="RightRingFingerLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="RightThumb">
+            <GameObject name="RightThumbMid">
+              <GameObject name="RightThumbTip" />
+            </GameObject>
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+    <GameObject name="LeftElbowBendGoal" />
+    <GameObject name="ThrottleHandle">
+      <Component type="UnityEngine.MeshFilter" />
+      <Component type="UnityEngine.MeshRenderer" />
+      <Component type="ModApi.Craft.Parts.PartMeshScript" />
+      <GameObject name="HandPosition">
+        <GameObject name="LeftHand">
+          <Component type="RootMotion.FinalIK.InteractionTarget" />
+          <GameObject name="LeftIndexFinger">
+            <GameObject name="LeftIndexFingerUpper">
+              <GameObject name="LeftIndexFingerLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="LeftMiddleFinger">
+            <GameObject name="LeftMiddleFingerUpper">
+              <GameObject name="LeftMiddleFingerLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="LeftPinky">
+            <GameObject name="LeftPinkyUpper">
+              <GameObject name="LeftPinkyLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="LeftRingFinger">
+            <GameObject name="LeftRingFingerUpper">
+              <GameObject name="LeftRingFingerLower" />
+            </GameObject>
+          </GameObject>
+          <GameObject name="LeftThumb">
+            <GameObject name="LeftThumbMid">
+              <GameObject name="LeftThumbTip" />
+            </GameObject>
+          </GameObject>
+        </GameObject>
+      </GameObject>
+    </GameObject>
+    <GameObject name="CrewExit_forReferenceOnly" />
+  </GameObject>
+</GameObject>

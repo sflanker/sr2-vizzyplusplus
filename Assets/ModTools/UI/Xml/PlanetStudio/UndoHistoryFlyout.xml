@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
+  <Include path="Ui/Xml/Design/DesignStyles.xml" />
+  <Defaults>
+    <Panel class="list-item" hoverClass="list-item-hover" pressClass="list-item-press" onClick="OnListItemClicked(this);" />
+    <Panel class="list-item-hover" color="Button" />
+    <Panel class="list-item-press" color="ButtonHover" />
+    <Panel class="selected" color="Primary" />
+    <Panel class="object-button" navigation="None" tooltipPosition="Above" />
+  </Defaults>
+  <Panel id="main-panel" class="main-panel no-image">
+    <VerticalScrollView id="scroll-view" class="no-image" rectAlignment="UpperCenter">
+      <VerticalLayout class="no-image" childForceExpandHeight="false" padding="0" spacing="0" contentSizeFitter="vertical" pivot="0 1" childAlignment="UpperCenter" rectAlignment="UpperLeft">
+        <Panel id="row-template" class="list-item audio-btn-click" preferredHeight="32" raycastTarget="true" active="false">
+          <TextMeshPro offsetMin="10 0" text="" internalId="name" alignment="Left" color="ValueText" overflowMode="Truncate" />
+          <Image class="border" height="1" rectAlignment="LowerCenter" />
+        </Panel>
+      </VerticalLayout>
+    </VerticalScrollView>
+  </Panel>
+</XmlLayout>

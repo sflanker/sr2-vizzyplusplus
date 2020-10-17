@@ -16,6 +16,8 @@
     <Color id="CustomInstruction" color="#8B34A9" />
     <Color id="CallCustom" color="#DC77FF" />
     <Color id="List" color="#555A87" />
+    <Color id="WidgetInstruction" color="#3b99d8" />
+    <Color id="WidgetExpression" color="#2e80b7" />
   </Colors>
   <Styles>
     <Style id="repeat" color="InstructionBlock" format="repeat (0:ZeroOrMore)" tooltip="Repeats the block of code the number of times specified." />
@@ -31,6 +33,8 @@
     <Style id="break" color="Event" format="break" tooltip="Breaks out of a while or repeat loop." />
     <Style id="comment" color="Instruction" textColor="Comment" format="# (0)" tooltip="This instruction does not execute and can be used to place comments in your program to help explain how it works." />
     <Style id="comment-text" color="Constant" textColor="Comment" />
+    <Style id="play-beep" color="Instruction" format="beep (0:ZeroOrMore) Hz at (1:ZeroToOne) volume for (2:ZeroOrMore) seconds" tooltip="Plays a beep sound with the specified parameters." />
+    <Style id="note-frequency" color="Instruction" format="frequency of (0) octave (1:ZeroOrMore)" tooltip="Gets the frequency of the note at the octave." />
     <Style id="op-add" color="Operator" format="(0:Number) + (1:Number)" tooltip="Adds the left and right numbers together and returns the result." />
     <Style id="op-sub" color="Operator" format="(0:Number) - (1:Number)" tooltip="Subtracts the right number from the left number and returns the result." />
     <Style id="op-div" color="Operator" format="(0:Number) / (1:Number)" tooltip="Divides the left number by the right number and returns the result." />
@@ -54,18 +58,21 @@
     <Style id="vec" color="Operator" format="vec (0),(1),(2)" tooltip="Creates a vector from the x, y, and z components." />
     <Style id="vec-op-1" color="Operator" format="(0) [op]" tooltip="Access information from a vector." />
     <Style id="vec-op-2" color="Operator" format="(0) [op] (1)" tooltip="Returns the result of the operation between the two vectors." />
+    <Style id="vec-op-color" color="Operator" format="hex color (0)" tooltip="Converts a hexadecimal color (ie #FF0000) into a color vector (ie 1,0,0)." />
     <Style id="join" color="Operator" format="join " dynamicExpressionsSlots="true" tooltip="Returns the result of joining the two or more strings of text together." />
     <Style id="letter" color="Operator" format="letter (0:OneOrMore) of (1)" tooltip="Returns the letter at the specified location." />
     <Style id="substring" color="Operator" format="letters (0:ZeroOrMore) to (1:ZeroOrMore) of (2)" tooltip="Returns the letters of the text between the start and end locations. If 0 is specified for start/end then the start/end of the text will be used." />
     <Style id="length" color="Operator" format="length of (0)" tooltip="Returns the length of the string of text." />
     <Style id="contains" color="Operator" format="(0) contains (1)" tooltip="Returns true if the text on the left contains the text on the right." />
     <Style id="format" color="Operator" format="format " dynamicExpressionsSlots="true" tooltip="Advaned formatting that uses C#'s built-in System.String method. Refer to Microsoft's documentation for more information." />
+    <Style id="friendly" color="Operator" format="friendly [friendly] (0)" tooltip="Formats a value of a specified unit to user friendly text." />
     <Style id="activate-stage" color="Event" format="activate stage" tooltip="Activates the next stage in the craft." />
     <Style id="set-input" color="CraftInstruction" format="set [x] to (0:NegOneToPosOne)" tooltip="Sets the selected input of the craft to the specified amount. Value must be between -1 and 1. For example, if you want to set throttle to 65%, then set this to 0.65" />
     <Style id="set-heading" color="CraftInstruction" format="set craft [x] to (0)" tooltip="Sets the pitch or heading the craft should target." />
     <Style id="set-target" color="CraftInstruction" format="target node (0)" tooltip="Sets the craft's current target planet or craft." />
     <Style id="set-ag" color="CraftInstruction" format="set activation group (0:OneOrMore) to (1)" tooltip="Activates or deactivates the specified activation group. Setting an AG to true activates it. False deactivates it." />
     <Style id="lock-nav-sphere" color="CraftInstruction" format="lock heading on [x]" tooltip="Locks the nav sphere on the specified indicator." />
+    <Style id="lock-nav-sphere-vector" color="CraftInstruction" format="lock heading on vector (0)" tooltip="Locks the nav sphere on the specified vector in PCI coordinates." />
     <Style id="set-time-mode" color="CraftInstruction" format="set time mode to [x]" tooltip="Sets the current time mode of the game." />
     <Style id="set-camera" color="CraftInstruction" format="set camera [x] to (0)" tooltip="Sets the property on the camera." />
     <Style id="set-part" color="CraftInstruction" format="set part (0) [x] to (1)" tooltip="Sets the property of the part with the specified ID." />
@@ -81,10 +88,35 @@
     <Style id="prop-misc" color="CraftExpression" format="misc [x]" tooltip="Miscellanous properties." />
     <Style id="prop-time" color="CraftExpression" format="time [x]" tooltip="Returns the specified time in seconds." />
     <Style id="prop-name" color="CraftExpression" format="name of [x]" tooltip="Returns the current name the selected item." />
+    <Style id="prop-mfd-widget" color="WidgetExpression" format="get widget (0) [x]" tooltip="Returns information about the MFD widget with the specified name." />
+    <Style id="set-mfd-widget" color="WidgetInstruction" format="set widget (0) [x] to (1)" tooltip="Sets the property of MFD widget with the specified name." />
+    <Style id="set-mfd-order-front" color="WidgetInstruction" format="bring widget (0) in front of (1)" tooltip="Brings the widget in front of the target widget or in front of all other widgets if the target widget does not exist. Note: Widgets must share the same parent." />
+    <Style id="set-mfd-order-back" color="WidgetInstruction" format="send widget (0) behind (1)" tooltip="Sends the widget behind the target widget, or behind everything if the target widget does not exist. Note: Widgets must share the same parent." />
+    <Style id="prop-mfd-sprite" color="WidgetExpression" format="get sprite (0) [x]" tooltip="Returns information about the MFD sprite with the specified name." />
+    <Style id="set-mfd-sprite" color="WidgetInstruction" format="set sprite (0) [x] to (1)" tooltip="Sets the property of MFD sprite widget with the specified name." />
+    <Style id="set-mfd-navball" color="WidgetInstruction" format="set navball (0) [x] to (1)" tooltip="Sets the property of MFD navball widget with the specified name." />
+    <Style id="set-mfd-map" color="WidgetInstruction" format="set map (0) [x] to (1)" tooltip="Sets the property of MFD map widget with the specified name." />
+    <Style id="set-mfd-texture-setpixel" color="WidgetInstruction" format="set texture (0) pixel at x=(1), y=(2) to (3)" tooltip="Sets the pixel at the coordinate to the specified pixel. Note: Coordinates start at 1, not 0." />
+    <Style id="set-mfd-texture-initialize" color="WidgetInstruction" format="initialize texture (0) width (1) and height (2)" tooltip="Initializes the texture to the specified width and height." />
+    <Style id="prop-mfd-gauge" color="WidgetExpression" format="get gauge (0) [x]" tooltip="Returns information about the MFD gauge with the specified name." />
+    <Style id="set-mfd-gauge" color="WidgetInstruction" format="set gauge (0) [x] to (1)" tooltip="Sets the property of MFD gauge widget with the specified name." />
+    <Style id="set-mfd-line-points" color="WidgetInstruction" format="set line (0) from (1) to (2)" tooltip="Sets the line widget to connect the first point to the second point." />
+    <Style id="set-mfd-line" color="WidgetInstruction" format="set line (0) [x] to (1)" tooltip="Sets the property of the line widget." />
+    <Style id="prop-mfd-pos" color="WidgetExpression" format="convert (1) [x] for (0)" tooltip="Converts the position vector beteween a widget's local coordinate system and the display's global coordinate system." />
+    <Style id="prop-mfd-event" color="WidgetExpression" format="get widget (0) [x] message" tooltip="Gets the message name to broadcast when the widget receives the input." />
+    <Style id="set-mfd-event" color="WidgetInstruction" format="set widget (0) to broadcast (1) on [x] with data (2)" tooltip="Sets the message name to broadcast when the widget receives the input. The message received will include a data list where the first element is the data specified here, the second element is the widget name, and the third element is the local position of the input relative to the widget." />
+    <Style id="prop-mfd-label" color="WidgetExpression" format="get label (0) [x]" tooltip="Returns information about the MFD label widget with the specified name." />
+    <Style id="set-mfd-label" color="WidgetInstruction" format="set label (0) [x] to (1)" tooltip="Sets the property of MFD text widget with the specified name." />
+    <Style id="set-mfd-alignment" color="WidgetInstruction" format="set label (0) alignment to [x]" tooltip="Sets alignment of the label's text." />
+    <Style id="set-mfd-anchor" color="WidgetInstruction" format="set widget (0) anchor to [x]" tooltip="Sets where the widget is anchored to its parent." />
+    <Style id="create-mfd-widget" color="WidgetInstruction" format="create [x] widget named (0)" tooltip="Creates the MFD widget of the specified type with the specified name." />
+    <Style id="destroy-mfd-widget" color="WidgetInstruction" format="destroy widget named (0)" tooltip="Destroys the MFD widget with the specified name." />
+    <Style id="destroy-all-mfd-widgets" color="WidgetInstruction" format="destroy all widgets" tooltip="Destroys all of the the MFD widgets." />
     <Style id="activation-group" color="CraftExpression" format="activation group (0:OneOrMore)" tooltip="Returns the status of the activation group. True indicates the AG is active." />
     <Style id="planet-to-lat-long-agl" color="CraftInstruction" format="convert (0) to lat/long/AGL" tooltip="Converts the position vector to a (latitude, longitude, AGL) vector." />
     <Style id="planet-to-position" color="CraftInstruction" format="convert (0) to position" tooltip="Converts the (latitude, longitude, AGL) vector to a position vector." />
     <Style id="planet" color="CraftInstruction" format="planet (0) [x]" tooltip="Gets a property of the specified planet." />
+    <Style id="terrain-query" color="CraftInstruction" format="get terrain [x] at lat/long (0)" tooltip="Gets information about the current planet's terrain at the specified (latitude, longitude, 0) vector. The z component of the vector is not used." />
     <Style id="part" color="CraftInstruction" format="part (0:ZeroOrMore) [x]" tooltip="Gets a property of the part with the specified ID." />
     <Style id="part-id" color="CraftInstruction" format="part ID of (0)" tooltip="The ID of the first part found with the specified name or -1 if none are found." />
     <Style id="part-transform" color="CraftInstruction" format="part (0) [x] (1)" tooltip="Converts the vector between local and PCI coordinates." />
@@ -105,6 +137,7 @@
     <Style id="global-variable" color="GlobalVariable" format="" tooltip="Variable that can change its value." />
     <Style id="local-variable" color="LocalVariable" format="" tooltip="Variable that can change its value." />
     <Style id="list-variable" color="List" format="" tooltip="Variable that can hold a list of items." />
+    <Style id="user-input" color="Instruction" format="set variable (0) to user input (1)" tooltip="Sets the value of the variable to text received from an input dialog presented to the user with the specified message." />
     <Style id="list-init" color="List" format="set list (0) to (1)" tooltip="Initializes the list with a set of comma separated values." />
     <Style id="list-add" color="List" format="add (1) to (0)" tooltip="Adds the item to the end of the list." />
     <Style id="list-insert" color="List" format="insert (1) at (2:OneOrMore) in (0)" tooltip="Inserts the item at the index in the list. Index 1 is the first item in the list." />
@@ -269,6 +302,9 @@
         <Constant text="{0:n1}" />
         <Constant text="10000.99" />
       </StringOp>
+      <StringOp op="friendly" style="friendly" subOp="distance">
+        <Constant number="0" />
+      </StringOp>
       <Vector style="vec">
         <Constant number="0" />
         <Constant number="0" />
@@ -300,6 +336,9 @@
         <Constant bool="true" />
       </SetActivationGroup>
       <LockNavSphere style="lock-nav-sphere"></LockNavSphere>
+      <LockNavSphere style="lock-nav-sphere-vector" indicatorType="Vector">
+        <Constant vector="0,0,1" />
+      </LockNavSphere>
       <SetTimeMode style="set-time-mode" mode="Normal" />
       <SetCameraProperty style="set-camera" property="zoom">
         <Constant number="100" />
@@ -311,6 +350,15 @@
       <SwitchCraft style="switch-craft">
         <Constant number="0" />
       </SwitchCraft>
+      <SetCraftProperty style="play-beep" property="Sound.Beep">
+        <Constant number="1000" />
+        <Constant number="1" />
+        <Constant number="2" />
+      </SetCraftProperty>
+      <CraftProperty style="note-frequency" property="Sound.Frequency">
+        <Constant text="C#" />
+        <Constant number="3" />
+      </CraftProperty>
     </Category>
     <Category name="Craft Information" icon="Ui/Vizzy/ToolboxIconExpressions">
       <CraftProperty style="prop-altitude" property="Altitude.AGL" />
@@ -333,6 +381,9 @@
       <Planet style="planet-to-position" op="toPosition">
         <Constant vector="0,0,0" />
       </Planet>
+      <CraftProperty style="terrain-query" property="Terrain.Height">
+        <Constant vector="0,0,0" />
+      </CraftProperty>
       <Planet style="planet" op="radius">
         <Constant text="Droo" />
       </Planet>
@@ -382,6 +433,10 @@
         <Constant text="" />
         <Constant number="0" />
       </ChangeVariable>
+      <UserInput style="user-input">
+        <Constant text="" />
+        <Constant text="Message Text..." />
+      </UserInput>
     </Category>
     <Category name="Lists" icon="Ui/Vizzy/ToolboxIconLists">
       <SetList op="add" style="list-add">
@@ -431,5 +486,99 @@
     </Category>
     <Category name="Custom Expressions" icon="Ui/Vizzy/ToolboxIconCustomExpressions"></Category>
     <Category name="Custom Instructions" icon="Ui/Vizzy/ToolboxIconCustomInstructions"></Category>
+    <Category name="Multi-function Display" icon="Ui/Vizzy/ToolboxIconMfd">
+      <SetCraftProperty style="create-mfd-widget" property="Mfd.Create.Label">
+        <Constant text="name" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-widget" property="Mfd.SetPosition">
+        <Constant text="name" />
+        <Constant text="" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-anchor" property="Mfd.Widget.SetAnchor.Center">
+        <Constant text="name" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-label" property="Mfd.Label.SetText">
+        <Constant text="name" />
+        <Constant text="" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-alignment" property="Mfd.Label.SetAlignment.Center">
+        <Constant text="name" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-texture-initialize" property="Mfd.Texture.Initialize">
+        <Constant text="name" />
+        <Constant number="0" />
+        <Constant number="0" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-texture-setpixel" property="Mfd.Texture.SetPixel">
+        <Constant text="name" />
+        <Constant number="1" />
+        <Constant number="1" />
+        <Constant vector="0,0,0" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-sprite" property="Mfd.Sprite.SetFillAmount">
+        <Constant text="name" />
+        <Constant text="" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-gauge" property="Mfd.Gauge.SetValue">
+        <Constant text="name" />
+        <Constant text="" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-line" property="Mfd.Line.SetThickness">
+        <Constant text="name" />
+        <Constant number="0.5" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-line-points" property="Mfd.Line.SetLinePoints">
+        <Constant text="name" />
+        <Constant text="0,0" />
+        <Constant text="1,1" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-navball" property="Mfd.Navball.TopColor">
+        <Constant text="name" />
+        <Constant text="" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-map" property="Mfd.Map.NorthUp">
+        <Constant text="name" />
+        <Constant style="true" bool="true" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-order-front" property="Mfd.Order.SendToFront">
+        <Constant text="name" />
+        <Constant text="target" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-order-back" property="Mfd.Order.SendToBack">
+        <Constant text="name" />
+        <Constant text="target" />
+      </SetCraftProperty>
+      <SetCraftProperty style="set-mfd-event" property="Mfd.Event.SetPointerClick">
+        <Constant text="name" />
+        <Constant text="message" />
+        <Constant text="data" />
+      </SetCraftProperty>
+      <SetCraftProperty style="destroy-mfd-widget" property="Mfd.Destroy">
+        <Constant text="name" />
+      </SetCraftProperty>
+      <SetCraftProperty style="destroy-all-mfd-widgets" property="Mfd.Destroy.All"></SetCraftProperty>
+      <CraftProperty style="prop-mfd-widget" property="Mfd.Position">
+        <Constant text="name" />
+      </CraftProperty>
+      <CraftProperty style="prop-mfd-label" property="Mfd.Label.Text">
+        <Constant text="name" />
+      </CraftProperty>
+      <CraftProperty style="prop-mfd-sprite" property="Mfd.Sprite.FillAmount">
+        <Constant text="name" />
+      </CraftProperty>
+      <CraftProperty style="prop-mfd-gauge" property="Mfd.Gauge.Value">
+        <Constant text="name" />
+      </CraftProperty>
+      <CraftProperty style="prop-mfd-pos" property="Mfd.LocaltoDisplay">
+        <Constant text="name" />
+        <Constant text="0,0" />
+      </CraftProperty>
+      <CraftProperty style="prop-mfd-event" property="Mfd.Event.PointerClick">
+        <Constant text="name" />
+      </CraftProperty>
+      <VectorOp style="vec-op-color" op="hex">
+        <Constant text="#FF0000" />
+      </VectorOp>
+    </Category>
   </Categories>
 </VizzyToolbox>

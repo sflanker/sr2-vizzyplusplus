@@ -2,7 +2,7 @@
 <XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\XmlLayout.xsd">
   <Include path="Ui/Xml/Design/DesignStyles.xml" />
   <Defaults>
-    <Image class="color-button" color="Border" hoverClass="color-button-hover" pressClass="color-button-press" raycastTarget="true" borderSprite="Ui/Sprites/Border/Target-2px" borderOffset="-2 2 2 -2" />
+    <Image class="color-button" color="Transparent" hoverClass="color-button-hover" pressClass="color-button-press" raycastTarget="true" borderSprite="Ui/Sprites/Border/Target-2px" borderOffset="-2 2 2 -2" />
     <Image class="color-button-hover" border="ButtonHover" />
     <Image class="color-button-press" border="Primary" />
     <Image class="color-button-selected" border="Primary" />
@@ -30,6 +30,9 @@
           <Image internalId="gloss-overlay" sprite="Ui/Sprites/Design/IconPaintPreviewGlossOverlay" offsetMax="-1 -1" offsetMin="1 1" opacity="0" />
         </Image>
       </GridLayout>
+      <Button id="customize-button" class="btn btn-primary" onClick="OnCustomizedButtonClicked();" tooltip="Copies this theme into the Custom theme so that it can be customized.">
+        <TextMeshPro text="CUSTOMIZE" />
+      </Button>
       <VerticalLayout id="edit-color-panel" class="no-image" spacing="15" childForceExpandHeight="false" childAlignment="UpperCenter">
         <Panel class="header">
           <TextMeshPro text="EDIT COLOR" />
@@ -77,6 +80,11 @@
           <TextMeshPro class="label tooltip" text="Detail" tooltip="The strength of the detail texturing for the current color" />
           <TextMeshPro id="detail-slider-text" class="value" text="None" />
           <Slider id="detail-slider" />
+        </Panel>
+        <Panel class="slider">
+          <TextMeshPro class="label tooltip" text="Transparency" tooltip="The transparency strength for the current color" />
+          <TextMeshPro id="transparency-slider-text" class="value" text="None" />
+          <Slider id="transparency-slider" />
         </Panel>
       </VerticalLayout>
     </VerticalLayout>

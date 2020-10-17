@@ -9,25 +9,4 @@
     <Image class="finger-button-icon" sprite="Ui/Sprites/Design/FingerToolSelectPart" width="34" height="34" />
     <Image class="finger-button-selected" color="Primary" />
   </Defaults>
-  <Panel class="no-image">
-    <VerticalLayout id="debug-menu" color="Panel" border="Border" contentSizeFitter="vertical" padding="5 5 0 0" active="false" showAnimation="FadeIn" hideAnimation="FadeOut" animationDuration="0.1" rectAlignment="UpperRight" width="225" childForceExpandHeight="false" offsetXY="-230 -5" spacing="10" pivot="0 1">
-      <TextMeshPro ignoreLayout="true" text="MENU" color="LabelText" offsetXY="0 0" height="40" rectAlignment="UpperCenter" />
-      <Panel class="no-image" preferredHeight="30" />
-      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildButtonClicked();">
-        <TextMeshPro text="Build (Full)" />
-      </Button>
-      <Button class="btn" rectAlignment="LowerLeft" onClick="OnBuildFastButtonClicked();">
-        <TextMeshPro text="Build (Fast)" />
-      </Button>
-      <Image class="separator" />
-      <Button class="btn" rectAlignment="LowerLeft" onClick="OnRefreshDatabaseClicked();">
-        <TextMeshPro text="Refresh DB" />
-      </Button>
-      <Image class="separator" />
-      <Button class="btn" rectAlignment="LowerLeft" onClick="OnResetViewButtonClicked();">
-        <TextMeshPro text="Recenter Camera" />
-      </Button>
-    </VerticalLayout>
-    <Button class="icon-button" icon="Ui/Sprites/Menu/IconButtonMenu" rectAlignment="UpperRight" offsetXY="-5 -5" onClick="OnDebugMenuButtonClicked();" />
-  </Panel>
 </XmlLayout>

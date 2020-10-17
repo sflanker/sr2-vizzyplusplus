@@ -68,7 +68,7 @@
         <Panel id="template-text-input" class="property-row row" active="false">
           <TextMeshPro internalId="label" class="label" width="35%" />
           <TextMeshProInputField internalId="input-field" width="65%" height="100%" rectAlignment="MiddleRight">
-            <TMP_Text />
+            <TMP_Text richText="false" />
           </TextMeshProInputField>
         </Panel>
         <VerticalLayout id="template-color-sliders" class="property-row" padding="30 0 30 5" active="false">

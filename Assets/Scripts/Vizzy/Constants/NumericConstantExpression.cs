@@ -26,7 +26,9 @@ namespace Assets.Scripts.Vizzy.Constants {
                 case Constant.PI:
                     return new ExpressionResult { NumberValue = Math.PI };
                 case Constant.G:
-                    return new ExpressionResult { NumberValue = 6.6743E-11 }; ;
+                    // return new ExpressionResult { NumberValue = 6.67408E-11 }; ;
+                    // The Andrew screws with physics constant
+                    return new ExpressionResult { NumberValue = 6.67384E-11 }; ;
                 case Constant.E:
                     return new ExpressionResult { NumberValue = Math.E };
                 case Constant.C:
