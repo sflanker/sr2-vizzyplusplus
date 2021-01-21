@@ -35,6 +35,10 @@
         <TextMeshPro text="REPORT A BUG" />
       </Button>
       <Image class="separator" />
+      <Button class="btn" rectAlignment="LowerLeft" onClick="OnLaunchLocationButtonClicked();" tooltip="Change the current launch location.">
+        <TextMeshPro text="LAUNCH LOCATION" />
+      </Button>
+      <Image class="separator" />
       <Button class="btn audio-btn-big" rectAlignment="LowerLeft" onClick="OnExitButtonClicked();" tooltip="Exit the designer back to the main menu.">
         <TextMeshPro text="EXIT" />
       </Button>

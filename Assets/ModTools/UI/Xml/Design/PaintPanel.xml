@@ -82,10 +82,13 @@
           <Slider id="detail-slider" />
         </Panel>
         <Panel class="slider">
-          <TextMeshPro class="label tooltip" text="Transparency" tooltip="The transparency strength for the current color" />
+          <TextMeshPro class="label tooltip" text="Transparency" tooltip="The transparency strength for the current color. This can cause some parts to render in strange and mysterious ways, so use with caution." />
           <TextMeshPro id="transparency-slider-text" class="value" text="None" />
           <Slider id="transparency-slider" />
         </Panel>
+        <Button id="unlock-transparency" class="btn btn-primary" onClick="OnUnlockTransparencyButtonClicked();" tooltip="Unlock the transparency slider.">
+          <TextMeshPro text="UNLOCK TRANSPARENCY" />
+        </Button>
       </VerticalLayout>
     </VerticalLayout>
   </VerticalScrollView>

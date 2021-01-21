@@ -5,14 +5,18 @@
     <Image class="edit-button" color="Button" sprite="Ui/Sprites/Design/IconButtonEdit" width="24" height="24" hoverClass="edit-hover" />
     <Image class="edit-hover" color="ButtonHover" />
     <TextMeshPro class="error" color="Red" />
+    <Panel class="column-left" width="50%" rectAlignment="MiddleLeft" />
+    <Panel class="column-right" width="50%" rectAlignment="MiddleRight" />
+    <TextMeshPro class="column-left" alignment="Left" />
+    <TextMeshPro class="column-right" alignment="Right" />
   </Defaults>
-  <RectTransform class="safe-area">
-    <Panel id="program-container" raycastTarget="true" color="#2C2E33">
-      <Panel name="ProgramPanel" id="program-panel" anchorMin="0.5 1" anchorMax="0.5 1">
-        <Image sprite="Ui/Sprites/Common/Grid-32" color="#636363" opacity="0.075" width="100000" height="100000" raycastTarget="false" type="Tiled" />
-      </Panel>
-      <Image id="connection-hint-line" color="Primary" sprite="Ui/Vizzy/ConnectingLine" width="100" height="6" active="false" type="Sliced" />
+  <Panel id="program-container" raycastTarget="true" color="#2C2E33">
+    <Panel name="ProgramPanel" id="program-panel" anchorMin="0.5 1" anchorMax="0.5 1">
+      <Image id="grid" sprite="Ui/Sprites/Common/Grid-32" color="#636363" opacity="0.075" width="100000" height="100000" raycastTarget="false" type="Tiled" />
     </Panel>
+    <Image id="connection-hint-line" color="Primary" sprite="Ui/Vizzy/ConnectingLine" width="100" height="6" active="false" type="Sliced" />
+  </Panel>
+  <RectTransform class="safe-area">
     <Panel id="main-ui" opacity="1">
       <Panel rectAlignment="MiddleLeft" width="52" class="panel" border="Border">
         <VerticalLayout id="category-panel" class="no-image" childForceExpandHeight="false" width="50" offsetXY="0 0" rectAlignment="UpperLeft">
@@ -74,6 +78,13 @@
             <Button id="redo-button" class="btn" rectAlignment="MiddleRight" onClick="OnButtonRedoClicked();" tooltip="Redoes the last step." width="46%">
               <TextMeshPro text="REDO" />
             </Button>
+          </Panel>
+          <Image class="separator" />
+          <Panel class="no-image" preferredHeight="25">
+            <TextMeshPro class="label column-left" text="Grid" overflowMode="Overflow" enableWordWrapping="false" />
+            <Panel class="column-right">
+              <Toggle id="grid-toggle" toggleBackgroundImage="" anchorMax="1, .5" anchorMin="1, .5" pivot="1, .5" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" navigation="None" onValueChanged="OnGridEnabledChanged(this);" />
+            </Panel>
           </Panel>
         </VerticalLayout>
       </Panel>

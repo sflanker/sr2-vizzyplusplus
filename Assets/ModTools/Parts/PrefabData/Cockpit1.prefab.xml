@@ -2,8 +2,8 @@
 <GameObject name="Cockpit1" path="Craft/Parts/Prefabs/Cockpit1.prefab">
   <GameObject name="CrewExit_forReferenceOnly" />
   <GameObject name="Collider">
-    <Component type="UnityEngine.BoxCollider" />
     <Component type="ModApi.Craft.Parts.PartColliderScript" />
+    <Component type="UnityEngine.MeshCollider" />
   </GameObject>
   <GameObject name="CockPit1">
     <GameObject name="CockpitBase">
@@ -37,7 +37,7 @@
       <Component type="UnityEngine.MeshRenderer" />
       <Component type="ModApi.Craft.Parts.PartMeshScript" />
       <Component type="ModApi.Craft.Parts.DepthMaskScript" />
-      <Component type="UnityEngine.CapsuleCollider" />
+      <Component type="UnityEngine.BoxCollider" />
     </GameObject>
     <GameObject name="Joystick">
       <Component type="UnityEngine.MeshFilter" />

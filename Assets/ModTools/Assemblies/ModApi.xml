@@ -6547,6 +6547,7 @@
         <member name="T:ModApi.Common.Jobs.ManagedActionJob">
             <summary>
             A job structure for the job system that executes a managed action.
+            WARNING: This should be manually disposed as the job system does not dispose it automatically.
             Implements the <see cref="T:Unity.Jobs.IJob" />
             Implements the <see cref="T:System.IDisposable" />
             </summary>
@@ -11924,6 +11925,14 @@
               <c>true</c> if the part can be activated; otherwise, <c>false</c>.
             </value>
         </member>
+        <member name="P:ModApi.Craft.Parts.IConfigData.SupportsTransparency">
+            <summary>
+            Gets a value indicating whether this part supports transparency.
+            </summary>
+            <value>
+              <c>true</c> if this part supports transparency; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="T:ModApi.Craft.Parts.IConnectedAttachPointChangedHandler">
             <summary>
             Interface to implement to be notified when a connected attach point changes.
@@ -11979,12 +11988,12 @@
               <c>true</c> if  we're the active command pod while inside a crew compartment (like in a chair); otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="P:ModApi.Craft.Parts.IEvaScript.CockpitCommandPod">
+        <member name="P:ModApi.Craft.Parts.IEvaScript.CrewCompartmentCommandPod">
             <summary>
-            Gets the command pod of the cockpit, if the astronaut is in one, otherwise; <c>null</c>.
+            Gets the command pod of the crew-compartment that we're in, otherwise; <c>null</c> if we're not in a crew-compartment.
             </summary>
             <value>
-            The command pod of the cockpit, if the astronaut is in one, otherwise; <c>null</c>.
+            The command pod of the crew-compartment that we're in, otherwise; <c>null</c> if we're not in a crew-compartment.
             </value>
         </member>
         <member name="P:ModApi.Craft.Parts.IEvaScript.EvaActive">
@@ -13110,6 +13119,12 @@
             </summary>
             <value><c>true</c> if this renderer has transparency; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:ModApi.Craft.Parts.IRendererMaterialMap.IsTMProRenderer">
+            <summary>
+            Gets a value indicating whether this instance is TextMeshPro renderer.
+            </summary>
+            <value><c>true</c> if this instance is TextMeshPro renderer; otherwise, <c>false</c>.</value>
+        </member>
         <member name="P:ModApi.Craft.Parts.IRendererMaterialMap.Mesh">
             <summary>
             Gets the mesh component.
@@ -13642,6 +13657,11 @@
             The supports activation
             </summary>
         </member>
+        <member name="F:ModApi.Craft.Parts.Modifiers.ConfigData._supportsTransparency">
+            <summary>
+            The supports transparency flag.
+            </summary>
+        </member>
         <member name="F:ModApi.Craft.Parts.Modifiers.ConfigData._thermalMassRatio">
             <summary>
             The thermal mass ratio
@@ -13932,6 +13952,14 @@
             </summary>
             <value>
             <c>true</c> if the part can be activated; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:ModApi.Craft.Parts.Modifiers.ConfigData.SupportsTransparency">
+            <summary>
+            Gets a value indicating whether this part supports transparency.
+            </summary>
+            <value>
+              <c>true</c> if this part supports transparency; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:ModApi.Craft.Parts.Modifiers.ConfigData.TinkerPanelEnabled">
@@ -19264,6 +19292,14 @@
             The altitude above ground level.
             </value>
         </member>
+        <member name="P:ModApi.Craft.ICraftFlightData.AltitudeAboveTerrain">
+            <summary>
+            Gets the altitude above the terrain, in meters.
+            </summary>
+            <value>
+            The altitude above the terrain, in meters.
+            </value>
+        </member>
         <member name="P:ModApi.Craft.ICraftFlightData.AltitudeAboveSeaLevel">
             <summary>
             Gets the altitude above sea level.
@@ -20091,6 +20127,16 @@
             Occurs after the time multiplier changes, and after this <see cref="T:ModApi.Craft.ICraftScript"/> has finished processing the event.
             </summary>
         </member>
+        <member name="E:ModApi.Craft.ICraftScript.NavballRotationUpdate">
+            <summary>
+            Event for extra navballs (MFD) to hook rotation updates.
+            </summary>
+        </member>
+        <member name="E:ModApi.Craft.ICraftScript.NavballVectorUpdate">
+            <summary>
+            Event for extra navballs (MFD) to hook vector updates.
+            </summary>
+        </member>
         <member name="P:ModApi.Craft.ICraftScript.ActiveCommandPod">
             <summary>
             Gets the command pod currently being controlled by the player.
@@ -20495,6 +20541,13 @@
             The part state coloring information.
             </value>
         </member>
+        <member name="M:ModApi.Craft.ITheme.GetDefaultPartTMProMaterial(System.String)">
+            <summary>
+            Gets the default TextMeshPro part material for the specified material key.
+            </summary>
+            <param name="materialKey">The material key.</param>
+            <returns>The requested material.</returns>
+        </member>
         <member name="M:ModApi.Craft.ITheme.GetMaterialIndex(System.Int32)">
             <summary>
             Gets the array index of the material, which is used by the part shader.
@@ -20518,6 +20571,13 @@
             </summary>
             <param name="material">The material to release.</param>
         </member>
+        <member name="M:ModApi.Craft.ITheme.ReleasePartTMProMaterialInstance(System.String,UnityEngine.Material)">
+            <summary>
+            Releases the specified TextMeshPro part material instance with the specified material key.
+            </summary>
+            <param name="materialKey">The material key.</param>
+            <param name="material">The material instance to release.</param>
+        </member>
         <member name="M:ModApi.Craft.ITheme.ReleaseTransparentPartMaterialInstance(UnityEngine.Material)">
             <summary>
             Releases an instance of the transparent part material.
@@ -20529,6 +20589,13 @@
             Requests a new instance of the default part material.
             </summary>
             <returns>A new instance of the default part material.</returns>
+        </member>
+        <member name="M:ModApi.Craft.ITheme.RequestPartTMProMaterialInstance(System.String)">
+            <summary>
+            Gets the a TextMeshPro part material instance for the specified material key.
+            </summary>
+            <param name="materialKey">The material key.</param>
+            <returns>The requested material.</returns>
         </member>
         <member name="M:ModApi.Craft.ITheme.RequestTransparentPartMaterialInstance">
             <summary>
@@ -21455,6 +21522,12 @@
             Sets the craft's target node.
             </summary>
             <param name="name">The target's name.</param>
+        </member>
+        <member name="M:ModApi.Craft.Program.Craft.ICraftService.SetTargetVector(UnityEngine.Vector3d)">
+            <summary>
+            Sets the target to a PCI position vector.
+            </summary>
+            <param name="position">The PCI position vector.</param>
         </member>
         <member name="M:ModApi.Craft.Program.Craft.ICraftService.StopSound">
             <summary>
@@ -32611,29 +32684,42 @@
             The planet velocity.
             </returns>
         </member>
-        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetAltitudeAsl(UnityEngine.Vector3,System.Boolean)">
+        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetAltitudeAsl(UnityEngine.Vector3,System.Boolean,ModApi.Craft.ICraftScript)">
             <summary>
             Gets the altitude, above sea level, for the given frame position.
             </summary>
             <param name="framePos">The frame position.</param>
             <param name="includeWaves">If set to <c>true</c> the altitude includes sea level displacement caused by waves, otherwise <c>false</c> to use the "base" sea level.</param>
+            <param name="craft">Only used if includeWaves is <c>true</c>.  If the position is asssociated with a craft, it should be provided to speed up calculations...can be null at the expense of a ray-cast.</param>
             <returns>The altitude, above sea level, for the given frame position.</returns>
         </member>
-        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetWaterPosBelowPoint(UnityEngine.Vector3,System.Boolean)">
+        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetWaterPosBelowPoint(UnityEngine.Vector3,System.Boolean,ModApi.Craft.ICraftScript)">
             <summary>
             Gets the water position, in frame coordinates (without wave offset) below/above a given frame position.
             </summary>
             <param name="framePos">The frame position.</param>
             <param name="includeWaves">If set to <c>true</c> the point will be displaced by waves, otherwise <c>false</c> to use the "base" sea level.</param>
+            <param name="craft">Only used if includeWaves is <c>true</c>.  If the position is asssociated with a craft, it should be provided to speed up calculations...can be null at the expense of a ray-cast.</param>
             <returns>
             The water position, in frame coordinates (without wave offset) below/above a given frame position.
             </returns>
         </member>
-        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetWaterWaveOffset(UnityEngine.Vector3)">
+        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetWaterWaveOffset(UnityEngine.Vector3,ModApi.Craft.ICraftScript)">
             <summary>
             Gets the water wave offset for a given frame position, using the current planet's water properties.
             </summary>
             <param name="framePosition">The frame position.</param>
+            <param name="craft">If the position is asssociated with a craft, it should be provided to speed up calculations...can be null at the expense of a ray-cast.</param>
+            <returns>
+            The water wave offset for a given frame position, using the current planet's water properties.
+            </returns>
+        </member>
+        <member name="M:ModApi.Flight.GameView.IReferenceFrame.GetWaterWaveOffset(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Gets the water wave offset for a given frame position, using the current planet's water properties.
+            </summary>
+            <param name="framePosition">The frame position.</param>
+            <param name="agl">The agl of the frame position.</param>
             <returns>
             The water wave offset for a given frame position, using the current planet's water properties.
             </returns>
@@ -43184,11 +43270,6 @@
             The distance blended splatmap textures defined for this modifier.
             </summary>
         </member>
-        <member name="F:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap._lightingFresnelBias">
-            <summary>
-            The fresnel bias used in the light calculations.
-            </summary>
-        </member>
         <member name="F:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap._groundDetailTexture1">
             <summary>
             The first ground detail splatmap texture.
@@ -43202,6 +43283,11 @@
         <member name="F:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap._groundDetailTextures">
             <summary>
             The ground detail splatmap textures defined for this modifier.
+            </summary>
+        </member>
+        <member name="F:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap._lightingFresnelBias">
+            <summary>
+            The fresnel bias used in the light calculations.
             </summary>
         </member>
         <member name="F:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap._shaderDistanceBlendDataInitialized">
@@ -43254,6 +43340,12 @@
             <returns>
             The required terrain mesh data flags.
             </returns>
+        </member>
+        <member name="M:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap.GetSupportFileReferences">
+            <summary>
+            Gets the support file reference ids currently being used by this modifier.
+            </summary>
+            <returns>The support file reference ids currently being used by this modifier.</returns>
         </member>
         <member name="M:ModApi.Planet.Modifiers.Material.TerrainDetailSplatmap.Initialize(ModApi.Planet.IPlanetData)">
             <summary>
@@ -44204,6 +44296,12 @@
             </summary>
             <returns>The required water mesh data flags.</returns>
         </member>
+        <member name="M:ModApi.Planet.Modifiers.PlanetModifier.GetSupportFileReferences">
+            <summary>
+            Gets the support file reference ids currently being used by this modifier.
+            </summary>
+            <returns>The support file reference ids currently being used by this modifier.</returns>
+        </member>
         <member name="M:ModApi.Planet.Modifiers.PlanetModifier.Initialize(ModApi.Planet.PlanetTerrainDataScript)">
             <summary>
             Initializes the modifier.
@@ -44230,6 +44328,13 @@
             Saves the modifier as XML.
             </summary>
             <param name="xml">The XML element to which to save the modifier.</param>
+        </member>
+        <member name="M:ModApi.Planet.Modifiers.PlanetModifier.GetSupportFileReferences(System.Object,System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the support file reference ids currently being used by the specified object.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="references">The list of reference ids to update.</param>
         </member>
         <member name="M:ModApi.Planet.Modifiers.PlanetModifier.Awake">
             <summary>
@@ -52371,13 +52476,13 @@
             The planetary system defined data for this celestial body.
             </summary>
         </member>
-        <member name="F:ModApi.Planet.PlanetDataScript._quadSphereActivationDistance">
+        <member name="F:ModApi.Planet.PlanetDataScript._legacyQuadSphereActivationDistance">
             <summary>
             The distance from the center of the planet at which the quad sphere is enabled.
             If this is left at zero, then a default value will be used, which is the diameter of the planet.
             </summary>
         </member>
-        <member name="F:ModApi.Planet.PlanetDataScript._quadSphereTransitionDistance">
+        <member name="F:ModApi.Planet.PlanetDataScript._legacyQuadSphereTransitionDistance">
             <summary>
             The distance over which the rendering is transitioned between the quad sphere and the scaled space renderer.
             The quad sphere is 100% visible at QuadSphereActivationDistance and the scaled space renderer is 100% visible at
@@ -54025,6 +54130,26 @@
             The minimum subdivision level of the planet.
             </value>
         </member>
+        <member name="P:ModApi.Planet.IPlanetTerrainQuality.QuadSphereActivationDistance">
+            <summary>
+            Gets the distance from the center of the planet at which the quad sphere is enabled.
+            If this is left at zero, then a default value will be used, which is the diameter of the planet.
+            </summary>
+            <value>
+            The distance from the center of the planet that under which, the quad sphere is enabled.
+            </value>
+        </member>
+        <member name="P:ModApi.Planet.IPlanetTerrainQuality.QuadSphereTransitionDistance">
+            <summary>
+            Gets the distance over which the rendering is transitioned between the quad sphere and the scaled space renderer.
+            The quad sphere is 100% visible at <see cref="P:ModApi.Planet.IPlanetTerrainQuality.QuadSphereActivationDistance"/> and the scaled space renderer is
+            100% visible at <see cref="P:ModApi.Planet.IPlanetTerrainQuality.QuadSphereActivationDistance"/> + <see cref="P:ModApi.Planet.IPlanetTerrainQuality.QuadSphereTransitionDistance"/>.
+            If this is left at zero, then a default value will be used, which is the diameter of the planet.
+            </summary>
+            <value>
+            The quad sphere transition distance.
+            </value>
+        </member>
         <member name="P:ModApi.Planet.IPlanetTerrainQuality.TerrainQuadEdgeVertexCount">
             <summary>
             Gets the number of vertices along the edge of a terrain quad (not counting the skirt).
@@ -54055,6 +54180,16 @@
         <member name="F:ModApi.Planet.PlanetTerrainQuality.DefaultMinSubdivisionLevel">
             <summary>
             The default minimum subdivision level of the planet.
+            </summary>
+        </member>
+        <member name="F:ModApi.Planet.PlanetTerrainQuality.DefaultQuadSphereActivationDistance">
+            <summary>
+            The default quad sphere activation distance.
+            </summary>
+        </member>
+        <member name="F:ModApi.Planet.PlanetTerrainQuality.DefaultQuadSphereTransitionDistance">
+            <summary>
+            The default quad sphere transition distance.
             </summary>
         </member>
         <member name="F:ModApi.Planet.PlanetTerrainQuality.DefaultTerrainQuadEdgeVertexCount">
@@ -54107,6 +54242,20 @@
             The minimum subdivision level of the planet.
             </summary>
         </member>
+        <member name="F:ModApi.Planet.PlanetTerrainQuality._quadSphereActivationDistance">
+            <summary>
+            The distance from the center of the planet at which the quad sphere is enabled.
+            If this is left at zero, then a default value will be used, which is the diameter of the planet.
+            </summary>
+        </member>
+        <member name="F:ModApi.Planet.PlanetTerrainQuality._quadSphereTransitionDistance">
+            <summary>
+            Gets the distance over which the rendering is transitioned between the quad sphere and the scaled space renderer.
+            The quad sphere is 100% visible at <see cref="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereActivationDistance"/> and the scaled space renderer is
+            100% visible at <see cref="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereActivationDistance"/> + <see cref="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereTransitionDistance"/>.
+            If this is left at zero, then a default value will be used, which is the diameter of the planet.
+            </summary>
+        </member>
         <member name="F:ModApi.Planet.PlanetTerrainQuality._terrainQuadEdgeVertexCount">
             <summary>
             The number of vertices along the edge of a terrain quad (not counting the skirt).
@@ -54132,6 +54281,22 @@
             <value>
             The minimum subdivision level of the planet.
             </value>
+        </member>
+        <member name="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereActivationDistance">
+            <summary>
+            Gets or sets the distance from the center of the planet at which the quad sphere is enabled.
+            If this is left at zero, then a default value will be used, which is the diameter of the planet.
+            </summary>
+            <value>The distance from the center of the planet that under which, the quad sphere is enabled.</value>
+        </member>
+        <member name="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereTransitionDistance">
+            <summary>
+            Gets or sets the distance over which the rendering is transitioned between the quad sphere and the scaled space renderer.
+            The quad sphere is 100% visible at <see cref="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereActivationDistance" /> and the scaled space renderer is
+            100% visible at <see cref="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereActivationDistance" /> + <see cref="P:ModApi.Planet.PlanetTerrainQuality.QuadSphereTransitionDistance" />.
+            If this is left at zero, then a default value will be used, which is the diameter of the planet.
+            </summary>
+            <value>The quad sphere transition distance.</value>
         </member>
         <member name="P:ModApi.Planet.PlanetTerrainQuality.TerrainQuadEdgeVertexCount">
             <summary>
@@ -54507,11 +54672,6 @@
         <member name="F:ModApi.Planet.PlanetVertexDataInput.Position">
             <summary>
             The normalized position on the planet at which to generate vertex data.
-            </summary>
-        </member>
-        <member name="F:ModApi.Planet.PlanetVertexDataInput.TerrainData">
-            <summary>
-            The planet terrain data.
             </summary>
         </member>
         <member name="T:ModApi.Planet.PlanetWaterConfig">
@@ -56399,6 +56559,11 @@
             The vertex data result.
             </value>
         </member>
+        <member name="M:ModApi.Planet.TerrainGeneratorCacheData.CleanupOnSceneTransition">
+            <summary>
+            Called when the scene transitions in order to clean up any data necessary.
+            </summary>
+        </member>
         <member name="M:ModApi.Planet.TerrainGeneratorCacheData.GetCurrent(System.Int32,System.Int32)">
             <summary>
             Gets the cached terrain generator data object unique to the current thread.
@@ -57708,6 +57873,11 @@
             </summary>
         </member>
         <member name="F:ModApi.Project.FileExtensions.Generic">
+            <summary>
+            The generic file extension for SimpleRockets 2 content.
+            </summary>
+        </member>
+        <member name="F:ModApi.Project.FileExtensions.GenericLegacy">
             <summary>
             The generic file extension for SimpleRockets 2 content.
             </summary>
@@ -60386,6 +60556,14 @@
             </summary>
             <value>
             A setting indicating whether hidden part properties are show in the designer.
+            </value>
+        </member>
+        <member name="P:ModApi.Settings.DesignerSettings.UnlockTransparencySlider">
+            <summary>
+            Gets the unlock transparency setting.
+            </summary>
+            <value>
+            The unlock transparency setting.
             </value>
         </member>
         <member name="P:ModApi.Settings.DesignerSettings.ZoomSensitivity">
@@ -66925,6 +67103,25 @@
             <value>
             The start position.
             </value>
+        </member>
+        <member name="T:ModApi.Ui.Inspector.InspectorGroupAttribute">
+            <summary>
+            An inspector attribute for defining groups.
+            Implements the <see cref="T:System.Attribute" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:ModApi.Ui.Inspector.InspectorGroupAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ModApi.Ui.Inspector.InspectorGroupAttribute"/> class.
+            </summary>
+            <param name="groupName">Name of the group.</param>
+        </member>
+        <member name="P:ModApi.Ui.Inspector.InspectorGroupAttribute.GroupName">
+            <summary>
+            Gets the name of the group.
+            </summary>
+            <value>The name of the group.</value>
         </member>
         <member name="T:ModApi.Ui.Inspector.InspectorIds">
             <summary>

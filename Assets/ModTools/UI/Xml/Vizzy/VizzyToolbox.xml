@@ -98,6 +98,7 @@
     <Style id="set-mfd-map" color="WidgetInstruction" format="set map (0) [x] to (1)" tooltip="Sets the property of MFD map widget with the specified name." />
     <Style id="set-mfd-texture-setpixel" color="WidgetInstruction" format="set texture (0) pixel at x=(1), y=(2) to (3)" tooltip="Sets the pixel at the coordinate to the specified pixel. Note: Coordinates start at 1, not 0." />
     <Style id="set-mfd-texture-initialize" color="WidgetInstruction" format="initialize texture (0) width (1) and height (2)" tooltip="Initializes the texture to the specified width and height." />
+    <Style id="prop-mfd-texture-getpixel" color="WidgetInstruction" format="get texture (0) pixel at x=(1), y=(2)" tooltip="Gets the pixel at the specified coordinates. Note: Coordinates start at 1, not 0." />
     <Style id="prop-mfd-gauge" color="WidgetExpression" format="get gauge (0) [x]" tooltip="Returns information about the MFD gauge with the specified name." />
     <Style id="set-mfd-gauge" color="WidgetInstruction" format="set gauge (0) [x] to (1)" tooltip="Sets the property of MFD gauge widget with the specified name." />
     <Style id="set-mfd-line-points" color="WidgetInstruction" format="set line (0) from (1) to (2)" tooltip="Sets the line widget to connect the first point to the second point." />
@@ -568,6 +569,11 @@
       </CraftProperty>
       <CraftProperty style="prop-mfd-gauge" property="Mfd.Gauge.Value">
         <Constant text="name" />
+      </CraftProperty>
+      <CraftProperty style="prop-mfd-texture-getpixel" property="Mfd.Texture.GetPixel">
+        <Constant text="name" />
+        <Constant number="1" />
+        <Constant number="1" />
       </CraftProperty>
       <CraftProperty style="prop-mfd-pos" property="Mfd.LocaltoDisplay">
         <Constant text="name" />
